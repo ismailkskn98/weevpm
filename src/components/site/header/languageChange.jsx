@@ -28,10 +28,10 @@ export default function LanguageChange() {
             <DropdownMenuContent>
                 <DropdownMenuLabel className="text-xsm font-medium">Dil Seç</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-sm" onClick={() => handleLanguageChange('tr')}>Türkçe</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-sm" onClick={() => handleLanguageChange('en')}>English</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-sm" onClick={() => handleLanguageChange('ru')}>Russian</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-sm" onClick={() => handleLanguageChange('az')}>Azerbaijani</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-xsm" onClick={() => handleLanguageChange('tr')}>Türkçe</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-xsm" onClick={() => handleLanguageChange('en')}>English</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-xsm" onClick={() => handleLanguageChange('ru')}>Russian</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs 3xl:text-xsm" onClick={() => handleLanguageChange('az')}>Azerbaijani</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
