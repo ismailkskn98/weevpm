@@ -27,7 +27,7 @@ export default function Cards() {
     ]
 
     return (
-        <main className='fluid gridContainer w-full pt-28 mx-auto max-w-11/12 3xl:max-w-10/12'>
+        <main id='features' className='fluid gridContainer w-full pt-28 mx-auto max-w-11/12 3xl:max-w-10/12'>
             <MainTitle title="WeeVPN's Key Features" description="Scalable options to choose for Network & Infrastructure Security. Security Operations & Incident Response, Cloud Security and lot Security. " />
             <section className='w-10/12 mx-auto bg-white rounded-xl py-14 px-8 grid grid-cols-4 gap-4'>
                 {cards.map((card, index) => (

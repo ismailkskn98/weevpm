@@ -43,6 +43,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --breakpoint-3xl: 1600px;
   /*  */

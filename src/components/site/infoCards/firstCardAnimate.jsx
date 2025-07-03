@@ -33,32 +33,28 @@ export default function FirstCardAnimate() {
     ]
 
     useGSAP(() => {
-        // Timeline ile scroll-based animasyon
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 50%",
-                end: "+=300px",
+                start: "top 60%",
+                end: "+=350px",
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 toggleActions: "play none none reverse"
             }
         });
 
-        // Anahtar yukarı çıkıyor (translate-y-[55%]'den translate-y-1'e)
         tl.fromTo(
             ".lock-key",
-            { y: "55%" },
-            { y: "0.25rem", duration: 1, ease: "power2.inOut" }
+            { y: "80%" },
+            { y: "-0.35rem", duration: 2.5, ease: "power2.inOut" },
         )
-            // Lock-top 12 derece dönüyor
             .fromTo(
                 ".lock-top",
                 { rotation: 0, x: 0 },
-                { rotation: 12, x: 2, duration: 1, ease: "power2.inOut" },
+                { rotation: 15, x: 2, duration: 1, ease: "power2.inOut" },
                 "-=0.5"
             )
-            // Social iconlardaki blur kalkıyor (stagger ile)
             .to(
                 ".social-icon",
                 {
@@ -67,7 +63,7 @@ export default function FirstCardAnimate() {
                     stagger: 0.1,
                     ease: "power2.inOut"
                 },
-                "-=0.8"
+                "-=0.7"
             );
     }, { scope: containerRef });
 
@@ -86,7 +82,7 @@ export default function FirstCardAnimate() {
                 <div className='absolute z-20 left-1/2 -translate-x-1/2 -bottom-8 w-20 h-20 p-6 bg-white rounded-full shadow-xl flex flex-col items-center justify-center'>
                     <Image src="/images/lock-top.png" alt="WeeVPN Lock" width={100} height={100} className="lock-top w-full h-full object-contain object-center" />
                     <Image src="/images/lock-bottom.png" alt="WeeVPN Lock" width={100} height={100} className="lock-bottom w-full h-full object-contain object-center relative z-10" />
-                    <Image src="/images/lock-key.png" alt="WeeVPN key" width={100} height={100} className="lock-key w-full h-full max-h-7 object-contain object-center rotate-x-180 absolute translate-y-[55%] z-10 bottom-0 left-1/2 -translate-x-1/2" />
+                    <Image src="/images/lock-key.png" alt="WeeVPN key" width={100} height={100} className="lock-key w-full h-full max-h-7 object-contain object-center rotate-x-180 absolute translate-y-[80%] z-10 bottom-0 left-1/2 -translate-x-1/2" />
                 </div>
             </div>
         </article>
