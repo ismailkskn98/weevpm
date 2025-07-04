@@ -12,12 +12,12 @@ export default function Footer() {
     const t = useTranslations('Site.footer')
 
     const quickLinks = [
-        { title: t('quickLinks.login'), href: '/', },
-        { title: t('quickLinks.register'), href: '/', },
-        { title: t('quickLinks.forgotPassword'), href: '/', },
-        { title: t('quickLinks.distanceSalesAgreement'), href: '/', },
-        { title: t('quickLinks.privacyPolicy'), href: '/', },
-        { title: t('quickLinks.deliveryReturnTerms'), href: '/', },
+        { title: t('quickLinks.login'), href: '/auth/login', },
+        { title: t('quickLinks.register'), href: '/auth/register', },
+        { title: t('quickLinks.forgotPassword'), href: '/auth/forgot-password', },
+        { title: t('quickLinks.distanceSalesAgreement'), href: '/legal/distance-sales-agreement?t=distanceSalesAgreement', },
+        { title: t('quickLinks.privacyPolicy'), href: '/legal/privacy-policy?t=privacyPolicy', },
+        { title: t('quickLinks.deliveryReturnTerms'), href: '/legal/delivery-and-return-terms?t=deliveryReturnTerms', },
     ]
 
     const ecosystem = [
@@ -46,7 +46,7 @@ export default function Footer() {
             </article>
             <section className='w-full h-full grid grid-cols-2 lg:grid-cols-4 justify-items-center pb-14 pt-24 lg:pt-32 gap-10 lg:gap-1'>
                 <article className='col-span-2 lg:col-span-1 flex flex-col items-start gap-5'>
-                    <Image src="/images/logos/yellow_horizontal_text.png" alt="logo" width={250} height={200} className="object-contain object-center max-w-40" />
+                    <Image src="/images/logos/yellow_horizontal_text.png" alt="logo" width={250} height={200} className="object-contain object-center max-w-40 max-h-9" />
                     <p className='text-xsm text-black/70 max-w-xs'>{t('footerDesc')}</p>
                     <section className='flex items-center gap-3'>
                         <div className='flex items-center gap-2 bg-white shadow-lg px-4 py-2 rounded-lg'>

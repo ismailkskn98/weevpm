@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { useScroll, useMotionValueEvent } from "motion/react";
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
 
@@ -11,6 +12,7 @@ export default function Navbar() {
     const [activeSection, setActiveSection] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const { scrollY } = useScroll();
+    const pathname = usePathname();
 
     const navItems = [
         { name: t('home'), href: "/#hero", id: "hero" },
@@ -20,6 +22,14 @@ export default function Navbar() {
     ]
 
     useEffect(() => {
+        const isHomePage = pathname === '/tr' || pathname === '/en' || pathname === '/az' || pathname === '/ru';
+
+        if (!isHomePage) {
+            window.scrollTo(0, 0);
+            setActiveSection(null);
+            return;
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
@@ -34,9 +44,12 @@ export default function Navbar() {
             const section = document.querySelector(`#${item.id}`);
             if (section) observer.observe(section);
         })
-        return () => observer.disconnect();
 
-    }, [])
+        return () => {
+            observer.disconnect();
+        };
+
+    }, [navItems, pathname])
 
     useMotionValueEvent(scrollY, "change", (current) => {
         if (current > 70) {

@@ -38,11 +38,11 @@
     },
     "InfoCards": {
       "card1": {
-        "title": "Her ölçekteki ekipler için tasarlandı. Görevinizi korumak için geliştirildi.",
+        "title": "Her ölçekteki ekipler için tasarlandı Görevinizi korumak için geliştirildi",
         "description": "WeeVPN’in erişim güvenliği, kimlik bilgileri ve cihazlar tehlikeye girse bile tüm uygulamaları korur; geniş kapsamı sayesinde uyumluluk gereksinimlerini kolayca karşılamanızı sağlar."
       },
       "card2": {
-        "title": "Kullanıcılar için sezgisel doğrulama. Şirketler için güçlü esneklik.",
+        "title": "Kullanıcılar için sezgisel doğrulama Şirketler için güçlü esneklik",
         "description": "WeeVPN, uygulamalarla doğal entegrasyon sağlar; kullanıcı dostu ve esnek güvenliği hızlıca devreye almanıza ve kolayca yönetmenize olanak tanır. Kullanıcılar, yöneticiler ve BT ekipleri için kazanç sağlar.",
         "comingSoon": "Yakında yayında:",
         "scanToDownload": "Uygulamayı indirmek için tarayın",
