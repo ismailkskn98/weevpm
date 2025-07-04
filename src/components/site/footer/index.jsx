@@ -42,7 +42,7 @@ export default function Footer() {
                     <p className='text-black/80 font-bold text-xl md:text-2xl xl:text-3xl 3xl:text-4xl'>{t('title')}</p>
                     <Link href="/" className='rounded-full py-2.5 xl:py-3.5 px-4 xl:px-6 bg-gradient-to-b from-teal to-soft-turquoise text-white shadow-xl text-sm xl:text-base 3xl:text-lg font-medium'>{t('freeTrial')}</Link>
                 </div>
-                <Image src="/images/footer-top.png" alt="WeeVPN Footer" width={600} height={600} className="order-1 md:order-2 object-contain object-center w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[500px] 2xl:max-w-[600px]" />
+                <Image src="/images/footer-top.png" alt="WeeVPN Footer" width={600} height={600} className="order-1 md:order-2 object-contain object-center w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[500px] 2xl:max-w-[600px] h-fit" />
             </article>
             <section className='w-full h-full grid grid-cols-2 lg:grid-cols-4 justify-items-center pb-14 pt-24 lg:pt-32 gap-10 lg:gap-1'>
                 <article className='col-span-2 lg:col-span-1 flex flex-col items-start gap-5'>

@@ -1,7 +1,9 @@
+
 import React from 'react'
 import Sidebar from "@/components/legal/sidebar";
 
 export default function LegalLayout({ children }) {
+
     return (
         <main className="min-h-screen">
             <div className="w-full max-w-full xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

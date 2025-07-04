@@ -25,7 +25,6 @@ export default function Navbar() {
         const isHomePage = pathname === '/tr' || pathname === '/en' || pathname === '/az' || pathname === '/ru';
 
         if (!isHomePage) {
-            window.scrollTo(0, 0);
             setActiveSection(null);
             return;
         }
