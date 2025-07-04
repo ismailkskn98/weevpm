@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function SiteLayout({ children }) {
     return (
-        <main className='w-full bg-deep-white'>
+        <main className='w-full bg-deep-white overflow-x-clip'>
             <Header>
                 <HeaderSection />
             </Header>

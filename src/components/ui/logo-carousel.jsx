@@ -153,7 +153,7 @@ function LogoCarousel({
 
   // Render the logo columns
   return (
-    <div className="flex space-x-4">
+    <div className="w-full flex space-x-4">
       {logoSets.map((logos, index) => (
         <LogoColumn key={index} logos={logos} index={index} currentTime={currentTime} />
       ))}

@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@radix-ui/react-accordion": "^1.2.11",
+    "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@rive-app/react-canvas": "^4.21.4",
     "accordion": "^3.0.2",

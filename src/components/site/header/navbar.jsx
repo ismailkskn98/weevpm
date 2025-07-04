@@ -1,25 +1,27 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import { Link } from '@/i18n/navigation';
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { useScroll, useMotionValueEvent } from "motion/react";
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
+
+    const t = useTranslations('Site.navbar');
     const [activeSection, setActiveSection] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const { scrollY } = useScroll();
 
     const navItems = [
-        { name: "Home", href: "hero" },
-        { name: "Features", href: "features" },
-        { name: "Products", href: "products" },
-        { name: "FAQ", href: "faq" }
+        { name: t('home'), href: "/#hero", id: "hero" },
+        { name: t('features'), href: "/#features", id: "features" },
+        { name: t('products'), href: "/#products", id: "products" },
+        { name: t('faq'), href: "/#faq", id: "faq" }
     ]
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                // console.log("entry", entry);
                 if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
                     setActiveSection(entry.target.id);
                 }
@@ -29,7 +31,7 @@ export default function Navbar() {
         })
 
         navItems.forEach((item) => {
-            const section = document.querySelector(`#${item.href}`);
+            const section = document.querySelector(`#${item.id}`);
             if (section) observer.observe(section);
         })
         return () => observer.disconnect();
@@ -45,11 +47,11 @@ export default function Navbar() {
     });
 
     return (
-        <nav className='flex items-center gap-5 text-sm font-medium'>
+        <nav className='hidden md:flex items-center gap-5 text-sm font-medium'>
             {navItems.map((item, index) => (
-                <Link key={index} href={`#${item.href}`} className={classNames("relative cursor-pointer px-1 rounded-full", {
-                    "text-deep-teal": activeSection == item.href && !headerScroll,
-                    "text-aqua-green": activeSection == item.href && headerScroll,
+                <Link key={index} href={`${item.href}`} className={classNames("relative cursor-pointer px-1 rounded-full capitalize", {
+                    "text-deep-teal": activeSection == item.id && !headerScroll,
+                    "text-aqua-green": activeSection == item.id && headerScroll,
                 })}>
                     {item.name}
                 </Link>

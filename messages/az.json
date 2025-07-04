@@ -1,5 +1,253 @@
 {
-  "Home": {
-    "title": "Ana səhifə"
+  "Site": {
+    "navbar": {
+      "home": "Ana səhifə",
+      "features": "Xüsusiyyətlər",
+      "products": "Məhsullar",
+      "faq": "S.S.S"
+    },
+    "login": "Daxil ol",
+    "register": "Qeydiyyatdan keç",
+    "language": "Dili seç",
+    "hero": {
+      "title": "Verilərinizi sadə və güclü giriş təhlükəsizliyi ilə qoruyun",
+      "description": "Biz WeeVPN'yiz. Modern giriş təhlükəsizliyi, istifadəçilər, cihazlar və tətbiqləri qorumaq üçün hazırlanmışdır — böyleliklə siz ən yaxşı şeyi etməyə odaklanmaqla mükafatlandırılırsınız."
+    },
+    "logoCarousel": {
+      "title": "Bu markalar, hər birinin öz sahəsində yenilikçi həlləri təqdim edərək, <weecoins>WeeCoins Premium</weecoins> ekosisteminin sürətli və bütününün yapısını əhatə edir."
+    },
+    "Cards": {
+      "title": "WeeVPN-in Əsas Xüsusiyyətləri",
+      "description": "Şəbəkə və infrastruktur təhlükəsizliyi, təhlükəsizlik əməliyyatları, hadisələrə cavab, bulud və digər təhlükəsizlik sahələri üçün miqyaslana bilən seçimlər.",
+      "card1": {
+        "title": "Hərbi Səviyyəli Şifrələmə",
+        "description": "WeeVPN internet trafikinizi hakerlərdən, izləmədən və məlumat sızmalarından qorumaq üçün sənaye standartlarına uyğun şifrələmə istifadə edir — istənilən vaxt, istənilən yerdə."
+      },
+      "card2": {
+        "title": "Qlobal Server Əhatəsi",
+        "description": "Bir çox ölkədə yüksək sürətli VPN serverlərinə qoşularaq məzmun məhdudiyyətlərini keçin və məhdudiyyətsiz internet azadlığından yararlanın."
+      },
+      "card3": {
+        "title": "Optimallaşdırılmış Performans",
+        "description": "Ağıllı yönləndirmə ilə aşağı gecikməli və yüksək sürətli bağlantının dadını çıxarın. Baxış, yayım və oyunlar problemsiz davam edir."
+      },
+      "card4": {
+        "title": "Məxfilik Prioritetdir",
+        "description": "Gündəlik qeydlər yoxdur, izləmə yoxdur, güzəşt yoxdur. WeeVPN tam məxfilik fəlsəfəsi ilə qurulub — kimliyiniz onlayn mühitdə qorunur."
+      }
+    },
+    "InfoCards": {
+      "card1": {
+        "title": "Hər ölçüdə komanda üçün hazırlanıb. Missiyanızı qorumaq üçün qurulub.",
+        "description": "WeeVPN-in giriş təhlükəsizliyi bütün tətbiqləri sızdırılmış məlumatlardan və cihazlardan qoruyur, geniş əhatə dairəsi isə uyğunluq tələblərini asanlıqla yerinə yetirməyə kömək edir."
+      },
+      "card2": {
+        "title": "İstifadəçilər üçün intuitiv doğrulama. Şirkətlər üçün güclü elastiklik.",
+        "description": "WeeVPN tətbiqlərlə yerli inteqrasiya edir və çevik, istifadəçi dostu təhlükəsizlik təmin edir – tez tətbiq olunur və asan idarə olunur. İstifadəçilər, administratorlar və IT komandaları üçün qazan-qazan vəziyyətidir.",
+        "comingSoon": "Tezliklə:",
+        "scanToDownload": "Tətbiqi yükləmək üçün skan edin",
+        "iosAndAndroid": "iOS və Android",
+        "lite": "Lite",
+        "pro": "Pro"
+      }
+    },
+    "FAQ": {
+      "title": "Tez-tez Verilən Suallar",
+      "description": "WeeVPN haqqında ən çox verilən sualların siyahısını təqdim edirik. Əlavə suallarınız olarsa, bizimlə əlaqə saxlamaqdan çəkinməyin.",
+      "faq": {
+        "question1": {
+          "title": "WeeVPN nədir?",
+          "answer": "WeeVPN — internet bağlantınızı şifrələyərək onlayn məxfiliyinizi qoruyan və senzuralı məzmunlara təhlükəsiz çıxış təmin edən virtual özəl şəbəkə (VPN) xidmətidir."
+        },
+        "question2": {
+          "title": "VPN internetimi zəiflədir?",
+          "answer": "Şifrələmə səbəbindən sürət bir qədər azal bilər, lakin WeeVPN yüksək sürətli serverlərlə bu fərqi minimuma endirir."
+        },
+        "question3": {
+          "title": "WeeVPN hansı cihazlarda işləyir?",
+          "answer": "WeeVPN Windows, macOS, Android və iOS daxil olmaqla bütün əsas əməliyyat sistemlərini dəstəkləyəcək şəkildə hazırlanır."
+        },
+        "question4": {
+          "title": "WeeVPN pulsuzdur?",
+          "answer": "WeeVPN əsas funksiyaları olan pulsuz plan təklif etməyi planlaşdırır. Əlavə funksiyalar premium paketlərdə olacaq."
+        },
+        "question5": {
+          "title": "Siz log (qeyd) saxlayırsınız?",
+          "answer": "Məxfiliyiniz bizim üçün önəmlidir. WeeVPN istifadəçi fəaliyyətini qeydə almayan (no-log) siyasətə sadiqdir."
+        },
+        "question6": {
+          "title": "VPN istifadə etmək qanunidirmi?",
+          "answer": "VPN istifadəsi əksər ölkələrdə tamamilə qanunidir. Ancaq istifadəçi yerli qanunlara əməl etməyə məsuldur."
+        },
+        "question7": {
+          "title": "WeeVPN ilə Netflix kimi platformalara daxil ola bilərəm?",
+          "answer": "WeeVPN coğrafi məhdudiyyətləri aşmaq üçün hazırlanmışdır. Yayım xidmətlərinə giriş zamanla dəyişə bilər."
+        },
+        "question8": {
+          "title": "Hər hansı problem yaşasam, dəstək ala bilərəmmi?",
+          "answer": "Bəli. WeeVPN komandası texniki problemlərinizdə sizə kömək etməyə hazırdır."
+        }
+      }
+    },
+    "footer": {
+      "title": "Təhlükəsiz və ildırım sürətli internet təcrübəsi yaşayın — WeeVPN-i BU GÜN PULSUZ sınaqdan keçirin!",
+      "freeTrial": "Pulsuz Sınaq",
+      "footerDesc": "WeeVPN — bütün istifadəçiləri, cihazları və tətbiqləri qorumaq üçün hazırlanmış müasir giriş təhlükəsizliyi platformasıdır — beləliklə siz əsas işinizə fokuslana bilərsiniz.",
+      "ecosystem": "Ekosistem",
+      "followUs": "Bizi İzləyin",
+      "followUsDesc": "Sosial media hesablarımızı izləyərək son yeniliklərdən xəbərdar olun.",
+      "quickLinks": {
+        "title": "Tez keçidlər",
+        "login": "Daxil Ol",
+        "register": "Qeydiyyat",
+        "forgotPassword": "Şifrəmi Unutdum",
+        "privacyPolicy": "Məxfilik Siyasəti",
+        "distanceSalesAgreement": "Məsafəli Satış Müqaviləsi",
+        "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri"
+      }
+    },
+    "copyright": {
+      "copyright": "Müəllif Hüquqları © 2025 WeeVPN. Bütün hüquqlar qorunur.",
+      "privacyPolicy": "Məxfilik Siyasəti",
+      "distanceSalesAgreement": "Məsafəli Satış Müqaviləsi",
+      "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri"
+    }
+  },
+  "Legal": {
+    "privacyPolicy": {
+      "title": "Məxfilik Siyasəti",
+      "article1": {
+        "title": "Giriş",
+        "description": "Bu məxfilik siyasəti, WeeVPN xidmətindən istifadə edən bütün ziyarətçilərə və istifadəçilərə şamil olunur. İstifadəçilərimizin məxfiliyinə böyük önəm veririk və şəxsi məlumatların qorunması bizim üçün vacibdir."
+      },
+      "article2": {
+        "title": "Toplanan Məlumatlar",
+        "description": "Xidmətin göstərilməsi üçün aşağıdakı şəxsi məlumatlar toplanır:",
+        "item1": "Ad və soyad",
+        "item2": "E-poçt ünvanı",
+        "item3": "Telefon nömrəsi",
+        "item4": "Hesab və istifadə seçimləri",
+        "item5": "Bağlantı qeydləri (yalnız təhlükəsizlik məqsədilə, trafiklə bağlı qeydlər aparılmır)",
+        "item6": "IP ünvanı və cihaz məlumatları (təhlükəsizlik və analiz məqsədilə)"
+      },
+      "article3": {
+        "title": "Məlumatların İstifadəsi",
+        "description": "Toplanan məlumatlar aşağıdakı məqsədlərlə istifadə oluna bilər:",
+        "item1": "Xidmət göstərilməsi və əməliyyatlar",
+        "item2": "İstifadəçi dəstəyi və problem həlli",
+        "item3": "Hesabın idarə olunması və təhlükəsizlik",
+        "item4": "Statistik təhlillər (ümumi performans, istifadə analizi)"
+      },
+      "article4": {
+        "title": "Məlumatların Paylaşılması",
+        "description": "İstifadəçi məlumatları qanuni məcburiyyətlər istisna olmaqla üçüncü tərəflərlə paylaşılmır. Alt xidmət təminatçıları ilə (məsələn, server xidməti, e-poçt göndərilməsi) yalnız xidmətin göstərilməsi üçün zəruri məlumatlar paylaşılır."
+      },
+      "article5": {
+        "title": "Çərəzlər (Cookies)",
+        "description": "Veb saytımız istifadəçi təcrübəsini yaxşılaşdırmaq üçün çərəzlərdən istifadə edə bilər. Brauzer ayarlarından çərəzləri rədd edə bilərsiniz, lakin bu halda bəzi funksiyalar məhdudlaşa bilər."
+      },
+      "article6": {
+        "title": "Məlumatların Saxlanma Müddəti",
+        "description": "Şəxsi məlumatlar, xidmət istifadə olunduğu müddətcə və qanuni öhdəliklər çərçivəsində məqbul bir müddət ərzində saxlanılır. İstək əsasında şəxsi məlumatlar silinə bilər."
+      },
+      "article7": {
+        "title": "Təhlükəsizlik",
+        "description": "Şəxsi məlumatlarınızın təhlükəsizliyi üçün bütün zəruri texniki və inzibati tədbirlər görülür. Məlumatların təhlükəsizliyini təmin etmək üçün SSL, firewall və giriş nəzarətləri kimi üsullardan istifadə olunur."
+      },
+      "article8": {
+        "title": "Hüquqlarınız",
+        "description": "Şəxsi Məlumatların Qorunması Qanununa əsasən aşağıdakı hüquqlara maliksiniz:",
+        "item1": "Məlumatlarınıza baxmaq",
+        "item2": "Düzəliş tələb etmək",
+        "item3": "Silinməsini tələb etmək",
+        "item4": "Emal edilməsinə etiraz etmək"
+      },
+      "article9": {
+        "title": "Əlaqə",
+        "description": "Məxfilik siyasətimizlə bağlı bütün suallarınız üçün bizimlə info@weevpn.com ünvanından əlaqə saxlaya bilərsiniz."
+      }
+    },
+    "distanceSalesAgreement": {
+      "title": "Məsafəli Satış Müqaviləsi",
+      "description": "Bu Məsafəli Satış Müqaviləsi aşağıda göstərilən tərəflər arasında, aşağıda qeyd olunan şərtlər çərçivəsində elektron şəkildə bağlanmışdır.",
+      "article1": {
+        "title": "Tərəflər",
+        "description": "Satıcı:",
+        "item1": "Ad: WeeVPN Rəqəmsal Xidmətlər",
+        "item2": "Ünvan: Yukarı Öveçler Mah. Lizbon Cad.",
+        "item3": "E-poçt: info@weevpn.com"
+      },
+      "subtitle": "Alıcı (Müştəri):",
+      "subdescription": "WeeVPN veb saytına üzv olan və VPN xidmətini satın alan istifadəçi.",
+      "article2": {
+        "title": "Mövzu",
+        "description": "Bu müqavilə, Alıcının www.weevpn.com internet saytı üzərindən verdiyi VPN xidmətinin satışı və çatdırılması ilə bağlı olaraq, 6502 saylı İstehlakçı Hüquqlarının Müdafiəsi Qanunu və əlaqəli Məsafəli Müqavilələr Qaydalarına əsasən tərəflərin hüquq və öhdəliklərini tənzimləyir."
+      },
+      "article3": {
+        "title": "Məhsul/Xidmət Məlumatı",
+        "item1": "Məhsul: VPN (Virtual Private Network) Xidməti",
+        "item2": "Qiymət: Sifariş zamanı sistemdə göstərilən məbləğ",
+        "item3": "Çatdırılma Forması: Hesab məlumatları e-poçt və ya istifadəçi paneli vasitəsilə təqdim olunur",
+        "item4": "Çatdırılma Müddəti: Dərhal (ödəniş təsdiqindən sonra)"
+      },
+      "article4": {
+        "title": "Ödəniş",
+        "description": "Alıcı, alış-verişi tamamlamadan əvvəl xidmətin ümumi məbləğini və seçilmiş ödəniş metodunu təsdiq edir. Ödəniş kredit kartı, debet kartı və ya onlayn ödəniş sistemləri vasitəsilə həyata keçirilir."
+      },
+      "article5": {
+        "title": "Çatdırılma",
+        "description": "VPN xidməti ödənişdən sonra istifadəçiyə elektron şəkildə təqdim olunur. Fiziki çatdırılma yoxdur. Alıcı bu şərti qəbul etdiyini bəyan edir."
+      },
+      "article6": {
+        "title": "İmtina Hüququ",
+        "description": "Alıcı, bu rəqəmsal məzmunlu xidmətdə, istifadə edilmədən əvvəl imtina hüququndan istifadə edə bilər. Lakin xidmət istifadəyə verildikdən (hesab məlumatlarının paylaşılması və ya VPN aktivləşdirilməsi) sonra bu hüquq keçərsiz sayılır."
+      },
+      "article7": {
+        "title": "Məsuliyyətlər",
+        "item1": "Satıcı xidməti vaxtında və qüsursuz şəkildə təqdim etməyə borcludur.",
+        "item2": "Alıcı, sifariş zamanı təqdim etdiyi məlumatların düzgün olduğunu bəyan edir.",
+        "item3": "Satıcı, Alıcının səbəb olduğu çıxış problemlərinə görə məsuliyyət daşımır."
+      },
+      "article8": {
+        "title": "Mübahisələrin Həlli",
+        "description": "Bu müqavilədən doğan mübahisələrin həllində İstehlakçı Hüquqlarının Müdafiəsi Komitələri və İstehlakçı Məhkəmələri səlahiyyətlidir."
+      },
+      "article9": {
+        "title": "Qüvvəyə Minmə",
+        "description": "Alıcı www.weevpn.com saytından sifariş verərək bu müqavilənin bütün şərtlərini qəbul etmiş sayılır. Müqavilə rəqəmsal təsdiqləndiyi tarixdə qüvvəyə minir."
+      }
+    },
+    "deliveryReturnTerms": {
+      "title": "Çatdırılma və Geri Qaytarma Şərtləri",
+      "article1": {
+        "title": "Çatdırılma Şərtləri",
+        "description": "WeeVPN xidməti ödənişiniz tamamlandıqdan dərhal sonra aktivləşdirilir. Hesab məlumatları və bağlantı təlimatları sizə e-poçt, istifadəçi paneli və ya xüsusi bağlantı ilə təqdim olunur."
+      },
+      "article2": {
+        "title": "Çatdırılma Forması",
+        "description": "Xidmətimiz tamamilə rəqəmsal xarakter daşıyır və fiziki göndəriş edilmir. VPN xidməti proqram təminatları və veb panel vasitəsilə təqdim olunur və müxtəlif cihazlarda istifadə üçün giriş təmin edilir."
+      },
+      "article3": {
+        "title": "Geri Qaytarma Şərtləri",
+        "description": "Rəqəmsal məhsulların təbiəti baxımından qaytarma ümumiyyətlə mümkün deyil. Lakin aşağıdakı hallarda fərdi həllər təklif oluna bilər:",
+        "item1": "Xidmət vəd edilən müddət ərzində aktivləşdirilməzsə",
+        "item2": "Təqdim olunan VPN xidməti göstərilən xüsusiyyətlərdən və performansdan ciddi şəkildə fərqlənərsə",
+        "item3": "Texniki nasazlıqlar səbəbilə VPN xidmətinə giriş mümkün olmazsa"
+      },
+      "article4": {
+        "title": "Geri Qaytarma Prosesi",
+        "description": "Yuxarıdakı hallar mövcuddursa, istifadəçi 7 gün ərzində info@weevpn.com ünvanına e-poçt göndərərək dəstək tələb edə bilər. Sorğunuz araşdırıldıqdan sonra, ehtiyac olarsa təkrar çatdırılma, düzəliş və ya istisna olaraq ödəniş geri qaytarıla bilər."
+      },
+      "article5": {
+        "title": "Əlaqə",
+        "description": "İstənilən sual və dəstək tələbləriniz üçün bizimlə info@weevpn.com vasitəsilə əlaqə saxlaya bilərsiniz."
+      }
+    },
+    "aside": {
+      "title": "Hüquqi Sənədlər",
+      "privacyPolicy": "Məxfilik Siyasəti",
+      "distanceSalesAgreement": "Satış Müqaviləsi",
+      "deliveryReturnTerms": "Qaytarma və Çatdırılma"
+    }
   }
 }

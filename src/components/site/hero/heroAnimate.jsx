@@ -1,180 +1,405 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import { cn } from "@/lib/utils"
 
-export default function AdvancedSphereAnimation({
-    className,
-    size = 600,
-    primaryColor = "#5dd0c0",
-    secondaryColor = "#00917d",
-    backgroundColor = "transparent",
-}) {
+export default function AdvancedSphereAnimation({ className, primaryColor = "#5dd0c0", secondaryColor = "#00917d", backgroundColor = "transparent" }) {
     const svgRef = useRef(null)
+    const elementsRef = useRef({})
+    const animationRef = useRef(null)
+    const observerRef = useRef(null)
+    const [size, setSize] = useState(600)
+    const [isReady, setIsReady] = useState(false)
+    const [isVisible, setIsVisible] = useState(true)
+    const [isLowPerformance, setIsLowPerformance] = useState(false)
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
+    // Mobile performance detection
+    useEffect(() => {
+        // Check for reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+        setPrefersReducedMotion(mediaQuery.matches)
+
+        // Listen for changes
+        const handleChange = (e) => setPrefersReducedMotion(e.matches)
+        mediaQuery.addEventListener('change', handleChange)
+
+        // Detect low-end devices
+        const checkPerformance = () => {
+            // Check various indicators of low-end device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4 // Less than 4GB RAM
+            const isSlowConnection = navigator.connection && navigator.connection.effectiveType &&
+                ['slow-2g', '2g', '3g'].includes(navigator.connection.effectiveType)
+
+            // Simple performance test
+            const start = performance.now()
+            for (let i = 0; i < 100000; i++) {
+                Math.sin(i * 0.1)
+            }
+            const end = performance.now()
+            const isSlowCPU = (end - start) > 50 // If simple calc takes more than 50ms
+
+            setIsLowPerformance(isMobile && (isLowMemory || isSlowConnection || isSlowCPU))
+        }
+
+        checkPerformance()
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange)
+        }
+    }, [])
+
+    // Handle responsive size with mobile optimization
+    const handleResize = useCallback(() => {
+        if (window.innerWidth < 768) {
+            setSize(280) // Much smaller for mobile
+        } else if (window.innerWidth < 1024) {
+            setSize(350)
+        } else if (window.innerWidth < 1280) {
+            setSize(450)
+        } else {
+            setSize(600)
+        }
+    }, [])
+
+    useEffect(() => {
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [handleResize])
+
+    // Intersection Observer for performance
+    useEffect(() => {
+        if (!svgRef.current) return
+
+        observerRef.current = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    setIsVisible(entry.isIntersecting)
+                })
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '50px'
+            }
+        )
+
+        observerRef.current.observe(svgRef.current)
+
+        return () => {
+            if (observerRef.current) {
+                observerRef.current.disconnect()
+            }
+        }
+    }, [])
+
+    // Cache DOM elements once
     useEffect(() => {
         if (!svgRef.current) return
 
         const svg = svgRef.current
-        const mainCircle = svg.querySelector("#mainCircle")
-        const blob1 = svg.querySelector("#blob1")
-        const blob2 = svg.querySelector("#blob2")
-        const blob3 = svg.querySelector("#blob3")
+        const elements = {
+            mainCircle: svg.querySelector("#mainCircle"),
+            blob1: svg.querySelector("#blob1"),
+            blob2: svg.querySelector("#blob2"),
+            blob3: svg.querySelector("#blob3"),
+            particles: [],
+            outerParticles: []
+        }
 
         // Get particle elements
-        const particles = []
         for (let i = 1; i <= 6; i++) {
-            particles.push(svg.querySelector(`#particle${i}`))
+            elements.particles.push(svg.querySelector(`#particle${i}`))
         }
 
         // Get outer particle elements
-        const outerParticles = []
         for (let i = 1; i <= 4; i++) {
-            outerParticles.push(svg.querySelector(`#outerParticle${i}`))
+            elements.outerParticles.push(svg.querySelector(`#outerParticle${i}`))
         }
 
-        if (!mainCircle || !blob1 || !blob2 || !blob3 || particles.some(p => !p) || outerParticles.some(p => !p)) return
-
-        // Animation parameters
-        const duration = 20000 // 20 seconds for one full cycle
-
-        // Create animation
-        const animate = () => {
-            const time = Date.now()
-
-            // Main circle subtle pulsing
-            const mainScale = 0.98 + Math.sin(time / 2000) * 0.02
-            mainCircle.setAttribute("transform", `scale(${mainScale})`)
-
-            // Blob 1 movement
-            const blob1X = 50 + Math.sin(time / 3000) * 10
-            const blob1Y = 50 + Math.cos(time / 4000) * 10
-            const blob1Scale = 0.9 + Math.sin(time / 2500) * 0.1
-            blob1.setAttribute("cx", blob1X.toString())
-            blob1.setAttribute("cy", blob1Y.toString())
-            blob1.setAttribute("transform", `scale(${blob1Scale})`)
-
-            // Blob 2 movement
-            const blob2X = 50 + Math.sin(time / 4000 + 2) * 15
-            const blob2Y = 50 + Math.cos(time / 3500 + 1) * 15
-            const blob2Scale = 0.85 + Math.sin(time / 3000 + 1) * 0.15
-            blob2.setAttribute("cx", blob2X.toString())
-            blob2.setAttribute("cy", blob2Y.toString())
-            blob2.setAttribute("transform", `scale(${blob2Scale})`)
-
-            // Blob 3 movement
-            const blob3X = 50 + Math.sin(time / 5000 + 4) * 12
-            const blob3Y = 50 + Math.cos(time / 4500 + 3) * 12
-            const blob3Scale = 0.8 + Math.sin(time / 3500 + 2) * 0.2
-            blob3.setAttribute("cx", blob3X.toString())
-            blob3.setAttribute("cy", blob3Y.toString())
-            blob3.setAttribute("transform", `scale(${blob3Scale})`)
-
-            // Particle animations
-            particles.forEach((particle, index) => {
-                if (!particle) return
-
-                const offset = (index * Math.PI * 2) / 6 // Distribute particles evenly
-                const radius = 25 + Math.sin(time / 2000 + offset) * 8 // Distance from center
-                const angle = (time / 6000) + offset // Rotation speed
-
-                const particleX = 50 + Math.cos(angle) * radius + Math.sin(time / (1500 + index * 200)) * 3
-                const particleY = 50 + Math.sin(angle) * radius + Math.cos(time / (1800 + index * 300)) * 3
-                const particleScale = 0.6 + Math.sin(time / (1000 + index * 150)) * 0.4
-
-                particle.setAttribute("cx", particleX.toString())
-                particle.setAttribute("cy", particleY.toString())
-                particle.setAttribute("transform", `scale(${particleScale})`)
-            })
-
-            // Outer particle animations - always stay outside, never come to center
-            outerParticles.forEach((particle, index) => {
-                if (!particle) return
-
-                const safeMinRadius = 60 + index * 8 // Much larger minimum distance
-                const offset = (index * Math.PI * 1.5) / 4 // Different distribution
-                const slowRotation = (time / (8000 + index * 1000)) + offset
-                const tinyOscillation = Math.sin(time / (800 + index * 300)) * 2 // Very small oscillation
-
-                const outerX = 50 + Math.cos(slowRotation) * (safeMinRadius + Math.abs(tinyOscillation))
-                const outerY = 50 + Math.sin(slowRotation) * (safeMinRadius + Math.abs(tinyOscillation))
-                const outerScale = 0.3 + Math.sin(time / (1200 + index * 200)) * 0.4
-
-                particle.setAttribute("cx", outerX.toString())
-                particle.setAttribute("cy", outerY.toString())
-                particle.setAttribute("transform", `scale(${outerScale})`)
-            })
-
-            requestAnimationFrame(animate)
+        // Verify all elements exist
+        if (!elements.mainCircle || !elements.blob1 || !elements.blob2 || !elements.blob3 ||
+            elements.particles.some(p => !p) || elements.outerParticles.some(p => !p)) {
+            return
         }
 
-        const animationId = requestAnimationFrame(animate)
+        // Pre-apply CSS animations for constant movements
+        // Slower animations for low-performance devices
+        const animationSpeed = isLowPerformance ? 1.5 : 1
+        elements.mainCircle.style.animation = `pulse ${4 * animationSpeed}s ease-in-out infinite`
+        elements.blob1.style.animation = `float1 ${6 * animationSpeed}s ease-in-out infinite`
+        elements.blob2.style.animation = `float2 ${5 * animationSpeed}s ease-in-out infinite`
+        elements.blob3.style.animation = `float3 ${7 * animationSpeed}s ease-in-out infinite`
+
+        elementsRef.current = elements
+        setIsReady(true)
+    }, [isLowPerformance])
+
+    // Ultra-optimized animation loop with mobile considerations
+    useEffect(() => {
+        if (!isReady || !elementsRef.current || !isVisible || prefersReducedMotion) return
+
+        const elements = elementsRef.current
+        let startTime = performance.now()
+        let frameCount = 0
+        let lastFpsCheck = startTime
+
+        const animate = (currentTime) => {
+            // FPS monitoring for mobile
+            frameCount++
+            if (currentTime - lastFpsCheck > 1000) {
+                const fps = frameCount / ((currentTime - lastFpsCheck) / 1000)
+                if (fps < 30 && !isLowPerformance) {
+                    setIsLowPerformance(true) // Dynamically detect performance issues
+                }
+                frameCount = 0
+                lastFpsCheck = currentTime
+            }
+
+            // Skip frames on low-performance devices
+            if (isLowPerformance && frameCount % 2 === 0) {
+                animationRef.current = requestAnimationFrame(animate)
+                return
+            }
+
+            const elapsed = (currentTime - startTime) * 0.001
+
+            // Reduced calculations for mobile
+            const t1 = elapsed * 0.166
+            const movementScale = isLowPerformance ? 0.7 : 1
+
+            // Simplified inner particle animations for mobile
+            elements.particles.forEach((particle, index) => {
+                const offset = (index * Math.PI * 2) / 6
+                const radius = (80 + Math.sin(elapsed * 0.5 + offset) * 25) * movementScale
+                const angle = t1 + offset
+                const wobble = Math.sin(elapsed * (0.8 + index * 0.1)) * 8 * movementScale
+
+                const particleX = 200 + Math.cos(angle) * radius + wobble
+                const particleY = 200 + Math.sin(angle) * radius + wobble * 0.5
+                const particleScale = 0.6 + Math.sin(elapsed * (1.2 + index * 0.15)) * 0.4
+
+                particle.style.transform = `translate(${particleX - 200}px, ${particleY - 200}px) scale(${particleScale})`
+            })
+
+            // Reduced outer particle complexity for mobile
+            elements.outerParticles.forEach((particle, index) => {
+                const minRadius = (200 + index * 25) * movementScale
+                const radiusVariation = Math.sin(elapsed * (0.3 + index * 0.1)) * 40 * movementScale
+                const radius = minRadius + Math.abs(radiusVariation)
+
+                const angleSpeed = 0.08 + index * 0.04
+                const angle = elapsed * angleSpeed + index * Math.PI * 0.5
+
+                const chaoticX = Math.sin(elapsed * (0.4 + index * 0.2)) * 30 * movementScale
+                const chaoticY = Math.cos(elapsed * (0.6 + index * 0.15)) * 25 * movementScale
+                const drift = Math.sin(elapsed * (0.25 + index * 0.08)) * 20 * movementScale
+
+                const outerX = 200 + Math.cos(angle) * radius + chaoticX + drift
+                const outerY = 200 + Math.sin(angle) * radius + chaoticY + drift * 0.7
+                const outerScale = 0.4 + Math.sin(elapsed * (0.9 + index * 0.3)) * 0.5
+
+                particle.style.transform = `translate(${outerX - 200}px, ${outerY - 200}px) scale(${outerScale})`
+            })
+
+            animationRef.current = requestAnimationFrame(animate)
+        }
+
+        // Start immediately
+        animationRef.current = requestAnimationFrame(animate)
+
         return () => {
-            cancelAnimationFrame(animationId)
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current)
+            }
+        }
+    }, [isReady, isVisible, prefersReducedMotion, isLowPerformance])
+
+    // Cleanup
+    useEffect(() => {
+        return () => {
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current)
+            }
+            if (observerRef.current) {
+                observerRef.current.disconnect()
+            }
         }
     }, [])
 
-    return (
-        <div className={cn("absolute right-0 top-1/2 -translate-y-1/2 z-0 opacity-80 overflow-hidden", className)} style={{ width: size, height: size }}>
-            <svg
-                ref={svgRef}
-                width={size}
-                height={size}
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ backgroundColor }}
+    // If user prefers reduced motion, show static version
+    if (prefersReducedMotion) {
+        return (
+            <div
+                className={cn("absolute right-0 top-1/2 -translate-y-1/2 z-0 opacity-60", className)}
+                style={{ width: size, height: size }}
             >
-                <defs>
-                    <radialGradient id="sphereGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                        <stop offset="0%" stopColor={primaryColor} stopOpacity="0.8" />
-                        <stop offset="100%" stopColor={secondaryColor} stopOpacity="0.6" />
-                    </radialGradient>
-
-                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="2" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
-
-                <circle
-                    id="mainCircle"
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="url(#sphereGradient)"
-                    filter="url(#glow)"
-                    transformOrigin="center"
+                <div
+                    className="w-full h-full rounded-full"
+                    style={{
+                        background: `radial-gradient(circle at center, ${primaryColor}CC, ${secondaryColor}99)`,
+                        filter: 'blur(1px)'
+                    }}
                 />
+            </div>
+        )
+    }
 
-                <circle id="blob1" cx="50" cy="50" r="20" fill={primaryColor} fillOpacity="0.4" transformOrigin="center" />
+    return (
+        <>
+            <style jsx>{`
+                @keyframes pulse {
+                    0%, 100% { transform: scale(0.98); }
+                    50% { transform: scale(1.02); }
+                }
+                @keyframes float1 {
+                    0%, 100% { transform: translate(0px, 0px) scale(0.9); }
+                    25% { transform: translate(${isLowPerformance ? '16px, -12px' : '32px, -24px'}) scale(1.0); }
+                    50% { transform: translate(${isLowPerformance ? '-8px, 16px' : '-16px, 32px'}) scale(0.95); }
+                    75% { transform: translate(${isLowPerformance ? '-16px, -8px' : '-32px, -16px'}) scale(1.05); }
+                }
+                @keyframes float2 {
+                    0%, 100% { transform: translate(0px, 0px) scale(0.85); }
+                    33% { transform: translate(${isLowPerformance ? '24px, 20px' : '48px, 40px'}) scale(1.0); }
+                    66% { transform: translate(${isLowPerformance ? '-20px, -16px' : '-40px, -32px'}) scale(0.9); }
+                }
+                @keyframes float3 {
+                    0%, 100% { transform: translate(0px, 0px) scale(0.8); }
+                    40% { transform: translate(${isLowPerformance ? '-16px, 24px' : '-32px, 48px'}) scale(1.0); }
+                    80% { transform: translate(${isLowPerformance ? '20px, -12px' : '40px, -24px'}) scale(0.85); }
+                }
+            `}</style>
+            <div
+                className={cn("absolute right-0 top-1/2 -translate-y-1/2 z-0 opacity-80 overflow-visible", className)}
+                style={{
+                    width: size,
+                    height: size,
+                    willChange: "transform",
+                    backfaceVisibility: "hidden",
+                    perspective: "1000px",
+                    contain: "layout style paint"
+                }}
+            >
+                <svg
+                    ref={svgRef}
+                    width={size}
+                    height={size}
+                    viewBox="0 0 400 400"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                        backgroundColor,
+                        willChange: "transform",
+                        overflow: "visible"
+                    }}
+                >
+                    <defs>
+                        <radialGradient id="sphereGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" stopColor={primaryColor} stopOpacity="0.8" />
+                            <stop offset="100%" stopColor={secondaryColor} stopOpacity="0.6" />
+                        </radialGradient>
 
-                <circle id="blob2" cx="50" cy="50" r="15" fill={secondaryColor} fillOpacity="0.5" transformOrigin="center" />
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation={isLowPerformance ? "3" : "6"} result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
 
-                <circle id="blob3" cx="50" cy="50" r="10" fill={primaryColor} fillOpacity="0.6" transformOrigin="center" />
+                        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation={isLowPerformance ? "1.5" : "3"} result="softBlur" />
+                            <feComposite in="SourceGraphic" in2="softBlur" operator="over" />
+                        </filter>
+                    </defs>
 
-                {/* Particle circles */}
-                <circle id="particle1" cx="50" cy="50" r="2.5" fill={primaryColor} fillOpacity="0.7" transformOrigin="center" />
+                    <circle
+                        id="mainCircle"
+                        cx="200"
+                        cy="200"
+                        r="140"
+                        fill="url(#sphereGradient)"
+                        filter="url(#glow)"
+                        style={{
+                            transformOrigin: "center",
+                            willChange: "transform"
+                        }}
+                    />
 
-                <circle id="particle2" cx="50" cy="50" r="2" fill={secondaryColor} fillOpacity="0.8" transformOrigin="center" />
+                    <circle
+                        id="blob1"
+                        cx="200"
+                        cy="200"
+                        r="80"
+                        fill={primaryColor}
+                        fillOpacity="0.4"
+                        style={{
+                            transformOrigin: "center",
+                            willChange: "transform"
+                        }}
+                    />
 
-                <circle id="particle3" cx="50" cy="50" r="3" fill={primaryColor} fillOpacity="0.6" transformOrigin="center" />
+                    <circle
+                        id="blob2"
+                        cx="200"
+                        cy="200"
+                        r="60"
+                        fill={secondaryColor}
+                        fillOpacity="0.5"
+                        style={{
+                            transformOrigin: "center",
+                            willChange: "transform"
+                        }}
+                    />
 
-                <circle id="particle4" cx="50" cy="50" r="1.8" fill={secondaryColor} fillOpacity="0.9" transformOrigin="center" />
+                    <circle
+                        id="blob3"
+                        cx="200"
+                        cy="200"
+                        r="40"
+                        fill={primaryColor}
+                        fillOpacity="0.6"
+                        style={{
+                            transformOrigin: "center",
+                            willChange: "transform"
+                        }}
+                    />
 
-                <circle id="particle5" cx="50" cy="50" r="2.2" fill={primaryColor} fillOpacity="0.7" transformOrigin="center" />
+                    {/* Inner particle circles - stay within main circle */}
+                    {[...Array(6)].map((_, i) => (
+                        <circle
+                            key={i}
+                            id={`particle${i + 1}`}
+                            cx="200"
+                            cy="200"
+                            r={[8, 6, 10, 5, 7, 9][i]}
+                            fill={i % 2 === 0 ? primaryColor : secondaryColor}
+                            fillOpacity={[0.7, 0.8, 0.6, 0.9, 0.7, 0.6][i]}
+                            filter="url(#softGlow)"
+                            style={{
+                                transformOrigin: "center",
+                                willChange: "transform"
+                            }}
+                        />
+                    ))}
 
-                <circle id="particle6" cx="50" cy="50" r="2.8" fill={secondaryColor} fillOpacity="0.6" transformOrigin="center" />
-
-                {/* Outer scattered particles */}
-                <circle id="outerParticle1" cx="50" cy="50" r="1.5" fill={primaryColor} fillOpacity="0.5" transformOrigin="center" />
-
-                <circle id="outerParticle2" cx="50" cy="50" r="2" fill={secondaryColor} fillOpacity="0.4" transformOrigin="center" />
-
-                <circle id="outerParticle3" cx="50" cy="50" r="1.2" fill={primaryColor} fillOpacity="0.6" transformOrigin="center" />
-
-                <circle id="outerParticle4" cx="50" cy="50" r="1.8" fill={secondaryColor} fillOpacity="0.3" transformOrigin="center" />
-            </svg>
-        </div>
+                    {/* Outer scattered particles - completely outside main circle */}
+                    {[...Array(4)].map((_, i) => (
+                        <circle
+                            key={i}
+                            id={`outerParticle${i + 1}`}
+                            cx="200"
+                            cy="200"
+                            r={[5, 6, 4, 5.5][i]}
+                            fill={i % 2 === 0 ? primaryColor : secondaryColor}
+                            fillOpacity={[0.4, 0.3, 0.5, 0.35][i]}
+                            filter="url(#softGlow)"
+                            style={{
+                                transformOrigin: "center",
+                                willChange: "transform"
+                            }}
+                        />
+                    ))}
+                </svg>
+            </div>
+        </>
     )
 }

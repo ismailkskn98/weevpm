@@ -2,8 +2,10 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { motion } from "motion/react"
+import { useTranslations } from 'next-intl'
 
 export default function SecondCardAnimate() {
+    const t = useTranslations('Site.InfoCards.card2')
     const [imageMode, setImageMode] = useState("lite");
 
     const handleImageMode = (mode) => {
@@ -18,10 +20,10 @@ export default function SecondCardAnimate() {
     const activeImage = images.find(image => image.mode === imageMode);
 
     return (
-        <article className='w-full flex flex-col items-center justify-center gap-5 max-w-[40%] relative'>
-            <div className='rounded-xl max-h-[500px] w-[400px] h-[500px] flex items-center justify-center'>
+        <article className='order-1 md:order-2 w-full flex flex-col items-center justify-center gap-5 max-w-[40%] relative'>
+            <div className='rounded-xl w-fit h-fit flex items-center justify-center'>
                 <motion.div
-                    className='w-full h-full flex items-center justify-center'
+                    className='w-fit h-fit flex items-center justify-center'
                     initial={false}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -31,7 +33,7 @@ export default function SecondCardAnimate() {
                         alt={activeImage.alt}
                         width={400}
                         height={600}
-                        className="w-fit h-full max-h-[500px] object-contain object-center rounded-xl"
+                        className="w-fit h-full max-h-[350px] md:max-h-[450px] lg:max-h-[500px] object-contain object-center rounded-xl"
                     />
                 </motion.div>
             </div>
@@ -42,7 +44,7 @@ export default function SecondCardAnimate() {
                     onClick={() => handleImageMode("lite")}
                     className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "lite" ? "text-blue-600 font-semibold" : "text-gray-600"}`}
                 >
-                    Lite
+                    {t('lite')}
                     {imageMode === "lite" && (
                         <motion.span
                             layoutId="underline"
@@ -55,7 +57,7 @@ export default function SecondCardAnimate() {
                     onClick={() => handleImageMode("pro")}
                     className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "pro" ? "text-blue-600 font-semibold" : "text-gray-600"}`}
                 >
-                    Pro
+                    {t('pro')}
                     {imageMode === "pro" && (
                         <motion.span
                             layoutId="underline"

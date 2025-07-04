@@ -18,7 +18,7 @@ export default function HeaderLogo() {
 
     return (
         <Link href="/">
-            <Image id='header-logo' src={logoChange ? "/images/logos/white_horizontal.png" : "/images/logos/yellow_horizontal.png"} alt="WeeVPN logo" width={200} height={150} className='object-contain object-center w-28' />
+            <Image id='header-logo' src={logoChange ? "/images/logos/white_horizontal.png" : "/images/logos/yellow_horizontal.png"} alt="WeeVPN logo" width={200} height={150} className='object-contain object-center w-28 max-h-6' />
         </Link>
     )
 }
