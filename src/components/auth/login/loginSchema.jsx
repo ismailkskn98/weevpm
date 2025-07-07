@@ -1,11 +1,13 @@
 "use client"
 import React from 'react'
 import { z } from "zod";
+import { useTranslations } from 'next-intl'
 
 export default function LoginSchema() {
+    const t = useTranslations('Auth.login.validation')
 
     return (z.object({
-        username: z.string().min(3, "Kullanıcı adı en az 3 karakter olmalıdır"),
-        password: z.string().min(8, "Şifre en az 8 karakter olmalıdır"),
+        username: z.string().min(3, t('usernameMinLength')),
+        password: z.string().min(8, t('passwordMinLength')),
     }))
 }

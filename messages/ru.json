@@ -100,7 +100,7 @@
       "quickLinks": {
         "title": "Быстрые ссылки",
         "login": "Войти",
-        "register": "Зарегистрироваться",
+        "register": "Регистрация",
         "forgotPassword": "Забыли пароль",
         "privacyPolicy": "Политика конфиденциальности",
         "distanceSalesAgreement": "Договор дистанционной продажи",
@@ -249,6 +249,78 @@
       "privacyPolicy": "Конфиденц.",
       "distanceSalesAgreement": "Договор",
       "deliveryReturnTerms": "Возврат"
+    }
+  },
+  "Auth": {
+    "common": {
+      "passwordForgotten": "Забыли пароль?"
+    },
+    "register": {
+      "title": "Регистрация",
+      "subtitle": "Создайте учетную запись для начала работы",
+      "referralMessage": "Вы присоединяетесь по рефералу",
+      "referralBadge": "Реферал",
+      "alreadyHaveAccount": "Уже есть учетная запись?",
+      "loginLink": "Войти",
+      "form": {
+        "usernamePlaceholder": "Логин",
+        "countryPlaceholder": "Выберите страну",
+        "emailPlaceholder": "Email",
+        "passwordPlaceholder": "Пароль",
+        "confirmPasswordPlaceholder": "Повторите пароль",
+        "submitButton": "Регистрация"
+      },
+      "validation": {
+        "countryRequired": "Выберите страну",
+        "usernameMinLength": "Логин: минимум 3 символа",
+        "invalidEmail": "Неверный email",
+        "passwordMinLength": "Пароль: минимум 8 символов",
+        "passwordMismatch": "Пароли не совпадают"
+      }
+    },
+    "login": {
+      "title": "Войти",
+      "subtitle": "Войдите в свою учетную запись",
+      "noAccount": "Нет учетной записи?",
+      "registerLink": "Регистрация",
+      "form": {
+        "usernamePlaceholder": "Email или логин",
+        "passwordPlaceholder": "Пароль",
+        "submitButton": "Войти"
+      },
+      "validation": {
+        "usernameMinLength": "Email/логин: минимум 3 символа",
+        "passwordMinLength": "Пароль: минимум 8 символов"
+      }
+    },
+    "forgotPassword": {
+      "title": "Забыли пароль",
+      "subtitle": "Забыли пароль?",
+      "rememberPassword": "Вспомнили пароль?",
+      "loginLink": "Войти",
+      "form": {
+        "emailPlaceholder": "Email",
+        "submitButton": "Отправить ссылку"
+      },
+      "validation": {
+        "emailRequired": "Email обязателен",
+        "invalidEmail": "Неверный email"
+      }
+    },
+    "resetPassword": {
+      "title": "Сброс пароля",
+      "subtitle": "Сбросьте пароль",
+      "alreadyHaveAccount": "Уже есть аккаунт?",
+      "loginLink": "Войти",
+      "form": {
+        "passwordPlaceholder": "Новый пароль",
+        "confirmPasswordPlaceholder": "Повторите новый пароль",
+        "submitButton": "Сбросить пароль"
+      },
+      "validation": {
+        "passwordMinLength": "Пароль: минимум 8 символов",
+        "passwordMismatch": "Пароли не совпадают"
+      }
     }
   }
 }

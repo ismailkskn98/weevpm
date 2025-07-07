@@ -250,5 +250,77 @@
       "distanceSalesAgreement": "Satış Müqaviləsi",
       "deliveryReturnTerms": "Qaytarma və Çatdırılma"
     }
+  },
+  "Auth": {
+    "common": {
+      "passwordForgotten": "Şifrəni unutdunuz?"
+    },
+    "register": {
+      "title": "Qeydiyyat",
+      "subtitle": "Başlamaq üçün hesab yaradın",
+      "referralMessage": "Siz referansla qoşulursunuz",
+      "referralBadge": "Referans",
+      "alreadyHaveAccount": "Artıq hesabınız var?",
+      "loginLink": "Daxil Ol",
+      "form": {
+        "usernamePlaceholder": "İstifadəçi Adı",
+        "countryPlaceholder": "Ölkənizi seçin",
+        "emailPlaceholder": "E-poçt",
+        "passwordPlaceholder": "Şifrə",
+        "confirmPasswordPlaceholder": "Şifrəni Təsdiq Et",
+        "submitButton": "Qeydiyyat"
+      },
+      "validation": {
+        "countryRequired": "Ölkə seçimi məcburidir",
+        "usernameMinLength": "İstifadəçi adı ən azı 3 simvol olmalıdır",
+        "invalidEmail": "Etibarsız e-poçt ünvanı",
+        "passwordMinLength": "Şifrə ən azı 8 simvol olmalıdır",
+        "passwordMismatch": "Şifrələr uyğun gəlmir"
+      }
+    },
+    "login": {
+      "title": "Daxil Ol",
+      "subtitle": "Hesabınıza daxil olun",
+      "noAccount": "Hesabınız yoxdur?",
+      "registerLink": "Qeydiyyat",
+      "form": {
+        "usernamePlaceholder": "E-poçt və ya İstifadəçi Adı",
+        "passwordPlaceholder": "Şifrə",
+        "submitButton": "Daxil Ol"
+      },
+      "validation": {
+        "usernameMinLength": "E-poçt və ya istifadəçi adı ən azı 3 simvol olmalıdır",
+        "passwordMinLength": "Şifrə ən azı 8 simvol olmalıdır"
+      }
+    },
+    "forgotPassword": {
+      "title": "Şifrəni Unutdum",
+      "subtitle": "Şifrənizi unutdunuz?",
+      "rememberPassword": "Şifrənizi xatırladınız?",
+      "loginLink": "Daxil Ol",
+      "form": {
+        "emailPlaceholder": "E-poçt",
+        "submitButton": "Sıfırlama Linki Göndər"
+      },
+      "validation": {
+        "emailRequired": "E-poçt alanı məcburidir",
+        "invalidEmail": "Etibarsız e-poçt ünvanı"
+      }
+    },
+    "resetPassword": {
+      "title": "Şifrəni Sıfırla",
+      "subtitle": "Şifrənizi sıfırlayın",
+      "alreadyHaveAccount": "Artıq hesabınız var?",
+      "loginLink": "Daxil Ol",
+      "form": {
+        "passwordPlaceholder": "Yeni Şifrə",
+        "confirmPasswordPlaceholder": "Yeni Şifrəni Təsdiq Et",
+        "submitButton": "Şifrəni Sıfırla"
+      },
+      "validation": {
+        "passwordMinLength": "Şifrə ən az 8 simvol olmalıdır",
+        "passwordMismatch": "Şifrələr uyğun gəlmir"
+      }
+    }
   }
 }

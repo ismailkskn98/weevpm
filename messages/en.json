@@ -252,5 +252,77 @@
       "distanceSalesAgreement": "Sales Agreement",
       "deliveryReturnTerms": "Returns & Delivery"
     }
+  },
+  "Auth": {
+    "common": {
+      "passwordForgotten": "Password forgotten?"
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create an account to get started",
+      "referralMessage": "You are joining with a referral",
+      "referralBadge": "Referral",
+      "alreadyHaveAccount": "Already have an account?",
+      "loginLink": "Login",
+      "form": {
+        "usernamePlaceholder": "Username",
+        "countryPlaceholder": "Select your country",
+        "emailPlaceholder": "Email",
+        "passwordPlaceholder": "Password",
+        "confirmPasswordPlaceholder": "Confirm Password",
+        "submitButton": "Register"
+      },
+      "validation": {
+        "countryRequired": "Country selection is required",
+        "usernameMinLength": "Username must be at least 3 characters",
+        "invalidEmail": "Invalid email address",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "subtitle": "Sign in to your account",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Register",
+      "form": {
+        "usernamePlaceholder": "Email or Username",
+        "passwordPlaceholder": "Password",
+        "submitButton": "Login"
+      },
+      "validation": {
+        "usernameMinLength": "Email or username must be at least 3 characters",
+        "passwordMinLength": "Password must be at least 8 characters"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Forgot your password?",
+      "rememberPassword": "Remember your password?",
+      "loginLink": "Login",
+      "form": {
+        "emailPlaceholder": "Email",
+        "submitButton": "Send Reset Link"
+      },
+      "validation": {
+        "emailRequired": "Email field is required",
+        "invalidEmail": "Invalid email address"
+      }
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Reset your password",
+      "alreadyHaveAccount": "Already have an account?",
+      "loginLink": "Login",
+      "form": {
+        "passwordPlaceholder": "New Password",
+        "confirmPasswordPlaceholder": "Confirm New Password",
+        "submitButton": "Reset Password"
+      },
+      "validation": {
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match"
+      }
+    }
   }
 }

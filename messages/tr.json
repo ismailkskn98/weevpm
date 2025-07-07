@@ -250,5 +250,77 @@
       "distanceSalesAgreement": "Satış Sözleşmesi",
       "deliveryReturnTerms": "İade & Teslimat"
     }
+  },
+  "Auth": {
+    "common": {
+      "passwordForgotten": "Şifremi unuttum?"
+    },
+    "register": {
+      "title": "Kayıt Ol",
+      "subtitle": "Başlamak için bir hesap oluşturun",
+      "referralMessage": "Referans ile katılıyorsunuz",
+      "referralBadge": "Referans",
+      "alreadyHaveAccount": "Zaten hesabınız var mı?",
+      "loginLink": "Giriş Yap",
+      "form": {
+        "usernamePlaceholder": "Kullanıcı Adı",
+        "countryPlaceholder": "Ülkenizi seçin",
+        "emailPlaceholder": "E-posta",
+        "passwordPlaceholder": "Şifre",
+        "confirmPasswordPlaceholder": "Şifreyi Onayla",
+        "submitButton": "Kayıt Ol"
+      },
+      "validation": {
+        "countryRequired": "Ülke seçimi zorunludur",
+        "usernameMinLength": "Kullanıcı adı en az 3 karakter olmalıdır",
+        "invalidEmail": "Geçersiz email adresi",
+        "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
+        "passwordMismatch": "Şifreler eşleşmiyor"
+      }
+    },
+    "login": {
+      "title": "Giriş Yap",
+      "subtitle": "Hesabınıza giriş yapın",
+      "noAccount": "Hesabınız yok mu?",
+      "registerLink": "Kayıt Ol",
+      "form": {
+        "usernamePlaceholder": "E-posta veya Kullanıcı Adı",
+        "passwordPlaceholder": "Şifre",
+        "submitButton": "Giriş Yap"
+      },
+      "validation": {
+        "usernameMinLength": "E-posta veya kullanıcı adı en az 3 karakter olmalıdır",
+        "passwordMinLength": "Şifre en az 8 karakter olmalıdır"
+      }
+    },
+    "forgotPassword": {
+      "title": "Şifremi Unuttum",
+      "subtitle": "Şifrenizi mi unuttunuz?",
+      "rememberPassword": "Şifrenizi hatırladınız mı?",
+      "loginLink": "Giriş Yap",
+      "form": {
+        "emailPlaceholder": "E-posta",
+        "submitButton": "Sıfırlama Linki Gönder"
+      },
+      "validation": {
+        "emailRequired": "Email alanı zorunludur",
+        "invalidEmail": "Geçersiz email adresi"
+      }
+    },
+    "resetPassword": {
+      "title": "Şifre Sıfırla",
+      "subtitle": "Şifrenizi sıfırlayın",
+      "alreadyHaveAccount": "Zaten hesabınız var mı?",
+      "loginLink": "Giriş Yap",
+      "form": {
+        "passwordPlaceholder": "Yeni Şifre",
+        "confirmPasswordPlaceholder": "Yeni Şifreyi Onayla",
+        "submitButton": "Şifreyi Sıfırla"
+      },
+      "validation": {
+        "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
+        "passwordMismatch": "Şifreler eşleşmiyor"
+      }
+    }
   }
 }

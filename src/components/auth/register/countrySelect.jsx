@@ -2,6 +2,7 @@
 import React, { use, useEffect, useState } from 'react'
 import Select from 'react-select';
 import { Controller } from "react-hook-form"
+import { useTranslations } from 'next-intl'
 
 /*
 control	Dış container (select kutusu)
@@ -14,6 +15,7 @@ multiValue	Multi-select etiket kutuları
 */
 
 export default function CountrySelect({ control, error }) {
+    const t = useTranslations('Auth.register.form')
     const [countryOptions, setCountryOptions] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -52,7 +54,7 @@ export default function CountrySelect({ control, error }) {
                         isLoading={loading}
                         isClearable={true}
                         isSearchable={true}
-                        placeholder="Select your country"
+                        placeholder={t('countryPlaceholder')}
                         className='w-full'
                         classNames={{
                             control: () => '!bg-black/20 h-[50px] !p-1.5 !rounded-full !border-2 !border-gray-400/10 text-white p-2 !placeholder:text-xs !shadow-none focus:outline-2 outline-gray-300/50',
