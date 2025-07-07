@@ -253,7 +253,10 @@
   },
   "Auth": {
     "common": {
-      "passwordForgotten": "Şifrəni unutdunuz?"
+      "passwordForgotten": "Şifrəni unutdunuz?",
+      "privacyNotice": "Qeydiyyatla",
+      "privacyPolicy": "Məxfilik Siyasətini",
+      "privacyAgreement": "qəbul edirsiniz."
     },
     "register": {
       "title": "Qeydiyyat",

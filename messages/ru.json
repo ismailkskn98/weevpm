@@ -253,7 +253,10 @@
   },
   "Auth": {
     "common": {
-      "passwordForgotten": "Забыли пароль?"
+      "passwordForgotten": "Забыли пароль?",
+      "privacyNotice": "Регистрируясь, вы принимаете",
+      "privacyPolicy": "Политику конфиденциальности",
+      "privacyAgreement": "."
     },
     "register": {
       "title": "Регистрация",

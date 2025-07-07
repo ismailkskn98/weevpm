@@ -253,7 +253,10 @@
   },
   "Auth": {
     "common": {
-      "passwordForgotten": "Şifremi unuttum?"
+      "passwordForgotten": "Şifremi unuttum?",
+      "privacyNotice": "Kaydolarak",
+      "privacyPolicy": "Gizlilik Politikasını",
+      "privacyAgreement": "kabul edersiniz."
     },
     "register": {
       "title": "Kayıt Ol",

@@ -26,7 +26,7 @@ export default function RegisterForm({ referenceInfo }) {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='w-md flex flex-col items-center justify-center gap-y-3 text-white/80'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-8 flex flex-col items-center justify-center gap-y-3 text-white/80'>
             <CustomInput type='text' placeholder={t('usernamePlaceholder')} {...register("username")} error={errors.username} />
             <CountrySelect control={control} error={errors.country} />
             <CustomInput type='email' placeholder={t('emailPlaceholder')} {...register("email")} error={errors.email} />

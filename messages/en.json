@@ -255,7 +255,10 @@
   },
   "Auth": {
     "common": {
-      "passwordForgotten": "Password forgotten?"
+      "passwordForgotten": "Password forgotten?",
+      "privacyNotice": "By signing up, you agree to our",
+      "privacyPolicy": "Privacy Policy",
+      "privacyAgreement": "."
     },
     "register": {
       "title": "Register",
