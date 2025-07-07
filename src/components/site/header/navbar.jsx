@@ -17,7 +17,7 @@ export default function Navbar() {
     const navItems = [
         { name: t('home'), href: "/#hero", id: "hero" },
         { name: t('features'), href: "/#features", id: "features" },
-        { name: t('products'), href: "/#products", id: "products" },
+        { name: t('products'), href: "/#weevpn", id: "weevpn" },
         { name: t('faq'), href: "/#faq", id: "faq" }
     ]
 

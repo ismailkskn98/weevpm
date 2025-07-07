@@ -1,9 +1,10 @@
 {
   "Site": {
+    "mobileNavbarHeader": "Təhlükəsiz və Sürətli VPN Həlli",
     "navbar": {
       "home": "Ana səhifə",
       "features": "Xüsusiyyətlər",
-      "products": "Məhsullar",
+      "products": "WeeVPN",
       "faq": "S.S.S"
     },
     "login": "Daxil ol",

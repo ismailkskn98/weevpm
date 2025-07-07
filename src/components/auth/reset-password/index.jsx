@@ -1,0 +1,25 @@
+"use client";
+import React from 'react'
+import { Link } from '@/i18n/navigation'
+import { motion } from 'motion/react'
+
+export default function ResetPassword({ children }) {
+    return (
+        <motion.main
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: "easeInOut", delay: 0.4 }}
+            className='flex flex-col items-center justify-center text-white gap-4'
+        >
+            <article className='flex flex-col items-center justify-center gap-3 mb-2'>
+                <h1 className='text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-white'>Reset Password</h1>
+                <p className='text-sm text-white/80'>Reset your password</p>
+            </article>
+            {children}
+            <article className='flex items-center gap-2'>
+                <p className='text-sm text-white/80'>Already have an account?</p>
+                <Link href="/auth/login" className='text-sm text-white/80 underline'>Login</Link>
+            </article>
+        </motion.main>
+    )
+}

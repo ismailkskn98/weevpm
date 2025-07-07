@@ -1,9 +1,10 @@
 {
   "Site": {
+    "mobileNavbarHeader": "Güvenli ve Hızlı VPN Çözümü",
     "navbar": {
       "home": "Ana sayfa",
       "features": "Özellikler",
-      "products": "Ürünler",
+      "products": "WeeVPN",
       "faq": "S.S.S"
     },
     "login": "Giriş Yap",

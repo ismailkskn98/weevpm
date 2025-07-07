@@ -10,7 +10,7 @@ export default function index() {
                 <article className="text-center">
                     <h2 className='text-base sm:text-lg px-4 xl:text-xl 3xl:text-xl font-medium max-w-3xl 3xl:max-w-3xl mx-auto text-black/70'>{t.rich('title', { weecoins: (chunks) => <span className='text-deep-teal'>{chunks}</span> })}</h2>
                 </article>
-                <LogoCarousel columnCount={5} />
+                <LogoCarousel />
             </section>
         </main>
     )

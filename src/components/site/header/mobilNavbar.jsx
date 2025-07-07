@@ -29,10 +29,10 @@ export default function MobilNavbar() {
     });
 
     const navItems = [
-        { name: t('navbar.home'), href: "/#hero", id: "hero", icon: CiHome },
-        { name: t('navbar.features'), href: "/#features", id: "features", icon: CiStar },
-        { name: t('navbar.products'), href: "/#products", id: "products", icon: CiGrid31 },
-        { name: t('navbar.faq'), href: "/#faq", id: "faq", icon: CiCircleQuestion }
+        { name: t('navbar.home'), href: "/#hero", id: "hero" },
+        { name: t('navbar.features'), href: "/#features", id: "features" },
+        { name: t('navbar.products'), href: "/#weevpn", id: "weevpn" },
+        { name: t('navbar.faq'), href: "/#faq", id: "faq" }
     ]
 
     const handleLinkClick = () => {
@@ -44,7 +44,7 @@ export default function MobilNavbar() {
             <SheetTrigger className='md:hidden p-2'>
                 <CiMenuFries className={`text-2xl transition-colors ${isScrolled ? "text-white" : "text-deep-teal"}`} />
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col h-full bg-white">
+            <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col h-full bg-white border-none">
                 <SheetHeader className="sr-only">
                     <SheetTitle>Navigation Menu</SheetTitle>
                     <SheetDescription>
@@ -63,25 +63,21 @@ export default function MobilNavbar() {
                         />
                     </div>
                     <p className="text-center text-sm opacity-90">
-                        Güvenli ve Hızlı VPN Çözümü
+                        {t('mobileNavbarHeader')}
                     </p>
                 </div>
 
                 <div className="flex-1 px-2 py-6 overflow-y-auto">
-                    <nav className="w-full h-full space-y-3">
+                    <nav className="w-full flex flex-col items-center justify-start h-full gap-y-6 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-gray-100">
                         {navItems.map((item, index) => {
-                            const IconComponent = item.icon;
                             return (
                                 <Link
                                     key={item.id}
                                     href={item.href}
                                     onClick={handleLinkClick}
-                                    className="flex bg-white items-center gap-3 p-2 rounded-xl hover:bg-teal/10 transition-all duration-200 group w-full"
+                                    className="w-full flex justify-center items-center bg-white p-4 hover:bg-teal/10 transition-all duration-200 group text-center"
                                 >
-                                    <div className="p-2 rounded-lg bg-teal/10 group-hover:bg-teal/20 transition-colors">
-                                        <IconComponent className="w-5 h-5 text-teal" />
-                                    </div>
-                                    <span className="font-medium text-gray-700 group-hover:text-teal transition-colors">
+                                    <span className="uppercase font-medium text-black/80 text-lg group-hover:text-teal transition-colors">
                                         {item.name}
                                     </span>
                                 </Link>
@@ -116,7 +112,7 @@ export default function MobilNavbar() {
 
                     <div className="text-center">
                         <p className="text-xs text-gray-500">
-                            © 2024 WeeVPN - Tüm hakları saklıdır
+                            {t('copyright.copyright')}
                         </p>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { getMessages } from 'next-intl/server'
 
-export default async function legalPage({ params, searchParams }) {
+export default async function LegalPage({ params, searchParams }) {
     const { slug } = await params;
     const queryParams = await searchParams;
     const content = (await getMessages()).Legal[queryParams.t];

@@ -1,9 +1,10 @@
 {
   "Site": {
+    "mobileNavbarHeader": "Безопасное и Быстрое VPN-Решение",
     "navbar": {
       "home": "Главная",
       "features": "Возможности",
-      "products": "Продукты",
+      "products": "WeeVPN",
       "faq": "FAQ"
     },
     "login": "Войти",

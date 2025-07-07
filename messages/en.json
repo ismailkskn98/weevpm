@@ -1,9 +1,10 @@
 {
   "Site": {
+    "mobileNavbarHeader": "Secure and Fast VPN Solution",
     "navbar": {
       "home": "Home",
       "features": "Features",
-      "products": "Products",
+      "products": "WeeVPN",
       "faq": "FAQ"
     },
     "login": "Login",

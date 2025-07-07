@@ -114,11 +114,10 @@ const LogoColumn = React.memo(({ logos, index, currentTime }) => {
 })
 
 // Main LogoCarousel component
-function LogoCarousel({
-  columnCount = 2
-}) {
+function LogoCarousel() {
   const [logoSets, setLogoSets] = useState([])
   const [currentTime, setCurrentTime] = useState(0)
+  const [columnCount, setColumnCount] = useState(3) // Default to 3 columns
 
   // Memoize the array of logos to prevent unnecessary re-renders
   const allLogos = useMemo(() => [
@@ -134,11 +133,34 @@ function LogoCarousel({
     { name: "WeeCoins", id: 10, img: "/images/ecosystem/weecoins.webp", href: "https://www.weecoins.com" },
   ], [])
 
-  // Distribute logos across columns when the component mounts
+  // Handle responsive column count based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      if (width >= 1024) {
+        setColumnCount(5)
+      } else if (width >= 640) {
+        setColumnCount(4)
+      } else {
+        setColumnCount(3)
+      }
+    }
+
+    // Set initial column count
+    handleResize()
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Distribute logos across columns when the component mounts or column count changes
   useEffect(() => {
     const distributedLogos = distributeLogos(allLogos, columnCount)
     setLogoSets(distributedLogos)
-  }, [allLogos])
+  }, [allLogos, columnCount])
 
   // Function to update the current time (used for logo cycling)
   const updateTime = useCallback(() => {
@@ -153,7 +175,7 @@ function LogoCarousel({
 
   // Render the logo columns
   return (
-    <div className="w-full flex space-x-4">
+    <div className="w-full flex justify-center space-x-4">
       {logoSets.map((logos, index) => (
         <LogoColumn key={index} logos={logos} index={index} currentTime={currentTime} />
       ))}

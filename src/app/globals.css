@@ -156,3 +156,26 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Auth Overlay Animation */
+@keyframes fade-in-overlay {
+  0% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  65% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+}
+
+.animate-fade-in-overlay {
+  animation: fade-in-overlay 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}

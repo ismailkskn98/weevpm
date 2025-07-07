@@ -42,27 +42,27 @@ export default function SecondCardAnimate() {
                 <div className='absolute bottom-0 inset-x-0 h-[2px] bg-black/10 w-full z-0'></div>
                 <div
                     onClick={() => handleImageMode("lite")}
-                    className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "lite" ? "text-blue-600 font-semibold" : "text-gray-600"}`}
+                    className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "lite" ? "text-teal font-semibold" : "text-gray-600"}`}
                 >
                     {t('lite')}
                     {imageMode === "lite" && (
                         <motion.span
                             layoutId="underline"
                             initial={false}
-                            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-blue-600 rounded-full w-full"
+                            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-teal rounded-full w-full"
                         />
                     )}
                 </div>
                 <div
                     onClick={() => handleImageMode("pro")}
-                    className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "pro" ? "text-blue-600 font-semibold" : "text-gray-600"}`}
+                    className={`cursor-pointer py-2 px-4 transition-colors relative z-10 ${imageMode === "pro" ? "text-teal font-semibold" : "text-gray-600"}`}
                 >
                     {t('pro')}
                     {imageMode === "pro" && (
                         <motion.span
                             layoutId="underline"
                             initial={false}
-                            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-blue-600 rounded-full w-full"
+                            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-teal rounded-full w-full"
                         />
                     )}
                 </div>

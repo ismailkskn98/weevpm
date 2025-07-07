@@ -16,13 +16,10 @@ export default function SecondCardQR() {
             }
         };
 
-        // Set initial size
         handleResize();
 
-        // Add event listener
         window.addEventListener('resize', handleResize);
 
-        // Cleanup
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

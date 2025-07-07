@@ -4,7 +4,7 @@ import Hero from "@/components/site/hero";
 import LogoCarousel from "@/components/site/logoCarousel";
 import FAQ from "@/components/site/faq";
 
-export default async function Home() {
+export default async function HomePage() {
 
   return (
     <>
