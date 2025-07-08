@@ -276,9 +276,14 @@
       "validation": {
         "countryRequired": "Ölkə seçimi məcburidir",
         "usernameMinLength": "İstifadəçi adı ən azı 3 simvol olmalıdır",
+        "invalidUsername": "İstifadəçi adı yalnız hərf, rəqəm, _, -, . simvollarını ehtiva edə bilər",
         "invalidEmail": "Etibarsız e-poçt ünvanı",
-        "passwordMinLength": "Şifrə ən azı 8 simvol olmalıdır",
+        "passwordMinLength": "Şifrə ən azı 6 simvol olmalıdır",
         "passwordMismatch": "Şifrələr uyğun gəlmir"
+      },
+      "messages": {
+        "success": "Qeydiyyat uğurla tamamlandı! Giriş səhifəsinə yönləndirilirsiniz",
+        "error": "Qeydiyyat zamanı xəta baş verdi. Lütfən təkrar yoxlayın"
       }
     },
     "login": {
@@ -294,6 +299,10 @@
       "validation": {
         "usernameMinLength": "E-poçt və ya istifadəçi adı ən azı 3 simvol olmalıdır",
         "passwordMinLength": "Şifrə ən azı 8 simvol olmalıdır"
+      },
+      "messages": {
+        "success": "Giriş uğurla tamamlandı! Yönləndirilirsiniz",
+        "error": "Giriş zamanı xəta baş verdi. Lütfən məlumatlarınızı yoxlayın"
       }
     },
     "forgotPassword": {
@@ -308,6 +317,10 @@
       "validation": {
         "emailRequired": "E-poçt alanı məcburidir",
         "invalidEmail": "Etibarsız e-poçt ünvanı"
+      },
+      "messages": {
+        "success": "Şifrə sıfırlama linki e-poçt ünvanınıza göndərildi",
+        "error": "Xəta baş verdi. Lütfən təkrar yoxlayın"
       }
     },
     "resetPassword": {
@@ -323,6 +336,10 @@
       "validation": {
         "passwordMinLength": "Şifrə ən az 8 simvol olmalıdır",
         "passwordMismatch": "Şifrələr uyğun gəlmir"
+      },
+      "messages": {
+        "success": "Şifrə uğurla sıfırlandı! Giriş səhifəsinə yönləndirilirsiniz",
+        "error": "Şifrə sıfırlama zamanı xəta baş verdi. Lütfən təkrar yoxlayın"
       }
     }
   }

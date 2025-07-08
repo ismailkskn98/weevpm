@@ -8,6 +8,6 @@ export default function LoginSchema() {
 
     return (z.object({
         username: z.string().min(3, t('usernameMinLength')),
-        password: z.string().min(8, t('passwordMinLength')),
+        password: z.string().min(6, t('passwordMinLength')),
     }))
 }

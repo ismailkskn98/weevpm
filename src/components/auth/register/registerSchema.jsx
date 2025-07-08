@@ -7,18 +7,14 @@ export default function RegisterSchema() {
     const t = useTranslations('Auth.register.validation')
     const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/;
     const usernameRegex = /^[a-zA-Z0-9_.-]+$/;
-    const countrySchema = z
-        .object({
-            value: z.string(),
-            label: z.string(),
-        })
-        .nullable()
-        .refine((val) => val?.value && val?.label, {
-            message: t('countryRequired'),
-        });
+    // Country schema - react-select object'i için düzeltme
+    const countrySchema = z.object({
+        value: z.string(),
+        label: z.string()
+    }).nullable().refine((val) => val !== null, { message: t('countryRequired') });
 
     return (z.object({
-        username: z.string().regex(usernameRegex, "kabul etmedi"),
+        username: z.string().regex(usernameRegex, t('invalidUsername')),
         country: countrySchema,
         email: z.string().regex(emailRegex, t('invalidEmail')).email(t('invalidEmail')),
         password: z.string().min(8, t('passwordMinLength')),

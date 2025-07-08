@@ -278,9 +278,14 @@
       "validation": {
         "countryRequired": "Country selection is required",
         "usernameMinLength": "Username must be at least 3 characters",
+        "invalidUsername": "Username can only contain letters, numbers, _, -, . characters",
         "invalidEmail": "Invalid email address",
         "passwordMinLength": "Password must be at least 8 characters",
         "passwordMismatch": "Passwords do not match"
+      },
+      "messages": {
+        "success": "Registration successful! You are being redirected to the login page",
+        "error": "An error occurred during registration. Please try again"
       }
     },
     "login": {
@@ -296,6 +301,10 @@
       "validation": {
         "usernameMinLength": "Email or username must be at least 3 characters",
         "passwordMinLength": "Password must be at least 8 characters"
+      },
+      "messages": {
+        "success": "Login successful! You are being redirected",
+        "error": "An error occurred during login. Please check your credentials"
       }
     },
     "forgotPassword": {
@@ -310,6 +319,10 @@
       "validation": {
         "emailRequired": "Email field is required",
         "invalidEmail": "Invalid email address"
+      },
+      "messages": {
+        "success": "Password reset link sent to your email address",
+        "error": "An error occurred. Please try again"
       }
     },
     "resetPassword": {
@@ -325,6 +338,10 @@
       "validation": {
         "passwordMinLength": "Password must be at least 8 characters",
         "passwordMismatch": "Passwords do not match"
+      },
+      "messages": {
+        "success": "Password reset successful! You are being redirected to the login page",
+        "error": "An error occurred during password reset. Please try again"
       }
     }
   }

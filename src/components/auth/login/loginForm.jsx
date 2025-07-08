@@ -5,29 +5,52 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import CustomInput from '../customInput';
 import LoginSchema from './loginSchema';
 import { useTranslations } from 'next-intl'
+import { ClipLoader } from 'react-spinners';
+import axios from 'axios';
+import { useRouter } from '@/i18n/navigation';
+import { toast } from 'sonner';
+import coreAxios from '@/helper/coreAxios';
 
 export default function LoginForm() {
     const t = useTranslations('Auth.login.form')
+    const tMessages = useTranslations('Auth.login.messages')
     const schema = LoginSchema();
-    const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm({
+    const router = useRouter();
+    const { register, handleSubmit, formState: { errors, isValid, isSubmitting }, reset } = useForm({
         resolver: zodResolver(schema), defaultValues: { username: "", password: "" }, mode: "onChange"
     });
 
-    const onSubmit = (data) => {
-        console.log("handleSubmit:", data)
+    const onSubmit = async (data) => {
+        try {
+            const response = await coreAxios.POST("/login", {
+                user_name_or_email: data.username,
+                password: data.password
+            }, tMessages("error"))
+
+            if (response.status) {
+                toast.success(response.message);
+                reset();
+                router.push("/user");
+            } else {
+                if (response.status == false) {
+                    toast.error(response.message);
+                }
+            }
+        } catch (err) { }
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-8 flex flex-col items-center justify-center gap-y-3 text-white/80'>
             <CustomInput type='text' placeholder={t('usernamePlaceholder')} {...register("username")} error={errors.username} />
             <CustomInput type='password' placeholder={t('passwordPlaceholder')} {...register("password")} error={errors.password} forgotPassword={true} />
-            <input
+            <button
                 type="submit"
-                value={t('submitButton')}
                 disabled={!isValid || isSubmitting}
-                className={`bg-white text-black font-bold rounded-full px-3.5 py-3 w-full mt-10 transition-all duration-300
+                className={`bg-white text-black font-bold rounded-full px-3.5 py-3 w-full mt-10 transition-all duration-300 flex items-center justify-center gap-2
                     ${!isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/80 cursor-pointer'} `}
-            />
+            >
+                {isSubmitting ? <ClipLoader size={20} color="#000" /> : t('submitButton')}
+            </button>
         </form>
     )
 }

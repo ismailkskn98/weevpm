@@ -276,9 +276,14 @@
       "validation": {
         "countryRequired": "Ülke seçimi zorunludur",
         "usernameMinLength": "Kullanıcı adı en az 3 karakter olmalıdır",
+        "invalidUsername": "Kullanıcı adı sadece harf, rakam, _, -, . karakterlerini içerebilir",
         "invalidEmail": "Geçersiz email adresi",
         "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
         "passwordMismatch": "Şifreler eşleşmiyor"
+      },
+      "messages": {
+        "success": "Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz",
+        "error": "Kayıt işlemi sırasında bir hata oluştu. Lütfen tekrar deneyin"
       }
     },
     "login": {
@@ -294,6 +299,10 @@
       "validation": {
         "usernameMinLength": "E-posta veya kullanıcı adı en az 3 karakter olmalıdır",
         "passwordMinLength": "Şifre en az 8 karakter olmalıdır"
+      },
+      "messages": {
+        "success": "Giriş başarılı! Yönlendiriliyorsunuz",
+        "error": "Giriş yapılırken bir hata oluştu. Lütfen bilgilerinizi kontrol edin"
       }
     },
     "forgotPassword": {
@@ -308,6 +317,10 @@
       "validation": {
         "emailRequired": "Email alanı zorunludur",
         "invalidEmail": "Geçersiz email adresi"
+      },
+      "messages": {
+        "success": "Şifre sıfırlama linki e-posta adresinize gönderildi",
+        "error": "Bir hata oluştu. Lütfen tekrar deneyin"
       }
     },
     "resetPassword": {
@@ -323,6 +336,10 @@
       "validation": {
         "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
         "passwordMismatch": "Şifreler eşleşmiyor"
+      },
+      "messages": {
+        "success": "Şifre başarıyla sıfırlandı! Giriş sayfasına yönlendiriliyorsunuz",
+        "error": "Şifre sıfırlama sırasında bir hata oluştu. Lütfen tekrar deneyin"
       }
     }
   }
