@@ -45,18 +45,18 @@ export default function RegisterForm({ referenceInfo }) {
                 Object.entries(cookies).forEach(([key, value]) => {
                     setCookie(key, value, {
                         maxAge: 60 * 60 * 24,
-                        httpOnly: key === "WEEVPN_TOKEN",
+                        // httpOnly: key === "WEEVPN_TOKEN",
                         path: '/',
                         secure: false
                     });
                 });
-                setCookie("user", btoa(JSON.stringify(response.data.user)), {
+                setCookie("user", btoa(JSON.stringify(response.user)), {
                     maxAge: 60 * 60 * 24,
                     secure: false,
                     path: '/',
                 })
                 toast.success(response.message);
-                router.push("/user");
+                router.replace("/user");
                 reset();
             } else {
                 if (response.status == false) {
