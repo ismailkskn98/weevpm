@@ -1,13 +1,36 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import axios from "axios";
-import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+
+const authRequiredPaths = ["/user"];
+const guestOnlyPaths = ["/auth/login", "/auth/register", "/auth/forgot-password", "/auth/reset-password"];
 
 export default async function middleware(request) {
   const { origin: originUrl, searchParams, pathname } = request.nextUrl;
+  const cookieStore = await cookies();
   const locale = pathname.split("/")[1];
+  const requestAuth = guestOnlyPaths.some((path) => pathname.startsWith(`/${locale}${path}`));
+  const requestUser = authRequiredPaths.some((path) => pathname.startsWith(`/${locale}${path}`));
 
+  if (requestAuth) {
+    const token = cookieStore.get("WEEVPN_TOKEN");
+    const user = cookieStore.get("user");
+    if (token && user) {
+      return NextResponse.redirect(new URL(`${locale}/user`, originUrl));
+    }
+  }
+
+  if (requestUser) {
+    const token = cookieStore.get("WEEVPN_TOKEN");
+    const user = cookieStore.get("user");
+    if (!token || !user) {
+      return NextResponse.redirect(new URL(`${locale}/auth/login`, originUrl));
+    }
+  }
+
+  // mobilden gelen direkt panele gidecek olan kullanıcı için kontrol
   if (pathname.endsWith("auth/login")) {
     if (searchParams.get("user_id") && searchParams.get("password")) {
       try {
@@ -19,11 +42,17 @@ export default async function middleware(request) {
 
         if (response.data.status) {
           const nextResponse = NextResponse.next();
-          nextResponse.cookies.set("WEEVPN_TOKEN", response.data.token);
+          nextResponse.cookies.set("WEEVPN_TOKEN", response.data.token, {
+            // httpOnly: true,
+            // secure: process.env.NODE_ENV === "production",
+            // path: "/",
+            // sameSite: "Lax",
+          });
           nextResponse.cookies.set("username", response.data.user.user_name);
           nextResponse.cookies.set("email", response.data.user.email);
           nextResponse.cookies.set("country", response.data.user.country);
-          nextResponse.cookies.set("user", btoa(JSON.stringify(response.data.user)));
+          const encodedUser = Buffer.from(JSON.stringify(response.data.user)).toString("base64");
+          nextResponse.cookies.set("user", encodedUser);
 
           return NextResponse.redirect(new URL(`${locale}/user`, originUrl));
         } else {

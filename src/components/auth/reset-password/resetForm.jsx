@@ -6,7 +6,6 @@ import CustomInput from '../customInput';
 import ResetSchema from './resetSchema';
 import { useTranslations } from 'next-intl'
 import { ClipLoader } from 'react-spinners';
-import axios from 'axios';
 import { toast } from 'sonner';
 import { useRouter } from '@/i18n/navigation';
 

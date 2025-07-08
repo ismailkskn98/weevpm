@@ -6,10 +6,10 @@ import CustomInput from '../customInput';
 import LoginSchema from './loginSchema';
 import { useTranslations } from 'next-intl'
 import { ClipLoader } from 'react-spinners';
-import axios from 'axios';
 import { useRouter } from '@/i18n/navigation';
 import { toast } from 'sonner';
 import coreAxios from '@/helper/coreAxios';
+import { setCookie } from 'cookies-next';
 
 export default function LoginForm() {
     const t = useTranslations('Auth.login.form')
@@ -26,8 +26,26 @@ export default function LoginForm() {
                 user_name_or_email: data.username,
                 password: data.password
             }, tMessages("error"))
-
             if (response.status) {
+                const cookies = {
+                    WEEVPN_TOKEN: response.token,
+                    username: response.user.user_name,
+                    email: response.user.email,
+                    country: response.user.country,
+                };
+                Object.entries(cookies).forEach(([key, value]) => {
+                    setCookie(key, value, {
+                        maxAge: 60 * 60 * 24,
+                        // httpOnly: key === "WEEVPN_TOKEN",
+                        path: '/',
+                        secure: false
+                    });
+                });
+                setCookie("user", btoa(JSON.stringify(response.user)), {
+                    maxAge: 60 * 60 * 24,
+                    secure: false,
+                    path: '/',
+                })
                 toast.success(response.message);
                 reset();
                 router.push("/user");

@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import CustomInput from '../customInput';
 import ForgotSchema from './forgotSchema';
 import { useLocale, useTranslations } from 'next-intl'
-import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import { toast } from 'sonner'
 import coreAxios from '@/helper/coreAxios';

@@ -6,11 +6,12 @@ import CustomInput from '../customInput';
 import CountrySelect from './countrySelect';
 import RegisterSchema from './registerSchema';
 import { useTranslations } from 'next-intl'
-import axios from 'axios';
 import { toast } from 'sonner';
 import { ClipLoader } from 'react-spinners';
 import { useRouter } from '@/i18n/navigation';
 import coreAxios from '@/helper/coreAxios';
+import { setCookie } from 'cookies-next';
+
 
 export default function RegisterForm({ referenceInfo }) {
     const t = useTranslations('Auth.register.form');
@@ -35,9 +36,28 @@ export default function RegisterForm({ referenceInfo }) {
             }, tMessages("error"))
 
             if (response.status) {
+                const cookies = {
+                    WEEVPN_TOKEN: response.token,
+                    username: response.user.user_name,
+                    email: response.user.email,
+                    country: response.user.country,
+                };
+                Object.entries(cookies).forEach(([key, value]) => {
+                    setCookie(key, value, {
+                        maxAge: 60 * 60 * 24,
+                        httpOnly: key === "WEEVPN_TOKEN",
+                        path: '/',
+                        secure: false
+                    });
+                });
+                setCookie("user", btoa(JSON.stringify(response.data.user)), {
+                    maxAge: 60 * 60 * 24,
+                    secure: false,
+                    path: '/',
+                })
                 toast.success(response.message);
-                reset();
                 router.push("/user");
+                reset();
             } else {
                 if (response.status == false) {
                     toast.error(response.message);
