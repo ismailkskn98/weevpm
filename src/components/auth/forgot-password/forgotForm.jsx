@@ -4,17 +4,30 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import CustomInput from '../customInput';
 import ForgotSchema from './forgotSchema';
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import axios from 'axios';
+// import { toast } from 'sonner'
 
 export default function ForgotForm() {
     const t = useTranslations('Auth.forgotPassword.form')
+    const locale = useLocale();
     const schema = ForgotSchema();
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm({
         resolver: zodResolver(schema), defaultValues: { email: "" }, mode: "onChange"
     });
 
-    const onSubmit = (data) => {
-        console.log("handleSubmit:", data)
+    const onSubmit = async (data) => {
+
+        try {
+            const response = await axios.post(`http://192.168.1.10:3000/api/v1/forgot-password`, {
+                user_name_or_email: data.email,
+                language: locale
+            });
+            console.log(response.data);
+        } catch (error) {
+            // toast.error(error.message);
+            console.log(error);
+        }
     }
 
     return (

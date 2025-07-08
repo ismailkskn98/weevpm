@@ -12,7 +12,7 @@ export default function ResetForm({ token }) {
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm({
         resolver: zodResolver(schema), defaultValues: { password: "", confirmPassword: "" }, mode: "onChange"
     });
-
+    console.log("token:", token);
     const onSubmit = (data) => {
         console.log("handleSubmit:", data)
     }

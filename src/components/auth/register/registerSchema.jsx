@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 export default function RegisterSchema() {
     const t = useTranslations('Auth.register.validation')
     const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/;
+    const usernameRegex = /^[a-zA-Z0-9_.-]+$/;
     const countrySchema = z
         .object({
             value: z.string(),
@@ -17,7 +18,7 @@ export default function RegisterSchema() {
         });
 
     return (z.object({
-        username: z.string().min(3, t('usernameMinLength')),
+        username: z.string().regex(usernameRegex, "kabul etmedi"),
         country: countrySchema,
         email: z.string().regex(emailRegex, t('invalidEmail')).email(t('invalidEmail')),
         password: z.string().min(8, t('passwordMinLength')),
