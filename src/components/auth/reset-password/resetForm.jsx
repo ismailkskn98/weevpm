@@ -38,7 +38,7 @@ export default function ResetForm({ token }) {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-8 flex flex-col items-center justify-center gap-y-3 text-white/80'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-4 flex flex-col items-center justify-center gap-y-3 text-white/80'>
             <CustomInput type='password' placeholder={t('passwordPlaceholder')} {...register("password")} error={errors.password} />
             <CustomInput type='password' placeholder={t('confirmPasswordPlaceholder')} {...register("confirmPassword")} error={errors.confirmPassword} />
             <button

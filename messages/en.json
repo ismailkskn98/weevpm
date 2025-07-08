@@ -280,12 +280,18 @@
         "usernameMinLength": "Username must be at least 3 characters",
         "invalidUsername": "Username can only contain letters, numbers, _, -, . characters",
         "invalidEmail": "Invalid email address",
-        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordMinLength": "Password must be at least 6 characters",
         "passwordMismatch": "Passwords do not match"
       },
       "messages": {
         "success": "Registration successful! You are being redirected to the login page",
         "error": "An error occurred during registration. Please try again"
+      },
+      "emailVerification": {
+        "title": "Verification Required",
+        "description": "Enter the code we sent to your email address.",
+        "submitButton": "Submit",
+        "invalidCode": "Code is invalid"
       }
     },
     "login": {
@@ -300,7 +306,7 @@
       },
       "validation": {
         "usernameMinLength": "Email or username must be at least 3 characters",
-        "passwordMinLength": "Password must be at least 8 characters"
+        "passwordMinLength": "Password must be at least 6 characters"
       },
       "messages": {
         "success": "Login successful! You are being redirected",

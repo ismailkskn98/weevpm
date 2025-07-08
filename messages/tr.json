@@ -284,6 +284,12 @@
       "messages": {
         "success": "Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz",
         "error": "Kayıt işlemi sırasında bir hata oluştu. Lütfen tekrar deneyin"
+      },
+      "emailVerification": {
+        "title": "Doğrulama Gerekli",
+        "description": "adresine gönderdiğimiz e-postadaki kodu giriniz.",
+        "submitButton": "Gönder",
+        "invalidCode": "Kod hatalı"
       }
     },
     "login": {

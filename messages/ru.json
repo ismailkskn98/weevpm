@@ -278,12 +278,18 @@
         "usernameMinLength": "Логин: минимум 3 символа",
         "invalidUsername": "Имя пользователя может содержать только буквы, цифры, _, -, . символы",
         "invalidEmail": "Неверный email",
-        "passwordMinLength": "Пароль: минимум 8 символов",
+        "passwordMinLength": "Пароль: минимум 6 символов",
         "passwordMismatch": "Пароли не совпадают"
       },
       "messages": {
         "success": "Регистрация прошла успешно! Вас перенаправляют на страницу входа",
         "error": "Произошла ошибка при регистрации. Попробуйте еще раз"
+      },
+      "emailVerification": {
+        "title": "Требуется верификация",
+        "description": "Введите код, который мы отправили на ваш email.",
+        "submitButton": "Отправить",
+        "invalidCode": "Неверный код"
       }
     },
     "login": {
@@ -298,7 +304,7 @@
       },
       "validation": {
         "usernameMinLength": "Email/логин: минимум 3 символа",
-        "passwordMinLength": "Пароль: минимум 8 символов"
+        "passwordMinLength": "Пароль: минимум 6 символов"
       },
       "messages": {
         "success": "Вход выполнен успешно! Вас перенаправляют",

@@ -40,7 +40,7 @@ export default function ForgotForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-8 flex flex-col items-center justify-center gap-y-3 text-white/80'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md px-5 sm:px-4 flex flex-col items-center justify-center gap-y-3 text-white/80'>
             <CustomInput type='email' placeholder={t('emailPlaceholder')} {...register("email")} error={errors.email} />
             <button
                 type="submit"

@@ -284,6 +284,12 @@
       "messages": {
         "success": "Qeydiyyat uğurla tamamlandı! Giriş səhifəsinə yönləndirilirsiniz",
         "error": "Qeydiyyat zamanı xəta baş verdi. Lütfən təkrar yoxlayın"
+      },
+      "emailVerification": {
+        "title": "Doğrulama Tələb Olunur",
+        "description": "e-poçt ünvanınıza göndərdiyimiz kodu daxil edin.",
+        "submitButton": "Göndər",
+        "invalidCode": "Kod yanlışdır"
       }
     },
     "login": {

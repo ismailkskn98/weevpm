@@ -20,7 +20,7 @@ const POST = async (url, data, errorMessage) => {
     );
     return response.data;
   } catch (error) {
-    toast.error(errorMessage);
+    toast.error(errorMessage || response.data.message);
   }
 };
 

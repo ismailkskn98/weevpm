@@ -25,7 +25,7 @@ function InputOTPGroup({
   return (
     <div
       data-slot="input-otp-group"
-      className={cn("flex items-center", className)}
+      className={cn("w-full flex items-center", className)}
       {...props} />
   );
 }
