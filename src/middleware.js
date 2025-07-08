@@ -64,6 +64,23 @@ export default async function middleware(request) {
     }
   }
 
+  // reset-password token kontrolü yapıyoruz sayfaya girmeden
+  if (pathname.includes(`auth/reset-password`)) {
+    const token = pathname.split("/")[4];
+
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/check-reset-token`, {
+        reset_token: token,
+      });
+
+      if (response.data.status == false) {
+        return NextResponse.redirect(new URL(`${locale}/auth/login`, originUrl));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return createMiddleware(routing)(request);
 }
 

@@ -45,7 +45,6 @@ export default function RegisterForm({ referenceInfo }) {
                 Object.entries(cookies).forEach(([key, value]) => {
                     setCookie(key, value, {
                         maxAge: 60 * 60 * 24,
-                        // httpOnly: key === "WEEVPN_TOKEN",
                         path: '/',
                         secure: false
                     });
