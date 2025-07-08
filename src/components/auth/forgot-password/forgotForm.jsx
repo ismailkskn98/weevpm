@@ -9,11 +9,13 @@ import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import { toast } from 'sonner'
 import coreAxios from '@/helper/coreAxios';
+import { useRouter } from '@/i18n/navigation';
 
 export default function ForgotForm() {
     const t = useTranslations('Auth.forgotPassword.form')
     const tMessages = useTranslations('Auth.forgotPassword.messages')
     const locale = useLocale();
+    const router = useRouter();
     const schema = ForgotSchema();
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting }, reset } = useForm({
         resolver: zodResolver(schema), defaultValues: { email: "" }, mode: "onChange"
@@ -21,7 +23,7 @@ export default function ForgotForm() {
 
     const onSubmit = async (data) => {
         try {
-            const response = await coreAxios.POST("/forgot-passwoard", {
+            const response = await coreAxios.POST("/forgot-password", {
                 user_name_or_email: data.email,
                 language: locale
             }, tMessages("error"))
@@ -29,6 +31,7 @@ export default function ForgotForm() {
             if (response.status) {
                 toast.success(response.message);
                 reset();
+                router.push("/auth/login");
             } else {
                 if (response.status == false) {
                     toast.error(response.message);

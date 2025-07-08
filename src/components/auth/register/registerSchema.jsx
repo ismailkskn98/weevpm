@@ -14,10 +14,10 @@ export default function RegisterSchema() {
     }).nullable().refine((val) => val !== null, { message: t('countryRequired') });
 
     return (z.object({
-        username: z.string().regex(usernameRegex, t('invalidUsername')),
+        username: z.string().regex(usernameRegex, t('invalidUsername')).min(3, t('usernameMinLength')),
         country: countrySchema,
         email: z.string().regex(emailRegex, t('invalidEmail')).email(t('invalidEmail')),
-        password: z.string().min(8, t('passwordMinLength')),
+        password: z.string().min(6, t('passwordMinLength')),
         confirmPassword: z.string()
     }))
         .refine((data) => data.password === data.confirmPassword, {

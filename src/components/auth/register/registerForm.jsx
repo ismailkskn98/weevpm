@@ -10,6 +10,7 @@ import axios from 'axios';
 import { toast } from 'sonner';
 import { ClipLoader } from 'react-spinners';
 import { useRouter } from '@/i18n/navigation';
+import coreAxios from '@/helper/coreAxios';
 
 export default function RegisterForm({ referenceInfo }) {
     const t = useTranslations('Auth.register.form');

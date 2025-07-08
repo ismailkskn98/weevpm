@@ -4,15 +4,12 @@ import React from 'react'
 import { IoCloseOutline } from "react-icons/io5";
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Toaster } from "@/components/ui/sonner"
-
 
 export default function AuthLayout({ children }) {
     const t = useTranslations('Auth.common');
 
     return (
         <main className='relative min-h-screen w-full h-full overflow-hidden'>
-            <Toaster position="top-center" richColors />
             <article className='w-full h-fit flex items-center justify-between absolute inset-x-0 top-7 px-7 z-20'>
                 <Link href="/" className='text-white text-xl rounded-full p-2 bg-black/30 cursor-pointer flex items-center justify-center drop-shadow-md'>
                     <IoCloseOutline className='text-white' />

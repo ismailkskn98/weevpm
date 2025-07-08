@@ -278,7 +278,7 @@
         "usernameMinLength": "Kullanıcı adı en az 3 karakter olmalıdır",
         "invalidUsername": "Kullanıcı adı sadece harf, rakam, _, -, . karakterlerini içerebilir",
         "invalidEmail": "Geçersiz email adresi",
-        "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
+        "passwordMinLength": "Şifre en az 6 karakter olmalıdır",
         "passwordMismatch": "Şifreler eşleşmiyor"
       },
       "messages": {
@@ -298,7 +298,7 @@
       },
       "validation": {
         "usernameMinLength": "E-posta veya kullanıcı adı en az 3 karakter olmalıdır",
-        "passwordMinLength": "Şifre en az 8 karakter olmalıdır"
+        "passwordMinLength": "Şifre en az 6 karakter olmalıdır"
       },
       "messages": {
         "success": "Giriş başarılı! Yönlendiriliyorsunuz",
