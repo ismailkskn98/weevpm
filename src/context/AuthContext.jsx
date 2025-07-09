@@ -2,23 +2,17 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { getCookie, setCookie, deleteCookie } from 'cookies-next';
 import coreAxios from '@/helper/coreAxios';
-import { useRouter } from '@/i18n/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { toast } from 'sonner';
 
 const AuthContext = createContext();
-
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
-    }
-    return context;
-};
+export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
+    const pathname = usePathname();
 
     const logout = () => {
         const cookiesToDelete = [
@@ -86,14 +80,13 @@ export function AuthProvider({ children }) {
         } else {
             setLoading(false);
         }
-    }, []);
+    }, [pathname]);
 
     const value = {
         user,
         loading,
         logout,
         fetchUserData,
-        isAuthenticated: !!user && !!getCookie('WEEVPN_TOKEN')
     };
 
     return (
