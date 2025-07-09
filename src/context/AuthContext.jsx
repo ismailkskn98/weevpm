@@ -9,7 +9,7 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null);
+    const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     const pathname = usePathname();
@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
         });
 
         localStorage.removeItem('userData');
-        setUser(null);
+        setUserData(null);
         router.replace('/auth/login');
         toast.info('Oturum sonlandırıldı');
     };
@@ -38,21 +38,22 @@ export function AuthProvider({ children }) {
             const userData = await coreAxios.POST('/user-data', {}, 'Kullanıcı verileri alınamadı', logout);
 
             if (userData.status) {
-                setUser(userData.user);
-
+                setUserData(userData);
+                console.log(userData);
                 const cookies = {
                     WEEVPN_TOKEN: userData.token,
                     username: userData.user.user_name,
                     email: userData.user.email,
                     country: userData.user.country,
-                    referance_code: userData.user.referance_code,
+                    reference_code: userData.user.reference_code,
+                    reference_count: userData.user.reference_count,
                     package_names: userData.user.package_names,
-                    can_token_withdraw: userData.financialStatus[0].can_token_withdraw,
-                    can_usdt_withdraw: userData.financialStatus[0].can_usdt_withdraw,
-                    total_token_income: userData.financialStatus[0].total_token_income,
-                    total_token_withdraw: userData.financialStatus[0].total_token_withdraw,
-                    total_usdt_income: userData.financialStatus[0].total_usdt_income,
-                    total_usdt_withdraw: userData.financialStatus[0].total_usdt_withdraw,
+                    can_token_withdraw: userData.financial_status[0].can_token_withdraw,
+                    can_usdt_withdraw: userData.financial_status[0].can_usdt_withdraw,
+                    total_token_income: userData.financial_status[0].total_token_income,
+                    total_token_withdraw: userData.financial_status[0].total_token_withdraw,
+                    total_usdt_income: userData.financial_status[0].total_usdt_income,
+                    total_usdt_withdraw: userData.financial_status[0].total_usdt_withdraw,
                 };
 
                 Object.entries(cookies).forEach(([key, value]) => {
@@ -83,7 +84,7 @@ export function AuthProvider({ children }) {
     }, [pathname]);
 
     const value = {
-        user,
+        userData,
         loading,
         logout,
         fetchUserData,

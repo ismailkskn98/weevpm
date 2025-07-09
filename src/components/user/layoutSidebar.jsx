@@ -18,7 +18,7 @@ import { Link } from '@/i18n/navigation';
 export default function LayoutSidebar() {
     const [open, setOpen] = useState(false);
     const [pinned, setPinned] = useState(false);
-    const { user, loading, logout } = useAuth();
+    const { userData, loading, logout } = useAuth();
 
     useEffect(() => {
         const saved = localStorage.getItem("sidebarPinned");
@@ -125,7 +125,7 @@ export default function LayoutSidebar() {
                             className="cursor-default"
                             spanClassName="group-hover/sidebar:translate-x-0"
                             link={{
-                                label: user?.user_name || "",
+                                label: userData?.user?.user_name || "",
                                 href: "#",
                                 icon: (
                                     <IconUserBolt className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
