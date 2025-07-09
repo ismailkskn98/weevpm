@@ -47,12 +47,12 @@ export function AuthProvider({ children }) {
                     country: userData.user.country,
                     referance_code: userData.user.referance_code,
                     package_names: userData.user.package_names,
-                    can_token_withdraw: userData.financialStatus.can_token_withdraw,
-                    can_usdt_withdraw: userData.financialStatus.can_usdt_withdraw,
-                    total_token_income: userData.financialStatus.total_token_income,
-                    total_token_withdraw: userData.financialStatus.total_token_withdraw,
-                    total_usdt_income: userData.financialStatus.total_usdt_income,
-                    total_usdt_withdraw: userData.financialStatus.total_usdt_withdraw,
+                    can_token_withdraw: userData.financialStatus[0].can_token_withdraw,
+                    can_usdt_withdraw: userData.financialStatus[0].can_usdt_withdraw,
+                    total_token_income: userData.financialStatus[0].total_token_income,
+                    total_token_withdraw: userData.financialStatus[0].total_token_withdraw,
+                    total_usdt_income: userData.financialStatus[0].total_usdt_income,
+                    total_usdt_withdraw: userData.financialStatus[0].total_usdt_withdraw,
                 };
 
                 Object.entries(cookies).forEach(([key, value]) => {

@@ -69,40 +69,33 @@ export default function LayoutSidebar() {
     return (
         <Sidebar open={open} setOpen={setOpen} animate={!pinned}>
             <SidebarBody className="justify-between gap-10 bg-deep-teal relative">
-                {(pinned || open) && (
-                    <motion.button
-                        initial={{ opacity: 0 }}
-                        transition={{
-                            duration: 0.15,
-                            ease: "easeInOut",
-                            delay: 0.3
-                        }}
-                        animate={{
-                            opacity: 1,
-                        }}
-                        onClick={() => setPinned(prev => !prev)}
-                        className="absolute top-3 right-3.5 text-white p-1 text-xl cursor-pointer"
-                        title={pinned ? "Unpin sidebar" : "Pin sidebar"}
-                    >
-                        {pinned ? <TbPinnedFilled className='rotate-45' /> : <TbPinned className='rotate-45' />}
-                    </motion.button>
-                )}
+                <motion.button
+                    animate={{
+                        display: !pinned ? (open ? "inline-block" : "none") : "inline-block",
+                        opacity: !pinned ? (open ? 1 : 0) : 1,
+                    }}
+                    onClick={() => setPinned(prev => !prev)}
+                    className="absolute top-3 right-3.5 text-white p-1 text-xl cursor-pointer"
+                    title={pinned ? "Unpin sidebar" : "Pin sidebar"}
+                >
+                    {pinned ? <TbPinnedFilled className='rotate-45' /> : <TbPinned className='rotate-45' />}
+                </motion.button>
                 <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
                     <Link
                         href="/user"
                         className="relative h-12 w-fit flex items-center justify-start">
                         <Image src="/images/logos/white_single_icon.png" alt="WeeVPN Logo" width={40} height={40} className="object-contain object-center h-10 w-7 shrink-0" />
-                        {(pinned || open) && (
-                            <motion.div
-                                initial={{ opacity: 0, width: 0 }}
-                                animate={{ opacity: 1, width: "auto" }}
-                                exit={{ opacity: 0, width: 0 }}
-                                transition={{ duration: 0.4, ease: "easeInOut" }}
-                                className="ml-3 overflow-hidden"
-                            >
-                                <Image src="/images/logos/white_text_logo.png" alt="WeeVPN Text" width={120} height={40} className="object-contain object-left h-5 w-auto" />
-                            </motion.div>
-                        )}
+
+                        <motion.div
+                            animate={{
+                                display: !pinned ? (open ? "inline-block" : "none") : "inline-block",
+                                opacity: !pinned ? (open ? 1 : 0) : 1,
+                            }}
+                            className="ml-3 overflow-hidden"
+                        >
+                            <Image src="/images/logos/white_text_logo.png" alt="WeeVPN Text" width={120} height={40} className="object-contain object-left h-5 w-auto" />
+                        </motion.div>
+
                     </Link>
                     <div className="mt-8 flex flex-col gap-2">
                         {links.map((link, idx) => (
