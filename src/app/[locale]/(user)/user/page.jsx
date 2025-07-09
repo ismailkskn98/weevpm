@@ -1,14 +1,15 @@
 import React from 'react'
+import Dashboard from '@/components/user/dashboard'
+import HeaderTitle from '@/components/user/headerTitle'
+import TotalRevenueCard from '@/components/user/dashboard/totalRevenueCard'
 
-export default function page() {
+export default async function page() {
     return (
-        <div>
-            <h1>User Page</h1>
-            <section className='w-full h-[300px] flex items-center justify-between gap-8'>
-                <div className='w-full h-full flex-1 bg-teal flex items-center justify-between rounded-lg'></div>
-                <div className='w-full h-full flex-1 bg-green-800 flex items-center justify-between rounded-lg'></div>
-                <div className='w-full h-full flex-1 bg-green-300 flex items-center justify-between rounded-lg'></div>
-            </section>
-        </div>
+        <main className='w-full flex flex-col gap-8'>
+            <HeaderTitle title='Gösterge Paneli' description='Bu bölümde, kullanıcının hesap bilgileri ve kullanım durumu gibi detayları görüntüleyebilirsiniz.' />
+            <Dashboard>
+                <TotalRevenueCard />
+            </Dashboard>
+        </main>
     )
 }

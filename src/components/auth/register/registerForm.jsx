@@ -8,20 +8,23 @@ import RegisterSchema from './registerSchema';
 import { useTranslations } from 'next-intl';
 import { ClipLoader } from 'react-spinners';
 import coreAxios from '@/helper/coreAxios';
-
 import EmailVerification from './emailVerification';
-
+import { useAuth } from '@/context/AuthContext';
 
 export default function RegisterForm({ referenceInfo }) {
     const t = useTranslations('Auth.register.form');
     const tMessages = useTranslations('Auth.register.messages');
+    const { logout } = useAuth();
+
     const [modalOpen, setModalOpen] = useState(false);
     const [verifyCode, setVerifyCode] = useState("");
     const [formData, setFormData] = useState({});
 
     const schema = RegisterSchema();
     const { register, handleSubmit, watch, formState: { errors, isValid, isSubmitting }, control, reset } = useForm({
-        resolver: zodResolver(schema), defaultValues: { country: null, }, mode: "onChange"
+        resolver: zodResolver(schema),
+        defaultValues: { country: null },
+        mode: "onChange"
     });
 
     const countryValue = watch("country");
@@ -31,7 +34,7 @@ export default function RegisterForm({ referenceInfo }) {
         try {
             const response = await coreAxios.POST("/send-verify-code", {
                 email: data.email,
-            }, tMessages("error"))
+            }, tMessages("error"), logout)
 
             if (response.status) {
                 setVerifyCode(response.code);
@@ -46,7 +49,7 @@ export default function RegisterForm({ referenceInfo }) {
                 });
             }
         } catch (error) {
-            console.log(error);
+            console.log('Register error:', error);
         }
     }
 
@@ -57,7 +60,7 @@ export default function RegisterForm({ referenceInfo }) {
             <CustomInput type='email' placeholder={t('emailPlaceholder')} {...register("email")} error={errors.email} />
             <CustomInput type='password' placeholder={t('passwordPlaceholder')} {...register("password")} error={errors.password} />
             <CustomInput type='password' placeholder={t('confirmPasswordPlaceholder')} {...register("confirmPassword")} error={errors.confirmPassword} />
-            <EmailVerification isOpen={modalOpen} setIsOpen={setModalOpen} isSubmitting={isSubmitting} isValid={isValid} verifyCode={verifyCode} formData={formData} />
+            <EmailVerification isOpen={modalOpen} setIsOpen={setModalOpen} isSubmitting={isSubmitting} isValid={isValid} verifyCode={verifyCode} formData={formData} logout={logout} />
             <button
                 type="submit"
                 disabled={!isValid || isSubmitting}

@@ -4,10 +4,12 @@ import { toast } from "sonner";
 
 const base_url = process.env.NEXT_PUBLIC_API_URL;
 const general_hash = process.env.NEXT_PUBLIC_GENERAl_HASH;
-const token = getCookie("WEEVPN_TOKEN");
-const locale = getCookie("NEXT_LOCALE");
 
-const POST = async (url, data, errorMessage) => {
+// Logout fonksiyonunu parametre olarak al (hook'ları component dışında kullanamazsın!)
+const POST = async (url, data, errorMessage, logoutFunction = null) => {
+  const locale = getCookie("NEXT_LOCALE");
+  const token = getCookie("WEEVPN_TOKEN");
+
   try {
     const response = await axios.post(
       `${base_url}${url}`,
@@ -18,9 +20,18 @@ const POST = async (url, data, errorMessage) => {
         },
       }
     );
+
+    if (response.data.status == false && (response.data.message == "NO_TOKEN" || response.data.message == "INVALID_TOKEN")) {
+      if (logoutFunction) {
+        logoutFunction();
+      }
+    }
+
     return response.data;
   } catch (error) {
-    toast.error(errorMessage || response.data.message);
+    const message = error.response?.data?.message || errorMessage || "Bir hata oluştu";
+    toast.error(message);
+    throw error;
   }
 };
 

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { Link } from "@/i18n/navigation";
 
 const SidebarContext = createContext(undefined);
 
@@ -64,11 +65,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 w-[300px] shrink-0",
+          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 w-[250px] shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "300px" : "60px") : "300px",
+          width: animate ? (open ? "250px" : "60px") : "250px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -128,13 +129,14 @@ export const MobileSidebar = ({
 export const SidebarLink = ({
   link,
   className,
+  spanClassName,
   ...props
 }) => {
   const { open, animate } = useSidebar();
   return (
-    <a
+    <Link
       href={link.href}
-      className={cn("flex items-center justify-start gap-2  group/sidebar py-2", className)}
+      className={cn("flex items-center justify-start gap-2 group/sidebar py-2", className)}
       {...props}>
       {link.icon}
       <motion.span
@@ -142,9 +144,9 @@ export const SidebarLink = ({
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-white text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">
+        className={cn("text-white text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0", spanClassName)}>
         {link.label}
       </motion.span>
-    </a>
+    </Link>
   );
 };

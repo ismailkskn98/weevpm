@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import { setCookie } from 'cookies-next';
 import { useRouter } from '@/i18n/navigation';
 
-export default function EmailVerification({ isOpen, setIsOpen, verifyCode, formData }) {
+export default function EmailVerification({ isOpen, setIsOpen, verifyCode, formData, logout }) {
     const tMessages = useTranslations('Auth.register.messages');
     const tEmailVerification = useTranslations('Auth.register.emailVerification');
     const router = useRouter();
@@ -22,7 +22,12 @@ export default function EmailVerification({ isOpen, setIsOpen, verifyCode, formD
                 return;
             }
             setIsLoading(true);
-            const response = await coreAxios.POST("/register", { ...formData, verify_code: atob(verifyCode) }, tMessages("error"));
+
+            const response = await coreAxios.POST("/register", {
+                ...formData,
+                verify_code: atob(verifyCode)
+            }, tMessages("error"), logout);
+
             if (response.status) {
                 const cookies = {
                     WEEVPN_TOKEN: response.token,
@@ -32,13 +37,13 @@ export default function EmailVerification({ isOpen, setIsOpen, verifyCode, formD
                 };
                 Object.entries(cookies).forEach(([key, value]) => {
                     setCookie(key, value, {
-                        maxAge: 60 * 60 * 24,
+                        maxAge: 60 * 60 * 24 * 10000,
                         path: '/',
                         secure: false
                     });
                 });
                 setCookie("user", btoa(JSON.stringify(response.user)), {
-                    maxAge: 60 * 60 * 24,
+                    maxAge: 60 * 60 * 24 * 10000,
                     secure: false,
                     path: '/',
                 })
@@ -78,9 +83,9 @@ export default function EmailVerification({ isOpen, setIsOpen, verifyCode, formD
                 <button
                     type="button"
                     onClick={handleSubmit}
-                    disabled={isLoading}
+                    disabled={isLoading || otp.length !== 6}
                     className={`bg-black text-white font-bold rounded-full mx-auto px-8 py-3 w-fit mt-8 transition-all duration-300 flex items-center justify-center gap-2
-                    ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-black/80 cursor-pointer'} `}
+                    ${isLoading || otp.length !== 6 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-black/80 cursor-pointer'} `}
                 >
                     {isLoading ? <ClipLoader size={20} color="#fff" /> : tEmailVerification("submitButton")}
                 </button>

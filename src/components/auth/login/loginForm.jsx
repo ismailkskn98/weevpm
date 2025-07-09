@@ -10,12 +10,15 @@ import { useRouter } from '@/i18n/navigation';
 import { toast } from 'sonner';
 import coreAxios from '@/helper/coreAxios';
 import { setCookie } from 'cookies-next';
+import { useAuth } from '@/context/AuthContext';
 
 export default function LoginForm() {
     const t = useTranslations('Auth.login.form')
     const tMessages = useTranslations('Auth.login.messages')
     const schema = LoginSchema();
     const router = useRouter();
+    const { logout } = useAuth();
+
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting }, reset } = useForm({
         resolver: zodResolver(schema), defaultValues: { username: "", password: "" }, mode: "onChange"
     });
@@ -25,7 +28,8 @@ export default function LoginForm() {
             const response = await coreAxios.POST("/login", {
                 user_name_or_email: data.username,
                 password: data.password
-            }, tMessages("error"))
+            }, tMessages("error"), logout)
+
             if (response.status) {
                 const cookies = {
                     WEEVPN_TOKEN: response.token,
@@ -35,14 +39,14 @@ export default function LoginForm() {
                 };
                 Object.entries(cookies).forEach(([key, value]) => {
                     setCookie(key, value, {
-                        maxAge: 60 * 60 * 24,
+                        maxAge: 60 * 60 * 24 * 10000,
                         // httpOnly: key === "WEEVPN_TOKEN",
                         path: '/',
                         secure: false
                     });
                 });
                 setCookie("user", btoa(JSON.stringify(response.user)), {
-                    maxAge: 60 * 60 * 24,
+                    maxAge: 60 * 60 * 24 * 10000,
                     secure: false,
                     path: '/',
                 })
