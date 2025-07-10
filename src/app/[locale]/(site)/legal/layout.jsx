@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Sidebar from "@/components/legal/sidebar";
+import Sidebar from "@/components/site/legal/sidebar";
 
 export default function LegalLayout({ children }) {
 

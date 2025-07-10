@@ -5,7 +5,6 @@ import { toast } from "sonner";
 const base_url = process.env.NEXT_PUBLIC_API_URL;
 const general_hash = process.env.NEXT_PUBLIC_GENERAl_HASH;
 
-// Logout fonksiyonunu parametre olarak al (hook'ları component dışında kullanamazsın!)
 const POST = async (url, data, errorMessage, logoutFunction = null) => {
   const locale = getCookie("NEXT_LOCALE");
   const token = getCookie("WEEVPN_TOKEN");
@@ -13,7 +12,7 @@ const POST = async (url, data, errorMessage, logoutFunction = null) => {
   try {
     const response = await axios.post(
       `${base_url}${url}`,
-      { ...data, language: locale, hash: general_hash },
+      { ...data, language: locale, hash: general_hash, platform: "web" },
       {
         headers: {
           Authorization: `Bearer ${token}`,

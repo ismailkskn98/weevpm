@@ -1,85 +1,93 @@
 'use client';
 import React, { useEffect, useState } from 'react'
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { CiSearch } from "react-icons/ci";
+import { FaLongArrowAltDown, FaLongArrowAltUp } from "react-icons/fa";
 
 export default function ServerList() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredServers, setFilteredServers] = useState(null);
+    const [originalServers, setOriginalServers] = useState(null);
+    const [servers, setServers] = useState(null);
 
-    const servers = [
-        {
-            id: "1",
-            name: "Turkey Istanbul",
-            status: "online",
-            location: "Istanbul, TR",
-            ping: "25ms"
-        },
-        {
-            id: "2",
-            name: "Germany Frankfurt",
-            status: "online",
-            location: "Frankfurt, DE",
-            ping: "45ms"
-        },
-        {
-            id: "3",
-            name: "USA New York",
-            status: "offline",
-            location: "New York, US",
-            ping: "120ms"
-        },
-        {
-            id: "4",
-            name: "UK London",
-            status: "online",
-            location: "London, UK",
-            ping: "65ms"
-        },
-        {
-            id: "5",
-            name: "France Paris",
-            status: "maintenance",
-            location: "Paris, FR",
-            ping: "55ms"
-        },
-        {
-            id: "6",
-            name: "Netherlands Amsterdam",
-            status: "online",
-            location: "Amsterdam, NL",
-            ping: "40ms"
-        },
-        {
-            id: "7",
-            name: "Singapore",
-            status: "online",
-            location: "Singapore, SG",
-            ping: "200ms"
-        },
-        {
-            id: "8",
-            name: "Japan Tokyo",
-            status: "online",
-            location: "Tokyo, JP",
-            ping: "180ms"
-        }
-    ]
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
-
-    const totalPages = Math.ceil(servers.length / itemsPerPage);
-
+    const totalPages = servers && servers.length > 0 ? Math.ceil(servers.length / itemsPerPage) : 0;
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentServers = servers.slice(startIndex, endIndex);
+    const currentServers = servers && servers.length > 0 ? servers.slice(startIndex, endIndex) : [];
+
+
+    useEffect(() => {
+        const fetchServers = async () => {
+            const server = [
+                {
+                    id: "1",
+                    name: "Turkey Istanbul",
+                    status: "online",
+                    location: "Istanbul, TR",
+                    ping: "25ms"
+                },
+                {
+                    id: "2",
+                    name: "Germany Frankfurt",
+                    status: "online",
+                    location: "Frankfurt, DE",
+                    ping: "45ms"
+                },
+                {
+                    id: "3",
+                    name: "USA New York",
+                    status: "offline",
+                    location: "New York, US",
+                    ping: "120ms"
+                },
+                {
+                    id: "4",
+                    name: "UK London",
+                    status: "online",
+                    location: "London, UK",
+                    ping: "65ms"
+                },
+                {
+                    id: "5",
+                    name: "France Paris",
+                    status: "maintenance",
+                    location: "Paris, FR",
+                    ping: "55ms"
+                },
+                {
+                    id: "6",
+                    name: "Netherlands Amsterdam",
+                    status: "online",
+                    location: "Amsterdam, NL",
+                    ping: "40ms"
+                },
+                {
+                    id: "7",
+                    name: "Singapore",
+                    status: "online",
+                    location: "Singapore, SG",
+                    ping: "200ms"
+                },
+                {
+                    id: "8",
+                    name: "Japan Tokyo",
+                    status: "online",
+                    location: "Tokyo, JP",
+                    ping: "180ms"
+                }
+            ]
+            setOriginalServers(server);
+            setServers(server);
+
+        }
+        fetchServers();
+    }, [])
+
+
+
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -95,58 +103,83 @@ export default function ServerList() {
     }
 
     useEffect(() => {
-        // setTimeout bekle
-        if (searchTerm.length >= 2) {
-            const filteredServer = servers.filter(server => {
+        const timer = setTimeout(() => {
+            const filteredServer = servers && servers.length > 0 ? servers.filter(server => {
                 return (server.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) || server.location.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()))
-            })
-            if (filteredServer.length > 0) {
-                setFilteredServers(filteredServer);
-            } else {
-                setFilteredServers([]);
-            }
-            console.log(filteredServers);
-        } else {
-            setFilteredServers([]);
-        }
-    }, [searchTerm])
+            }) : [];
+            setFilteredServers(filteredServer);
+        }, 150)
+
+        return () => clearTimeout(timer);
+
+    }, [searchTerm, servers])
+
+    const handleStatusSort = () => {
+
+    }
+
+    const handlePingSort = () => {
+        const sortedServers = [...servers].sort((a, b) => {
+            return parseInt(a.ping) - parseInt(b.ping);
+        })
+    }
 
     return (
-        <div className="space-y-4">
-            <h2 className="text-xl font-semibold">Server Listesi</h2>
-            <input type="text" className='py-2 px-3 border border-gray-300' onChange={(e) => setSearchTerm(e.target.value)} />
-            <div className="border rounded-lg">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Server Adı</TableHead>
-                            <TableHead>Lokasyon</TableHead>
-                            <TableHead>Durum</TableHead>
-                            <TableHead>Ping</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
-                            <TableRow key={server.id}>
-                                <TableCell className="font-medium">
-                                    {server.name}
-                                </TableCell>
-                                <TableCell>{server.location}</TableCell>
-                                <TableCell>
-                                    <span className={getStatusColor(server.status)}>
-                                        {server.status}
-                                    </span>
-                                </TableCell>
-                                <TableCell>{server.ping}</TableCell>
+        <main className="w-full flex flex-col items-start gap-6 mt-16">
+            <section className='w-full flex items-end justify-between gap-2'>
+                <article className='flex flex-col gap-2'>
+                    <h2 className="text-xl font-semibold text-black/80">Server Listesi</h2>
+                    <p className='text-sm text-gray-500'>Server listesi, tüm serverlerinizi görüntülemek için kullanılır.</p>
+                </article>
+                <article className='relative'>
+                    <input type="text" className='py-2.5 pl-3 border border-deep-teal/20 outline-none rounded-lg placeholder:text-xs text-sm text-black/60 pr-7' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
+                    <CiSearch className='absolute right-2 top-1/2 -translate-y-1/2 text-deep-teal/50' />
+                </article>
+            </section>
+            <section className='w-full flex flex-col items-start gap-4'>
+                <div className="w-full border border-deep-teal/20 rounded-lg">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>Server Adı</TableHead>
+                                <TableHead>Lokasyon</TableHead>
+                                <TableHead>
+                                    <div className='w-fit flex items-center gap-1 cursor-pointer' onClick={handleStatusSort}>
+                                        <span>Durum</span>
+                                        <FaLongArrowAltDown />
+                                    </div>
+                                </TableHead>
+                                <TableHead>
+                                    <div className='w-fit flex items-center gap-1 cursor-pointer' onClick={handlePingSort}>
+                                        <span>Ping</span>
+                                        <FaLongArrowAltDown />
+                                    </div>
+                                </TableHead>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
+                        </TableHeader>
+                        <TableBody>
+                            {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
+                                <TableRow key={server.id}>
+                                    <TableCell className="font-medium">
+                                        {server.name}
+                                    </TableCell>
+                                    <TableCell>{server.location}</TableCell>
+                                    <TableCell>
+                                        <span className={getStatusColor(server.status)}>
+                                            {server.status}
+                                        </span>
+                                    </TableCell>
+                                    <TableCell>{server.ping}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+            </section>
 
-            <div className="flex items-center justify-between">
+            <section className="w-full flex items-center justify-between">
                 <div className="text-sm text-gray-600">
-                    Sayfa {currentPage} / {totalPages} ({servers.length} server)
+                    Sayfa {currentPage} / {totalPages} ({servers && servers.length > 0 ? servers.length : 0} server)
                 </div>
 
                 <div className="flex space-x-2">
@@ -166,7 +199,7 @@ export default function ServerList() {
                         Sonraki
                     </button>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }
