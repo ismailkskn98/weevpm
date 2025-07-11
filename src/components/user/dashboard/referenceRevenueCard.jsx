@@ -29,7 +29,7 @@ export default function ReferenceRevenueCard() {
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
                             <h2 className="text-xl font-bold text-black/75">Referans Bilgileriniz</h2>
-                            <p className="text-sm text-gray-500 font-medium">Referans gelirinizin özetini görüntüleyebilirsiniz.</p>
+                            <p className="text-xs 3xl:text-sm text-gray-500 font-medium">Referans gelirinizin özetini görüntüleyebilirsiniz.</p>
                         </div>
                     </div>
                 </article>
@@ -48,11 +48,11 @@ export default function ReferenceRevenueCard() {
                         </article>
                     ))}
                     <article className="group w-full">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between gap-8">
                             <span className="text-sm font-bold text-black/70">Referans Kodunuz</span>
                             <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success('Referans kodunuz kopyalandı')}>
                                 <div className="flex items-center gap-1.5 cursor-pointer group">
-                                    <span className={`text-2xl font-bold text-soft-turquoise group-hover:text-deep-teal transition-all duration-150`}>
+                                    <span className={`text-xl 3xl:text-2xl font-bold text-soft-turquoise group-hover:text-deep-teal transition-all duration-150`}>
                                         {loading ? <div className="animate-pulse bg-deep-teal/10 w-11 h-[33px] rounded"></div> : userData?.user.reference_code}
                                     </span>
                                     <Copy className="w-4 h-4 text-soft-turquoise group-hover:text-deep-teal transition-all duration-150" />

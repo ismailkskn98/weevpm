@@ -39,22 +39,51 @@ export default async function middleware(request) {
           password: searchParams.get("password"),
           hash: process.env.NEXT_PUBLIC_GENERAl_HASH,
         });
-
         if (response.data.status) {
-          const nextResponse = NextResponse.next();
-          nextResponse.cookies.set("WEEVPN_TOKEN", response.data.token, {
-            // httpOnly: true,
-            // secure: process.env.NODE_ENV === "production",
-            // path: "/",
-            // sameSite: "Lax",
-          });
-          nextResponse.cookies.set("username", response.data.user.user_name);
-          nextResponse.cookies.set("email", response.data.user.email);
-          nextResponse.cookies.set("country", response.data.user.country);
-          const encodedUser = Buffer.from(JSON.stringify(response.data.user)).toString("base64");
-          nextResponse.cookies.set("user", encodedUser);
+          // Redirect response oluştur
+          let page_url = atob(searchParams.get("page_url")) || "/";
+          const redirectResponse = NextResponse.redirect(new URL(`${locale}/user${page_url}`, originUrl));
 
-          return NextResponse.redirect(new URL(`${locale}/user`, originUrl));
+          // Cookie'leri redirect response üzerine set et
+          redirectResponse.cookies.set("WEEVPN_TOKEN", response.data.token, {
+            httpOnly: false,
+            secure: false,
+            path: "/",
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 24 * 7, // 7 gün
+          });
+          redirectResponse.cookies.set("username", response.data.user.user_name, {
+            httpOnly: false,
+            secure: false,
+            path: "/",
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 24 * 7,
+          });
+          redirectResponse.cookies.set("email", response.data.user.email, {
+            httpOnly: false,
+            secure: false,
+            path: "/",
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 24 * 7,
+          });
+          redirectResponse.cookies.set("country", response.data.user.country, {
+            httpOnly: false,
+            secure: false,
+            path: "/",
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 24 * 7,
+          });
+
+          const encodedUser = Buffer.from(JSON.stringify(response.data.user)).toString("base64");
+          redirectResponse.cookies.set("user", encodedUser, {
+            httpOnly: false,
+            secure: false,
+            path: "/",
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 24 * 7,
+          });
+
+          return redirectResponse;
         } else {
           return NextResponse.redirect(new URL(`${locale}/auth/login`, originUrl));
         }

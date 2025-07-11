@@ -43,7 +43,7 @@ export default function TotalRevenueCard() {
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
                             <h2 className="text-xl font-bold text-black/75">Gelir Özeti</h2>
-                            <p className="text-sm text-gray-500 font-medium">Token durumunuz</p>
+                            <p className="text-xs 3xl:text-sm text-gray-500 font-medium">Token durumunuz</p>
                         </div>
                         <Image src="/images/ecosystem/weecoins-premium.webp" alt="weecoins premium logo" width={50} height={50} className="w-8 2xl:w-9 h-8 2xl:h-9 object-contain object-center drop-shadow-sm" />
                     </div>

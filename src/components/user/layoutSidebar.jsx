@@ -13,12 +13,15 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { IoMdFingerPrint } from "react-icons/io";
 import { TbPinnedFilled } from "react-icons/tb";
 import { TbPinned } from "react-icons/tb";
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
+import { GoPackage } from "react-icons/go";
+
 
 export default function LayoutSidebar() {
     const [open, setOpen] = useState(false);
     const [pinned, setPinned] = useState(false);
     const { userData, loading, logout } = useAuth();
+    const pathname = usePathname();
 
     useEffect(() => {
         const saved = localStorage.getItem("sidebarPinned");
@@ -34,35 +37,42 @@ export default function LayoutSidebar() {
             label: "Gösterge Paneli",
             href: "/user",
             icon: (
-                <MdOutlineSpaceDashboard className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
+                <MdOutlineSpaceDashboard className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
             label: "Referanslar",
             href: "/user/references",
             icon: (
-                <HiOutlineUserGroup className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
+                <HiOutlineUserGroup className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/references" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
             label: "Referans Gelirleri",
-            href: "/user/reference-earnings",
+            href: "/user/reference-revenues",
             icon: (
-                <FaUserPlus className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
+                <FaUserPlus className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/reference-revenues" ? "text-white" : "text-white/70"}`} />
+            ),
+        },
+        {
+            label: "Paketler",
+            href: "/user/packages",
+            icon: (
+                <GoPackage className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/packages" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
             label: "Çekim",
             href: "/user/withdrawal",
             icon: (
-                <FaMoneyBillWave className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
+                <FaMoneyBillWave className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/withdrawal" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
             label: "Şifre İşlemleri",
             href: "/user/password-operations",
             icon: (
-                <IoMdFingerPrint className="h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 text-white" />
+                <IoMdFingerPrint className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/password-operations" ? "text-white" : "text-white/70"}`} />
             ),
         },
     ];
@@ -99,7 +109,7 @@ export default function LayoutSidebar() {
                     </Link>
                     <div className="mt-8 flex flex-col gap-2">
                         {links.map((link, idx) => (
-                            <SidebarLink key={idx} link={link} className="text-white 2xl:text-base text-sm" />
+                            <SidebarLink key={idx} link={link} className={`2xl:text-base text-sm hover:text-white transition-all duration-150 group ${pathname === link.href ? 'text-white' : 'text-white/70'}`} />
                         ))}
                     </div>
                 </div>
@@ -107,6 +117,7 @@ export default function LayoutSidebar() {
                 <div>
                     <SidebarLink
                         onClick={logout}
+                        className="text-white"
                         link={{
                             label: "Çıkış Yap",
                             href: "#",
@@ -122,7 +133,7 @@ export default function LayoutSidebar() {
                         </div>
                     ) : (
                         <SidebarLink
-                            className="cursor-default"
+                            className="cursor-default text-white"
                             spanClassName="group-hover/sidebar:translate-x-0"
                             link={{
                                 label: userData?.user?.user_name || "",

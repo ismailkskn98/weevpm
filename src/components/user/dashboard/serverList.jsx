@@ -3,21 +3,21 @@ import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { CiSearch } from "react-icons/ci";
 import { FaLongArrowAltDown, FaLongArrowAltUp } from "react-icons/fa";
+import Pagination from '../pagination';
+import TableSkeleton from '../../ui/table-skeleton';
 
 export default function ServerList() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredServers, setFilteredServers] = useState(null);
-    const [originalServers, setOriginalServers] = useState(null);
     const [servers, setServers] = useState(null);
-
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
+
     const totalPages = servers && servers.length > 0 ? Math.ceil(servers.length / itemsPerPage) : 0;
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentServers = servers && servers.length > 0 ? servers.slice(startIndex, endIndex) : [];
-
 
     useEffect(() => {
         const fetchServers = async () => {
@@ -79,15 +79,11 @@ export default function ServerList() {
                     ping: "180ms"
                 }
             ]
-            setOriginalServers(server);
             setServers(server);
 
         }
         fetchServers();
     }, [])
-
-
-
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -104,25 +100,22 @@ export default function ServerList() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            const filteredServer = servers && servers.length > 0 ? servers.filter(server => {
-                return (server.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) || server.location.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()))
-            }) : [];
-            setFilteredServers(filteredServer);
+            if (searchTerm.length > 1) {
+                const filteredServer = servers && servers.length > 0 ? servers.filter(server => {
+                    return server.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+                        server.location.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+                }) : [];
+                setFilteredServers(filteredServer);
+            } else {
+                setFilteredServers(null);
+            }
         }, 150)
 
         return () => clearTimeout(timer);
 
     }, [searchTerm, servers])
 
-    const handleStatusSort = () => {
 
-    }
-
-    const handlePingSort = () => {
-        const sortedServers = [...servers].sort((a, b) => {
-            return parseInt(a.ping) - parseInt(b.ping);
-        })
-    }
 
     return (
         <main className="w-full flex flex-col items-start gap-6 mt-16">
@@ -137,69 +130,65 @@ export default function ServerList() {
                 </article>
             </section>
             <section className='w-full flex flex-col items-start gap-4'>
-                <div className="w-full border border-deep-teal/20 rounded-lg">
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead>Server Adı</TableHead>
-                                <TableHead>Lokasyon</TableHead>
-                                <TableHead>
-                                    <div className='w-fit flex items-center gap-1 cursor-pointer' onClick={handleStatusSort}>
-                                        <span>Durum</span>
-                                        <FaLongArrowAltDown />
-                                    </div>
-                                </TableHead>
-                                <TableHead>
-                                    <div className='w-fit flex items-center gap-1 cursor-pointer' onClick={handlePingSort}>
-                                        <span>Ping</span>
-                                        <FaLongArrowAltDown />
-                                    </div>
-                                </TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
-                                <TableRow key={server.id}>
-                                    <TableCell className="font-medium">
-                                        {server.name}
-                                    </TableCell>
-                                    <TableCell>{server.location}</TableCell>
-                                    <TableCell>
-                                        <span className={getStatusColor(server.status)}>
-                                            {server.status}
-                                        </span>
-                                    </TableCell>
-                                    <TableCell>{server.ping}</TableCell>
+                {!servers ? (
+                    <TableSkeleton
+                        rows={5}
+                        columns={4}
+                        headers={['Server Adı', 'Lokasyon', 'Durum', 'Ping']}
+                    />
+                ) : (
+                    <div className="w-full border border-deep-teal/20 rounded-lg">
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="text-black/80">Server Adı</TableHead>
+                                    <TableHead className="text-black/80">Lokasyon</TableHead>
+                                    <TableHead className="text-black/80">
+                                        <div className='flex items-center gap-1'>
+                                            <span>Durum</span>
+                                            <FaLongArrowAltUp className='text-black/60 text-xs' />
+                                        </div>
+                                    </TableHead>
+                                    <TableHead className="text-black/80">
+                                        <div className='flex items-center gap-1'>
+                                            <span>Ping</span>
+                                            <FaLongArrowAltUp className='text-black/60 text-xs' />
+                                        </div>
+                                    </TableHead>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </div>
+                            </TableHeader>
+                            <TableBody>
+                                {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
+                                    <TableRow key={server.id}>
+                                        <TableCell className="font-medium text-black/70 text-sm">
+                                            {server.name}
+                                        </TableCell>
+                                        <TableCell className="font-medium text-black/70 text-sm">{server.location}</TableCell>
+                                        <TableCell className="font-medium text-black/70 text-sm">
+                                            <span className={getStatusColor(server.status)}>
+                                                {server.status}
+                                            </span>
+                                        </TableCell>
+                                        <TableCell className="font-medium text-black/70 text-sm">
+                                            <article className='flex items-end gap-1'>
+                                                <div className='flex items-end justify-center gap-[1px] w-auto h-5'>
+                                                    <span className='inline-block w-[3px] h-[20%] flex-1 bg-green-600'></span>
+                                                    <span className='inline-block w-[3px] h-[40%] flex-1 bg-green-400'></span>
+                                                    <span className='inline-block w-[3px] h-[60%] flex-1 bg-green-300'></span>
+                                                    <span className='inline-block w-[3px] h-[80%] flex-1 bg-green-200'></span>
+                                                    <span className='inline-block w-[3px] h-full flex-1 bg-green-100'></span>
+                                                </div>
+                                                <span className='text-xss'>{server.ping}</span>
+                                            </article>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </div>
+                )}
             </section>
-
-            <section className="w-full flex items-center justify-between">
-                <div className="text-sm text-gray-600">
-                    Sayfa {currentPage} / {totalPages} ({servers && servers.length > 0 ? servers.length : 0} server)
-                </div>
-
-                <div className="flex space-x-2">
-                    <button
-                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                        disabled={currentPage === 1}
-                        className="px-3 py-2 text-sm border rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-                    >
-                        Önceki
-                    </button>
-
-                    <button
-                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                        disabled={currentPage === totalPages}
-                        className="px-3 py-2 text-sm border rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-                    >
-                        Sonraki
-                    </button>
-                </div>
-            </section>
+            <Pagination currentPage={currentPage} totalPages={totalPages} itemsCount={servers && servers.length > 0 ? servers.length : 0} setCurrentPage={setCurrentPage} />
         </main>
     )
 }

@@ -22,12 +22,9 @@ export default function ReferenceCapture({ code }) {
   useEffect(() => {
     const fetchData = async () => {
       const ipAddressRequest = await axios.get(`https://api.ipify.org?format=json`);
-      console.log(ipAddressRequest);
       let ipAddress = ipAddressRequest ? ipAddressRequest.data.ip : '-';
       let platform = getPlatform();
-      console.log(ipAddress, platform);
       const insertReference = await axios.get(`http://192.168.1.10:3000/api/v1/catch-reference?code=${code}&ip=${ipAddress}&platform=${platform}`);
-      console.log(insertReference);
     }
     fetchData();
   }, [code])
