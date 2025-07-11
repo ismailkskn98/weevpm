@@ -25,14 +25,14 @@ export default function CustomInput({
                 <input
                     type={inputType}
                     placeholder={placeholder}
-                    className={`w-full h-12 px-4 ${isPasswordType ? 'pr-12' : 'pr-4'} border border-gray-300 rounded-xl bg-gray-50 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-aqua-green focus:border-transparent transition-all duration-200 ${className}`}
+                    className={`w-full h-12 px-4 ${isPasswordType ? 'pr-12' : 'pr-4'} border border-gray-300 rounded-3xl placeholder:text-sm bg-gray-50 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-aqua-green focus:border-transparent transition-all duration-200 ${className}`}
                     {...props}
                 />
                 {isPasswordType && (
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                        className="absolute right-5 cursor-pointer top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
                     >
                         {showPassword ? <LuEye size={18} /> : <LuEyeClosed size={18} />}
                     </button>

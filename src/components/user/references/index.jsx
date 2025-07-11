@@ -59,8 +59,8 @@ export default function References() {
                         headers={['ID', 'Kullanıcı Adı', 'Email', 'Paket Adı', 'Level', 'Referans Tarihi']}
                     />
                 ) : (
-                    <div className="w-fit border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
-                        <Table className='w-fit'>
+                    <div className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
+                        <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
                                     <TableHead className="text-gray-700 font-semibold">ID</TableHead>

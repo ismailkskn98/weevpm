@@ -11,6 +11,6 @@ export default function HeaderDate() {
         day: 'numeric',
     });
     return (
-        <div className='absolute right-0 bottom-0 text-sm text-gray-500 text-nowrap'>{formattedDate}</div>
+        <div className='absolute right-0 bottom-4 text-sm text-gray-500 text-nowrap'>{formattedDate}</div>
     )
 }

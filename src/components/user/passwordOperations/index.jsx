@@ -43,9 +43,9 @@ export default function PasswordOperations() {
     }
 
     return (
-        <main className="max-w-2xl flex flex-col items-start gap-6">
+        <main className="max-w-xl flex flex-col items-start gap-3">
             <div className="w-full">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                <h2 className="text-xl font-medium text-gray-900 mb-2">
                     {t('description')}
                 </h2>
             </div>
@@ -79,7 +79,7 @@ export default function PasswordOperations() {
                     <button
                         type="submit"
                         disabled={!isValid || isSubmitting}
-                        className={`w-fit px-6 mx-auto h-12 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
+                        className={`w-fit px-6 mx-auto h-12 rounded-3xl text-sm font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
                                 ${!isValid || isSubmitting
                                 ? 'bg-gray-300 cursor-not-allowed'
                                 : 'bg-aqua-green hover:bg-teal active:scale-[0.98] cursor-pointer'

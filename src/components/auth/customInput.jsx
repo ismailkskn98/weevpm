@@ -12,7 +12,7 @@ export default function CustomInput({ type, placeholder, error, forgotPassword =
     return (
         <div className='w-full relative'>
             <div className='relative w-full'>
-                <input type={type === "password" ? (showPassword ? "text" : "password") : type} placeholder={placeholder} {...props} className='h-[50px] backdrop-blur-lg bg-black/20 border-2 border-gray-400/10 text-sm font-light placeholder:text-sm rounded-full pl-4 pr-8 py-3.5 w-full focus:outline-2 outline-gray-300/50' />
+                <input type={type === "password" ? (showPassword ? "text" : "password") : type} placeholder={placeholder} {...props} className='h-[50px] backdrop-blur-lg bg-black/20 border-2 border-gray-400/10 text-sm font-light placeholder:text-sm rounded-full pl-4 pr-10 py-3.5 w-full focus:outline-2 outline-gray-300/50' />
                 {forgotPassword && <Link href="/auth/forgot-password" className='text-xs text-white/80 absolute underline -bottom-2 right-0 translate-y-full'>{t('passwordForgotten')}</Link>}
                 {
                     type === "password" && (
