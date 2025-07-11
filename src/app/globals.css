@@ -203,3 +203,16 @@ html {
     animation: fade-in-overlay 0.5s ease-in forwards;
   }
 }
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}

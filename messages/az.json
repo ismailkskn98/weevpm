@@ -348,5 +348,34 @@
         "error": "Şifrə sıfırlama zamanı xəta baş verdi. Lütfən təkrar yoxlayın"
       }
     }
+  },
+  "User": {
+    "passwordOperations": {
+      "page": {
+        "title": "Şifrə Əməliyyatları",
+        "description": "Bu bölmədə şifrənizi dəyişə bilərsiniz."
+      },
+      "form": {
+        "title": "Şifrəni Dəyiş",
+        "description": "Hesabınızın təhlükəsizliyi üçün güclü şifrə seçin.",
+        "currentPasswordLabel": "Hazırkı Şifrə",
+        "currentPasswordPlaceholder": "Hazırkı şifrənizi daxil edin",
+        "passwordLabel": "Yeni Şifrə",
+        "passwordPlaceholder": "Yeni şifrənizi daxil edin",
+        "confirmPasswordLabel": "Şifrə Təkrarı",
+        "confirmPasswordPlaceholder": "Yeni şifrənizi təkrar daxil edin",
+        "submitButton": "Şifrəni Dəyiş",
+        "submittingButton": "Dəyişdirilir..."
+      },
+      "validation": {
+        "currentPasswordMinLength": "Hazırkı şifrə ən azı 6 simvol olmalıdır",
+        "passwordMinLength": "Şifrə ən azı 6 simvol olmalıdır",
+        "passwordMismatch": "Şifrələr uyğun gəlmir"
+      },
+      "messages": {
+        "success": "Şifrəniz uğurla dəyişdirildi",
+        "error": "Şifrə dəyişdirilməsi zamanı xəta baş verdi. Lütfən təkrar yoxlayın"
+      }
+    }
   }
 }

@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import React from 'react'
 
-export default function LastUpdate() {
+export default function LastUpdate({ className }) {
     const locale = useLocale();
 
     const date = new Date().toLocaleDateString(locale, {
@@ -15,8 +15,8 @@ export default function LastUpdate() {
     });
 
     return (
-        <div className="w-full pt-2 border-t border-gray-100">
-            <p className="text-xs text-gray-400 text-center">Son güncelleme: {date}</p>
+        <div className={`w-full pt-2 border-t border-gray-100 text-gray-400 ${className}`}>
+            <p className="text-xs text-center">Son güncelleme: {date}</p>
         </div>
     )
 }

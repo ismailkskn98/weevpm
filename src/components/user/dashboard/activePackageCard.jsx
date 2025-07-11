@@ -28,25 +28,45 @@ export default function ActivePackageCard() {
         premium: {
             title: 'Premium Paket',
             description: 'Tüm özellikler aktif',
-            bgColor: 'bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50',
-            borderColor: 'border-amber-200',
-            headerIcon: <Crown className="w-8 h-8 text-amber-600" />,
-            mainIcon: <Sparkles className="w-12 h-12 text-amber-600" />,
-            textColor: 'text-amber-700',
-            titleColor: 'text-amber-800'
+            bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
+            borderColor: 'border-orange-600/30',
+            headerIcon: <Crown className="w-8 h-8 text-white/90" />,
+            mainIcon: <Sparkles className="w-12 h-12 text-white/90" />,
+            textColor: 'text-white/95',
+            titleColor: 'text-white'
         }
     };
 
     const config = isPremium ? packageConfig.premium : packageConfig.free;
 
     return (
-        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} shadow-sm ${config.bgColor} rounded-xl px-6 py-4`}>
-            <div className='w-full  h-full'>
+        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} ${isPremium ? 'shadow-md shadow-orange-200/40' : 'shadow-sm'} ${config.bgColor} rounded-xl px-6 py-4 relative overflow-hidden`}>
+            {isPremium && (
+                <>
+                    <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
+                    <div className="absolute top-8 right-12 w-2 h-2 bg-white/30 rounded-full"></div>
+                    <div className="absolute top-12 right-4 w-1.5 h-1.5 bg-white/25 rounded-full"></div>
+
+                    <div className="absolute top-6 left-12 w-2.5 h-2.5 bg-white/15 rounded-full"></div>
+                    <div className="absolute top-16 left-6 w-1 h-1 bg-white/30 rounded-full"></div>
+
+                    <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-white/20 rounded-full"></div>
+                    <div className="absolute top-1/3 left-16 w-2 h-2 bg-white/25 rounded-full"></div>
+
+                    <div className="absolute bottom-6 left-8 w-4 h-4 bg-white/15 rounded-full"></div>
+                    <div className="absolute bottom-12 left-4 w-2 h-2 bg-white/25 rounded-full"></div>
+                    <div className="absolute bottom-16 left-14 w-1.5 h-1.5 bg-white/20 rounded-full"></div>
+
+                    <div className="absolute bottom-8 right-10 w-2.5 h-2.5 bg-white/20 rounded-full"></div>
+                    <div className="absolute bottom-14 right-6 w-1 h-1 bg-white/35 rounded-full"></div>
+                </>
+            )}
+            <div className='w-full h-full relative z-10'>
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className={`text-xl font-bold ${config.titleColor}`}>{config.title}</h2>
-                            <p className="text-xs 3xl:text-sm text-gray-500 font-medium">{config.description}</p>
+                            <h2 className={`text-xl font-semibold ${config.titleColor}`}>{config.title}</h2>
+                            <p className={`text-xs ${isPremium ? 'text-white/80' : 'text-gray-500'}`}>{config.description}</p>
                         </div>
                         {config.headerIcon}
                     </div>
@@ -56,22 +76,22 @@ export default function ActivePackageCard() {
                     <div className="flex flex-col items-center gap-3">
                         {config.mainIcon}
                         {loading ? (
-                            <div className={`animate-pulse ${isPremium ? 'bg-amber-200' : 'bg-slate-200'} w-32 h-12 rounded`}></div>
+                            <div className={`animate-pulse ${isPremium ? 'bg-white/30' : 'bg-slate-200'} w-32 h-12 rounded`}></div>
                         ) : (
                             <span className={`text-3xl font-bold ${config.textColor} text-center ${isPremium ? 'drop-shadow-sm' : ''}`}>
                                 {packageName || 'Paket Bulunamadı'}
                             </span>
                         )}
                         {isPremium && (
-                            <div className="flex items-center gap-1 px-3 py-1 bg-amber-100/80 rounded-full">
-                                <Crown className="w-3 h-3 text-amber-600" />
-                                <span className="text-xs font-semibold text-amber-700">VIP Access</span>
+                            <div className="flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full shadow-sm border border-white/30">
+                                <Crown className="w-3 h-3 text-white/90" />
+                                <span className="text-xs font-semibold text-white/95">VIP Access</span>
                             </div>
                         )}
                     </div>
                 </main>
             </div>
-            <LastUpdate />
+            <LastUpdate className={`${isPremium ? 'text-white/80' : 'text-gray-500'}`} />
         </section>
     )
 }

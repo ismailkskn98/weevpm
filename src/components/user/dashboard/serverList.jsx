@@ -88,13 +88,13 @@ export default function ServerList() {
     const getStatusColor = (status) => {
         switch (status) {
             case 'online':
-                return 'text-green-600 bg-green-100 px-2 py-1 rounded-full text-xs'
+                return 'text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50'
             case 'offline':
-                return 'text-red-600 bg-red-100 px-2 py-1 rounded-full text-xs'
+                return 'text-red-700 bg-red-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-red-200/50'
             case 'maintenance':
-                return 'text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full text-xs'
+                return 'text-amber-700 bg-amber-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-amber-200/50'
             default:
-                return 'text-gray-600 bg-gray-100 px-2 py-1 rounded-full text-xs'
+                return 'text-gray-700 bg-gray-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-200/50'
         }
     }
 
@@ -121,12 +121,12 @@ export default function ServerList() {
         <main className="w-full flex flex-col items-start gap-6 mt-16">
             <section className='w-full flex items-end justify-between gap-2'>
                 <article className='flex flex-col gap-2'>
-                    <h2 className="text-xl font-semibold text-black/80">Server Listesi</h2>
-                    <p className='text-sm text-gray-500'>Server listesi, tüm serverlerinizi görüntülemek için kullanılır.</p>
+                    <h2 className="text-xl font-semibold text-gray-800">Server Listesi</h2>
+                    <p className='text-sm text-gray-600'>Server listesi, tüm serverlerinizi görüntülemek için kullanılır.</p>
                 </article>
                 <article className='relative'>
-                    <input type="text" className='py-2.5 pl-3 border border-deep-teal/20 outline-none rounded-lg placeholder:text-xs text-sm text-black/60 pr-7' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
-                    <CiSearch className='absolute right-2 top-1/2 -translate-y-1/2 text-deep-teal/50' />
+                    <input type="text" className='py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
+                    <CiSearch className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4' />
                 </article>
             </section>
             <section className='w-full flex flex-col items-start gap-4'>
@@ -137,48 +137,48 @@ export default function ServerList() {
                         headers={['Server Adı', 'Lokasyon', 'Durum', 'Ping']}
                     />
                 ) : (
-                    <div className="w-full border border-deep-teal/20 rounded-lg">
+                    <div className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
                         <Table>
                             <TableHeader>
-                                <TableRow>
-                                    <TableHead className="text-black/80">Server Adı</TableHead>
-                                    <TableHead className="text-black/80">Lokasyon</TableHead>
-                                    <TableHead className="text-black/80">
+                                <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
+                                    <TableHead className="text-gray-700 font-semibold">Server Adı</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold">Lokasyon</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold">
                                         <div className='flex items-center gap-1'>
                                             <span>Durum</span>
-                                            <FaLongArrowAltUp className='text-black/60 text-xs' />
+                                            <FaLongArrowAltUp className='text-gray-500 text-xs' />
                                         </div>
                                     </TableHead>
-                                    <TableHead className="text-black/80">
+                                    <TableHead className="text-gray-700 font-semibold">
                                         <div className='flex items-center gap-1'>
                                             <span>Ping</span>
-                                            <FaLongArrowAltUp className='text-black/60 text-xs' />
+                                            <FaLongArrowAltUp className='text-gray-500 text-xs' />
                                         </div>
                                     </TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
-                                    <TableRow key={server.id}>
-                                        <TableCell className="font-medium text-black/70 text-sm">
+                                    <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
                                             {server.name}
                                         </TableCell>
-                                        <TableCell className="font-medium text-black/70 text-sm">{server.location}</TableCell>
-                                        <TableCell className="font-medium text-black/70 text-sm">
+                                        <TableCell className="font-medium text-gray-600 text-sm py-4">{server.location}</TableCell>
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
                                             <span className={getStatusColor(server.status)}>
                                                 {server.status}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="font-medium text-black/70 text-sm">
-                                            <article className='flex items-end gap-1'>
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                            <article className='flex items-end gap-2'>
                                                 <div className='flex items-end justify-center gap-[1px] w-auto h-5'>
-                                                    <span className='inline-block w-[3px] h-[20%] flex-1 bg-green-600'></span>
-                                                    <span className='inline-block w-[3px] h-[40%] flex-1 bg-green-400'></span>
-                                                    <span className='inline-block w-[3px] h-[60%] flex-1 bg-green-300'></span>
-                                                    <span className='inline-block w-[3px] h-[80%] flex-1 bg-green-200'></span>
-                                                    <span className='inline-block w-[3px] h-full flex-1 bg-green-100'></span>
+                                                    <span className='inline-block w-[3px] h-[20%] flex-1 bg-emerald-600 rounded-t-sm'></span>
+                                                    <span className='inline-block w-[3px] h-[40%] flex-1 bg-emerald-500 rounded-t-sm'></span>
+                                                    <span className='inline-block w-[3px] h-[60%] flex-1 bg-emerald-400 rounded-t-sm'></span>
+                                                    <span className='inline-block w-[3px] h-[80%] flex-1 bg-emerald-300 rounded-t-sm'></span>
+                                                    <span className='inline-block w-[3px] h-full flex-1 bg-emerald-200 rounded-t-sm'></span>
                                                 </div>
-                                                <span className='text-xss'>{server.ping}</span>
+                                                <span className='text-xs font-medium text-gray-600'>{server.ping}</span>
                                             </article>
                                         </TableCell>
                                     </TableRow>

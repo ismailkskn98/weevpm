@@ -5,6 +5,7 @@ import { UserPlus, ArrowUpRight, Copy } from 'lucide-react';
 import LastUpdate from '../lastUpdate';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
+import { NumberSkeleton } from './totalRevenueCard';
 
 export default function ReferenceRevenueCard() {
     const { userData, loading } = useAuth();
@@ -13,23 +14,31 @@ export default function ReferenceRevenueCard() {
         {
             title: 'Toplam Referans Sayısı',
             value: userData?.user?.reference_count || 0,
-            icon: <UserPlus className="w-4 h-4 text-emerald-600" />,
+            icon: <UserPlus className="w-4 h-4 text-white/80" />,
         },
         {
             title: 'Toplam Referans Geliri',
             value: Number(userData?.financial_status?.[0]?.total_token_income) * 1 || 0,
-            icon: <ArrowUpRight className="w-4 h-4 text-emerald-600" />,
+            icon: <ArrowUpRight className="w-4 h-4 text-white/80" />,
         },
     ]
 
     return (
-        <section className="w-full max-w-sm h-full flex flex-col justify-between gap-5 border border-gray-200 shadow-sm bg-mint/20 rounded-xl px-6 py-4">
-            <div className='w-full h-full'>
+        <section className="w-full max-w-sm h-full flex flex-col justify-between gap-5 border border-teal-300/50 shadow-md shadow-aqua-green/40 bg-gradient-to-br from-aqua-green to-teal rounded-xl px-6 py-4 relative overflow-hidden">
+            <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
+            <div className="absolute top-8 right-12 w-2 h-2 bg-white/30 rounded-full"></div>
+            <div className="absolute top-12 right-4 w-1.5 h-1.5 bg-white/25 rounded-full"></div>
+            <div className="absolute top-6 left-12 w-2.5 h-2.5 bg-white/15 rounded-full"></div>
+            <div className="absolute bottom-6 left-8 w-4 h-4 bg-white/15 rounded-full"></div>
+            <div className="absolute bottom-12 left-4 w-2 h-2 bg-white/25 rounded-full"></div>
+            <div className="absolute bottom-8 right-10 w-2.5 h-2.5 bg-white/20 rounded-full"></div>
+
+            <div className='w-full h-full relative z-10'>
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-xl font-bold text-black/75">Referans Bilgileriniz</h2>
-                            <p className="text-xs 3xl:text-sm text-gray-500 font-medium">Referans gelirinizin özetini görüntüleyebilirsiniz.</p>
+                            <h2 className="text-xl font-semibold text-white">Referans Bilgileriniz</h2>
+                            <p className="text-xs text-white/80">Referans özetini görüntüleyebilirsiniz</p>
                         </div>
                     </div>
                 </article>
@@ -37,10 +46,10 @@ export default function ReferenceRevenueCard() {
                     {totalItems.map((item, index) => (
                         <article className="group w-full" key={index}>
                             <div className="flex items-center justify-between">
-                                <span className="text-sm font-bold text-black/70">{item.title}</span>
+                                <span className="text-sm font-semibold text-white/90">{item.title}</span>
                                 <div className="flex items-center gap-1">
-                                    <span className={`text-2xl font-bold text-emerald-600`}>
-                                        {loading ? <div className="animate-pulse bg-deep-teal/10 w-11 h-[33px] rounded"></div> : item.value}
+                                    <span className="tabular-nums font-mono text-2xl font-bold text-white/95">
+                                        {loading ? <NumberSkeleton /> : item.value}
                                     </span>
                                     {item.icon}
                                 </div>
@@ -49,20 +58,20 @@ export default function ReferenceRevenueCard() {
                     ))}
                     <article className="group w-full">
                         <div className="flex items-center justify-between gap-8">
-                            <span className="text-sm font-bold text-black/70">Referans Kodunuz</span>
+                            <span className="text-sm font-semibold text-white/90">Referans Kodunuz</span>
                             <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success('Referans kodunuz kopyalandı')}>
                                 <div className="flex items-center gap-1.5 cursor-pointer group">
-                                    <span className={`text-xl 3xl:text-2xl font-bold text-soft-turquoise group-hover:text-deep-teal transition-all duration-150`}>
-                                        {loading ? <div className="animate-pulse bg-deep-teal/10 w-11 h-[33px] rounded"></div> : userData?.user.reference_code}
+                                    <span className="tabular-nums font-mono text-xl 3xl:text-2xl font-bold text-white/95 group-hover:text-white transition-all duration-150">
+                                        {loading ? <NumberSkeleton /> : userData?.user.reference_code}
                                     </span>
-                                    <Copy className="w-4 h-4 text-soft-turquoise group-hover:text-deep-teal transition-all duration-150" />
+                                    <Copy className="w-4 h-4 text-white/80 group-hover:text-white transition-all duration-150" />
                                 </div>
                             </CopyToClipboard>
                         </div>
                     </article>
                 </main>
             </div>
-            <LastUpdate />
+            <LastUpdate className="text-white/80" />
         </section>
     )
 }

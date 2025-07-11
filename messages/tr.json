@@ -348,5 +348,34 @@
         "error": "Şifre sıfırlama sırasında bir hata oluştu. Lütfen tekrar deneyin"
       }
     }
+  },
+  "User": {
+    "passwordOperations": {
+      "page": {
+        "title": "Şifre İşlemleri",
+        "description": "Bu bölümde, şifrenizi değiştirebilirsiniz."
+      },
+      "form": {
+        "title": "Şifre Değiştir",
+        "description": "Hesabınızın güvenliği için güçlü bir şifre seçin.",
+        "currentPasswordLabel": "Mevcut Şifre",
+        "currentPasswordPlaceholder": "Mevcut şifrenizi girin",
+        "passwordLabel": "Yeni Şifre",
+        "passwordPlaceholder": "Yeni şifrenizi girin",
+        "confirmPasswordLabel": "Şifre Tekrar",
+        "confirmPasswordPlaceholder": "Yeni şifrenizi tekrar girin",
+        "submitButton": "Şifreyi Değiştir",
+        "submittingButton": "Değiştiriliyor..."
+      },
+      "validation": {
+        "currentPasswordMinLength": "Mevcut şifre en az 6 karakter olmalıdır",
+        "passwordMinLength": "Şifre en az 6 karakter olmalıdır",
+        "passwordMismatch": "Şifreler eşleşmiyor"
+      },
+      "messages": {
+        "success": "Şifreniz başarıyla değiştirildi",
+        "error": "Şifre değiştirme sırasında bir hata oluştu. Lütfen tekrar deneyin"
+      }
+    }
   }
 }

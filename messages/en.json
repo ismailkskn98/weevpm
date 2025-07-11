@@ -350,5 +350,34 @@
         "error": "An error occurred during password reset. Please try again"
       }
     }
+  },
+  "User": {
+    "passwordOperations": {
+      "page": {
+        "title": "Password Operations",
+        "description": "In this section, you can change your password."
+      },
+      "form": {
+        "title": "Change Password",
+        "description": "Choose a strong password for your account security.",
+        "currentPasswordLabel": "Current Password",
+        "currentPasswordPlaceholder": "Enter your current password",
+        "passwordLabel": "New Password",
+        "passwordPlaceholder": "Enter your new password",
+        "confirmPasswordLabel": "Confirm Password",
+        "confirmPasswordPlaceholder": "Confirm your new password",
+        "submitButton": "Change Password",
+        "submittingButton": "Changing..."
+      },
+      "validation": {
+        "currentPasswordMinLength": "Current password must be at least 6 characters",
+        "passwordMinLength": "Password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "messages": {
+        "success": "Your password has been changed successfully",
+        "error": "An error occurred while changing your password. Please try again"
+      }
+    }
   }
 }

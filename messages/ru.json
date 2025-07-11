@@ -348,5 +348,34 @@
         "error": "Произошла ошибка при сбросе пароля. Попробуйте еще раз"
       }
     }
+  },
+  "User": {
+    "passwordOperations": {
+      "page": {
+        "title": "Операции с паролем",
+        "description": "В этом разделе вы можете изменить свой пароль."
+      },
+      "form": {
+        "title": "Изменить пароль",
+        "description": "Выберите надежный пароль для безопасности вашей учетной записи.",
+        "currentPasswordLabel": "Текущий пароль",
+        "currentPasswordPlaceholder": "Введите текущий пароль",
+        "passwordLabel": "Новый пароль",
+        "passwordPlaceholder": "Введите новый пароль",
+        "confirmPasswordLabel": "Повторите пароль",
+        "confirmPasswordPlaceholder": "Повторите новый пароль",
+        "submitButton": "Изменить пароль",
+        "submittingButton": "Изменение..."
+      },
+      "validation": {
+        "currentPasswordMinLength": "Текущий пароль должен содержать не менее 6 символов",
+        "passwordMinLength": "Пароль должен содержать не менее 6 символов",
+        "passwordMismatch": "Пароли не совпадают"
+      },
+      "messages": {
+        "success": "Ваш пароль был успешно изменен",
+        "error": "Произошла ошибка при изменении пароля. Попробуйте еще раз"
+      }
+    }
   }
 }
