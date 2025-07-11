@@ -57,7 +57,7 @@ export default function Packages() {
                 <section className='w-full flex items-start gap-12'>
                     <FreePackage freePackages={freePackages} />
                     {premiumPackages.map((packageItem) => (
-                        <TabsContent key={packageItem.id} value={packageItem.id.toString()} className="w-full max-w-sm h-full flex flex-col justify-between gap-5 relative shadow-md hover:shadow-lg transition-all duration-300 bg-orange-50 rounded-2xl" asChild>
+                        <TabsContent key={packageItem.id} value={packageItem.id.toString()} className="w-full max-w-sm h-full flex flex-col justify-between gap-0 relative shadow-md hover:shadow-lg transition-all duration-300 bg-orange-50 rounded-2xl" asChild>
                             <article className='w-full h-full'>
                                 <PremiumPackageHeader packageItem={packageItem} selectedCurrency={selectedCurrency} getPrice={getPrice} />
                                 <PremiumPackageBody packageItem={packageItem} selectedCurrency={selectedCurrency} handlePurchase={handlePurchase}>

@@ -7,7 +7,7 @@ export default function PremiumPackageBody({ packageItem, selectedCurrency, hand
     const { userData, loading } = useAuth();
     const locale = useLocale();
     return (
-        <figure className="relative w-full flex flex-col items-center justify-between gap-4 py-6 px-6">
+        <figure className="relative w-full flex flex-col items-center justify-between gap-4 pb-6 pt-3 3xl:py-6 px-6">
             <ul className="space-y-3 mb-8 w-full">
                 {loading || !packageItem ? (
                     <>
@@ -43,7 +43,7 @@ export default function PremiumPackageBody({ packageItem, selectedCurrency, hand
                     ) : (
                         <button
                             onClick={() => handlePurchase(packageItem.id, (selectedCurrency == 'WCS' ? packageItem.token_price : packageItem.usdt_price), packageItem.interval)}
-                            className="w-2/3 uppercase bg-orange-400 text-white font-medium py-3.5 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-lg cursor-pointer hover:bg-orange-500"
+                            className="w-1/2 3xl:w-2/3 uppercase bg-orange-400 text-white font-medium py-3 3xl:py-3.5 px-6 rounded-3xl text-sm transition-all duration-200 shadow-sm hover:shadow-lg cursor-pointer hover:bg-orange-500"
                         >
                             satın al
                         </button>

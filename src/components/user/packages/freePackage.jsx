@@ -8,7 +8,7 @@ export default function FreePackage({ freePackages }) {
     const { userData, loading } = useAuth();
     const locale = useLocale();
     return (
-        <article className="relative w-full max-w-sm h-full flex flex-col justify-between gap-5 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-slate-100 rounded-2xl">
+        <article className="relative w-full max-w-sm h-full flex flex-col justify-between overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-slate-100 rounded-2xl">
             <div className='relative flex flex-col items-start w-full h-full'>
                 <figure className="relative w-full bg-gradient-to-br from-slate-500 to-slate-700 px-6 pt-10 pb-12 text-white">
                     <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
@@ -35,13 +35,13 @@ export default function FreePackage({ freePackages }) {
                             </div>
                             <Gift className="w-8 h-8 text-white/80" />
                         </div>
-                        <div className="text-4xl font-bold mt-6">Ücretsiz</div>
+                        <div className="text-3xl 3xl:text-4xl font-bold mt-6">Ücretsiz</div>
                     </div>
 
-                    <div className="absolute -bottom-1 left-0 right-0 h-8 bg-slate-100 rounded-t-[2rem]"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-slate-100 rounded-t-[2rem]"></div>
                 </figure>
 
-                <figure className="w-full flex-1 relative flex flex-col items-center justify-between gap-4 py-6 px-6">
+                <figure className="w-full flex-1 relative flex flex-col items-center justify-between gap-4 pb-6 pt-3 3xl:py-6 px-6">
                     <ul className="space-y-3 mb-4 w-full">
                         {loading || freePackages.length === 0 ? (
                             <>
