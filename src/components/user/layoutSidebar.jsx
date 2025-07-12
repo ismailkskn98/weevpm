@@ -62,7 +62,7 @@ export default function LayoutSidebar() {
             ),
         },
         {
-            label: "Çekim",
+            label: "Çekim İşlemleri",
             href: "/user/withdrawal",
             icon: (
                 <FaMoneyBillWave className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/withdrawal" ? "text-white" : "text-white/70"}`} />

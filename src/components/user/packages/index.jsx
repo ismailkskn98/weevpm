@@ -34,13 +34,13 @@ export default function Packages() {
         if (selectedCurrency === 'USD') {
             return `${packageData?.usdt_price || 0}$`;
         } else {
-            return `${packageData?.token_price || 0} WCS`;
+            return `${packageData?.token_price || 0} WCP`;
         }
     };
 
     const handlePurchase = (packageId, price, interval) => {
-        if (selectedCurrency === 'WCS') {
-            router.push(`/user/package-details?package_id=${packageId}&user_id=${userData.user.id}&currency=WCS&price=${price}&interval=${interval}`);
+        if (selectedCurrency === 'WCP') {
+            router.push(`/user/package-details?package_id=${packageId}&user_id=${userData.user.id}&currency=WCP&price=${price}&interval=${interval}`);
         } else {
             // iyzico
         }

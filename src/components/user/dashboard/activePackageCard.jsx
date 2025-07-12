@@ -18,8 +18,8 @@ export default function ActivePackageCard() {
         free: {
             title: 'Ücretsiz Paket',
             description: 'Temel özellikler',
-            bgColor: 'bg-slate-50/80',
-            borderColor: 'border-slate-200',
+            bgColor: 'bg-gradient-to-br from-slate-50 to-slate-50',
+            borderColor: 'border border-slate-200',
             headerIcon: <Gift className="w-8 h-8 text-slate-500" />,
             mainIcon: <Package className="w-12 h-12 text-slate-600" />,
             textColor: 'text-slate-700',
@@ -40,7 +40,7 @@ export default function ActivePackageCard() {
     const config = isPremium ? packageConfig.premium : packageConfig.free;
 
     return (
-        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} ${isPremium ? 'shadow-md shadow-orange-200/40' : 'shadow-sm'} ${config.bgColor} rounded-xl px-6 py-4 relative overflow-hidden`}>
+        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} ${isPremium ? 'shadow-md shadow-orange-200/40' : 'shadow-md shadow-slate-200/40'} ${config.bgColor} rounded-xl px-6 py-4 relative overflow-hidden`}>
             {isPremium && (
                 <>
                     <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
@@ -91,7 +91,7 @@ export default function ActivePackageCard() {
                     </div>
                 </main>
             </div>
-            <LastUpdate className={`${isPremium ? 'text-white/80' : 'text-gray-500'}`} />
+            <LastUpdate className={`${isPremium ? 'text-white/80' : 'text-gray-500 border-slate-200'}`} />
         </section>
     )
 }

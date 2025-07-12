@@ -71,32 +71,35 @@ export default function ReferenceRevenues() {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {currentReferences.map((reference, index) => (
-                                    <TableRow key={index} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
-                                            {index + 1}
-                                        </TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
-                                            {reference.user_name}
-                                        </TableCell>
-                                        <TableCell className="font-medium text-gray-600 text-sm py-4">
-                                            {reference.email}
-                                        </TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
-                                            <span className="text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50">
-                                                {reference.token_amount}
-                                            </span>
-                                        </TableCell>
-                                        <TableCell className="font-medium text-gray-600 text-sm py-4">
-                                            {dateFormat(reference.referenced_at, locale)}
-                                        </TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
-                                            <span className="text-blue-700 bg-blue-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-blue-200/50">
-                                                Level {reference.reference_level}
-                                            </span>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                {currentReferences.map((reference, index) => {
+                                    console.log(reference);
+                                    return (
+                                        <TableRow key={index} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
+                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                                {index + 1}
+                                            </TableCell>
+                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                                {reference.user_name}
+                                            </TableCell>
+                                            <TableCell className="font-medium text-gray-600 text-sm py-4">
+                                                {reference.email}
+                                            </TableCell>
+                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                                <span className="text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50">
+                                                    {reference.token_amount * 1} WCP
+                                                </span>
+                                            </TableCell>
+                                            <TableCell className="font-medium text-gray-600 text-sm py-4">
+                                                {dateFormat(reference.referenced_at, locale)}
+                                            </TableCell>
+                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                                <span className="text-blue-700 bg-blue-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-blue-200/50">
+                                                    Level {reference.reference_level}
+                                                </span>
+                                            </TableCell>
+                                        </TableRow>
+                                    )
+                                })}
                             </TableBody>
                         </Table>
                     </div>

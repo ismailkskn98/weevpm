@@ -8,7 +8,7 @@ import PasswordSchema from './passwordSchema';
 import { useTranslations } from 'next-intl';
 import { ClipLoader } from 'react-spinners';
 import { useAuth } from '@/context/AuthContext';
-import CustomInput from './customInput';
+import CustomInput from '../customInput';
 
 export default function PasswordOperations() {
     const t = useTranslations('User.passwordOperations.form');

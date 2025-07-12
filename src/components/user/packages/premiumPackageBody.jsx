@@ -42,7 +42,7 @@ export default function PremiumPackageBody({ packageItem, selectedCurrency, hand
                         </div>
                     ) : (
                         <button
-                            onClick={() => handlePurchase(packageItem.id, (selectedCurrency == 'WCS' ? packageItem.token_price : packageItem.usdt_price), packageItem.interval)}
+                            onClick={() => handlePurchase(packageItem.id, (selectedCurrency == 'WCP' ? packageItem.token_price : packageItem.usdt_price), packageItem.interval)}
                             className="w-1/2 3xl:w-2/3 uppercase bg-orange-400 text-white font-medium py-3 3xl:py-3.5 px-6 rounded-3xl text-sm transition-all duration-200 shadow-sm hover:shadow-lg cursor-pointer hover:bg-orange-500"
                         >
                             satın al

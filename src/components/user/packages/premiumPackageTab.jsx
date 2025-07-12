@@ -33,21 +33,21 @@ export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrenc
                                 <span className="relative z-10">USD</span>
                             </button>
                             <button
-                                onClick={() => setSelectedCurrency('WCS')}
+                                onClick={() => setSelectedCurrency('WCP')}
                                 disabled={userData.user.active_package == 'PREMIUM'}
-                                className={`${userData.user.active_package == 'PREMIUM' ? 'cursor-not-allowed' : 'cursor-pointer'} px-6 py-2 rounded-xl text-sm font-medium transition-all duration-200 relative z-10 ${selectedCurrency === 'WCS'
+                                className={`${userData.user.active_package == 'PREMIUM' ? 'cursor-not-allowed' : 'cursor-pointer'} px-6 py-2 rounded-xl text-sm font-medium transition-all duration-200 relative z-10 ${selectedCurrency === 'WCP'
                                     ? `text-white ${userData.user.active_package == 'PREMIUM' ? 'text-gray-500' : ''}`
                                     : 'text-gray-500 hover:text-gray-700'
                                     }`}
                             >
-                                {selectedCurrency === 'WCS' && (
+                                {selectedCurrency === 'WCP' && (
                                     <motion.div
                                         layoutId="activeCurrency"
                                         className="absolute inset-0 bg-orange-400 rounded-xl shadow-sm"
                                         transition={{ duration: 0.2, ease: "easeInOut" }}
                                     />
                                 )}
-                                <span className="relative z-10">WCS</span>
+                                <span className="relative z-10">WCP</span>
                             </button>
                         </>
                     )

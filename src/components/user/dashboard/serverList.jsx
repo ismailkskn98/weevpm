@@ -26,56 +26,56 @@ export default function ServerList() {
                     id: "1",
                     name: "Turkey Istanbul",
                     status: "online",
-                    location: "Istanbul, TR",
+                    location: "Free",
                     ping: "25ms"
                 },
                 {
                     id: "2",
                     name: "Germany Frankfurt",
                     status: "online",
-                    location: "Frankfurt, DE",
+                    location: "Paid",
                     ping: "45ms"
                 },
                 {
                     id: "3",
                     name: "USA New York",
                     status: "offline",
-                    location: "New York, US",
+                    location: "Paid",
                     ping: "120ms"
                 },
                 {
                     id: "4",
                     name: "UK London",
                     status: "online",
-                    location: "London, UK",
+                    location: "Paid",
                     ping: "65ms"
                 },
                 {
                     id: "5",
                     name: "France Paris",
                     status: "maintenance",
-                    location: "Paris, FR",
+                    location: "Free",
                     ping: "55ms"
                 },
                 {
                     id: "6",
                     name: "Netherlands Amsterdam",
                     status: "online",
-                    location: "Amsterdam, NL",
+                    location: "Free",
                     ping: "40ms"
                 },
                 {
                     id: "7",
                     name: "Singapore",
                     status: "online",
-                    location: "Singapore, SG",
+                    location: "Free",
                     ping: "200ms"
                 },
                 {
                     id: "8",
                     name: "Japan Tokyo",
                     status: "online",
-                    location: "Tokyo, JP",
+                    location: "Paid",
                     ping: "180ms"
                 }
             ]
@@ -142,7 +142,7 @@ export default function ServerList() {
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
                                     <TableHead className="text-gray-700 font-semibold">Server Adı</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Lokasyon</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold">Paket Türü</TableHead>
                                     <TableHead className="text-gray-700 font-semibold">
                                         <div className='flex items-center gap-1'>
                                             <span>Durum</span>

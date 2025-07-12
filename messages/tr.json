@@ -376,6 +376,60 @@
         "success": "Şifreniz başarıyla değiştirildi",
         "error": "Şifre değiştirme sırasında bir hata oluştu. Lütfen tekrar deneyin"
       }
+    },
+    "withdrawal": {
+      "title": "Çekimlerim",
+      "searchPlaceholder": "Kullanıcı adı veya email ara",
+      "table": {
+        "id": "ID",
+        "amount": "Miktar",
+        "currency": "Para Birimi",
+        "hash": "Hash",
+        "walletAddress": "Cüzdan Adresi",
+        "status": "Durum",
+        "date": "Tarih"
+      },
+      "status": {
+        "PENDING": "Beklemede",
+        "APPROVED": "Onaylandı",
+        "REJECTED": "Reddedildi"
+      },
+      "messages": {
+        "copied": "Kopyalandı!",
+        "fetchError": "Çekimler alınamadı",
+        "success": "Çekim talebi başarıyla oluşturuldu",
+        "createError": "Çekim talebi oluşturulamadı",
+        "submitError": "Çekim işlemi sırasında bir hata oluştu"
+      },
+      "form": {
+        "title": "Çekim İşlemleri",
+        "description": "Gelir türünüzü seçin ve çekim miktarını belirleyin.",
+        "revenueTypeLabel": "Gelir Türü",
+        "revenueTypePlaceholder": "Gelir türünü seçin",
+        "amountLabel": "Miktar",
+        "amountPlaceholder": "Çekim miktarını girin",
+        "walletAddressLabel": "Cüzdan Adresi",
+        "walletAddressPlaceholder": "Cüzdan adresinizi girin",
+        "minButton": "Min",
+        "maxButton": "Max",
+        "submitButton": "Çekim Yap",
+        "submittingButton": "Çekim Yapılıyor...",
+        "revenueTypes": {
+          "referral": "Referans Geliri",
+          "stake": "Stake Geliri"
+        }
+      },
+      "validation": {
+        "revenueTypeRequired": "Gelir türü seçimi zorunludur",
+        "amountRequired": "Miktar alanı zorunludur",
+        "amountPositive": "Miktar pozitif bir sayı olmalıdır",
+        "amountMax": "Maksimum çekim miktarı: {max}",
+        "walletAddressRequired": "Cüzdan adresi zorunludur",
+        "walletAddressMinLength": "Cüzdan adresi en az 8 karakter olmalıdır"
+      }
+    },
+    "common": {
+      "lastUpdateDate": "Son güncelleme tarihi"
     }
   }
 }

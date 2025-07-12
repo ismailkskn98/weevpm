@@ -71,7 +71,7 @@ export default function ReferenceRevenueCard() {
                     </article>
                 </main>
             </div>
-            <LastUpdate className="text-white/80" />
+            <LastUpdate className="text-white/80 border-slate-200/50" />
         </section>
     )
 }
