@@ -1,6 +1,5 @@
 'use client';
 import coreAxios from '@/helper/coreAxios';
-import { useLocale } from 'next-intl';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'sonner';
 import { useAuth } from '@/context/AuthContext';
