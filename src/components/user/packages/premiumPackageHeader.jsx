@@ -3,15 +3,19 @@ import { useAuth } from '@/context/AuthContext';
 import { Crown } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
-export default function PremiumPackageHeader({ packageItem, selectedCurrency, getPrice }) {
+export default function PremiumPackageHeader({ packageItem, selectedCurrency, getPrice, getOriginalPrice }) {
     const { userData, loading } = useAuth();
     const locale = useLocale();
+
+    // Yıllık paket için orijinal fiyat hesapla
+    const originalPrice = getOriginalPrice(packageItem);
+    const currentPrice = getPrice(packageItem);
 
     return (
         <figure className="relative bg-gradient-to-br from-amber-500 to-orange-600 px-6 pt-10 pb-12 text-white rounded-t-2xl">
             {packageItem.interval === 'YEARLY' && (
                 <div className='absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-fit h-fit px-3 py-1.5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-lg'>
-                    <span className='text-xs font-semibold tracking-wide'>{JSON.parse(packageItem.slogan)[locale]}</span>
+                    <span className='text-xs font-semibold tracking-wide'>16% İndirim</span>
                 </div>
             )}
             <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
@@ -40,15 +44,37 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                     </div>
                     <Crown className="w-8 h-8 text-white/80" />
                 </div>
-                <div
-                    className="text-3xl 3xl:text-4xl font-bold mt-6" key={`${packageItem.id}-${selectedCurrency}`}
-                >
+
+                {/* Fiyat Gösterimi */}
+                <div className="mt-6">
                     {loading || !packageItem ? (
                         <div className="animate-pulse bg-white/20 w-20 h-10 rounded"></div>
                     ) : (
-                        <span className="tabular-nums">
-                            {getPrice(packageItem)}
-                        </span>
+                        <div className="flex flex-col items-start">
+                            {/* Yıllık paket için orijinal fiyat (üstü çizili) */}
+                            {packageItem.interval === 'YEARLY' && originalPrice && (
+                                <div className="text-lg font-medium text-white/70 mb-1">
+                                    <span className="line-through tabular-nums">
+                                        {originalPrice}
+                                    </span>
+                                    <span className="text-sm ml-2">
+                                        (Normal fiyat)
+                                    </span>
+                                </div>
+                            )}
+
+                            {/* Güncel fiyat */}
+                            <div className="text-3xl 3xl:text-4xl font-bold tabular-nums" key={`${packageItem.id}-${selectedCurrency}`}>
+                                {currentPrice}
+                            </div>
+
+                            {/* Yıllık paket için indirim vurgusu */}
+                            {packageItem.interval === 'YEARLY' && originalPrice && (
+                                <div className="text-sm text-white/90 mt-1 font-medium">
+                                    ✨ 16% tasarruf edin!
+                                </div>
+                            )}
+                        </div>
                     )}
                 </div>
             </div>
