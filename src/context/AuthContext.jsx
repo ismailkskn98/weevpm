@@ -38,11 +38,12 @@ export function AuthProvider({ children }) {
             const userData = await coreAxios.POST('/user-data', {}, 'Kullanıcı verileri alınamadı', logout);
             if (userData.status) {
                 setUserData(userData);
-
                 const cookies = {
                     WEEVPN_TOKEN: userData.token,
                     username: userData.user.user_name,
                     email: userData.user.email,
+                    wallet_address: userData.user.wallet_address,
+                    user_id: userData.user.id,
                     country: userData.user.country,
                     reference_code: userData.user.reference_code,
                     reference_count: userData.user.reference_count,

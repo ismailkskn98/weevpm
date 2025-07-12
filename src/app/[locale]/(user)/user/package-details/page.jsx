@@ -1,5 +1,8 @@
 import React from 'react'
 import { cookies } from 'next/headers';
+import { redirect } from '@/i18n/navigation';
+import HeaderTitle from '@/components/user/headerTitle';
+import PackagesDetails from '@/components/user/packagesDetails';
 
 const fetchPackage = async (package_id, token, locale) => {
     try {
@@ -20,8 +23,11 @@ const fetchPackage = async (package_id, token, locale) => {
         }
 
         const data = await response.json();
-        console.log("data", data);
-        return data;
+
+        if (data.status == false) {
+            redirect("/user/packages");
+        }
+        return data.data[0];
     } catch (error) {
         console.error('Paket bilgileri alınırken hata oluştu:', error);
         return null;
@@ -29,37 +35,18 @@ const fetchPackage = async (package_id, token, locale) => {
 }
 
 export default async function page({ searchParams }) {
-    try {
-        const { user_id, package_id, currency } = await searchParams;
-        const cookieStore = await cookies();
-        const locale = cookieStore.get('NEXT_LOCALE')?.value;
-        const token = cookieStore.get('WEEVPN_TOKEN')?.value;
 
-        const packageData = await fetchPackage(package_id, token, locale);
+    const { package_id } = await searchParams;
+    const cookieStore = await cookies();
+    const locale = cookieStore.get('NEXT_LOCALE')?.value;
+    const token = cookieStore.get('WEEVPN_TOKEN')?.value;
+    const walletAddress = cookieStore.get('wallet_address')?.value;
+    const packageData = await fetchPackage(package_id, token, locale);
 
-        if (!packageData) {
-            return (
-                <div>
-                    <h1>Hata: Paket bilgileri alınamadı</h1>
-                    <p>Paket bilgileri yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>
-                </div>
-            );
-        }
-        return (
-            <div>
-                <h1>Paket Detayları</h1>
-                <h2>Kullanıcı ID: {user_id}</h2>
-                <h2>Paket ID: {package_id}</h2>
-                <h2>Para Birimi: {currency}</h2>
-            </div>
-        );
-    } catch (error) {
-        console.error('Sayfa yüklenirken hata oluştu:', error);
-        return (
-            <div>
-                <h1>Bir hata oluştu</h1>
-                <p>Sayfa yüklenirken beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya daha sonra tekrar deneyin.</p>
-            </div>
-        );
-    }
+    return (
+        <main className='w-full flex flex-col gap-8'>
+            <HeaderTitle title='Paket Detayları' description='Bu bölümde, paket detaylarını görüntüleyebilir ve ödeme yapabilirsiniz.' />
+            <PackagesDetails packageData={packageData} walletAddress={walletAddress} />
+        </main>
+    )
 }

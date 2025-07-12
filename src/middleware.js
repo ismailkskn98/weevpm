@@ -110,6 +110,16 @@ export default async function middleware(request) {
     }
   }
 
+  if (pathname.includes(`package-details`) && searchParams.get("user_id")) {
+    const cookieUserId = cookieStore.get("user_id")?.value;
+    if (cookieUserId !== searchParams.get("user_id")) {
+      const redirectResponse = NextResponse.redirect(new URL(`${locale}/auth/login`, originUrl));
+      redirectResponse.cookies.delete("WEEVPN_TOKEN");
+      redirectResponse.cookies.delete("user");
+      return redirectResponse;
+    }
+  }
+
   return createMiddleware(routing)(request);
 }
 

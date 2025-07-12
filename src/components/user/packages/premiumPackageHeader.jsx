@@ -7,7 +7,6 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
     const { userData, loading } = useAuth();
     const locale = useLocale();
 
-    console.log("packageItem", packageItem);
     return (
         <figure className="relative bg-gradient-to-br from-amber-500 to-orange-600 px-6 pt-10 pb-12 text-white rounded-t-2xl">
             {packageItem.interval === 'YEARLY' && (

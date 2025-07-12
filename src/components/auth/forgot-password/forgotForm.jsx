@@ -45,7 +45,7 @@ export default function ForgotForm() {
             <button
                 type="submit"
                 disabled={!isValid || isSubmitting}
-                className={`bg-white text-black font-bold rounded-full px-3.5 py-3 w-full mt-8 transition-all duration-300 flex items-center justify-center gap-2
+                className={`bg-white text-black font-medium rounded-full px-3.5 py-3 w-full mt-8 transition-all duration-300 flex items-center justify-center gap-2
                     ${!isValid || isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/80 cursor-pointer'} `}
             >
                 {isSubmitting ? <ClipLoader size={20} color="#000" /> : t('submitButton')}

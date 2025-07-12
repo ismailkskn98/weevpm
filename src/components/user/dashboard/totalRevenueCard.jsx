@@ -5,11 +5,18 @@ import LastUpdate from '../lastUpdate'
 import Image from 'next/image'
 import { useAuth } from '@/context/AuthContext';
 
-export const NumberSkeleton = () => (
-    <div className="relative overflow-hidden bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 rounded-md w-16 h-8">
-        <div className="absolute top-0 -left-16 h-full w-48 animate-shimmer bg-gradient-to-r from-transparent via-white/80 to-transparent"></div>
-    </div>
-);
+export const NumberSkeleton = ({ variant = 'default' }) => {
+    const variants = {
+        default: 'bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200',
+        white: 'bg-gradient-to-r from-white/30 via-white/50 to-white/30',
+    };
+
+    return (
+        <div className={`relative overflow-hidden ${variants[variant]} rounded-md w-16 h-8`}>
+            <div className="absolute top-0 -left-16 h-full w-48 animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        </div>
+    );
+};
 
 export default function TotalRevenueCard() {
     const { userData, loading } = useAuth();
@@ -66,7 +73,7 @@ export default function TotalRevenueCard() {
                                 <span className="text-sm font-semibold text-white/90">{item.title}</span>
                                 <div className="flex items-center gap-1">
                                     <span className="tabular-nums font-mono text-2xl font-bold text-white/95">
-                                        {loading ? <NumberSkeleton /> : item.value}
+                                        {loading ? <NumberSkeleton variant="white" /> : item.value}
                                     </span>
                                     {item.icon}
                                 </div>

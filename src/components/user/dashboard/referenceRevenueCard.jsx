@@ -45,11 +45,11 @@ export default function ReferenceRevenueCard() {
                 <main className="w-full flex flex-col items-start gap-4">
                     {totalItems.map((item, index) => (
                         <article className="group w-full" key={index}>
-                            <div className="flex items-center justify-between">
+                            <div className="flex items-center justify-between gap-6">
                                 <span className="text-sm font-semibold text-white/90">{item.title}</span>
                                 <div className="flex items-center gap-1">
                                     <span className="tabular-nums font-mono text-2xl font-bold text-white/95">
-                                        {loading ? <NumberSkeleton /> : item.value}
+                                        {loading ? <NumberSkeleton variant="white" /> : item.value}
                                     </span>
                                     {item.icon}
                                 </div>
@@ -62,7 +62,7 @@ export default function ReferenceRevenueCard() {
                             <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success('Referans kodunuz kopyalandı')}>
                                 <div className="flex items-center gap-1.5 cursor-pointer group">
                                     <span className="tabular-nums font-mono text-xl 3xl:text-2xl font-bold text-white/95 group-hover:text-white transition-all duration-150">
-                                        {loading ? <NumberSkeleton /> : userData?.user.reference_code}
+                                        {loading ? <NumberSkeleton variant="white" /> : userData?.user.reference_code}
                                     </span>
                                     <Copy className="w-4 h-4 text-white/80 group-hover:text-white transition-all duration-150" />
                                 </div>
