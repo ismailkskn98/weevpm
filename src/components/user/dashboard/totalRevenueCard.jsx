@@ -59,10 +59,10 @@ export default function TotalRevenueCard() {
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-xl font-semibold text-black">Gelir Özeti</h2>
-                            <p className="text-xs text-black/80">Token durumunuz</p>
+                            <h2 className="text-lg xl:text-xl font-semibold text-black">Gelir Özeti</h2>
+                            <p className="text-xs xl:text-sm text-black/80">Token durumunuz</p>
                         </div>
-                        <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-8 2xl:w-9 h-8 2xl:h-9 object-contain object-center drop-shadow-sm" />
+                        <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-6 xl:w-8 2xl:w-9 h-6 xl:h-8 2xl:h-9 object-contain object-center drop-shadow-sm" />
                     </div>
                 </article>
 
@@ -70,9 +70,9 @@ export default function TotalRevenueCard() {
                     {totalItems.map((item, index) => (
                         <article className="group w-full" key={index}>
                             <div className="flex items-center justify-between">
-                                <span className="text-sm font-semibold text-black/90">{item.title}</span>
+                                <span className="text-xs xl:text-sm font-semibold text-black/90">{item.title}</span>
                                 <div className="flex items-center gap-1 text-black/95">
-                                    <span className="tabular-nums font-mono text-2xl font-bold text-black/95">
+                                    <span className="tabular-nums font-mono text-xl xl:text-2xl font-bold text-black/95">
                                         {loading ? <NumberSkeleton variant="white" /> : item.value}
                                     </span>
                                     {item.icon}

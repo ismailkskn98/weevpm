@@ -54,7 +54,7 @@ export default function Packages() {
             <Tabs defaultValue={"6"} onValueChange={setActiveTab} className="w-full">
                 <TabList premiumPackages={premiumPackages} activeTab={activeTab} />
 
-                <section className='w-full flex items-start gap-12'>
+                <section className='w-full flex flex-col lg:flex-row items-start gap-12'>
                     <FreePackage freePackages={freePackages} />
                     {premiumPackages.map((packageItem) => (
                         <TabsContent key={packageItem.id} value={packageItem.id.toString()} className="w-full max-w-sm h-full flex flex-col justify-between gap-0 relative shadow-md hover:shadow-lg transition-all duration-300 bg-orange-50 rounded-2xl" asChild>

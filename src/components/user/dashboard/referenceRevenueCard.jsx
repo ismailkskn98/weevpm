@@ -37,18 +37,18 @@ export default function ReferenceRevenueCard() {
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-xl font-semibold text-white">Referans Bilgileriniz</h2>
-                            <p className="text-xs text-white/80">Referans özetini görüntüleyebilirsiniz</p>
+                            <h2 className="text-lg xl:text-xl font-semibold text-white">Referans Bilgileriniz</h2>
+                            <p className="text-xs xl:text-sm text-white/80">Referans özetini görüntüleyebilirsiniz</p>
                         </div>
                     </div>
                 </article>
-                <main className="w-full flex flex-col items-start gap-4">
+                <main className="w-full flex flex-col items-start gap-2 xl:gap-4">
                     {totalItems.map((item, index) => (
                         <article className="group w-full" key={index}>
                             <div className="flex items-center justify-between gap-6">
-                                <span className="text-sm font-semibold text-white/90">{item.title}</span>
+                                <span className="text-xs xl:text-sm font-semibold text-white/90">{item.title}</span>
                                 <div className="flex items-center gap-1">
-                                    <span className="tabular-nums font-mono text-2xl font-bold text-white/95">
+                                    <span className="tabular-nums font-mono text-xl xl:text-2xl font-bold text-white/95">
                                         {loading ? <NumberSkeleton variant="white" /> : item.value}
                                     </span>
                                     {item.icon}
@@ -58,13 +58,13 @@ export default function ReferenceRevenueCard() {
                     ))}
                     <article className="group w-full">
                         <div className="flex items-center justify-between gap-8">
-                            <span className="text-sm font-semibold text-white/90">Referans Kodunuz</span>
+                            <span className="text-xs xl:text-sm font-semibold text-white/90">Referans Kodunuz</span>
                             <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success('Referans kodunuz kopyalandı')}>
                                 <div className="flex items-center gap-1.5 cursor-pointer group">
-                                    <span className="tabular-nums font-mono text-xl 3xl:text-2xl font-bold text-white/95 group-hover:text-white transition-all duration-150">
+                                    <span className="tabular-nums font-mono text-lg xl:text-xl 2xl:text-2xl font-bold text-white/95 group-hover:text-white transition-all duration-150">
                                         {loading ? <NumberSkeleton variant="white" /> : userData?.user.reference_code}
                                     </span>
-                                    <Copy className="w-4 h-4 text-white/80 group-hover:text-white transition-all duration-150" />
+                                    <Copy className="w-3 xl:w-4 h-3 xl:h-4 text-white/80 group-hover:text-white transition-all duration-150" />
                                 </div>
                             </CopyToClipboard>
                         </div>

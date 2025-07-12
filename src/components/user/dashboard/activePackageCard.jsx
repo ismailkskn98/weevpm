@@ -65,27 +65,27 @@ export default function ActivePackageCard() {
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className={`text-xl font-semibold ${config.titleColor}`}>{config.title}</h2>
-                            <p className={`text-xs ${isPremium ? 'text-white/80' : 'text-gray-500'}`}>{config.description}</p>
+                            <h2 className={`text-lg xl:text-xl font-semibold ${config.titleColor}`}>{config.title}</h2>
+                            <p className={`text-xs xl:text-sm ${isPremium ? 'text-white/80' : 'text-gray-500'}`}>{config.description}</p>
                         </div>
                         {config.headerIcon}
                     </div>
                 </article>
 
                 <main className="w-full relative flex flex-col items-center justify-center gap-4 py-2.5">
-                    <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center gap-2 xl:gap-3">
                         {config.mainIcon}
                         {loading ? (
                             <div className={`animate-pulse ${isPremium ? 'bg-white/30' : 'bg-slate-200'} w-32 h-12 rounded`}></div>
                         ) : (
-                            <span className={`text-3xl font-bold ${config.textColor} text-center ${isPremium ? 'drop-shadow-sm' : ''}`}>
+                            <span className={`text-2xl xl:text-3xl font-bold ${config.textColor} text-center ${isPremium ? 'drop-shadow-sm' : ''}`}>
                                 {packageName || 'Paket Bulunamadı'}
                             </span>
                         )}
                         {isPremium && (
                             <div className="flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full shadow-sm border border-white/30">
                                 <Crown className="w-3 h-3 text-white/90" />
-                                <span className="text-xs font-semibold text-white/95">VIP Access</span>
+                                <span className="text-xs xl:text-sm font-semibold text-white/95">VIP Access</span>
                             </div>
                         )}
                     </div>

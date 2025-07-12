@@ -20,17 +20,21 @@ import { GoPackage } from "react-icons/go";
 export default function LayoutSidebar() {
     const [open, setOpen] = useState(false);
     const [pinned, setPinned] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const { userData, loading, logout } = useAuth();
     const pathname = usePathname();
 
     useEffect(() => {
+        setMounted(true);
         const saved = localStorage.getItem("sidebarPinned");
         if (saved === "true") setPinned(true);
     }, []);
 
     useEffect(() => {
-        localStorage.setItem("sidebarPinned", pinned.toString());
-    }, [pinned]);
+        if (mounted) {
+            localStorage.setItem("sidebarPinned", pinned.toString());
+        }
+    }, [pinned, mounted]);
 
     const links = [
         {
@@ -76,17 +80,19 @@ export default function LayoutSidebar() {
             ),
         },
     ];
+
     return (
         <Sidebar open={open} setOpen={setOpen} animate={!pinned}>
-            <SidebarBody className="justify-between gap-10 bg-deep-teal relative">
+            <SidebarBody className="justify-between gap-10 bg-deep-teal lg:relative" suppressHydrationWarning>
                 <motion.button
                     animate={{
                         display: !pinned ? (open ? "inline-block" : "none") : "inline-block",
                         opacity: !pinned ? (open ? 1 : 0) : 1,
                     }}
                     onClick={() => setPinned(prev => !prev)}
-                    className="absolute top-3 right-3.5 text-white p-1 text-xl cursor-pointer"
+                    className="absolute top-3 right-3.5 text-white p-1 text-xl cursor-pointer !hidden lg:!block"
                     title={pinned ? "Unpin sidebar" : "Pin sidebar"}
+                    suppressHydrationWarning
                 >
                     {pinned ? <TbPinnedFilled className='rotate-45' /> : <TbPinned className='rotate-45' />}
                 </motion.button>

@@ -118,14 +118,14 @@ export default function ServerList() {
 
 
     return (
-        <main className="w-full flex flex-col items-start gap-6 mt-16">
-            <section className='w-full flex items-end justify-between gap-2'>
+        <main className="w-full flex flex-col items-start gap-4 md:gap-6 mt-16">
+            <section className='w-full flex flex-col md:flex-row items-start md:items-end justify-start md:justify-between gap-6 md:gap-2'>
                 <article className='flex flex-col gap-2'>
                     <h2 className="text-xl font-semibold text-gray-800">Server Listesi</h2>
                     <p className='text-sm text-gray-600'>Server listesi, tüm serverlerinizi görüntülemek için kullanılır.</p>
                 </article>
                 <article className='relative'>
-                    <input type="text" className='py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
+                    <input type="text" className='py-2 md:py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
                     <CiSearch className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4' />
                 </article>
             </section>
@@ -141,15 +141,15 @@ export default function ServerList() {
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
-                                    <TableHead className="text-gray-700 font-semibold">Server Adı</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Paket Türü</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">
+                                    <TableHead className="text-gray-700 font-semibold px-6">Server Adı</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Paket Türü</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">
                                         <div className='flex items-center gap-1'>
                                             <span>Durum</span>
                                             <FaLongArrowAltUp className='text-gray-500 text-xs' />
                                         </div>
                                     </TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">
+                                    <TableHead className="text-gray-700 font-semibold px-6">
                                         <div className='flex items-center gap-1'>
                                             <span>Ping</span>
                                             <FaLongArrowAltUp className='text-gray-500 text-xs' />
@@ -160,16 +160,16 @@ export default function ServerList() {
                             <TableBody>
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
                                             {server.name}
                                         </TableCell>
-                                        <TableCell className="font-medium text-gray-600 text-sm py-4">{server.location}</TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                        <TableCell className="font-medium text-gray-600 text-sm py-4 px-6">{server.location}</TableCell>
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
                                             <span className={getStatusColor(server.status)}>
                                                 {server.status}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
                                             <article className='flex items-end gap-2'>
                                                 <div className='flex items-end justify-center gap-[1px] w-auto h-5'>
                                                     <span className='inline-block w-[3px] h-[20%] flex-1 bg-emerald-600 rounded-t-sm'></span>

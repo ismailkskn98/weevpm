@@ -65,11 +65,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 w-[280px] shrink-0",
+          "h-full px-4 py-4 hidden lg:flex lg:flex-col bg-neutral-100 w-[clamp(220px, 20vw, 280px)] shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "280px" : "60px") : "280px",
+          width: animate ? (open ? "clamp(220px, 20vw, 280px)" : "60px") : "clamp(220px, 20vw, 280px)",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -90,7 +90,7 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "h-10 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-100 w-full"
+          "h-10 px-4 py-4 flex flex-row lg:hidden items-center justify-between bg-neutral-100 w-full"
         )}
         {...props}>
         <div className="flex justify-end z-20 w-full">
@@ -113,7 +113,7 @@ export const MobileSidebar = ({
                 className
               )}>
               <div
-                className="absolute right-10 top-10 z-50 text-neutral-800"
+                className="absolute right-10 top-12 z-50 text-white/90 cursor-pointer"
                 onClick={() => setOpen(!open)}>
                 <IconX />
               </div>

@@ -8,7 +8,7 @@ export default function Dashboard() {
 
     return (
         <main className='w-full'>
-            <div className='w-fit h-fit grid grid-cols-1 md:grid-cols-3 place-items-start gap-12'>
+            <div className='w-full 3xl:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 place-items-start gap-6 2xl:gap-12'>
                 <TotalRevenueCard />
                 <ReferenceRevenueCard />
                 <ActivePackageCard />
