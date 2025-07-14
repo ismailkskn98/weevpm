@@ -95,29 +95,29 @@ export default function HistoryPackage() {
                             <TableBody>
                                 {currentPackages.map((packageItem, index) => (
                                     <TableRow key={index} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {index + 1}
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {packageItem.humanization_translations ?
                                                 (JSON.parse(packageItem.humanization_translations)[locale] || 'Bulunamadı') :
                                                 'Bulunamadı'
                                             }
                                         </TableCell>
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {packageItem.token_price * 1} WCP
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {getInterval(packageItem.interval)}
                                         </TableCell>
 
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {dateFormat(packageItem.purchased_at, locale)}
                                         </TableCell>
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {packageItem.package_name === 'FREE' ? <PiInfinity className="text-2xl" /> : dateFormat(packageItem.expires_at, locale)}
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <span className={`inline-block rounded-full w-2 h-2 ${packageItem.status === 'ACTIVE' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}>
                                             </span>
                                         </TableCell>

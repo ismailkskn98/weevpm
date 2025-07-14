@@ -68,16 +68,16 @@ export default function References() {
                             <TableBody>
                                 {currentReferences.map((reference, index) => (
                                     <TableRow key={index} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {index + 1}
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {reference.user_name}
                                         </TableCell>
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {reference.email}
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
                                                 {reference.package_names ?
                                                     (JSON.parse(reference.package_names)[locale] || 'Bulunamadı') :
@@ -85,12 +85,12 @@ export default function References() {
                                                 }
                                             </span>
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
                                                 {reference.level}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {dateFormat(reference.referenced_at, locale)}
                                         </TableCell>
                                     </TableRow>

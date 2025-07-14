@@ -403,7 +403,7 @@
       },
       "form": {
         "title": "Операции Вывода",
-        "description": "Выберите тип дохода и определите сумму вывода.",
+        "description": "Выберите тип дохода и определите сумму вывода",
         "revenueTypeLabel": "Тип Дохода",
         "revenueTypePlaceholder": "Выберите тип дохода",
         "amountLabel": "Сумма",

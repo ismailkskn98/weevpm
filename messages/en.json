@@ -405,7 +405,7 @@
       },
       "form": {
         "title": "Withdrawal Operations",
-        "description": "Select your revenue type and determine the withdrawal amount.",
+        "description": "Select your revenue type and determine the withdrawal amount",
         "revenueTypeLabel": "Revenue Type",
         "revenueTypePlaceholder": "Select revenue type",
         "amountLabel": "Amount",

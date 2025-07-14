@@ -79,7 +79,7 @@ export default function PasswordOperations() {
                     <button
                         type="submit"
                         disabled={!isValid || isSubmitting}
-                        className={`w-fit px-6 mx-auto h-12 rounded-3xl text-sm font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
+                        className={`w-fit px-6 mx-auto h-12 rounded-3xl text-xs sm:text-sm font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
                                 ${!isValid || isSubmitting
                                 ? 'bg-gray-300 cursor-not-allowed'
                                 : 'bg-aqua-green hover:bg-teal active:scale-[0.98] cursor-pointer'

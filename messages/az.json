@@ -403,7 +403,7 @@
       },
       "form": {
         "title": "Çıxış Əməliyyatları",
-        "description": "Gəlir növünü seçin və çıxış məbləğini müəyyənləşdirin.",
+        "description": "Gəlir növünü seçin və çıxış məbləğini müəyyənləşdirin",
         "revenueTypeLabel": "Gəlir Növü",
         "revenueTypePlaceholder": "Gəlir növünü seçin",
         "amountLabel": "Məbləğ",

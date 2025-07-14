@@ -132,7 +132,7 @@ export default function ServerList() {
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">{server.user_group === 'PREMIUM' ? (
                                             <div className='flex items-center gap-1'>
                                                 <Crown className='w-4 h-4 text-amber-500' />
-                                                <span className='!text-black/70 hover:!text-black text-xsm '>Premium</span>
+                                                <span className='!text-black/70 hover:!text-black text-xsm'>Premium</span>
                                             </div>
                                         ) : (
                                             <div className='flex items-center gap-1'>
@@ -144,7 +144,7 @@ export default function ServerList() {
                                                 {server.status}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="!text-black/70 hover:!text-black  text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <article className='flex items-end gap-1'>
                                                 <div className='relative flex items-end justify-center gap-[1px] h-5 w-8 ping-clip bg-[#ececec]'>
                                                     <div className={`absolute inset-0 ${getSignalColor(server.server_signal)} h-full bg-green-600`}></div>

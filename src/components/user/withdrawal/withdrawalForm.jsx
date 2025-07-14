@@ -89,12 +89,13 @@ export default function WithdrawalForm({ setIsLoading }) {
                             setSelectedRevenueType(value);
                             setValue("revenueType", value);
                         }}
+                        className="text-xs sm:text-sm"
                     >
-                        <SelectTrigger className="w-full rounded-3xl placeholder:text-sm">
+                        <SelectTrigger className="w-full rounded-3xl text-xs sm:text-sm">
                             <SelectValue placeholder={t('revenueTypePlaceholder')} />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="referral">{t('revenueTypes.referral')}</SelectItem>
+                            <SelectItem value="referral" className={"text-xs sm:text-sm"}>{t('revenueTypes.referral')}</SelectItem>
                         </SelectContent>
                     </Select>
                     {errors.revenueType && (
@@ -112,7 +113,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                             step="0.01"
                             placeholder={t('amountPlaceholder')}
                             disabled={!watchRevenueType}
-                            className={`w-full px-4 py-3 border rounded-3xl outline-none text-sm transition-all duration-200 pr-24 ${!watchRevenueType
+                            className={`w-full px-4 py-3 border rounded-3xl outline-none placeholder:text-xs sm:placeholder:text-sm text-xs sm:text-sm transition-all duration-200 pr-24 ${!watchRevenueType
                                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                 : 'bg-gray-50 focus:bg-white focus:border-aqua-green/40'
                                 } ${errors.amount ? 'border-red-300' : 'border-gray-300'}`}
@@ -165,7 +166,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                     <button
                         type="submit"
                         disabled={!isValid || isSubmitting}
-                        className={`w-fit px-6 mx-auto h-12 rounded-3xl text-sm font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
+                        className={`w-fit px-6 mx-auto h-12 rounded-3xl text-xs sm:text-sm font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2
                                 ${!isValid || isSubmitting
                                 ? 'bg-gray-300 cursor-not-allowed'
                                 : 'bg-aqua-green hover:bg-teal active:scale-[0.98] cursor-pointer'

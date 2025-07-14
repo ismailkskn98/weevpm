@@ -403,7 +403,7 @@
       },
       "form": {
         "title": "Çekim İşlemleri",
-        "description": "Gelir türünüzü seçin ve çekim miktarını belirleyin.",
+        "description": "Gelir türünüzü seçin ve çekim miktarını belirleyin",
         "revenueTypeLabel": "Gelir Türü",
         "revenueTypePlaceholder": "Gelir türünü seçin",
         "amountLabel": "Miktar",
