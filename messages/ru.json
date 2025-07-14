@@ -494,6 +494,31 @@
       "page": {
         "title": "Пакеты",
         "description": "В этом разделе вы можете просматривать пакеты или обновить свой пакет."
+      },
+      "errors": {
+        "loadFailed": "Ошибка загрузки"
+      },
+      "freePackage": {
+        "title": "Бесплатно",
+        "currentPackage": "Текущий пакет",
+        "basicFeatures": "Базовые",
+        "free": "Бесплатно",
+        "currentPackageStatus": "Активен"
+      },
+      "intervals": {
+        "monthly": "Месяц",
+        "yearly": "Год",
+        "premium": "Премиум"
+      },
+      "premiumPackage": {
+        "title": "Премиум",
+        "discount": "16% Скидка",
+        "currentPackage": "Текущий пакет",
+        "allFeatures": "Все функции",
+        "normalPrice": "(Обычная цена)",
+        "savingsText": "✨ Экономия 16%!",
+        "currentPackageStatus": "Активен",
+        "buyButton": "купить"
       }
     },
     "references": {
@@ -512,6 +537,38 @@
       "page": {
         "title": "Выводы",
         "description": "В этом разделе вы можете просматривать и управлять своими выводами."
+      }
+    },
+    "packageDetails": {
+      "page": {
+        "title": "Детали Пакета",
+        "description": "Здесь можно просмотреть детали пакета и оплатить."
+      }
+    },
+    "passwordOperations": {
+      "page": {
+        "title": "Пароль",
+        "description": "Здесь вы можете безопасно изменить пароль."
+      },
+      "form": {
+        "description": "Для безопасности вы можете изменить пароль ниже",
+        "currentPasswordLabel": "Текущий пароль",
+        "currentPasswordPlaceholder": "Введите пароль",
+        "passwordLabel": "Новый пароль",
+        "passwordPlaceholder": "Новый пароль",
+        "confirmPasswordLabel": "Повторить",
+        "confirmPasswordPlaceholder": "Повторите пароль",
+        "submitButton": "Изменить",
+        "submittingButton": "Изменяем..."
+      },
+      "messages": {
+        "success": "Пароль изменен",
+        "error": "Ошибка изменения"
+      },
+      "validation": {
+        "currentPasswordMinLength": "Минимум 6 символов",
+        "passwordMinLength": "Минимум 6 символов",
+        "passwordMismatch": "Пароли не совпадают"
       }
     },
     "common": {

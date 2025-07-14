@@ -3,6 +3,7 @@ import coreAxios from '@/helper/coreAxios';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'sonner';
 import { useAuth } from '@/context/AuthContext';
+import { useTranslations } from 'next-intl';
 import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { useRouter } from '@/i18n/navigation';
 import FreePackage from './freePackage';
@@ -19,6 +20,7 @@ export default function Packages() {
     const [activeTab, setActiveTab] = useState("6");
     const { userData } = useAuth();
     const router = useRouter();
+    const t = useTranslations('User.packages');
 
     const fetchPackages = async () => {
         const response = await coreAxios.POST('/package-list');
@@ -26,7 +28,7 @@ export default function Packages() {
             setFreePackages(response.free_details);
             setPremiumPackages(response.data);
         } else {
-            toast.error(response.message || "Paketler yüklenemedi");
+            toast.error(response.message || t('errors.loadFailed'));
         }
     };
 

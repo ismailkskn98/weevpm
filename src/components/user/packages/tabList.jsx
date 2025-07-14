@@ -1,8 +1,10 @@
 import { TabsList, TabsTrigger } from '@/components/ui/tabs'
 import React from 'react'
 import { motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
 
 export default function TabList({ premiumPackages, activeTab }) {
+    const t = useTranslations('User.packages.intervals');
     return (
         <section className="w-full flex justify-start mb-6">
             <TabsList className="flex bg-gray-100 p-1 rounded-2xl h-auto relative">
@@ -20,7 +22,7 @@ export default function TabList({ premiumPackages, activeTab }) {
                             />
                         )}
                         <span className="relative z-10">
-                            {packageItem.interval === 'MONTHLY' ? 'Aylık' : packageItem.interval === 'YEARLY' ? 'Yıllık' : 'Premium'}
+                            {packageItem.interval === 'MONTHLY' ? t('monthly') : packageItem.interval === 'YEARLY' ? t('yearly') : t('premium')}
                         </span>
                     </TabsTrigger>
                 ))}

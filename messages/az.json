@@ -494,6 +494,31 @@
       "page": {
         "title": "Paketlər",
         "description": "Bu bölmədə paketləri görə bilər və ya paketinizi yeniləyə bilərsiniz."
+      },
+      "errors": {
+        "loadFailed": "Paketlər yüklənmədi"
+      },
+      "freePackage": {
+        "title": "Pulsuz Paket",
+        "currentPackage": "Hal-hazırda bu paketi istifadə edirsiniz.",
+        "basicFeatures": "Əsas xüsusiyyətlər",
+        "free": "Pulsuz",
+        "currentPackageStatus": "Mövcud Paket"
+      },
+      "intervals": {
+        "monthly": "Aylıq",
+        "yearly": "İllik",
+        "premium": "Premium"
+      },
+      "premiumPackage": {
+        "title": "Premium Paket",
+        "discount": "16% Endirim",
+        "currentPackage": "Hal-hazırda bu paketi istifadə edirsiniz.",
+        "allFeatures": "Bütün xüsusiyyətləri aktivləşdirin.",
+        "normalPrice": "(Normal qiymət)",
+        "savingsText": "✨ 16% qənaət edin!",
+        "currentPackageStatus": "Mövcud Paket",
+        "buyButton": "satın al"
       }
     },
     "references": {
@@ -512,6 +537,38 @@
       "page": {
         "title": "Çıxışlar",
         "description": "Bu bölmədə çıxışlarınızı görə və idarə edə bilərsiniz."
+      }
+    },
+    "packageDetails": {
+      "page": {
+        "title": "Paket Detalları",
+        "description": "Bu bölmədə paket detallarını görə və ödəmə edə bilərsiniz."
+      }
+    },
+    "passwordOperations": {
+      "page": {
+        "title": "Şifrə Əməliyyatları",
+        "description": "Bu bölmədə şifrənizi təhlükəsiz şəkildə dəyişə bilərsiniz."
+      },
+      "form": {
+        "description": "Təhlükəsizlik üçün şifrənizi dəyişmək istəyirsinizsə, aşağıdakı formu doldura bilərsiniz",
+        "currentPasswordLabel": "Mövcud Şifrə",
+        "currentPasswordPlaceholder": "Mövcud şifrənizi daxil edin",
+        "passwordLabel": "Yeni Şifrə",
+        "passwordPlaceholder": "Yeni şifrənizi daxil edin",
+        "confirmPasswordLabel": "Yeni Şifrə Təkrar",
+        "confirmPasswordPlaceholder": "Yeni şifrənizi təkrar daxil edin",
+        "submitButton": "Şifrəni Dəyişdir",
+        "submittingButton": "Dəyişdirilir..."
+      },
+      "messages": {
+        "success": "Şifrə uğurla dəyişdirildi",
+        "error": "Şifrə dəyişdirilə bilmədi"
+      },
+      "validation": {
+        "currentPasswordMinLength": "Mövcud şifrə ən azı 6 simvol olmalıdır",
+        "passwordMinLength": "Yeni şifrə ən azı 6 simvol olmalıdır",
+        "passwordMismatch": "Şifrələr uyğun gəlmir"
       }
     },
     "common": {

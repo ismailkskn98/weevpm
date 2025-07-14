@@ -496,6 +496,31 @@
       "page": {
         "title": "Packages",
         "description": "In this section, you can view packages or update your package."
+      },
+      "errors": {
+        "loadFailed": "Failed to load packages"
+      },
+      "freePackage": {
+        "title": "Free Package",
+        "currentPackage": "You are currently using this package.",
+        "basicFeatures": "Basic features",
+        "free": "Free",
+        "currentPackageStatus": "Current Package"
+      },
+      "intervals": {
+        "monthly": "Monthly",
+        "yearly": "Yearly",
+        "premium": "Premium"
+      },
+      "premiumPackage": {
+        "title": "Premium Package",
+        "discount": "16% Discount",
+        "currentPackage": "You are currently using this package.",
+        "allFeatures": "Activate all features.",
+        "normalPrice": "(Normal price)",
+        "savingsText": "✨ Save 16%!",
+        "currentPackageStatus": "Current Package",
+        "buyButton": "buy now"
       }
     },
     "references": {
@@ -514,6 +539,38 @@
       "page": {
         "title": "Withdrawals",
         "description": "In this section, you can view and manage your withdrawals."
+      }
+    },
+    "packageDetails": {
+      "page": {
+        "title": "Package Details",
+        "description": "In this section, you can view package details and make payment."
+      }
+    },
+    "passwordOperations": {
+      "page": {
+        "title": "Password Operations",
+        "description": "In this section, you can securely change your password."
+      },
+      "form": {
+        "description": "If you want to change your password for security, you can fill out the form below",
+        "currentPasswordLabel": "Current Password",
+        "currentPasswordPlaceholder": "Enter your current password",
+        "passwordLabel": "New Password",
+        "passwordPlaceholder": "Enter your new password",
+        "confirmPasswordLabel": "Confirm New Password",
+        "confirmPasswordPlaceholder": "Confirm your new password",
+        "submitButton": "Change Password",
+        "submittingButton": "Changing..."
+      },
+      "messages": {
+        "success": "Password changed successfully",
+        "error": "Failed to change password"
+      },
+      "validation": {
+        "currentPasswordMinLength": "Current password must be at least 6 characters",
+        "passwordMinLength": "New password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
       }
     },
     "common": {

@@ -2,7 +2,7 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import coreAxios, { POST } from '@/helper/coreAxios'
+import coreAxios from '@/helper/coreAxios'
 import { toast } from 'sonner';
 import PasswordSchema from './passwordSchema';
 import { useTranslations } from 'next-intl';

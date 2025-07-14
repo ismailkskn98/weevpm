@@ -1,6 +1,7 @@
 import React from 'react'
 import { cookies } from 'next/headers';
 import { redirect } from '@/i18n/navigation';
+import { getTranslations } from 'next-intl/server';
 import HeaderTitle from '@/components/user/headerTitle';
 import PackagesDetails from '@/components/user/packagesDetails';
 
@@ -43,9 +44,11 @@ export default async function page({ searchParams }) {
     const walletAddress = cookieStore.get('wallet_address')?.value;
     const packageData = await fetchPackage(package_id, token, locale);
 
+    const t = await getTranslations('User.packageDetails.page');
+
     return (
         <main className='w-full flex flex-col gap-8'>
-            <HeaderTitle title='Paket Detayları' description='Bu bölümde, paket detaylarını görüntüleyebilir ve ödeme yapabilirsiniz.' />
+            <HeaderTitle title={t('title')} description={t('description')} />
             <PackagesDetails packageData={packageData} walletAddress={walletAddress} />
         </main>
     )

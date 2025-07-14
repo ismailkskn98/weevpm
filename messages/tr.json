@@ -494,6 +494,31 @@
       "page": {
         "title": "Paketler",
         "description": "Bu bölümde, paketleri görüntüleyebilir veya paketinizi güncelleyebilirsiniz."
+      },
+      "errors": {
+        "loadFailed": "Paketler yüklenemedi"
+      },
+      "freePackage": {
+        "title": "Ücretsiz Paket",
+        "currentPackage": "Şuan bu paketi kullanıyorsunuz.",
+        "basicFeatures": "Temel özellikler",
+        "free": "Ücretsiz",
+        "currentPackageStatus": "Mevcut Paketiniz"
+      },
+      "intervals": {
+        "monthly": "Aylık",
+        "yearly": "Yıllık",
+        "premium": "Premium"
+      },
+      "premiumPackage": {
+        "title": "Premium Paket",
+        "discount": "16% İndirim",
+        "currentPackage": "Şuan bu paketi kullanıyorsunuz.",
+        "allFeatures": "Tüm özellikleri aktif edin.",
+        "normalPrice": "(Normal fiyat)",
+        "savingsText": "✨ 16% tasarruf edin!",
+        "currentPackageStatus": "Mevcut Paketiniz",
+        "buyButton": "satın al"
       }
     },
     "references": {
@@ -512,6 +537,38 @@
       "page": {
         "title": "Çekimler",
         "description": "Bu bölümde, çekimlerinizi görüntüleyebilir ve yönetebilirsiniz."
+      }
+    },
+    "packageDetails": {
+      "page": {
+        "title": "Paket Detayları",
+        "description": "Bu bölümde, paket detaylarını görüntüleyebilir ve ödeme yapabilirsiniz."
+      }
+    },
+    "passwordOperations": {
+      "page": {
+        "title": "Şifre İşlemleri",
+        "description": "Bu bölümde şifrenizi güvenli bir şekilde değiştirebilirsiniz."
+      },
+      "form": {
+        "description": "Güvenliğiniz için şifrenizi değiştirmek istiyorsanız aşağıdaki formu doldurabilirsiniz",
+        "currentPasswordLabel": "Mevcut Şifre",
+        "currentPasswordPlaceholder": "Mevcut şifrenizi girin",
+        "passwordLabel": "Yeni Şifre",
+        "passwordPlaceholder": "Yeni şifrenizi girin",
+        "confirmPasswordLabel": "Yeni Şifre Tekrar",
+        "confirmPasswordPlaceholder": "Yeni şifrenizi tekrar girin",
+        "submitButton": "Şifreyi Değiştir",
+        "submittingButton": "Değiştiriliyor..."
+      },
+      "messages": {
+        "success": "Şifre başarıyla değiştirildi",
+        "error": "Şifre değiştirilemedi"
+      },
+      "validation": {
+        "currentPasswordMinLength": "Mevcut şifre en az 6 karakter olmalıdır",
+        "passwordMinLength": "Yeni şifre en az 6 karakter olmalıdır",
+        "passwordMismatch": "Şifreler eşleşmiyor"
       }
     },
     "common": {

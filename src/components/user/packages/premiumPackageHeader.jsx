@@ -1,11 +1,13 @@
 import React from 'react'
 import { useAuth } from '@/context/AuthContext';
 import { Crown } from 'lucide-react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function PremiumPackageHeader({ packageItem, selectedCurrency, getPrice, getOriginalPrice }) {
     const { userData, loading } = useAuth();
     const locale = useLocale();
+    const tPackage = useTranslations('User.packages.premiumPackage');
+    const tIntervals = useTranslations('User.packages.intervals');
 
     const originalPrice = getOriginalPrice(packageItem);
     const currentPrice = getPrice(packageItem);
@@ -14,7 +16,7 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
         <figure className="relative bg-gradient-to-br from-amber-500 to-orange-600 px-6 pt-10 pb-12 text-white rounded-t-2xl">
             {packageItem.interval === 'YEARLY' && (
                 <div className='absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-fit h-fit px-3 py-1.5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-lg'>
-                    <span className='text-xs font-semibold tracking-wide'>16% İndirim</span>
+                    <span className='text-xs font-semibold tracking-wide'>{tPackage('discount')}</span>
                 </div>
             )}
             <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
@@ -33,10 +35,10 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                         ) : (
                             <>
                                 <h3 className="text-xl font-semibold mb-1">
-                                    Premium Paket - {packageItem.interval === 'MONTHLY' ? 'Aylık' : packageItem.interval === 'YEARLY' ? 'Yıllık' : 'Premium'}
+                                    {tPackage('title')} - {packageItem.interval === 'MONTHLY' ? tIntervals('monthly') : packageItem.interval === 'YEARLY' ? tIntervals('yearly') : tIntervals('premium')}
                                 </h3>
                                 <p className="text-sm text-white/80 font-normal">
-                                    {userData.user.active_package == 'PREMIUM' ? 'Şuan bu paketi kullanıyorsunuz.' : 'Tüm özellikleri aktif edin.'}
+                                    {userData.user.active_package == 'PREMIUM' ? tPackage('currentPackage') : tPackage('allFeatures')}
                                 </p>
                             </>
                         )}
@@ -55,7 +57,7 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                                         {originalPrice}
                                     </span>
                                     <span className="text-sm ml-2">
-                                        (Normal fiyat)
+                                        {tPackage('normalPrice')}
                                     </span>
                                 </div>
                             )}
@@ -64,7 +66,7 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                             </div>
                             {packageItem.interval === 'YEARLY' && originalPrice && (
                                 <div className="text-sm text-white/90 mt-1 font-medium">
-                                    ✨ 16% tasarruf edin!
+                                    {tPackage('savingsText')}
                                 </div>
                             )}
                         </div>
