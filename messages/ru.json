@@ -11,8 +11,8 @@
     "register": "Регистрация",
     "language": "Выбрать язык",
     "hero": {
-      "title": "Защитите свои данные с простым и мощным безопасным доступом",
-      "description": "Мы WeeVPN. Наша современная безопасность доступа разработана для защиты всех пользователей, устройств и приложений — так что вы можете сосредоточиться на том, что делаете лучше всего."
+      "title": "Защитите данные простой и мощной безопасностью доступа",
+      "description": "Мы WeeVPN. Современная безопасность доступа защищает пользователей, устройства и приложения — чтобы вы могли сосредоточиться на самом важном."
     },
     "logoCarousel": {
       "title": "Эти бренды, каждый в своей области, собираются вместе, чтобы сформировать устойчивую и комплексную структуру экосистемы <weecoins>WeeCoins Premium</weecoins>."
@@ -107,6 +107,25 @@
         "deliveryReturnTerms": "Условия доставки и возврата"
       }
     },
+    "referenceCapture": {
+      "welcome": "Добро пожаловать в WeeVPN",
+      "description": "Безопасный и быстрый VPN на мобильном",
+      "getItFrom": "Get it from",
+      "googlePlay": "Google Play",
+      "downloadOnThe": "Download on the",
+      "appStore": "App Store",
+      "capturingCode": "Получение кода...",
+      "error": {
+        "title": "Неверный код",
+        "description": "Код недействителен или истек. Проверьте код и попробуйте снова.",
+        "errorLabel": "Ошибка:",
+        "errorMessage": "Код не обработан",
+        "goTo": "Go to",
+        "homePage": "Home Page",
+        "signInTo": "Sign in to",
+        "account": "Account"
+      }
+    },
     "copyright": {
       "copyright": "Авторские права © 2025 WeeVPN. Все права защищены.",
       "privacyPolicy": "Политика конфиденциальности",
@@ -115,6 +134,10 @@
     }
   },
   "Legal": {
+    "page": {
+      "notFound": "Не найдено",
+      "notFoundDescription": "Страница не существует."
+    },
     "privacyPolicy": {
       "title": "Политика конфиденциальности",
       "article1": {
@@ -252,6 +275,10 @@
     }
   },
   "Auth": {
+    "context": {
+      "sessionEnded": "Сессия завершена",
+      "userDataError": "Ошибка данных"
+    },
     "common": {
       "passwordForgotten": "Забыли пароль?",
       "privacyNotice": "Регистрируясь, вы принимаете",
@@ -525,18 +552,93 @@
       "page": {
         "title": "Рефералы",
         "description": "В этом разделе вы можете просматривать и отслеживать своих рефералов."
+      },
+      "component": {
+        "title": "Мои Рефералы",
+        "errorLoading": "Ошибка загрузки",
+        "notFound": "Не найдено",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Имя",
+          "email": "Email",
+          "packageName": "Пакет",
+          "level": "Уровень",
+          "referenceDate": "Дата"
+        }
       }
     },
     "referenceRevenues": {
       "page": {
         "title": "Доходы от Рефералов",
         "description": "В этом разделе вы можете просматривать и отслеживать доходы от рефералов."
+      },
+      "component": {
+        "title": "Мои Доходы",
+        "errorLoading": "Ошибка загрузки",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Имя",
+          "email": "Email",
+          "token": "Токен",
+          "referenceDate": "Дата",
+          "level": "Уровень"
+        }
       }
     },
     "withdrawalPage": {
       "page": {
         "title": "Выводы",
         "description": "В этом разделе вы можете просматривать и управлять своими выводами."
+      }
+    },
+    "withdrawal": {
+      "processing": "Обработка...",
+      "form": {
+        "description": "Заполните форму для создания запроса на вывод",
+        "revenueTypeLabel": "Тип дохода",
+        "revenueTypePlaceholder": "Выберите тип",
+        "amountLabel": "Сумма",
+        "amountPlaceholder": "Введите сумму",
+        "walletAddressLabel": "Адрес кошелька",
+        "walletAddressPlaceholder": "Введите адрес",
+        "minButton": "Мин",
+        "maxButton": "Макс",
+        "submitButton": "Создать запрос",
+        "submittingButton": "Создаем...",
+        "maxAmountText": "Максимум: {amount}",
+        "revenueTypes": {
+          "referral": "Реферальный доход"
+        }
+      },
+      "title": "История Выводов",
+      "table": {
+        "id": "ID",
+        "amount": "Сумма",
+        "currency": "Валюта",
+        "hash": "Хеш",
+        "walletAddress": "Кошелек",
+        "status": "Статус",
+        "date": "Дата"
+      },
+      "status": {
+        "PENDING": "Ожидание",
+        "APPROVED": "Одобрено",
+        "REJECTED": "Отклонено"
+      },
+      "messages": {
+        "success": "Запрос создан",
+        "createError": "Ошибка создания",
+        "submitError": "Ошибка отправки",
+        "fetchError": "Ошибка загрузки",
+        "copied": "Скопировано"
+      },
+      "validation": {
+        "revenueTypeRequired": "Выберите тип дохода",
+        "amountRequired": "Введите сумму",
+        "amountPositive": "Сумма должна быть положительной",
+        "amountMax": "Максимум {max}",
+        "walletAddressRequired": "Введите адрес кошелька",
+        "walletAddressMinLength": "Минимум 8 символов"
       }
     },
     "packageDetails": {

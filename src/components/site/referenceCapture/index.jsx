@@ -3,8 +3,10 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function ReferenceCapture({ code }) {
+  const t = useTranslations('Site.referenceCapture');
 
   const getPlatform = () => {
     const ua = navigator.userAgent
@@ -48,10 +50,10 @@ export default function ReferenceCapture({ code }) {
 
           <article className='text-center space-y-2'>
             <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black/80'>
-              WeeVPN'e hoş geldiniz
+              {t('welcome')}
             </h1>
             <p className='text-sm md:text-base text-black/70 max-w-md'>
-              Mobil cihazınızda en güvenli ve hızlı VPN deneyimi
+              {t('description')}
             </p>
           </article>
 
@@ -69,8 +71,8 @@ export default function ReferenceCapture({ code }) {
                 className='object-contain object-center group-hover:scale-110 transition-transform duration-300'
               />
               <div className='flex flex-col items-start'>
-                <p className='text-xss sm:text-xs opacity-90 text-nowrap'>Get it from</p>
-                <p className='text-xs sm:text-sm font-semibold text-nowrap'>Google Play</p>
+                <p className='text-xss sm:text-xs opacity-90 text-nowrap'>{t('getItFrom')}</p>
+                <p className='text-xs sm:text-sm font-semibold text-nowrap'>{t('googlePlay')}</p>
               </div>
             </Link>
 
@@ -87,15 +89,15 @@ export default function ReferenceCapture({ code }) {
                 className='object-contain object-center group-hover:scale-110 transition-transform duration-300'
               />
               <div className='flex flex-col items-start'>
-                <p className='text-xss sm:text-xs opacity-70 text-nowrap'>Download on the</p>
-                <p className='text-xs sm:text-sm font-semibold text-nowrap'>App Store</p>
+                <p className='text-xss sm:text-xs opacity-70 text-nowrap'>{t('downloadOnThe')}</p>
+                <p className='text-xs sm:text-sm font-semibold text-nowrap'>{t('appStore')}</p>
               </div>
             </Link>
           </section>
 
           <article className='flex items-center gap-2 text-sm text-black/60'>
             <div className='w-2 h-2 bg-gradient-to-r from-teal to-soft-turquoise rounded-full animate-pulse'></div>
-            <span>Referans kodu yakalanıyor...</span>
+            <span>{t('capturingCode')}</span>
           </article>
         </main>
       </section>

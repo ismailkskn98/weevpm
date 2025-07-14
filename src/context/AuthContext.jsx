@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { getCookie, setCookie, deleteCookie } from 'cookies-next';
 import coreAxios from '@/helper/coreAxios';
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
 const AuthContext = createContext();
@@ -13,6 +14,7 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     const pathname = usePathname();
+    const t = useTranslations('Auth.context');
 
     const logout = () => {
         const cookiesToDelete = [
@@ -29,13 +31,13 @@ export function AuthProvider({ children }) {
         localStorage.removeItem('userData');
         setUserData(null);
         router.replace('/auth/login');
-        toast.info('Oturum sonlandırıldı');
+        toast.info(t('sessionEnded'));
     };
 
     const fetchUserData = async () => {
         try {
             setLoading(true);
-            const userData = await coreAxios.POST('/user-data', {}, 'Kullanıcı verileri alınamadı', logout);
+            const userData = await coreAxios.POST('/user-data', {}, t('userDataError'), logout);
             if (userData.status) {
                 setUserData(userData);
                 const cookies = {

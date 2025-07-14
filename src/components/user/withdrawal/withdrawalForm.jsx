@@ -113,7 +113,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                             step="0.01"
                             placeholder={t('amountPlaceholder')}
                             disabled={!watchRevenueType}
-                            className={`w-full px-4 py-3 border rounded-3xl outline-none placeholder:text-xs sm:placeholder:text-sm text-xs sm:text-sm transition-all duration-200 pr-24 ${!watchRevenueType
+                            className={`w-full px-4 py-3 border rounded-3xl outline-none placeholder:text-xs sm:placeholder:text-sm text-xs sm:text-sm transition-all duration-200 pr-28 ${!watchRevenueType
                                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                 : 'bg-gray-50 focus:bg-white focus:border-aqua-green/40'
                                 } ${errors.amount ? 'border-red-300' : 'border-gray-300'}`}
@@ -149,7 +149,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                     )}
                     {watchRevenueType && (
                         <p className="text-xs text-gray-500">
-                            Maksimum çekim miktarı: {getMaxAmount()}
+                            {t('maxAmountText', { amount: getMaxAmount() })}
                         </p>
                     )}
                 </section>

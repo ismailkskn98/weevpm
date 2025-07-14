@@ -12,7 +12,7 @@
     "language": "Dili seç",
     "hero": {
       "title": "Verilərinizi sadə və güclü giriş təhlükəsizliyi ilə qoruyun",
-      "description": "Biz WeeVPN'yiz. Modern giriş təhlükəsizliyi, istifadəçilər, cihazlar və tətbiqləri qorumaq üçün hazırlanmışdır — böyleliklə siz ən yaxşı şeyi etməyə odaklanmaqla mükafatlandırılırsınız."
+      "description": "Biz WeeVPN'yiz. Modern təhlükəsizlik sistemi istifadəçilər, cihazlar və tətbiqləri qoruyur — beləliklə siz ən vacib işlərə diqqət yetirə bilərsiniz."
     },
     "logoCarousel": {
       "title": "Bu markalar, hər birinin öz sahəsində yenilikçi həlləri təqdim edərək, <weecoins>WeeCoins Premium</weecoins> ekosisteminin sürətli və bütününün yapısını əhatə edir."
@@ -107,6 +107,25 @@
         "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri"
       }
     },
+    "referenceCapture": {
+      "welcome": "WeeVPN-ə xoş gəlmisiniz",
+      "description": "Mobil cihazınızda ən təhlükəsiz və sürətli VPN təcrübəsi",
+      "getItFrom": "Get it from",
+      "googlePlay": "Google Play",
+      "downloadOnThe": "Download on the",
+      "appStore": "App Store",
+      "capturingCode": "Referans kodu tutulur...",
+      "error": {
+        "title": "Etibarsız Referans Kodu",
+        "description": "Təqdim etdiyiniz referans kodu etibarsız və ya vaxtı keçmişdir. Lütfən kodunuzu yoxlayın və yenidən cəhd edin.",
+        "errorLabel": "Xəta:",
+        "errorMessage": "Referans kodu emal edilə bilmədi",
+        "goTo": "Go to",
+        "homePage": "Home Page",
+        "signInTo": "Sign in to",
+        "account": "Account"
+      }
+    },
     "copyright": {
       "copyright": "Müəllif Hüquqları © 2025 WeeVPN. Bütün hüquqlar qorunur.",
       "privacyPolicy": "Məxfilik Siyasəti",
@@ -115,6 +134,10 @@
     }
   },
   "Legal": {
+    "page": {
+      "notFound": "Məzmun Tapılmadı",
+      "notFoundDescription": "Axtardığınız səhifə mövcud deyil."
+    },
     "privacyPolicy": {
       "title": "Məxfilik Siyasəti",
       "article1": {
@@ -252,6 +275,10 @@
     }
   },
   "Auth": {
+    "context": {
+      "sessionEnded": "Sesiya bitdi",
+      "userDataError": "İstifadəçi məlumatları alınmadı"
+    },
     "common": {
       "passwordForgotten": "Şifrəni unutdunuz?",
       "privacyNotice": "Qeydiyyatla",
@@ -525,18 +552,93 @@
       "page": {
         "title": "İstinadlar",
         "description": "Bu bölmədə istinadlarınızı görə və izləyə bilərsiniz."
+      },
+      "component": {
+        "title": "İstinadlarım",
+        "errorLoading": "İstinadlar yüklənmədi",
+        "notFound": "Tapılmadı",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "İstifadəçi Adı",
+          "email": "Email",
+          "packageName": "Paket Adı",
+          "level": "Səviyyə",
+          "referenceDate": "İstinad Tarixi"
+        }
       }
     },
     "referenceRevenues": {
       "page": {
         "title": "İstinad Gəlirləri",
         "description": "Bu bölmədə istinad gəlirlərinizi görə və izləyə bilərsiniz."
+      },
+      "component": {
+        "title": "Referans Gəlirlərim",
+        "errorLoading": "Referans gəlirləri yüklənmədi",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "İstifadəçi Adı",
+          "email": "Email",
+          "token": "Token",
+          "referenceDate": "Referans Tarixi",
+          "level": "Səviyyə"
+        }
       }
     },
     "withdrawalPage": {
       "page": {
         "title": "Çıxışlar",
         "description": "Bu bölmədə çıxışlarınızı görə və idarə edə bilərsiniz."
+      }
+    },
+    "withdrawal": {
+      "processing": "Əməliyyat aparılır...",
+      "form": {
+        "description": "Çıxış tələbi yaratmaq üçün aşağıdakı formu doldurun",
+        "revenueTypeLabel": "Gəlir Növü",
+        "revenueTypePlaceholder": "Gəlir növünü seçin",
+        "amountLabel": "Məbləğ",
+        "amountPlaceholder": "Çıxış məbləğini daxil edin",
+        "walletAddressLabel": "Pul Kisəsi Ünvanı",
+        "walletAddressPlaceholder": "Pul kisəsi ünvanınızı daxil edin",
+        "minButton": "Min",
+        "maxButton": "Max",
+        "submitButton": "Çıxış Tələbi Yarat",
+        "submittingButton": "Yaradılır...",
+        "maxAmountText": "Maksimum çıxış məbləği: {amount}",
+        "revenueTypes": {
+          "referral": "Referans Gəliri"
+        }
+      },
+      "title": "Keçmiş Çıxışlar",
+      "table": {
+        "id": "ID",
+        "amount": "Məbləğ",
+        "currency": "Valyuta",
+        "hash": "Hash",
+        "walletAddress": "Pul Kisəsi",
+        "status": "Status",
+        "date": "Tarix"
+      },
+      "status": {
+        "PENDING": "Gözləyir",
+        "APPROVED": "Təsdiqləndi",
+        "REJECTED": "Rədd edildi"
+      },
+      "messages": {
+        "success": "Çıxış tələbi uğurla yaradıldı",
+        "createError": "Çıxış tələbi yaradıla bilmədi",
+        "submitError": "Form göndərilərkən xəta baş verdi",
+        "fetchError": "Çıxışlar yüklənə bilmədi",
+        "copied": "Lövhəyə kopyalandı"
+      },
+      "validation": {
+        "revenueTypeRequired": "Gəlir növü seçmək məcburidir",
+        "amountRequired": "Məbləğ daxil etmək məcburidir",
+        "amountPositive": "Məbləğ müsbət rəqəm olmalıdır",
+        "amountMax": "Məbləğ ən çox {max} ola bilər",
+        "walletAddressRequired": "Pul kisəsi ünvanı daxil etmək məcburidir",
+        "walletAddressMinLength": "Pul kisəsi ünvanı ən azı 8 simvol olmalıdır"
       }
     },
     "packageDetails": {

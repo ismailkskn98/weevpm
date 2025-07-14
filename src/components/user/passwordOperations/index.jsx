@@ -33,6 +33,7 @@ export default function PasswordOperations() {
             if (response.status) {
                 toast.success(response.message || tMessages("success"));
                 reset();
+                logout();
             } else {
                 toast.error(response.message || tMessages("error"));
             }

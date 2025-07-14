@@ -94,7 +94,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         )}
         {...props}>
         <Link href="/user" className="flex items-center gap-2">
-          <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-full h-8 object-contain object-center scale-[1.4]" />
+          <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-full h-8 object-contain object-center scale-[1.2]" />
           <span className="text-sm font-medium text-deep-teal capitalize">{userData?.user?.user_name}</span>
         </Link>
         <div className="flex justify-end z-20 w-full">

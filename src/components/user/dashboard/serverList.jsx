@@ -130,8 +130,8 @@ export default function ServerList() {
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
-                                            <div className='flex gap-1'>
-                                                <Image src={`${server.country_flag}`} alt={server.country} width={16} height={16} className='w-4 h-4 object-contain object-bottom' />
+                                            <div className='flex items-center gap-1.5'>
+                                                <Image src={`${server.country_flag}`} alt={server.country} width={24} height={16} className='w-6 h-3 object-contain object-center' />
                                                 {server.country} / {server.city}
                                             </div>
                                         </TableCell>

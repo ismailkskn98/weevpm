@@ -109,6 +109,25 @@
         "deliveryReturnTerms": "Delivery and Return Terms"
       }
     },
+    "referenceCapture": {
+      "welcome": "Welcome to WeeVPN",
+      "description": "The safest and fastest VPN experience on your mobile device",
+      "getItFrom": "Get it from",
+      "googlePlay": "Google Play",
+      "downloadOnThe": "Download on the",
+      "appStore": "App Store",
+      "capturingCode": "Capturing reference code...",
+      "error": {
+        "title": "Invalid Reference Code",
+        "description": "The reference code you provided is invalid or expired. Please check your code and try again.",
+        "errorLabel": "Error:",
+        "errorMessage": "Reference code could not be processed",
+        "goTo": "Go to",
+        "homePage": "Home Page",
+        "signInTo": "Sign in to",
+        "account": "Account"
+      }
+    },
     "copyright": {
       "copyright": "Copyright © 2025 WeeVPN. All rights reserved.",
       "privacyPolicy": "Privacy Policy",
@@ -117,6 +136,10 @@
     }
   },
   "Legal": {
+    "page": {
+      "notFound": "Content Not Found",
+      "notFoundDescription": "The page you are looking for does not exist."
+    },
     "privacyPolicy": {
       "title": "Privacy Policy",
       "article1": {
@@ -254,6 +277,10 @@
     }
   },
   "Auth": {
+    "context": {
+      "sessionEnded": "Session ended",
+      "userDataError": "User data could not be retrieved"
+    },
     "common": {
       "passwordForgotten": "Password forgotten?",
       "privacyNotice": "By signing up, you agree to our",
@@ -527,18 +554,93 @@
       "page": {
         "title": "References",
         "description": "In this section, you can view and track your references."
+      },
+      "component": {
+        "title": "My References",
+        "errorLoading": "Failed to load references",
+        "notFound": "Not Found",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Username",
+          "email": "Email",
+          "packageName": "Package Name",
+          "level": "Level",
+          "referenceDate": "Reference Date"
+        }
       }
     },
     "referenceRevenues": {
       "page": {
         "title": "Reference Revenues",
         "description": "In this section, you can view and track your reference revenues."
+      },
+      "component": {
+        "title": "My Reference Revenues",
+        "errorLoading": "Failed to load reference revenues",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Username",
+          "email": "Email",
+          "token": "Token",
+          "referenceDate": "Reference Date",
+          "level": "Level"
+        }
       }
     },
     "withdrawalPage": {
       "page": {
         "title": "Withdrawals",
         "description": "In this section, you can view and manage your withdrawals."
+      }
+    },
+    "withdrawal": {
+      "processing": "Processing...",
+      "form": {
+        "description": "Fill out the form below to create a withdrawal request",
+        "revenueTypeLabel": "Revenue Type",
+        "revenueTypePlaceholder": "Select revenue type",
+        "amountLabel": "Amount",
+        "amountPlaceholder": "Enter withdrawal amount",
+        "walletAddressLabel": "Wallet Address",
+        "walletAddressPlaceholder": "Enter your wallet address",
+        "minButton": "Min",
+        "maxButton": "Max",
+        "submitButton": "Create Withdrawal Request",
+        "submittingButton": "Creating...",
+        "maxAmountText": "Maximum withdrawal amount: {amount}",
+        "revenueTypes": {
+          "referral": "Referral Revenue"
+        }
+      },
+      "title": "Past Withdrawals",
+      "table": {
+        "id": "ID",
+        "amount": "Amount",
+        "currency": "Currency",
+        "hash": "Hash",
+        "walletAddress": "Wallet Address",
+        "status": "Status",
+        "date": "Date"
+      },
+      "status": {
+        "PENDING": "Pending",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "messages": {
+        "success": "Withdrawal request created successfully",
+        "createError": "Failed to create withdrawal request",
+        "submitError": "Error occurred while submitting form",
+        "fetchError": "Failed to load withdrawals",
+        "copied": "Copied to clipboard"
+      },
+      "validation": {
+        "revenueTypeRequired": "Revenue type is required",
+        "amountRequired": "Amount is required",
+        "amountPositive": "Amount must be a positive number",
+        "amountMax": "Amount cannot exceed {max}",
+        "walletAddressRequired": "Wallet address is required",
+        "walletAddressMinLength": "Wallet address must be at least 8 characters"
       }
     },
     "packageDetails": {

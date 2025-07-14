@@ -107,6 +107,25 @@
         "deliveryReturnTerms": "Teslimat ve İade Koşulları"
       }
     },
+    "referenceCapture": {
+      "welcome": "WeeVPN'e hoş geldiniz",
+      "description": "Mobil cihazınızda en güvenli ve hızlı VPN deneyimi",
+      "getItFrom": "Get it from",
+      "googlePlay": "Google Play",
+      "downloadOnThe": "Download on the",
+      "appStore": "App Store",
+      "capturingCode": "Referans kodu yakalanıyor...",
+      "error": {
+        "title": "Geçersiz Referans Kodu",
+        "description": "Sağladığınız referans kodu geçersiz veya süresi dolmuş. Lütfen kodunuzu kontrol edip tekrar deneyin.",
+        "errorLabel": "Hata:",
+        "errorMessage": "Referans kodu işlenemedi",
+        "goTo": "Go to",
+        "homePage": "Home Page",
+        "signInTo": "Sign in to",
+        "account": "Account"
+      }
+    },
     "copyright": {
       "copyright": "Telif Hakkı © 2025 WeeVPN. Tüm hakları saklıdır.",
       "privacyPolicy": "Gizlilik Politikası",
@@ -115,6 +134,10 @@
     }
   },
   "Legal": {
+    "page": {
+      "notFound": "İçerik Bulunamadı",
+      "notFoundDescription": "Aradığınız sayfa mevcut değil."
+    },
     "privacyPolicy": {
       "title": "Gizlilik Politikası",
       "article1": {
@@ -252,6 +275,10 @@
     }
   },
   "Auth": {
+    "context": {
+      "sessionEnded": "Oturum sonlandırıldı",
+      "userDataError": "Kullanıcı verileri alınamadı"
+    },
     "common": {
       "passwordForgotten": "Şifremi unuttum?",
       "privacyNotice": "Kaydolarak",
@@ -525,18 +552,93 @@
       "page": {
         "title": "Referanslar",
         "description": "Bu bölümde, referanslarınızı görüntüleyebilir ve takip edebilirsiniz."
+      },
+      "component": {
+        "title": "Referanslarım",
+        "errorLoading": "Referanslar alınamadı",
+        "notFound": "Bulunamadı",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Kullanıcı Adı",
+          "email": "Email",
+          "packageName": "Paket Adı",
+          "level": "Level",
+          "referenceDate": "Referans Tarihi"
+        }
       }
     },
     "referenceRevenues": {
       "page": {
         "title": "Referans Gelirleri",
         "description": "Bu bölümde, referans gelirlerinizi görüntüleyebilir ve takip edebilirsiniz."
+      },
+      "component": {
+        "title": "Referans Gelirlerim",
+        "errorLoading": "Referans gelirleri alınamadı",
+        "tableHeaders": {
+          "id": "ID",
+          "username": "Kullanıcı Adı",
+          "email": "Email",
+          "token": "Token",
+          "referenceDate": "Referans Tarihi",
+          "level": "Level"
+        }
       }
     },
     "withdrawalPage": {
       "page": {
         "title": "Çekimler",
         "description": "Bu bölümde, çekimlerinizi görüntüleyebilir ve yönetebilirsiniz."
+      }
+    },
+    "withdrawal": {
+      "processing": "İşlem yapılıyor...",
+      "form": {
+        "description": "Çekim talebi oluşturmak için aşağıdaki formu doldurun",
+        "revenueTypeLabel": "Gelir Türü",
+        "revenueTypePlaceholder": "Gelir türünü seçin",
+        "amountLabel": "Miktar",
+        "amountPlaceholder": "Çekim miktarını girin",
+        "walletAddressLabel": "Cüzdan Adresi",
+        "walletAddressPlaceholder": "Cüzdan adresinizi girin",
+        "minButton": "Min",
+        "maxButton": "Max",
+        "submitButton": "Çekim Talebi Oluştur",
+        "submittingButton": "Oluşturuluyor...",
+        "maxAmountText": "Maksimum çekim miktarı: {amount}",
+        "revenueTypes": {
+          "referral": "Referans Geliri"
+        }
+      },
+      "title": "Geçmiş Çekimler",
+      "table": {
+        "id": "ID",
+        "amount": "Miktar",
+        "currency": "Para Birimi",
+        "hash": "Hash",
+        "walletAddress": "Cüzdan Adresi",
+        "status": "Durum",
+        "date": "Tarih"
+      },
+      "status": {
+        "PENDING": "Beklemede",
+        "APPROVED": "Onaylandı",
+        "REJECTED": "Reddedildi"
+      },
+      "messages": {
+        "success": "Çekim talebi başarıyla oluşturuldu",
+        "createError": "Çekim talebi oluşturulamadı",
+        "submitError": "Form gönderilirken hata oluştu",
+        "fetchError": "Çekimler alınamadı",
+        "copied": "Panoya kopyalandı"
+      },
+      "validation": {
+        "revenueTypeRequired": "Gelir türü seçmek zorunludur",
+        "amountRequired": "Miktar girmek zorunludur",
+        "amountPositive": "Miktar pozitif bir sayı olmalıdır",
+        "amountMax": "Miktar en fazla {max} olabilir",
+        "walletAddressRequired": "Cüzdan adresi girmek zorunludur",
+        "walletAddressMinLength": "Cüzdan adresi en az 8 karakter olmalıdır"
       }
     },
     "packageDetails": {

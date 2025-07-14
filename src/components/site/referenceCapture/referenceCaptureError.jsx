@@ -1,8 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function ReferenceCaptureError() {
+    const t = useTranslations('Site.referenceCapture.error');
+
     return (
         <main className='min-h-screen w-full bg-gradient-to-tr from-red-100/70 to-deep-white flex items-center justify-center p-4'>
             <section className='gridContainer w-full'>
@@ -22,14 +25,14 @@ export default function ReferenceCaptureError() {
 
                     <article className='text-center space-y-3'>
                         <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-red-800'>
-                            Geçersiz Referans Kodu
+                            {t('title')}
                         </h1>
                         <p className='text-sm md:text-base text-black/70 max-w-md'>
-                            Sağladığınız referans kodu geçersiz veya süresi dolmuş. Lütfen kodunuzu kontrol edip tekrar deneyin.
+                            {t('description')}
                         </p>
                         <div className='bg-red-50 border border-red-200 rounded-lg p-3 mt-4'>
                             <p className='text-sm text-red-700'>
-                                <span className='font-semibold'>Hata:</span> Referans kodu işlenemedi
+                                <span className='font-semibold'>{t('errorLabel')}</span> {t('errorMessage')}
                             </p>
                         </div>
                     </article>
@@ -53,8 +56,8 @@ export default function ReferenceCaptureError() {
                                 />
                             </svg>
                             <div className='flex flex-col items-start'>
-                                <p className='text-xss sm:text-xs opacity-90 text-nowrap'>Go to</p>
-                                <p className='text-sm font-semibold text-nowrap'>Home Page</p>
+                                <p className='text-xss sm:text-xs opacity-90 text-nowrap'>{t('goTo')}</p>
+                                <p className='text-sm font-semibold text-nowrap'>{t('homePage')}</p>
                             </div>
                         </Link>
 
@@ -76,8 +79,8 @@ export default function ReferenceCaptureError() {
                                 />
                             </svg>
                             <div className='flex flex-col items-start'>
-                                <p className='text-xss sm:text-xs opacity-70 text-nowrap'>Sign in to</p>
-                                <p className='text-sm font-semibold text-nowrap'>Account</p>
+                                <p className='text-xss sm:text-xs opacity-70 text-nowrap'>{t('signInTo')}</p>
+                                <p className='text-sm font-semibold text-nowrap'>{t('account')}</p>
                             </div>
                         </Link>
                     </section>
