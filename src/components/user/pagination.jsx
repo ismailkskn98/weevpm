@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Pagination({ currentPage, totalPages, itemsCount, setCurrentPage }) {
     return (
-        <section className="w-full flex items-center justify-between">
+        <main className="w-full flex items-center justify-between">
             <div className="text-xs lg:text-sm text-gray-600">
                 Sayfa {currentPage} / {totalPages} (Toplam {itemsCount})
             </div>
@@ -24,6 +24,6 @@ export default function Pagination({ currentPage, totalPages, itemsCount, setCur
                     Sonraki
                 </button>
             </div>
-        </section>
+        </main>
     )
 }

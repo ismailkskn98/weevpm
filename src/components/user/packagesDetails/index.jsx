@@ -33,7 +33,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
     };
 
     return (
-        <main className="w-full max-w-3xl space-y-8 sm:space-y-12">
+        <section className="w-full max-w-3xl space-y-8 sm:space-y-12">
             <header className="w-full flex flex-col items-start gap-2">
                 <h1 className="text-lg sm:text-xl font-medium text-nowrap text-gray-800">
                     Paket Ödeme
@@ -43,7 +43,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                 </p>
             </header>
 
-            <section className='w-full flex flex-col items-center justify-between gap-4'>
+            <main className='w-full flex flex-col items-center justify-between gap-4'>
                 <article className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">
                         <p className="text-xs text-gray-500 mb-1">Paket Adı</p>
@@ -83,9 +83,9 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                         </CopyToClipboard>
                     </div>
                 </article>
-            </section>
+            </main>
 
-            <div className="space-y-6 sm:space-y-8">
+            <main className="space-y-6 sm:space-y-8">
                 <section className="text-center space-y-4">
                     <article className="flex flex-col sm:flex-row items-center justify-center gap-2 text-red-600">
                         <Clock className="w-5 h-5" />
@@ -106,7 +106,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                         </p>
                     </article>
                 </section>
-            </div>
-        </main>
+            </main>
+        </section>
     )
 }

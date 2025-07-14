@@ -72,14 +72,14 @@ export default function WithdrawalForm({ setIsLoading }) {
 
     return (
         <main className="max-w-xl flex flex-col items-start gap-3">
-            <div className="w-full">
+            <article className="w-full">
                 <h2 className="text-xl font-medium text-gray-900 mb-2">
                     {t('description')}
                 </h2>
-            </div>
+            </article>
 
             <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
-                <div className="space-y-2">
+                <article className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
                         {t('revenueTypeLabel')}
                     </label>
@@ -100,13 +100,13 @@ export default function WithdrawalForm({ setIsLoading }) {
                     {errors.revenueType && (
                         <p className="text-sm text-red-500">{errors.revenueType.message}</p>
                     )}
-                </div>
+                </article>
 
-                <div className="space-y-2">
+                <section className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
                         {t('amountLabel')}
                     </label>
-                    <div className="relative">
+                    <article className="relative">
                         <input
                             type="number"
                             step="0.01"
@@ -142,7 +142,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                                 {t('maxButton')}
                             </button>
                         </div>
-                    </div>
+                    </article>
                     {errors.amount && (
                         <p className="text-sm text-red-500">{errors.amount.message}</p>
                     )}
@@ -151,7 +151,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                             Maksimum çekim miktarı: {getMaxAmount()}
                         </p>
                     )}
-                </div>
+                </section>
 
                 <CustomInput
                     type="text"
@@ -161,7 +161,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                     {...register("walletAddress")}
                 />
 
-                <div className="pt-4">
+                <article className="pt-4">
                     <button
                         type="submit"
                         disabled={!isValid || isSubmitting}
@@ -180,7 +180,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                             t('submitButton')
                         )}
                     </button>
-                </div>
+                </article>
             </form>
         </main>
     )

@@ -62,13 +62,13 @@ export default function References() {
     }
 
     return (
-        <main className="w-full flex flex-col items-start gap-6">
-            <section className='w-full flex items-end justify-between gap-2'>
+        <section className="w-full flex flex-col items-start gap-6">
+            <main className='w-full flex items-end justify-between gap-2'>
                 <article className='flex flex-col gap-2'>
                     <h2 className="text-xl font-semibold text-gray-800">Referanslarım</h2>
                 </article>
-            </section>
-            <section className='w-full flex flex-col items-start gap-4'>
+            </main>
+            <main className='w-full flex flex-col items-start gap-4'>
                 {!references ? (
                     <TableSkeleton
                         rows={5}
@@ -76,7 +76,7 @@ export default function References() {
                         headers={['ID', 'Kullanıcı Adı', 'Email', 'Paket Adı', 'Level', 'Referans Tarihi']}
                     />
                 ) : (
-                    <div className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
+                    <article className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
@@ -120,11 +120,11 @@ export default function References() {
                                 ))}
                             </TableBody>
                         </Table>
-                    </div>
+                    </article>
                 )}
-            </section>
+            </main>
 
             <Pagination currentPage={currentPage} totalPages={totalPages} itemsCount={references && references.length > 0 ? references.length : 0} setCurrentPage={setCurrentPage} />
-        </main>
+        </section>
     )
 }

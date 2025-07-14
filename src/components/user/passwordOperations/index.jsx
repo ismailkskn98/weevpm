@@ -43,12 +43,12 @@ export default function PasswordOperations() {
     }
 
     return (
-        <main className="max-w-xl flex flex-col items-start gap-3">
-            <div className="w-full">
+        <section className="max-w-xl flex flex-col items-start gap-3">
+            <article className="w-full">
                 <h2 className="text-xl font-medium text-gray-900 mb-2">
                     {t('description')}
                 </h2>
-            </div>
+            </article>
 
             <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
                 <CustomInput
@@ -96,6 +96,6 @@ export default function PasswordOperations() {
                     </button>
                 </div>
             </form>
-        </main>
+        </section>
     )
 }

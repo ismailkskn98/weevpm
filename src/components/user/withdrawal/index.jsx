@@ -7,14 +7,14 @@ export default function Withdrawal() {
     const [isLoading, setIsLoading] = useState(false);
 
     return (
-        <main className="w-full flex flex-col items-start gap-6">
+        <section className="w-full flex flex-col items-start gap-6">
             {isLoading && (
-                <div className='absolute inset-0 w-full h-full bg-black/50 z-50 flex items-center justify-center select-none pointer-events-none'>
+                <article className='absolute inset-0 w-full h-full bg-black/50 z-50 flex items-center justify-center select-none pointer-events-none'>
                     <span className='text-white text-2xl font-bold'>İşlem yapılıyor...</span>
-                </div>
+                </article>
             )}
             <WithdrawalForm setIsLoading={setIsLoading} />
             <PastWithdrawals />
-        </main>
+        </section>
     )
 }
