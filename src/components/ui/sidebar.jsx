@@ -4,6 +4,8 @@ import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import { useAuth } from "@/context/AuthContext";
 
 const SidebarContext = createContext(undefined);
 
@@ -65,11 +67,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden lg:flex lg:flex-col bg-neutral-100 w-[clamp(220px, 20vw, 280px)] shrink-0",
+          "h-full px-4 py-4 hidden lg:flex lg:flex-col bg-neutral-100 w-[270px] shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "clamp(220px, 20vw, 280px)" : "60px") : "clamp(220px, 20vw, 280px)",
+          width: animate ? (open ? "270px" : "60px") : "270px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -80,19 +82,23 @@ export const DesktopSidebar = ({
   );
 };
 
-export const MobileSidebar = ({
-  className,
-  children,
-  ...props
-}) => {
+export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
+  const { userData } = useAuth();
+
   return (
     <>
       <div
         className={cn(
-          "h-10 px-4 py-4 flex flex-row lg:hidden items-center justify-between bg-neutral-100 w-full"
+          "h-16 px-4 py-1.5 flex flex-row lg:hidden items-center justify-between bg-gradient-to-br from-slate-50 to-slate-50 w-full"
         )}
         {...props}>
+        <div className="flex items-center gap-2">
+          <Link href="/user">
+            <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-full h-11 object-contain object-center" />
+          </Link>
+          <span className="text-sm font-medium text-deep-teal capitalize">{userData?.user?.user_name}</span>
+        </div>
         <div className="flex justify-end z-20 w-full">
           <IconMenu2
             className="text-neutral-800"
@@ -117,7 +123,9 @@ export const MobileSidebar = ({
                 onClick={() => setOpen(!open)}>
                 <IconX />
               </div>
-              {children}
+              <section className="w-full h-full flex flex-col items-start gap-16">
+                {children}
+              </section>
             </motion.div>
           )}
         </AnimatePresence>
@@ -132,11 +140,19 @@ export const SidebarLink = ({
   spanClassName,
   ...props
 }) => {
-  const { open, animate } = useSidebar();
+  const { open, animate, setOpen } = useSidebar();
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 1024) {
+      setOpen(false);
+    }
+  };
+
   return (
     <Link
       href={link.href}
-      className={cn("flex items-center justify-start gap-2 group/sidebar py-2", className)}
+      className={cn("flex items-center justify-start gap-2 group/sidebar py-3.5 lg:py-2", className)}
+      onClick={handleLinkClick}
       {...props}>
       {link.icon}
       <motion.span

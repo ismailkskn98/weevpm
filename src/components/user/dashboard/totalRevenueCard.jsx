@@ -73,7 +73,7 @@ export default function TotalRevenueCard() {
                                 <span className="text-xs xl:text-sm font-semibold text-black/90">{item.title}</span>
                                 <div className="flex items-center gap-1 text-black/95">
                                     <span className="tabular-nums font-mono text-xl xl:text-2xl font-bold text-black/95">
-                                        {loading ? <NumberSkeleton variant="white" /> : item.value}
+                                        {loading ? <NumberSkeleton /> : item.value}
                                     </span>
                                     {item.icon}
                                 </div>
