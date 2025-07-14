@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { CiSearch } from "react-icons/ci";
-import { FaLongArrowAltDown, FaLongArrowAltUp } from "react-icons/fa";
+import { FaLongArrowAltUp } from "react-icons/fa";
 import Pagination from '../pagination';
 import TableSkeleton from '../../ui/table-skeleton';
+import coreAxios from '@/helper/coreAxios';
+import { toast } from 'sonner';
+import { Crown } from 'lucide-react';
 
 export default function ServerList() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -19,82 +22,45 @@ export default function ServerList() {
     const endIndex = startIndex + itemsPerPage;
     const currentServers = servers && servers.length > 0 ? servers.slice(startIndex, endIndex) : [];
 
-    useEffect(() => {
-        const fetchServers = async () => {
-            const server = [
-                {
-                    id: "1",
-                    name: "Turkey Istanbul",
-                    status: "online",
-                    location: "Free",
-                    ping: "25ms"
-                },
-                {
-                    id: "2",
-                    name: "Germany Frankfurt",
-                    status: "online",
-                    location: "Paid",
-                    ping: "45ms"
-                },
-                {
-                    id: "3",
-                    name: "USA New York",
-                    status: "offline",
-                    location: "Paid",
-                    ping: "120ms"
-                },
-                {
-                    id: "4",
-                    name: "UK London",
-                    status: "online",
-                    location: "Paid",
-                    ping: "65ms"
-                },
-                {
-                    id: "5",
-                    name: "France Paris",
-                    status: "maintenance",
-                    location: "Free",
-                    ping: "55ms"
-                },
-                {
-                    id: "6",
-                    name: "Netherlands Amsterdam",
-                    status: "online",
-                    location: "Free",
-                    ping: "40ms"
-                },
-                {
-                    id: "7",
-                    name: "Singapore",
-                    status: "online",
-                    location: "Free",
-                    ping: "200ms"
-                },
-                {
-                    id: "8",
-                    name: "Japan Tokyo",
-                    status: "online",
-                    location: "Paid",
-                    ping: "180ms"
-                }
-            ]
-            setServers(server);
+    const referencesFetch = async () => {
+        try {
+            const response = await coreAxios.POST("/server-list");
+            if (response.status === true) {
+                setServers(response.data);
+            }
+            else {
+                toast.error("Server verileri alınamadı");
+            }
 
+        } catch (error) {
+            console.log("Server list fetch error", error);
         }
-        fetchServers();
+    }
+
+    useEffect(() => {
+        referencesFetch();
     }, [])
 
     const getStatusColor = (status) => {
         switch (status) {
-            case 'online':
-                return 'text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50'
-            case 'offline':
-                return 'text-red-700 bg-red-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-red-200/50'
-            case 'maintenance':
-                return 'text-amber-700 bg-amber-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-amber-200/50'
+            case 'ONLINE':
+                return 'text-emerald-600 text-xs font-medium '
+            case 'OFFLINE':
+                return 'text-red-600 text-xs font-medium'
             default:
-                return 'text-gray-700 bg-gray-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-200/50'
+                return 'text-gray-600 text-xs font-medium '
+        }
+    }
+
+    const getSignalColor = (signal) => {
+        if (signal <= 25) {
+            return 'w-[25%] bg-gradient-to-r from-rose-500 to-red-500';
+        } else if (signal <= 50) {
+            return 'w-[50%] bg-gradient-to-r from-amber-400 to-orange-500'
+        } else if (signal <= 75) {
+            return 'w-[75%] bg-gradient-to-r from-emerald-400 to-green-500'
+        } else {
+            return 'w-[100%] bg-gradient-to-r from-green-500 to-emerald-600'
         }
     }
 
@@ -160,25 +126,34 @@ export default function ServerList() {
                             <TableBody>
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
-                                            {server.name}
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
+                                            {server.country} / {server.city}
                                         </TableCell>
-                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">{server.location}</TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">{server.user_group === 'PREMIUM' ? (
+                                            <div className='flex items-center gap-1'>
+                                                <Crown className='w-4 h-4 text-amber-500' />
+                                                <span className='!text-black/70 hover:!text-black text-xsm '>Premium</span>
+                                            </div>
+                                        ) : (
+                                            <div className='flex items-center gap-1'>
+                                                <span className='text-xsm text-deep-teal'>Free</span>
+                                            </div>
+                                        )}</TableCell>
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <span className={getStatusColor(server.status)}>
                                                 {server.status}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                        <TableCell className="!text-black/70 hover:!text-black  text-xsm py-4 px-6">
                                             <article className='flex items-end gap-1'>
-                                                <div className='flex items-end justify-center gap-[1px] w-auto h-5'>
-                                                    <span className='inline-block w-[3px] h-[20%] flex-1 bg-emerald-600 rounded-t-sm'></span>
-                                                    <span className='inline-block w-[3px] h-[40%] flex-1 bg-emerald-500 rounded-t-sm'></span>
-                                                    <span className='inline-block w-[3px] h-[60%] flex-1 bg-emerald-400 rounded-t-sm'></span>
-                                                    <span className='inline-block w-[3px] h-[80%] flex-1 bg-emerald-300 rounded-t-sm'></span>
-                                                    <span className='inline-block w-[3px] h-full flex-1 bg-emerald-200 rounded-t-sm'></span>
+                                                <div className='relative flex items-end justify-center gap-[1px] h-5 w-8 ping-clip bg-[#ececec]'>
+                                                    <div className={`absolute inset-0 ${getSignalColor(server.server_signal)} h-full bg-green-600`}></div>
+                                                    <div className='absolute left-2 inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
+                                                    <div className='absolute left-[14px] inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
+                                                    <div className='absolute left-5 inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
+                                                    <div className='absolute left-[26px] inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
                                                 </div>
-                                                <span className='text-xs text-gray-600'>{server.ping}</span>
+                                                <span className='text-xs !text-black/70 hover:!text-black'>{server.server_signal}ms</span>
                                             </article>
                                         </TableCell>
                                     </TableRow>

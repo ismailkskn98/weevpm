@@ -446,3 +446,7 @@ html {
 .animate-shimmer {
   animation: shimmer 2s infinite;
 }
+
+.ping-clip {
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}

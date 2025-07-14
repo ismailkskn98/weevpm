@@ -39,7 +39,7 @@ export default function TotalRevenueCard() {
             value: Number(userData?.financial_status?.[0]?.can_token_withdraw) * 1 || 0,
             icon: (
                 <div className='w-4 h-4 flex items-center justify-center'>
-                    <div className="w-2.5 h-2.5 bg-black/60 rounded-full animate-pulse"></div>
+                    <div className="w-2.5 h-2.5 bg-teal rounded-full animate-pulse"></div>
                 </div>
             ),
         }

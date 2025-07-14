@@ -23,6 +23,7 @@ export default function PastWithdrawals() {
     const currentWithdrawals = withdrawals && withdrawals.length > 0 ? withdrawals.slice(startIndex, endIndex) : [];
 
     const copyToClipboard = (text) => {
+        if (!text) return;
         navigator.clipboard.writeText(text);
         toast.success(t('messages.copied'));
     };
@@ -125,15 +126,19 @@ export default function PastWithdrawals() {
                                             {withdrawal.currency}
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black group text-xsm py-4 px-6">
-                                            <div className="w-full flex items-center justify-between gap-2 cursor-pointer group-hover:!text-black" onClick={() => copyToClipboard(withdrawal.hash)}>
+                                            <div className="w-full flex items-center justify-between gap-2 cursor-pointer group-hover:!text-black" onClick={() => copyToClipboard(withdrawal.hash || '')}>
                                                 <span>{shortenText(withdrawal.hash) || '—'}</span>
-                                                <IoCopy className="w-4 h-4 !text-deep-teal group-hover:!text-aqua-green" />
+                                                {withdrawal.hash && (
+                                                    <IoCopy className="w-4 h-4 !text-deep-teal group-hover:!text-aqua-green" />
+                                                )}
                                             </div>
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black group text-xsm py-4 px-6">
-                                            <div className="w-full flex items-center justify-between gap-2 cursor-pointer group-hover:!text-black" onClick={() => copyToClipboard(withdrawal.wallet_address)}>
+                                            <div className="w-full flex items-center justify-between gap-2 cursor-pointer group-hover:!text-black" onClick={() => copyToClipboard(withdrawal.wallet_address || '')}>
                                                 <span>{shortenText(withdrawal.wallet_address) || '—'}</span>
-                                                <IoCopy className="w-4 h-4 !text-deep-teal group-hover:!text-aqua-green" />
+                                                {withdrawal.wallet_address && (
+                                                    <IoCopy className="w-4 h-4 !text-deep-teal group-hover:!text-aqua-green" />
+                                                )}
                                             </div>
                                         </TableCell>
                                         <TableCell className="text-gray-700 text-xsm py-4 px-6">

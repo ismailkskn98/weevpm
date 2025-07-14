@@ -38,29 +38,6 @@ export default function References() {
         referencesFetch();
     }, [])
 
-    const getInterval = (interval) => {
-        if (interval === 'MONTHLY') {
-            return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Aylık
-            </span>
-        }
-        else if (interval === 'YEARLY') {
-            return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Yıllık
-            </span>
-        }
-        else if (interval === 'LIFETIME') {
-            return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Ömür Boyu
-            </span>
-        }
-        else {
-            return <span className="text-red-700 bg-red-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-red-200/50">
-                Bulunamadı
-            </span>
-        }
-    }
-
     return (
         <section className="w-full flex flex-col items-start gap-6">
             <main className='w-full flex items-end justify-between gap-2'>

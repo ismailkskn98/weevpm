@@ -90,7 +90,7 @@ export default function WithdrawalForm({ setIsLoading }) {
                             setValue("revenueType", value);
                         }}
                     >
-                        <SelectTrigger className="w-full rounded-3xl h-12 place">
+                        <SelectTrigger className="w-full rounded-3xl placeholder:text-sm">
                             <SelectValue placeholder={t('revenueTypePlaceholder')} />
                         </SelectTrigger>
                         <SelectContent>
