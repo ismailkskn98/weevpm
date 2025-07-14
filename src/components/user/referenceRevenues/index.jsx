@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react'
-import { CiSearch } from 'react-icons/ci'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import Pagination from '../pagination'
 import { useLocale } from 'next-intl';
@@ -12,7 +11,6 @@ import TableSkeleton from '@/components/ui/table-skeleton';
 export default function ReferenceRevenues() {
     const locale = useLocale();
     const [referencesRevenues, setReferencesRevenues] = useState(null);
-    const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
 
@@ -45,10 +43,6 @@ export default function ReferenceRevenues() {
                 <article className='flex flex-col gap-2'>
                     <h2 className="text-xl font-semibold text-gray-800">Referans Gelirlerim</h2>
                 </article>
-                <article className='relative'>
-                    <input type="text" className='py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder='Kullanıcı adı veya email ara' onChange={(e) => setSearchTerm(e.target.value)} />
-                    <CiSearch className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4' />
-                </article>
             </section>
             <section className='w-full flex flex-col items-start gap-4'>
                 {!referencesRevenues ? (
@@ -62,12 +56,12 @@ export default function ReferenceRevenues() {
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
-                                    <TableHead className="text-gray-700 font-semibold">ID</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Kullanıcı Adı</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Email</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Token</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Referans Tarihi</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold">Level</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">ID</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Kullanıcı Adı</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Email</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Token</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Referans Tarihi</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">Level</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -75,26 +69,26 @@ export default function ReferenceRevenues() {
                                     console.log(reference);
                                     return (
                                         <TableRow key={index} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                            <TableCell className="text-gray-700 text-xsm py-4 px-6">
                                                 {index + 1}
                                             </TableCell>
-                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                            <TableCell className="text-gray-700 text-xsm py-4 px-6">
                                                 {reference.user_name}
                                             </TableCell>
-                                            <TableCell className="font-medium text-gray-600 text-sm py-4">
+                                            <TableCell className="text-gray-600 text-xsm py-4 px-6">
                                                 {reference.email}
                                             </TableCell>
-                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
+                                            <TableCell className="text-gray-700 text-xsm py-4 px-6">
                                                 <span className="text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50">
                                                     {reference.token_amount * 1} WCP
                                                 </span>
                                             </TableCell>
-                                            <TableCell className="font-medium text-gray-600 text-sm py-4">
+                                            <TableCell className="text-gray-600 text-xsm py-4 px-6">
                                                 {dateFormat(reference.referenced_at, locale)}
                                             </TableCell>
-                                            <TableCell className="font-medium text-gray-700 text-sm py-4">
-                                                <span className="text-blue-700 bg-blue-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-blue-200/50">
-                                                    Level {reference.reference_level}
+                                            <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                                <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
+                                                    {reference.reference_level}
                                                 </span>
                                             </TableCell>
                                         </TableRow>

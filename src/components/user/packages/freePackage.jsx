@@ -38,7 +38,7 @@ export default function FreePackage({ freePackages }) {
                         <div className="text-3xl 3xl:text-4xl font-bold mt-6">Ücretsiz</div>
                     </div>
 
-                    <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-slate-100 rounded-t-[2rem]"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-slate-100 rounded-t-[2rem] drop-shadow-[0px_-5px_2px_#0000004a]"></div>
                 </figure>
 
                 <figure className="w-full flex-1 relative flex flex-col items-center justify-between gap-4 pb-6 pt-3 3xl:py-6 px-6">

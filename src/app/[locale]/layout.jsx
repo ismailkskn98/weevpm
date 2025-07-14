@@ -5,7 +5,6 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Toaster } from "@/components/ui/sonner"
-import { ReactLenis } from "@/utlis/lenis";
 
 const inter = localFont({
   src: [
@@ -36,12 +35,10 @@ export default async function RootLayout({ children, params }) {
       <body
         className={`${inter.variable} font-inter overflow-x-hidden antialiased w-full`}
       >
-        <ReactLenis root>
-          <Toaster position="top-center" richColors />
-          <NextIntlClientProvider>
-            {children}
-          </NextIntlClientProvider>
-        </ReactLenis>
+        <Toaster position="top-center" richColors />
+        <NextIntlClientProvider>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

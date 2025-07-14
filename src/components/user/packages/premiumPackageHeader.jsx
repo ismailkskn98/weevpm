@@ -7,7 +7,6 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
     const { userData, loading } = useAuth();
     const locale = useLocale();
 
-    // Yıllık paket için orijinal fiyat hesapla
     const originalPrice = getOriginalPrice(packageItem);
     const currentPrice = getPrice(packageItem);
 
@@ -45,13 +44,11 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                     <Crown className="w-8 h-8 text-white/80" />
                 </div>
 
-                {/* Fiyat Gösterimi */}
                 <div className="mt-6">
                     {loading || !packageItem ? (
                         <div className="animate-pulse bg-white/20 w-20 h-10 rounded"></div>
                     ) : (
                         <div className="flex flex-col items-start">
-                            {/* Yıllık paket için orijinal fiyat (üstü çizili) */}
                             {packageItem.interval === 'YEARLY' && originalPrice && (
                                 <div className="text-lg font-medium text-white/70 mb-1">
                                     <span className="line-through tabular-nums">
@@ -62,13 +59,9 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                                     </span>
                                 </div>
                             )}
-
-                            {/* Güncel fiyat */}
                             <div className="text-3xl 3xl:text-4xl font-bold tabular-nums" key={`${packageItem.id}-${selectedCurrency}`}>
                                 {currentPrice}
                             </div>
-
-                            {/* Yıllık paket için indirim vurgusu */}
                             {packageItem.interval === 'YEARLY' && originalPrice && (
                                 <div className="text-sm text-white/90 mt-1 font-medium">
                                     ✨ 16% tasarruf edin!
@@ -78,7 +71,7 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                     )}
                 </div>
             </div>
-            <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-orange-50 rounded-t-[2rem] z-10"></div>
+            <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-orange-50 rounded-t-[2rem] z-10 drop-shadow-[0px_-5px_2px_#0000004a]"></div>
         </figure>
     )
 }

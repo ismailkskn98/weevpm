@@ -90,15 +90,13 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     <>
       <div
         className={cn(
-          "h-16 px-4 py-1.5 flex flex-row lg:hidden items-center justify-between bg-gradient-to-br from-slate-50 to-slate-50 w-full"
+          "h-16 px-4 py-3.5 flex flex-row lg:hidden items-center justify-between bg-gradient-to-br from-slate-50 to-slate-50 w-full"
         )}
         {...props}>
-        <div className="flex items-center gap-2">
-          <Link href="/user">
-            <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-full h-11 object-contain object-center" />
-          </Link>
+        <Link href="/user" className="flex items-center gap-2">
+          <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-full h-8 object-contain object-center" />
           <span className="text-sm font-medium text-deep-teal capitalize">{userData?.user?.user_name}</span>
-        </div>
+        </Link>
         <div className="flex justify-end z-20 w-full">
           <IconMenu2
             className="text-neutral-800"

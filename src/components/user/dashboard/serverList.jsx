@@ -160,17 +160,17 @@ export default function ServerList() {
                             <TableBody>
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
+                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
                                             {server.name}
                                         </TableCell>
-                                        <TableCell className="font-medium text-gray-600 text-sm py-4 px-6">{server.location}</TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
+                                        <TableCell className="text-gray-600 text-xsm py-4 px-6">{server.location}</TableCell>
+                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
                                             <span className={getStatusColor(server.status)}>
                                                 {server.status}
                                             </span>
                                         </TableCell>
-                                        <TableCell className="font-medium text-gray-700 text-sm py-4 px-6">
-                                            <article className='flex items-end gap-2'>
+                                        <TableCell className="text-gray-700 text-xsm py-4 px-6">
+                                            <article className='flex items-end gap-1'>
                                                 <div className='flex items-end justify-center gap-[1px] w-auto h-5'>
                                                     <span className='inline-block w-[3px] h-[20%] flex-1 bg-emerald-600 rounded-t-sm'></span>
                                                     <span className='inline-block w-[3px] h-[40%] flex-1 bg-emerald-500 rounded-t-sm'></span>
@@ -178,7 +178,7 @@ export default function ServerList() {
                                                     <span className='inline-block w-[3px] h-[80%] flex-1 bg-emerald-300 rounded-t-sm'></span>
                                                     <span className='inline-block w-[3px] h-full flex-1 bg-emerald-200 rounded-t-sm'></span>
                                                 </div>
-                                                <span className='text-xs font-medium text-gray-600'>{server.ping}</span>
+                                                <span className='text-xs text-gray-600'>{server.ping}</span>
                                             </article>
                                         </TableCell>
                                     </TableRow>
