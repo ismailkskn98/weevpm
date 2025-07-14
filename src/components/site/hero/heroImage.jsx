@@ -4,22 +4,32 @@ import AdvancedSphereAnimation from "./heroAnimate";
 
 export default function HeroImage() {
   return (
-    <article className="relative flex-1 flex items-center justify-end h-full">
+    <article className="relative w-[250px] h-[280px] sm:h-[350px] lg:h-[450px] 2xl:h-[500px] 3xl:h-[550px] flex items-center justify-center perspective-1000 rounded-2xl">
       <AdvancedSphereAnimation />
-      <Image
-        src="/images/hero-image-left.png"
-        alt="hero image"
-        width={750}
-        height={600}
-        className="relative z-10 object-contain object-center -mr-20 max-h-[250px] md:max-h-[340px] lg:max-h-[400px] xl:max-h-[500px] w-fit"
-      />
-      <Image
-        src="/images/hero-image-bottom.png"
-        alt="hero image"
-        width={550}
-        height={400}
-        className="relative z-10 object-contain object-center self-end max-h-[100px] md:max-h-[130px] lg:max-h-[160px] xl:max-h-[200px] w-fit -mb-12"
-      />
+
+      <div className="absolute inset-0 w-fit h-full hero-layer-1 rounded-2xl shadow-md">
+        <Image
+          src="/images/hero-image-left.png"
+          alt="background layer"
+          width={750}
+          height={600}
+          className="w-full h-full object-fill object-center rounded-2xl"
+        />
+      </div>
+
+      <div className="absolute inset-0 w-fit h-full hero-layer-2 rounded-2xl shadow-md">
+        <div className="w-[142px] sm:w-[179px] lg:w-[230px] 3xl:w-[257px] h-full border-2 border-white/50 rounded-2xl backdrop-blur-md bg-gradient-to-br from-teal/20 via-transparent to-teal/30 flex items-center justify-center"></div>
+      </div>
+
+      <div className="relative w-fit h-full z-30 hero-layer-3 rounded-2xl shadow-md">
+        <Image
+          src="/images/hero-image-bottom.png"
+          alt="foreground layer"
+          width={550}
+          height={400}
+          className="object-fill object-center w-full h-full rounded-2xl"
+        />
+      </div>
     </article>
   );
 }

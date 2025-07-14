@@ -68,16 +68,16 @@ export default function MobilNavbar() {
                 </div>
 
                 <div className="flex-1 px-2 py-6 overflow-y-auto">
-                    <nav className="w-full flex flex-col items-center justify-start h-full gap-y-6 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-gray-100">
+                    <nav className="w-full flex flex-col items-center justify-start h-full gap-y-6">
                         {navItems.map((item, index) => {
                             return (
                                 <Link
                                     key={item.id}
                                     href={item.href}
                                     onClick={handleLinkClick}
-                                    className="w-full flex justify-center items-center bg-white p-4 hover:bg-teal/10 transition-all duration-200 group text-center"
+                                    className="w-full flex justify-center items-center bg-white p-2.5 hover:bg-teal/10 transition-all duration-200 group text-center"
                                 >
-                                    <span className="uppercase font-medium text-black/80 text-lg group-hover:text-teal transition-colors">
+                                    <span className="uppercase font-medium text-black/70 group-hover:text-teal transition-colors">
                                         {item.name}
                                     </span>
                                 </Link>
@@ -86,7 +86,7 @@ export default function MobilNavbar() {
                     </nav>
                 </div>
 
-                <div className="px-4 py-4 border-t border-gray-200 bg-gray-50">
+                <div className="px-4 py-4">
                     <div className="grid grid-cols-2 gap-3 mb-4">
                         <Link
                             href="/auth/login"

@@ -53,7 +53,7 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
     // Handle responsive size with mobile optimization
     const handleResize = useCallback(() => {
         if (window.innerWidth < 768) {
-            setSize(280) // Much smaller for mobile
+            setSize(0) // Hide completely on mobile
         } else if (window.innerWidth < 1024) {
             setSize(350)
         } else if (window.innerWidth < 1280) {
@@ -100,37 +100,18 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
 
         const svg = svgRef.current
         const elements = {
-            mainCircle: svg.querySelector("#mainCircle"),
-            blob1: svg.querySelector("#blob1"),
-            blob2: svg.querySelector("#blob2"),
-            blob3: svg.querySelector("#blob3"),
-            particles: [],
             outerParticles: []
         }
 
-        // Get particle elements
-        for (let i = 1; i <= 6; i++) {
-            elements.particles.push(svg.querySelector(`#particle${i}`))
-        }
-
         // Get outer particle elements
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 1; i <= 8; i++) {
             elements.outerParticles.push(svg.querySelector(`#outerParticle${i}`))
         }
 
         // Verify all elements exist
-        if (!elements.mainCircle || !elements.blob1 || !elements.blob2 || !elements.blob3 ||
-            elements.particles.some(p => !p) || elements.outerParticles.some(p => !p)) {
+        if (elements.outerParticles.some(p => !p)) {
             return
         }
-
-        // Pre-apply CSS animations for constant movements
-        // Slower animations for low-performance devices
-        const animationSpeed = isLowPerformance ? 1.5 : 1
-        elements.mainCircle.style.animation = `pulse ${4 * animationSpeed}s ease-in-out infinite`
-        elements.blob1.style.animation = `float1 ${6 * animationSpeed}s ease-in-out infinite`
-        elements.blob2.style.animation = `float2 ${5 * animationSpeed}s ease-in-out infinite`
-        elements.blob3.style.animation = `float3 ${7 * animationSpeed}s ease-in-out infinite`
 
         elementsRef.current = elements
         setIsReady(true)
@@ -164,28 +145,11 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
             }
 
             const elapsed = (currentTime - startTime) * 0.001
-
-            // Reduced calculations for mobile
-            const t1 = elapsed * 0.166
             const movementScale = isLowPerformance ? 0.7 : 1
-
-            // Simplified inner particle animations for mobile
-            elements.particles.forEach((particle, index) => {
-                const offset = (index * Math.PI * 2) / 6
-                const radius = (80 + Math.sin(elapsed * 0.5 + offset) * 25) * movementScale
-                const angle = t1 + offset
-                const wobble = Math.sin(elapsed * (0.8 + index * 0.1)) * 8 * movementScale
-
-                const particleX = 200 + Math.cos(angle) * radius + wobble
-                const particleY = 200 + Math.sin(angle) * radius + wobble * 0.5
-                const particleScale = 0.6 + Math.sin(elapsed * (1.2 + index * 0.15)) * 0.4
-
-                particle.style.transform = `translate(${particleX - 200}px, ${particleY - 200}px) scale(${particleScale})`
-            })
 
             // Reduced outer particle complexity for mobile
             elements.outerParticles.forEach((particle, index) => {
-                const minRadius = (200 + index * 25) * movementScale
+                const minRadius = (100 + index * 25) * movementScale
                 const radiusVariation = Math.sin(elapsed * (0.3 + index * 0.1)) * 40 * movementScale
                 const radius = minRadius + Math.abs(radiusVariation)
 
@@ -196,11 +160,11 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
                 const chaoticY = Math.cos(elapsed * (0.6 + index * 0.15)) * 25 * movementScale
                 const drift = Math.sin(elapsed * (0.25 + index * 0.08)) * 20 * movementScale
 
-                const outerX = 200 + Math.cos(angle) * radius + chaoticX + drift
-                const outerY = 200 + Math.sin(angle) * radius + chaoticY + drift * 0.7
+                const outerX = 100 + Math.cos(angle) * radius + chaoticX + drift
+                const outerY = 100 + Math.sin(angle) * radius + chaoticY + drift * 0.7
                 const outerScale = 0.4 + Math.sin(elapsed * (0.9 + index * 0.3)) * 0.5
 
-                particle.style.transform = `translate(${outerX - 200}px, ${outerY - 200}px) scale(${outerScale})`
+                particle.style.transform = `translate(${outerX - 100}px, ${outerY - 100}px) scale(${outerScale})`
             })
 
             animationRef.current = requestAnimationFrame(animate)
@@ -246,30 +210,13 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
         )
     }
 
+    // Hide completely on mobile
+    if (size === 0) {
+        return null
+    }
+
     return (
         <>
-            <style jsx>{`
-                @keyframes pulse {
-                    0%, 100% { transform: scale(0.98); }
-                    50% { transform: scale(1.02); }
-                }
-                @keyframes float1 {
-                    0%, 100% { transform: translate(0px, 0px) scale(0.9); }
-                    25% { transform: translate(${isLowPerformance ? '16px, -12px' : '32px, -24px'}) scale(1.0); }
-                    50% { transform: translate(${isLowPerformance ? '-8px, 16px' : '-16px, 32px'}) scale(0.95); }
-                    75% { transform: translate(${isLowPerformance ? '-16px, -8px' : '-32px, -16px'}) scale(1.05); }
-                }
-                @keyframes float2 {
-                    0%, 100% { transform: translate(0px, 0px) scale(0.85); }
-                    33% { transform: translate(${isLowPerformance ? '24px, 20px' : '48px, 40px'}) scale(1.0); }
-                    66% { transform: translate(${isLowPerformance ? '-20px, -16px' : '-40px, -32px'}) scale(0.9); }
-                }
-                @keyframes float3 {
-                    0%, 100% { transform: translate(0px, 0px) scale(0.8); }
-                    40% { transform: translate(${isLowPerformance ? '-16px, 24px' : '-32px, 48px'}) scale(1.0); }
-                    80% { transform: translate(${isLowPerformance ? '20px, -12px' : '40px, -24px'}) scale(0.85); }
-                }
-            `}</style>
             <div
                 className={cn("absolute right-0 top-1/2 -translate-y-1/2 z-0 opacity-80 overflow-visible", className)}
                 style={{
@@ -295,102 +242,22 @@ export default function AdvancedSphereAnimation({ className, primaryColor = "#5d
                     }}
                 >
                     <defs>
-                        <radialGradient id="sphereGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                            <stop offset="0%" stopColor={primaryColor} stopOpacity="0.8" />
-                            <stop offset="100%" stopColor={secondaryColor} stopOpacity="0.6" />
-                        </radialGradient>
-
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation={isLowPerformance ? "3" : "6"} result="blur" />
-                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                        </filter>
-
                         <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
                             <feGaussianBlur stdDeviation={isLowPerformance ? "1.5" : "3"} result="softBlur" />
                             <feComposite in="SourceGraphic" in2="softBlur" operator="over" />
                         </filter>
                     </defs>
 
-                    <circle
-                        id="mainCircle"
-                        cx="200"
-                        cy="200"
-                        r="140"
-                        fill="url(#sphereGradient)"
-                        filter="url(#glow)"
-                        style={{
-                            transformOrigin: "center",
-                            willChange: "transform"
-                        }}
-                    />
-
-                    <circle
-                        id="blob1"
-                        cx="200"
-                        cy="200"
-                        r="80"
-                        fill={primaryColor}
-                        fillOpacity="0.4"
-                        style={{
-                            transformOrigin: "center",
-                            willChange: "transform"
-                        }}
-                    />
-
-                    <circle
-                        id="blob2"
-                        cx="200"
-                        cy="200"
-                        r="60"
-                        fill={secondaryColor}
-                        fillOpacity="0.5"
-                        style={{
-                            transformOrigin: "center",
-                            willChange: "transform"
-                        }}
-                    />
-
-                    <circle
-                        id="blob3"
-                        cx="200"
-                        cy="200"
-                        r="40"
-                        fill={primaryColor}
-                        fillOpacity="0.6"
-                        style={{
-                            transformOrigin: "center",
-                            willChange: "transform"
-                        }}
-                    />
-
-                    {/* Inner particle circles - stay within main circle */}
-                    {[...Array(6)].map((_, i) => (
-                        <circle
-                            key={i}
-                            id={`particle${i + 1}`}
-                            cx="200"
-                            cy="200"
-                            r={[8, 6, 10, 5, 7, 9][i]}
-                            fill={i % 2 === 0 ? primaryColor : secondaryColor}
-                            fillOpacity={[0.7, 0.8, 0.6, 0.9, 0.7, 0.6][i]}
-                            filter="url(#softGlow)"
-                            style={{
-                                transformOrigin: "center",
-                                willChange: "transform"
-                            }}
-                        />
-                    ))}
-
-                    {/* Outer scattered particles - completely outside main circle */}
-                    {[...Array(4)].map((_, i) => (
+                    {/* Outer scattered particles only */}
+                    {[...Array(8)].map((_, i) => (
                         <circle
                             key={i}
                             id={`outerParticle${i + 1}`}
                             cx="200"
                             cy="200"
-                            r={[5, 6, 4, 5.5][i]}
+                            r={[5, 6, 4, 5.5, 7, 4.5, 6.5, 5][i]}
                             fill={i % 2 === 0 ? primaryColor : secondaryColor}
-                            fillOpacity={[0.4, 0.3, 0.5, 0.35][i]}
+                            fillOpacity={[0.4, 0.3, 0.5, 0.35, 0.45, 0.4, 0.3, 0.5][i]}
                             filter="url(#softGlow)"
                             style={{
                                 transformOrigin: "center",
