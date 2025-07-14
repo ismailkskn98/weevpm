@@ -439,8 +439,91 @@
       "passwordOperations": "Password Operations",
       "logout": "Logout"
     },
+    "dashboard": {
+      "page": {
+        "title": "Dashboard",
+        "description": "In this section, you can view your account information and usage status."
+      },
+      "totalRevenueCard": {
+        "title": "Revenue Summary",
+        "description": "Your token status",
+        "totalIncome": "Total Income",
+        "totalWithdrawal": "Total Withdrawal",
+        "withdrawable": "Withdrawable"
+      },
+      "referenceRevenueCard": {
+        "title": "Reference Information",
+        "description": "View your reference summary",
+        "totalReferenceCount": "Total References",
+        "totalReferenceRevenue": "Total Reference Revenue",
+        "yourReferenceCode": "Your Reference Code",
+        "referenceCodeCopied": "Reference code copied"
+      },
+      "activePackageCard": {
+        "freePackage": {
+          "title": "Free Package",
+          "description": "Basic features"
+        },
+        "premiumPackage": {
+          "title": "Premium Package",
+          "description": "All features active"
+        },
+        "packageNotFound": "Package Not Found",
+        "vipAccess": "VIP Access"
+      },
+      "serverList": {
+        "title": "Server List",
+        "description": "Server list is used to view all your servers.",
+        "searchPlaceholder": "Filter server or location name",
+        "errorMessage": "Server data could not be retrieved",
+        "table": {
+          "serverName": "Server Name",
+          "packageType": "Package Type",
+          "status": "Status",
+          "ping": "Ping"
+        },
+        "packageTypes": {
+          "premium": "Premium",
+          "free": "Free"
+        },
+        "status": {
+          "online": "ONLINE",
+          "offline": "OFFLINE"
+        }
+      }
+    },
+    "packages": {
+      "page": {
+        "title": "Packages",
+        "description": "In this section, you can view packages or update your package."
+      }
+    },
+    "references": {
+      "page": {
+        "title": "References",
+        "description": "In this section, you can view and track your references."
+      }
+    },
+    "referenceRevenues": {
+      "page": {
+        "title": "Reference Revenues",
+        "description": "In this section, you can view and track your reference revenues."
+      }
+    },
+    "withdrawalPage": {
+      "page": {
+        "title": "Withdrawals",
+        "description": "In this section, you can view and manage your withdrawals."
+      }
+    },
     "common": {
-      "lastUpdateDate": "Last update date"
+      "lastUpdateDate": "Last update date",
+      "lastUpdate": "Last update:"
+    },
+    "pagination": {
+      "pageInfo": "Page {currentPage} / {totalPages} (Total {itemsCount})",
+      "previous": "Previous",
+      "next": "Next"
     }
   }
 }

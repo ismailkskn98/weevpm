@@ -6,18 +6,20 @@ import LastUpdate from '../lastUpdate';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import { NumberSkeleton } from './totalRevenueCard';
+import { useTranslations } from 'next-intl';
 
 export default function ReferenceRevenueCard() {
     const { userData, loading } = useAuth();
+    const t = useTranslations('User.dashboard.referenceRevenueCard');
 
     const totalItems = [
         {
-            title: 'Toplam Referans Sayısı',
+            title: t('totalReferenceCount'),
             value: userData?.user?.reference_count || 0,
             icon: <UserPlus className="w-4 h-4 text-white/80" />,
         },
         {
-            title: 'Toplam Referans Geliri',
+            title: t('totalReferenceRevenue'),
             value: Number(userData?.financial_status?.[0]?.total_token_income) * 1 || 0,
             icon: <ArrowUpRight className="w-4 h-4 text-white/80" />,
         },
@@ -37,8 +39,8 @@ export default function ReferenceRevenueCard() {
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-lg xl:text-xl font-semibold text-white">Referans Bilgileriniz</h2>
-                            <p className="text-xs xl:text-sm text-white/80">Referans özetini görüntüleyebilirsiniz</p>
+                            <h2 className="text-lg xl:text-xl font-semibold text-white">{t('title')}</h2>
+                            <p className="text-xs xl:text-sm text-white/80">{t('description')}</p>
                         </div>
                     </div>
                 </article>
@@ -58,8 +60,8 @@ export default function ReferenceRevenueCard() {
                     ))}
                     <article className="group w-full">
                         <div className="flex items-center justify-between gap-8">
-                            <span className="text-xs xl:text-sm font-semibold text-white/90">Referans Kodunuz</span>
-                            <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success('Referans kodunuz kopyalandı')}>
+                            <span className="text-xs xl:text-sm font-semibold text-white/90">{t('yourReferenceCode')}</span>
+                            <CopyToClipboard text={userData?.user.reference_code} onCopy={() => toast.success(t('referenceCodeCopied'))}>
                                 <div className="flex items-center gap-1.5 cursor-pointer group">
                                     <span className="tabular-nums font-mono text-lg xl:text-xl 2xl:text-2xl font-bold text-white/95 group-hover:text-white transition-all duration-150">
                                         {loading ? <NumberSkeleton variant="white" /> : userData?.user.reference_code}

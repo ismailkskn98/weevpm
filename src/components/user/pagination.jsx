@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function Pagination({ currentPage, totalPages, itemsCount, setCurrentPage }) {
+    const t = useTranslations('User.pagination');
     return (
         <main className="w-full flex items-center justify-between">
             <div className="text-xs lg:text-sm text-gray-600">
-                Sayfa {currentPage} / {totalPages} (Toplam {itemsCount})
+                {t('pageInfo', { currentPage, totalPages, itemsCount })}
             </div>
 
             <div className="flex space-x-2">
@@ -13,7 +15,7 @@ export default function Pagination({ currentPage, totalPages, itemsCount, setCur
                     disabled={currentPage === 1}
                     className="px-3 py-2 text-xs lg:text-sm border rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
                 >
-                    Önceki
+                    {t('previous')}
                 </button>
 
                 <button
@@ -21,7 +23,7 @@ export default function Pagination({ currentPage, totalPages, itemsCount, setCur
                     disabled={currentPage === totalPages}
                     className="px-3 py-2 text-xs lg:text-sm border rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
                 >
-                    Sonraki
+                    {t('next')}
                 </button>
             </div>
         </main>

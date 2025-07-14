@@ -437,8 +437,91 @@
       "passwordOperations": "Şifrə Əməliyyatları",
       "logout": "Çıxış"
     },
+    "dashboard": {
+      "page": {
+        "title": "İdarə Paneli",
+        "description": "Bu bölmədə hesab məlumatlarınızı və istifadə statusunuzu görə bilərsiniz."
+      },
+      "totalRevenueCard": {
+        "title": "Gəlir Xülasəsi",
+        "description": "Token statusunuz",
+        "totalIncome": "Ümumi Gəlir",
+        "totalWithdrawal": "Ümumi Çıxış",
+        "withdrawable": "Çıxarıla bilər"
+      },
+      "referenceRevenueCard": {
+        "title": "İstinad Məlumatlarınız",
+        "description": "İstinad xülasəsini görə bilərsiniz",
+        "totalReferenceCount": "Ümumi İstinad Sayı",
+        "totalReferenceRevenue": "Ümumi İstinad Gəliri",
+        "yourReferenceCode": "İstinad Kodunuz",
+        "referenceCodeCopied": "İstinad kodunuz köçürüldü"
+      },
+      "activePackageCard": {
+        "freePackage": {
+          "title": "Pulsuz Paket",
+          "description": "Əsas xüsusiyyətlər"
+        },
+        "premiumPackage": {
+          "title": "Premium Paket",
+          "description": "Bütün xüsusiyyətlər aktiv"
+        },
+        "packageNotFound": "Paket Tapılmadı",
+        "vipAccess": "VIP Giriş"
+      },
+      "serverList": {
+        "title": "Server Siyahısı",
+        "description": "Server siyahısı bütün serverlərinizi görmək üçün istifadə olunur.",
+        "searchPlaceholder": "Server və ya lokasiya adını filtrləyin",
+        "errorMessage": "Server məlumatları alınmadı",
+        "table": {
+          "serverName": "Server Adı",
+          "packageType": "Paket Növü",
+          "status": "Status",
+          "ping": "Ping"
+        },
+        "packageTypes": {
+          "premium": "Premium",
+          "free": "Pulsuz"
+        },
+        "status": {
+          "online": "AKTİV",
+          "offline": "DEAKTİV"
+        }
+      }
+    },
+    "packages": {
+      "page": {
+        "title": "Paketlər",
+        "description": "Bu bölmədə paketləri görə bilər və ya paketinizi yeniləyə bilərsiniz."
+      }
+    },
+    "references": {
+      "page": {
+        "title": "İstinadlar",
+        "description": "Bu bölmədə istinadlarınızı görə və izləyə bilərsiniz."
+      }
+    },
+    "referenceRevenues": {
+      "page": {
+        "title": "İstinad Gəlirləri",
+        "description": "Bu bölmədə istinad gəlirlərinizi görə və izləyə bilərsiniz."
+      }
+    },
+    "withdrawalPage": {
+      "page": {
+        "title": "Çıxışlar",
+        "description": "Bu bölmədə çıxışlarınızı görə və idarə edə bilərsiniz."
+      }
+    },
     "common": {
-      "lastUpdateDate": "Son yeniləmə tarixi"
+      "lastUpdateDate": "Son yeniləmə tarixi",
+      "lastUpdate": "Son yeniləmə:"
+    },
+    "pagination": {
+      "pageInfo": "Səhifə {currentPage} / {totalPages} (Cəmi {itemsCount})",
+      "previous": "Əvvəlki",
+      "next": "Sonrakı"
     }
   }
 }

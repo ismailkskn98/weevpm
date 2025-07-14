@@ -8,11 +8,14 @@ import TableSkeleton from '../../ui/table-skeleton';
 import coreAxios from '@/helper/coreAxios';
 import { toast } from 'sonner';
 import { Crown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function ServerList() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredServers, setFilteredServers] = useState(null);
     const [servers, setServers] = useState(null);
+    const t = useTranslations('User.dashboard.serverList');
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
@@ -29,7 +32,7 @@ export default function ServerList() {
                 setServers(response.data);
             }
             else {
-                toast.error("Server verileri alınamadı");
+                toast.error(t('errorMessage'));
             }
 
         } catch (error) {
@@ -87,11 +90,11 @@ export default function ServerList() {
         <main className="w-full flex flex-col items-start gap-4 md:gap-6 mt-16">
             <section className='w-full flex flex-col md:flex-row items-start md:items-end justify-start md:justify-between gap-6 md:gap-2'>
                 <article className='flex flex-col gap-2'>
-                    <h2 className="text-xl font-semibold text-gray-800">Server Listesi</h2>
-                    <p className='text-sm text-gray-600'>Server listesi, tüm serverlerinizi görüntülemek için kullanılır.</p>
+                    <h2 className="text-xl font-semibold text-gray-800">{t('title')}</h2>
+                    <p className='text-sm text-gray-600'>{t('description')}</p>
                 </article>
                 <article className='relative'>
-                    <input type="text" className='py-2 md:py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder='Filter server or location name' onChange={(e) => setSearchTerm(e.target.value)} />
+                    <input type="text" className='py-2 md:py-3 pl-4 border border-gray-300 outline-none rounded-xl placeholder:text-xs text-sm text-black/70 pr-10 bg-gray-50 focus:bg-white focus:border-deep-teal/40 transition-all duration-200 shadow-sm' placeholder={t('searchPlaceholder')} onChange={(e) => setSearchTerm(e.target.value)} />
                     <CiSearch className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4' />
                 </article>
             </section>
@@ -100,24 +103,24 @@ export default function ServerList() {
                     <TableSkeleton
                         rows={5}
                         columns={4}
-                        headers={['Server Adı', 'Lokasyon', 'Durum', 'Ping']}
+                        headers={[t('table.serverName'), t('table.packageType'), t('table.status'), t('table.ping')]}
                     />
                 ) : (
                     <div className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
-                                    <TableHead className="text-gray-700 font-semibold px-6">Server Adı</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Paket Türü</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('table.serverName')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('table.packageType')}</TableHead>
                                     <TableHead className="text-gray-700 font-semibold px-6">
                                         <div className='flex items-center gap-1'>
-                                            <span>Durum</span>
+                                            <span>{t('table.status')}</span>
                                             <FaLongArrowAltUp className='text-gray-500 text-xs' />
                                         </div>
                                     </TableHead>
                                     <TableHead className="text-gray-700 font-semibold px-6">
                                         <div className='flex items-center gap-1'>
-                                            <span>Ping</span>
+                                            <span>{t('table.ping')}</span>
                                             <FaLongArrowAltUp className='text-gray-500 text-xs' />
                                         </div>
                                     </TableHead>
@@ -127,21 +130,24 @@ export default function ServerList() {
                                 {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
-                                            {server.country} / {server.city}
+                                            <div className='flex gap-1'>
+                                                <Image src={`${server.country_flag}`} alt={server.country} width={16} height={16} className='w-4 h-4 object-contain object-bottom' />
+                                                {server.country} / {server.city}
+                                            </div>
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">{server.user_group === 'PREMIUM' ? (
                                             <div className='flex items-center gap-1'>
                                                 <Crown className='w-4 h-4 text-amber-500' />
-                                                <span className='!text-black/70 hover:!text-black text-xsm'>Premium</span>
+                                                <span className='!text-black/70 hover:!text-black text-xsm'>{t('packageTypes.premium')}</span>
                                             </div>
                                         ) : (
                                             <div className='flex items-center gap-1'>
-                                                <span className='text-xsm text-deep-teal'>Free</span>
+                                                <span className='text-xsm text-deep-teal'>{t('packageTypes.free')}</span>
                                             </div>
                                         )}</TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <span className={getStatusColor(server.status)}>
-                                                {server.status}
+                                                {server.status === 'ONLINE' ? t('status.online') : server.status === 'OFFLINE' ? t('status.offline') : server.status}
                                             </span>
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">

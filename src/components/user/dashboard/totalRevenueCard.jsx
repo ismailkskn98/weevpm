@@ -1,9 +1,9 @@
 'use client';
 import React from 'react'
-import { ArrowUpRight, ArrowDownRight } from "lucide-react"
 import LastUpdate from '../lastUpdate'
 import Image from 'next/image'
 import { useAuth } from '@/context/AuthContext';
+import { useTranslations } from 'next-intl';
 
 export const NumberSkeleton = ({ variant = 'default' }) => {
     const variants = {
@@ -20,22 +20,23 @@ export const NumberSkeleton = ({ variant = 'default' }) => {
 
 export default function TotalRevenueCard() {
     const { userData, loading } = useAuth();
+    const t = useTranslations('User.dashboard.totalRevenueCard');
 
     const totalItems = [
         {
-            title: "Toplam Gelir",
+            title: t('totalIncome'),
             value: Number(userData?.financial_status?.[0]?.total_token_income) * 1 || 0,
             icon: <Image src="/images/ecosystem/weecoins-premium.webp" alt="weecoins premium logo" width={50} height={50} className="w-4 h-4 object-contain object-center" />,
         },
 
         {
-            title: "Toplam Çekim",
+            title: t('totalWithdrawal'),
             value: Number(userData?.financial_status?.[0]?.total_token_withdraw) * 1 || 0,
             icon: <Image src="/images/ecosystem/weecoins-premium.webp" alt="weecoins premium logo" width={50} height={50} className="w-4 h-4 object-contain object-center" />,
         },
 
         {
-            title: "Çekilebilir",
+            title: t('withdrawable'),
             value: Number(userData?.financial_status?.[0]?.can_token_withdraw) * 1 || 0,
             icon: (
                 <div className='w-4 h-4 flex items-center justify-center'>
@@ -59,8 +60,8 @@ export default function TotalRevenueCard() {
                 <article className="pb-4">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-lg xl:text-xl font-semibold text-black">Gelir Özeti</h2>
-                            <p className="text-xs xl:text-sm text-black/80">Token durumunuz</p>
+                            <h2 className="text-lg xl:text-xl font-semibold text-black">{t('title')}</h2>
+                            <p className="text-xs xl:text-sm text-black/80">{t('description')}</p>
                         </div>
                         <Image src="/images/logos/yellow_single_icon.png" alt="weecoins premium logo" width={50} height={50} className="w-6 xl:w-8 2xl:w-9 h-6 xl:h-8 2xl:h-9 object-contain object-center drop-shadow-sm" />
                     </div>

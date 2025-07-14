@@ -1,6 +1,6 @@
 'use client';
 import { useAuth } from '@/context/AuthContext';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react'
 import { Package, Crown, Gift, Sparkles } from 'lucide-react';
 import LastUpdate from '../lastUpdate';
@@ -8,6 +8,7 @@ import LastUpdate from '../lastUpdate';
 export default function ActivePackageCard() {
     const { userData, loading } = useAuth();
     const locale = useLocale();
+    const t = useTranslations('User.dashboard.activePackageCard');
 
     const packageName = userData?.user?.package_names ? JSON.parse(userData.user.package_names)[locale] : '';
     const activePackage = userData?.user?.active_package;
@@ -16,8 +17,8 @@ export default function ActivePackageCard() {
 
     const packageConfig = {
         free: {
-            title: 'Ücretsiz Paket',
-            description: 'Temel özellikler',
+            title: t('freePackage.title'),
+            description: t('freePackage.description'),
             bgColor: 'bg-gradient-to-br from-slate-50 to-slate-50',
             borderColor: 'border border-slate-200',
             headerIcon: <Gift className="w-8 h-8 text-slate-500" />,
@@ -26,8 +27,8 @@ export default function ActivePackageCard() {
             titleColor: 'text-slate-800'
         },
         premium: {
-            title: 'Premium Paket',
-            description: 'Tüm özellikler aktif',
+            title: t('premiumPackage.title'),
+            description: t('premiumPackage.description'),
             bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
             borderColor: 'border-orange-600/30',
             headerIcon: <Crown className="w-8 h-8 text-white/90" />,
@@ -79,13 +80,13 @@ export default function ActivePackageCard() {
                             <div className={`animate-pulse ${isPremium ? 'bg-white/30' : 'bg-slate-200'} w-32 h-12 rounded`}></div>
                         ) : (
                             <span className={`text-2xl xl:text-3xl font-bold ${config.textColor} text-center ${isPremium ? 'drop-shadow-sm' : ''}`}>
-                                {packageName || 'Paket Bulunamadı'}
+                                {packageName || t('packageNotFound')}
                             </span>
                         )}
                         {isPremium && (
                             <div className="flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full shadow-sm border border-white/30">
                                 <Crown className="w-3 h-3 text-white/90" />
-                                <span className="text-xs xl:text-sm font-semibold text-white/95">VIP Access</span>
+                                <span className="text-xs xl:text-sm font-semibold text-white/95">{t('vipAccess')}</span>
                             </div>
                         )}
                     </div>

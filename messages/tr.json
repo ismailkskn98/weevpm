@@ -437,8 +437,91 @@
       "passwordOperations": "Şifre İşlemleri",
       "logout": "Çıkış Yap"
     },
+    "dashboard": {
+      "page": {
+        "title": "Gösterge Paneli",
+        "description": "Bu bölümde, hesap bilgilerinizi ve kullanım durumunuzu görüntüleyebilirsiniz."
+      },
+      "totalRevenueCard": {
+        "title": "Gelir Özeti",
+        "description": "Token durumunuz",
+        "totalIncome": "Toplam Gelir",
+        "totalWithdrawal": "Toplam Çekim",
+        "withdrawable": "Çekilebilir"
+      },
+      "referenceRevenueCard": {
+        "title": "Referans Bilgileriniz",
+        "description": "Referans özetini görüntüleyebilirsiniz",
+        "totalReferenceCount": "Toplam Referans Sayısı",
+        "totalReferenceRevenue": "Toplam Referans Geliri",
+        "yourReferenceCode": "Referans Kodunuz",
+        "referenceCodeCopied": "Referans kodunuz kopyalandı"
+      },
+      "activePackageCard": {
+        "freePackage": {
+          "title": "Ücretsiz Paket",
+          "description": "Temel özellikler"
+        },
+        "premiumPackage": {
+          "title": "Premium Paket",
+          "description": "Tüm özellikler aktif"
+        },
+        "packageNotFound": "Paket Bulunamadı",
+        "vipAccess": "VIP Access"
+      },
+      "serverList": {
+        "title": "Server Listesi",
+        "description": "Server listesi, tüm serverlerinizi görüntülemek için kullanılır.",
+        "searchPlaceholder": "Server veya lokasyon adı filtreleyin",
+        "errorMessage": "Server verileri alınamadı",
+        "table": {
+          "serverName": "Server Adı",
+          "packageType": "Paket Türü",
+          "status": "Durum",
+          "ping": "Ping"
+        },
+        "packageTypes": {
+          "premium": "Premium",
+          "free": "Free"
+        },
+        "status": {
+          "online": "ONLINE",
+          "offline": "OFFLINE"
+        }
+      }
+    },
+    "packages": {
+      "page": {
+        "title": "Paketler",
+        "description": "Bu bölümde, paketleri görüntüleyebilir veya paketinizi güncelleyebilirsiniz."
+      }
+    },
+    "references": {
+      "page": {
+        "title": "Referanslar",
+        "description": "Bu bölümde, referanslarınızı görüntüleyebilir ve takip edebilirsiniz."
+      }
+    },
+    "referenceRevenues": {
+      "page": {
+        "title": "Referans Gelirleri",
+        "description": "Bu bölümde, referans gelirlerinizi görüntüleyebilir ve takip edebilirsiniz."
+      }
+    },
+    "withdrawalPage": {
+      "page": {
+        "title": "Çekimler",
+        "description": "Bu bölümde, çekimlerinizi görüntüleyebilir ve yönetebilirsiniz."
+      }
+    },
     "common": {
-      "lastUpdateDate": "Son güncelleme tarihi"
+      "lastUpdateDate": "Son güncelleme tarihi",
+      "lastUpdate": "Son güncelleme:"
+    },
+    "pagination": {
+      "pageInfo": "Sayfa {currentPage} / {totalPages} (Toplam {itemsCount})",
+      "previous": "Önceki",
+      "next": "Sonraki"
     }
   }
 }

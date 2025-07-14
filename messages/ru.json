@@ -437,8 +437,91 @@
       "passwordOperations": "Операции с Паролем",
       "logout": "Выйти"
     },
+    "dashboard": {
+      "page": {
+        "title": "Панель Управления",
+        "description": "В этом разделе вы можете просматривать информацию о своей учетной записи и статус использования."
+      },
+      "totalRevenueCard": {
+        "title": "Обзор Доходов",
+        "description": "Статус токенов",
+        "totalIncome": "Общий Доход",
+        "totalWithdrawal": "Общий Вывод",
+        "withdrawable": "Доступно"
+      },
+      "referenceRevenueCard": {
+        "title": "Рефералы",
+        "description": "Просмотр сводки",
+        "totalReferenceCount": "Всего Рефералов",
+        "totalReferenceRevenue": "Общий Доход",
+        "yourReferenceCode": "Ваш Код",
+        "referenceCodeCopied": "Код скопирован"
+      },
+      "activePackageCard": {
+        "freePackage": {
+          "title": "Бесплатно",
+          "description": "Базовые функции"
+        },
+        "premiumPackage": {
+          "title": "Премиум",
+          "description": "Все функции"
+        },
+        "packageNotFound": "Пакет не найден",
+        "vipAccess": "VIP"
+      },
+      "serverList": {
+        "title": "Серверы",
+        "description": "Просмотр всех серверов",
+        "searchPlaceholder": "Поиск серверов",
+        "errorMessage": "Ошибка загрузки",
+        "table": {
+          "serverName": "Сервер",
+          "packageType": "Тип",
+          "status": "Статус",
+          "ping": "Пинг"
+        },
+        "packageTypes": {
+          "premium": "Премиум",
+          "free": "Бесплатно"
+        },
+        "status": {
+          "online": "ОНЛАЙН",
+          "offline": "ОФЛАЙН"
+        }
+      }
+    },
+    "packages": {
+      "page": {
+        "title": "Пакеты",
+        "description": "В этом разделе вы можете просматривать пакеты или обновить свой пакет."
+      }
+    },
+    "references": {
+      "page": {
+        "title": "Рефералы",
+        "description": "В этом разделе вы можете просматривать и отслеживать своих рефералов."
+      }
+    },
+    "referenceRevenues": {
+      "page": {
+        "title": "Доходы от Рефералов",
+        "description": "В этом разделе вы можете просматривать и отслеживать доходы от рефералов."
+      }
+    },
+    "withdrawalPage": {
+      "page": {
+        "title": "Выводы",
+        "description": "В этом разделе вы можете просматривать и управлять своими выводами."
+      }
+    },
     "common": {
-      "lastUpdateDate": "Дата последнего обновления"
+      "lastUpdateDate": "Дата последнего обновления",
+      "lastUpdate": "Обновлено:"
+    },
+    "pagination": {
+      "pageInfo": "Стр. {currentPage} / {totalPages} ({itemsCount})",
+      "previous": "Назад",
+      "next": "Далее"
     }
   }
 }
