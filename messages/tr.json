@@ -428,6 +428,15 @@
         "walletAddressMinLength": "Cüzdan adresi en az 8 karakter olmalıdır"
       }
     },
+    "sidebar": {
+      "dashboard": "Gösterge Paneli",
+      "references": "Referanslar",
+      "referenceRevenues": "Referans Gelirleri",
+      "packages": "Paketler",
+      "withdrawal": "Çekim İşlemleri",
+      "passwordOperations": "Şifre İşlemleri",
+      "logout": "Çıkış Yap"
+    },
     "common": {
       "lastUpdateDate": "Son güncelleme tarihi"
     }

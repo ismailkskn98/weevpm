@@ -428,6 +428,15 @@
         "walletAddressMinLength": "Адрес кошелька должен содержать не менее 8 символов"
       }
     },
+    "sidebar": {
+      "dashboard": "Панель Управления",
+      "references": "Рефералы",
+      "referenceRevenues": "Доходы от Рефералов",
+      "packages": "Пакеты",
+      "withdrawal": "Операции Вывода",
+      "passwordOperations": "Операции с Паролем",
+      "logout": "Выйти"
+    },
     "common": {
       "lastUpdateDate": "Дата последнего обновления"
     }

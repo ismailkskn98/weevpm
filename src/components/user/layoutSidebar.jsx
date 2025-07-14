@@ -15,6 +15,7 @@ import { TbPinnedFilled } from "react-icons/tb";
 import { TbPinned } from "react-icons/tb";
 import { Link, usePathname } from '@/i18n/navigation';
 import { GoPackage } from "react-icons/go";
+import { useTranslations } from 'next-intl';
 
 
 export default function LayoutSidebar() {
@@ -23,6 +24,7 @@ export default function LayoutSidebar() {
     const [mounted, setMounted] = useState(false);
     const { userData, loading, logout } = useAuth();
     const pathname = usePathname();
+    const t = useTranslations('User.sidebar');
 
     useEffect(() => {
         setMounted(true);
@@ -38,42 +40,42 @@ export default function LayoutSidebar() {
 
     const links = [
         {
-            label: "Gösterge Paneli",
+            label: t('dashboard'),
             href: "/user",
             icon: (
                 <MdOutlineSpaceDashboard className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
-            label: "Referanslar",
+            label: t('references'),
             href: "/user/references",
             icon: (
                 <HiOutlineUserGroup className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/references" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
-            label: "Referans Gelirleri",
+            label: t('referenceRevenues'),
             href: "/user/reference-revenues",
             icon: (
                 <FaUserPlus className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/reference-revenues" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
-            label: "Paketler",
+            label: t('packages'),
             href: "/user/packages",
             icon: (
                 <GoPackage className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/packages" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
-            label: "Çekim İşlemleri",
+            label: t('withdrawal'),
             href: "/user/withdrawal",
             icon: (
                 <FaMoneyBillWave className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/withdrawal" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {
-            label: "Şifre İşlemleri",
+            label: t('passwordOperations'),
             href: "/user/password-operations",
             icon: (
                 <IoMdFingerPrint className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/password-operations" ? "text-white" : "text-white/70"}`} />
@@ -125,7 +127,7 @@ export default function LayoutSidebar() {
                         onClick={logout}
                         className="text-white"
                         link={{
-                            label: "Çıkış Yap",
+                            label: t('logout'),
                             href: "#",
                             icon: (
                                 <FiLogOut className="h-5 2xl:h-5 w-5 2xl:w-6 shrink-0 text-white rotate-180" />

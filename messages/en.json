@@ -430,6 +430,15 @@
         "walletAddressMinLength": "Wallet address must be at least 8 characters"
       }
     },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "references": "References",
+      "referenceRevenues": "Reference Revenues",
+      "packages": "Packages",
+      "withdrawal": "Withdrawal Operations",
+      "passwordOperations": "Password Operations",
+      "logout": "Logout"
+    },
     "common": {
       "lastUpdateDate": "Last update date"
     }

@@ -428,6 +428,15 @@
         "walletAddressMinLength": "Cüzdan ünvanı ən az 8 simvol olmalıdır"
       }
     },
+    "sidebar": {
+      "dashboard": "İdarə Paneli",
+      "references": "İstinadlar",
+      "referenceRevenues": "İstinad Gəlirləri",
+      "packages": "Paketlər",
+      "withdrawal": "Çıxış Əməliyyatları",
+      "passwordOperations": "Şifrə Əməliyyatları",
+      "logout": "Çıxış"
+    },
     "common": {
       "lastUpdateDate": "Son yeniləmə tarixi"
     }
