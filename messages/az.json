@@ -535,7 +535,8 @@
       "intervals": {
         "monthly": "Aylıq",
         "yearly": "İllik",
-        "premium": "Premium"
+        "premium": "Premium",
+        "lifetime": "Ömür Boyu"
       },
       "premiumPackage": {
         "title": "Premium Paket",
@@ -546,6 +547,21 @@
         "savingsText": "✨ 16% qənaət edin!",
         "currentPackageStatus": "Mövcud Paket",
         "buyButton": "satın al"
+      },
+      "history": {
+        "title": "Paket Keçmişi",
+        "description": "Paketlərinizin keçmişini buradan izləyə bilərsiniz",
+        "table": {
+          "id": "ID",
+          "packageName": "Paket Adı",
+          "amount": "Məbləğ",
+          "period": "Dövr",
+          "startDate": "Başlama Tarixi",
+          "endDate": "Bitmə Tarixi",
+          "status": "Status"
+        },
+        "notFound": "Tapılmadı",
+        "errorFetch": "Paketlər alına bilmədi"
       }
     },
     "references": {
@@ -681,6 +697,78 @@
       "pageInfo": "Səhifə {currentPage} / {totalPages} (Cəmi {itemsCount})",
       "previous": "Əvvəlki",
       "next": "Sonrakı"
+    },
+    "iyzico": {
+      "pageTitle": "Təhlükəsiz Ödəmə",
+      "pageDescription": "Təhlükəsiz ödəmə sistemi ilə alışverişinizi tamamlayın",
+      "form": {
+        "title": "Ödəmə Məlumatları",
+        "buyerInfo": "Alıcı Məlumatları",
+        "billingAddress": "Faktura Ünvanı",
+        "paymentInfo": "Ödəmə Məlumatları",
+        "name": "Ad",
+        "surname": "Soyad",
+        "email": "E-poçt",
+        "phone": "Telefon",
+        "identityNumber": "Şəxsiyyət Nömrəsi",
+        "address": "Ünvan",
+        "city": "Şəhər",
+        "country": "Ölkə",
+        "zipCode": "Poçt Kodu",
+        "basketId": "Səbət ID",
+        "price": "Qiymət",
+        "currency": "Valyuta",
+        "acceptTerms": "Şərtləri və qaydaları qəbul edirəm",
+        "submitButton": "Ödəmə Et",
+        "processing": "İşlənir...",
+        "namePlaceholder": "Adınızı daxil edin",
+        "surnamePlaceholder": "Soyadınızı daxil edin",
+        "emailPlaceholder": "E-poçt ünvanınızı daxil edin",
+        "phonePlaceholder": "Telefon nömrənizi daxil edin",
+        "identityNumberPlaceholder": "Şəxsiyyət nömrənizi daxil edin",
+        "addressPlaceholder": "Ünvanınızı daxil edin",
+        "cityPlaceholder": "Şəhərinizi daxil edin",
+        "countryPlaceholder": "Ölkənizi daxil edin",
+        "zipCodePlaceholder": "Poçt kodunuzu daxil edin",
+        "basketIdPlaceholder": "Səbət ID",
+        "pricePlaceholder": "Qiymət daxil edin",
+        "currencyPlaceholder": "Valyuta",
+        "selectCountryFirst": "Əvvəlcə ölkə seçin",
+        "validation": {
+          "nameRequired": "Ad sahəsi məcburidir",
+          "surnameRequired": "Soyad sahəsi məcburidir",
+          "emailInvalid": "Düzgün e-poçt ünvanı daxil edin",
+          "phoneRequired": "Telefon nömrəsi məcburidir",
+          "identityNumberRequired": "Şəxsiyyət nömrəsi məcburidir",
+          "addressRequired": "Ünvan sahəsi məcburidir",
+          "cityRequired": "Şəhər seçimi məcburidir",
+          "countryRequired": "Ölkə seçimi məcburidir",
+          "zipCodeRequired": "Poçt kodu məcburidir",
+          "basketIdRequired": "Səbət ID tələb olunur",
+          "priceRequired": "Qiymət tələb olunur",
+          "currencyRequired": "Valyuta tələb olunur",
+          "acceptTermsRequired": "Şərtləri və qaydaları qəbul etməlisiniz"
+        }
+      },
+      "basket": {
+        "title": "Sifariş Xülasəsi",
+        "items": "məhsul",
+        "quantity": "Sayı",
+        "subtotal": "Ara Cəm",
+        "discount": "Endirim",
+        "total": "Ümumi",
+        "securePayment": "Təhlükəsiz Ödəmə",
+        "securePaymentDesc": "256-bit SSL şifrələməsi ilə qorunur",
+        "guarantee": "Güvənli Alışveriş",
+        "guaranteeDesc": "7/24 müştəri dəsteyi",
+        "promo": "Promosyon",
+        "promoDesc": "İlk alışverişdə 10% endirim"
+      },
+      "messages": {
+        "success": "Ödəmə uğurla başladıldı",
+        "error": "Ödəmə zamanı xəta baş verdi",
+        "submitError": "Formu göndərərkən xəta baş verdi"
+      }
     }
   }
 }

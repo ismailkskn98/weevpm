@@ -535,7 +535,8 @@
       "intervals": {
         "monthly": "Aylık",
         "yearly": "Yıllık",
-        "premium": "Premium"
+        "premium": "Premium",
+        "lifetime": "Ömür Boyu"
       },
       "premiumPackage": {
         "title": "Premium Paket",
@@ -546,6 +547,21 @@
         "savingsText": "✨ 16% tasarruf edin!",
         "currentPackageStatus": "Mevcut Paketiniz",
         "buyButton": "satın al"
+      },
+      "history": {
+        "title": "Paket Geçmişi",
+        "description": "Paketlerinizin geçmişini buradan takip edebilirsiniz",
+        "table": {
+          "id": "ID",
+          "packageName": "Paket Adı",
+          "amount": "Tutar",
+          "period": "Periyot",
+          "startDate": "Başlangıç Tarihi",
+          "endDate": "Bitiş Tarihi",
+          "status": "Durum"
+        },
+        "notFound": "Bulunamadı",
+        "errorFetch": "Paketler alınamadı"
       }
     },
     "references": {
@@ -681,6 +697,78 @@
       "pageInfo": "Sayfa {currentPage} / {totalPages} (Toplam {itemsCount})",
       "previous": "Önceki",
       "next": "Sonraki"
+    },
+    "iyzico": {
+      "pageTitle": "Güvenli Ödeme",
+      "pageDescription": "Güvenli ödeme sistemi ile satın alma işleminizi tamamlayın",
+      "form": {
+        "title": "Ödeme Bilgileri",
+        "buyerInfo": "Alıcı Bilgileri",
+        "billingAddress": "Fatura Adresi",
+        "paymentInfo": "Ödeme Bilgileri",
+        "name": "Ad",
+        "surname": "Soyad",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "identityNumber": "Kimlik Numarası",
+        "address": "Adres",
+        "city": "Şehir",
+        "country": "Ülke",
+        "zipCode": "Posta Kodu",
+        "basketId": "Sepet ID",
+        "price": "Fiyat",
+        "currency": "Para Birimi",
+        "acceptTerms": "Hüküm ve koşulları kabul ediyorum",
+        "submitButton": "Ödeme Yap",
+        "processing": "İşleniyor...",
+        "namePlaceholder": "Adınızı girin",
+        "surnamePlaceholder": "Soyadınızı girin",
+        "emailPlaceholder": "E-posta adresinizi girin",
+        "phonePlaceholder": "Telefon numaranızı girin",
+        "identityNumberPlaceholder": "Kimlik numaranızı girin",
+        "addressPlaceholder": "Adresinizi girin",
+        "cityPlaceholder": "Şehrinizi girin",
+        "countryPlaceholder": "Ülkenizi girin",
+        "zipCodePlaceholder": "Posta kodunuzu girin",
+        "basketIdPlaceholder": "Sepet ID",
+        "pricePlaceholder": "Fiyat girin",
+        "currencyPlaceholder": "Para birimi",
+        "selectCountryFirst": "Önce ülke seçin",
+        "validation": {
+          "nameRequired": "Ad alanı gereklidir",
+          "surnameRequired": "Soyad alanı gereklidir",
+          "emailInvalid": "Geçerli bir e-posta adresi girin",
+          "phoneRequired": "Telefon numarası gereklidir",
+          "identityNumberRequired": "Kimlik numarası gereklidir",
+          "addressRequired": "Adres alanı gereklidir",
+          "cityRequired": "Şehir seçimi gereklidir",
+          "countryRequired": "Ülke seçimi gereklidir",
+          "zipCodeRequired": "Posta kodu gereklidir",
+          "basketIdRequired": "Sepet ID gereklidir",
+          "priceRequired": "Fiyat gereklidir",
+          "currencyRequired": "Para birimi gereklidir",
+          "acceptTermsRequired": "Kullanım şartlarını kabul etmelisiniz"
+        }
+      },
+      "basket": {
+        "title": "Sipariş Özeti",
+        "items": "ürün",
+        "quantity": "Adet",
+        "subtotal": "Ara Toplam",
+        "discount": "İndirim",
+        "total": "Toplam",
+        "securePayment": "Güvenli Ödeme",
+        "securePaymentDesc": "256-bit SSL şifreleme ile korunur",
+        "guarantee": "Güvenli Alışveriş",
+        "guaranteeDesc": "7/24 müşteri desteği",
+        "promo": "Promosyon",
+        "promoDesc": "İlk alışverişte %10 indirim"
+      },
+      "messages": {
+        "success": "Ödeme başarıyla başlatıldı",
+        "error": "Ödeme sırasında bir hata oluştu",
+        "submitError": "Form gönderilirken bir hata oluştu"
+      }
     }
   }
 }

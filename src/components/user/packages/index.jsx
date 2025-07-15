@@ -58,6 +58,7 @@ export default function Packages() {
             router.push(`/user/package-details?package_id=${packageId}&user_id=${userData.user.id}&currency=WCP&price=${price}&interval=${interval}`);
         } else {
             // iyzico
+            router.push(`/user/iyzico-payment?package_id=${packageId}&user_id=${userData.user.id}&currency=USD&price=${price}&interval=${interval}`);
         }
     };
     useEffect(() => {

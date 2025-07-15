@@ -535,7 +535,8 @@
       "intervals": {
         "monthly": "Месяц",
         "yearly": "Год",
-        "premium": "Премиум"
+        "premium": "Премиум",
+        "lifetime": "Пожизненно"
       },
       "premiumPackage": {
         "title": "Премиум",
@@ -546,6 +547,21 @@
         "savingsText": "✨ Экономия 16%!",
         "currentPackageStatus": "Активен",
         "buyButton": "купить"
+      },
+      "history": {
+        "title": "История Пакетов",
+        "description": "Здесь вы можете отследить историю ваших пакетов",
+        "table": {
+          "id": "ID",
+          "packageName": "Название Пакета",
+          "amount": "Сумма",
+          "period": "Период",
+          "startDate": "Дата Начала",
+          "endDate": "Дата Окончания",
+          "status": "Статус"
+        },
+        "notFound": "Не найдено",
+        "errorFetch": "Ошибка загрузки пакетов"
       }
     },
     "references": {
@@ -681,6 +697,78 @@
       "pageInfo": "Стр. {currentPage} / {totalPages} ({itemsCount})",
       "previous": "Назад",
       "next": "Далее"
+    },
+    "iyzico": {
+      "pageTitle": "Безопасная оплата",
+      "pageDescription": "Завершите покупку с безопасной системой оплаты",
+      "form": {
+        "title": "Данные для оплаты",
+        "buyerInfo": "Данные покупателя",
+        "billingAddress": "Адрес выставления счета",
+        "paymentInfo": "Данные об оплате",
+        "name": "Имя",
+        "surname": "Фамилия",
+        "email": "Email",
+        "phone": "Телефон",
+        "identityNumber": "Номер удостоверения",
+        "address": "Адрес",
+        "city": "Город",
+        "country": "Страна",
+        "zipCode": "Индекс",
+        "basketId": "ID корзины",
+        "price": "Цена",
+        "currency": "Валюта",
+        "acceptTerms": "Я принимаю условия",
+        "submitButton": "Оплатить",
+        "processing": "Обработка...",
+        "namePlaceholder": "Введите ваше имя",
+        "surnamePlaceholder": "Введите вашу фамилию",
+        "emailPlaceholder": "Введите ваш email",
+        "phonePlaceholder": "Введите ваш телефон",
+        "identityNumberPlaceholder": "Введите номер удостоверения",
+        "addressPlaceholder": "Введите ваш адрес",
+        "cityPlaceholder": "Введите ваш город",
+        "countryPlaceholder": "Введите вашу страну",
+        "zipCodePlaceholder": "Введите индекс",
+        "basketIdPlaceholder": "ID корзины",
+        "pricePlaceholder": "Введите цену",
+        "currencyPlaceholder": "Валюта",
+        "selectCountryFirst": "Сначала выберите страну",
+        "validation": {
+          "nameRequired": "Поле имени обязательно",
+          "surnameRequired": "Поле фамилии обязательно",
+          "emailInvalid": "Введите действительный email",
+          "phoneRequired": "Телефон обязателен",
+          "identityNumberRequired": "Номер удостоверения обязателен",
+          "addressRequired": "Поле адреса обязательно",
+          "cityRequired": "Выбор города обязателен",
+          "countryRequired": "Выбор страны обязателен",
+          "zipCodeRequired": "Индекс обязателен",
+          "basketIdRequired": "ID корзины обязателен",
+          "priceRequired": "Цена обязательна",
+          "currencyRequired": "Валюта обязательна",
+          "acceptTermsRequired": "Вы должны принять условия"
+        }
+      },
+      "basket": {
+        "title": "Итог заказа",
+        "items": "товаров",
+        "quantity": "Кол-во",
+        "subtotal": "Сумма",
+        "discount": "Скидка",
+        "total": "Итого",
+        "securePayment": "Безопасная оплата",
+        "securePaymentDesc": "Защищено 256-битным SSL",
+        "guarantee": "Гарантия",
+        "guaranteeDesc": "Поддержка 24/7",
+        "promo": "Акция",
+        "promoDesc": "Скидка 10% на первую покупку"
+      },
+      "messages": {
+        "success": "Платеж успешно инициирован",
+        "error": "Произошла ошибка при оплате",
+        "submitError": "Произошла ошибка при отправке формы"
+      }
     }
   }
 }

@@ -537,7 +537,8 @@
       "intervals": {
         "monthly": "Monthly",
         "yearly": "Yearly",
-        "premium": "Premium"
+        "premium": "Premium",
+        "lifetime": "Lifetime"
       },
       "premiumPackage": {
         "title": "Premium Package",
@@ -548,6 +549,21 @@
         "savingsText": "✨ Save 16%!",
         "currentPackageStatus": "Current Package",
         "buyButton": "buy now"
+      },
+      "history": {
+        "title": "Package History",
+        "description": "You can track your package history from here",
+        "table": {
+          "id": "ID",
+          "packageName": "Package Name",
+          "amount": "Amount",
+          "period": "Period",
+          "startDate": "Start Date",
+          "endDate": "End Date",
+          "status": "Status"
+        },
+        "notFound": "Not Found",
+        "errorFetch": "Failed to fetch packages"
       }
     },
     "references": {
@@ -683,6 +699,78 @@
       "pageInfo": "Page {currentPage} / {totalPages} (Total {itemsCount})",
       "previous": "Previous",
       "next": "Next"
+    },
+    "iyzico": {
+      "pageTitle": "Secure Payment",
+      "pageDescription": "Complete your purchase with secure payment system",
+      "form": {
+        "title": "Payment Information",
+        "buyerInfo": "Buyer Information",
+        "billingAddress": "Billing Address",
+        "paymentInfo": "Payment Information",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "phone": "Phone",
+        "identityNumber": "Identity Number",
+        "address": "Address",
+        "city": "City",
+        "country": "Country",
+        "zipCode": "Zip Code",
+        "basketId": "Basket ID",
+        "price": "Price",
+        "currency": "Currency",
+        "acceptTerms": "I accept the terms and conditions",
+        "submitButton": "Make Payment",
+        "processing": "Processing...",
+        "namePlaceholder": "Enter your name",
+        "surnamePlaceholder": "Enter your surname",
+        "emailPlaceholder": "Enter your email address",
+        "phonePlaceholder": "Enter your phone number",
+        "identityNumberPlaceholder": "Enter your identity number",
+        "addressPlaceholder": "Enter your address",
+        "cityPlaceholder": "Enter your city",
+        "countryPlaceholder": "Enter your country",
+        "zipCodePlaceholder": "Enter your zip code",
+        "basketIdPlaceholder": "Basket ID",
+        "pricePlaceholder": "Enter price",
+        "currencyPlaceholder": "Currency",
+        "selectCountryFirst": "Select country first",
+        "validation": {
+          "nameRequired": "Name field is required",
+          "surnameRequired": "Surname field is required",
+          "emailInvalid": "Enter a valid email address",
+          "phoneRequired": "Phone number is required",
+          "identityNumberRequired": "Identity number is required",
+          "addressRequired": "Address field is required",
+          "cityRequired": "City selection is required",
+          "countryRequired": "Country selection is required",
+          "zipCodeRequired": "Zip code is required",
+          "basketIdRequired": "Basket ID is required",
+          "priceRequired": "Price is required",
+          "currencyRequired": "Currency is required",
+          "acceptTermsRequired": "You must accept the terms and conditions"
+        }
+      },
+      "basket": {
+        "title": "Order Summary",
+        "items": "items",
+        "quantity": "Qty",
+        "subtotal": "Subtotal",
+        "discount": "Discount",
+        "total": "Total",
+        "securePayment": "Secure Payment",
+        "securePaymentDesc": "Protected with 256-bit SSL encryption",
+        "guarantee": "Secure Shopping",
+        "guaranteeDesc": "24/7 customer support",
+        "promo": "Promotion",
+        "promoDesc": "10% discount on first purchase"
+      },
+      "messages": {
+        "success": "Payment initiated successfully",
+        "error": "An error occurred during payment",
+        "submitError": "An error occurred while submitting the form"
+      }
     }
   }
 }

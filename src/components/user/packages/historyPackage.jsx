@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import Pagination from '../pagination'
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import coreAxios from '@/helper/coreAxios';
 import { toast } from 'sonner';
@@ -12,6 +12,7 @@ import { PiInfinity } from "react-icons/pi";
 
 export default function HistoryPackage() {
     const locale = useLocale();
+    const t = useTranslations('User.packages');
     const [packages, setPackages] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
@@ -28,7 +29,7 @@ export default function HistoryPackage() {
                 setPackages(response.data);
             }
             else {
-                toast.error("Paketler alınamadı");
+                toast.error(t('history.errorFetch'));
             }
 
         } catch (error) {
@@ -44,22 +45,22 @@ export default function HistoryPackage() {
     const getInterval = (interval) => {
         if (interval === 'MONTHLY') {
             return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Aylık
+                {t('intervals.monthly')}
             </span>
         }
         else if (interval === 'YEARLY') {
             return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Yıllık
+                {t('intervals.yearly')}
             </span>
         }
         else if (interval === 'LIFETIME') {
             return <span className="text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-teal-200/50">
-                Ömür Boyu
+                {t('intervals.lifetime')}
             </span>
         }
         else {
             return <span className="text-red-700 bg-red-100 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-red-200/50">
-                Bulunamadı
+                {t('history.notFound')}
             </span>
         }
     }
@@ -68,7 +69,7 @@ export default function HistoryPackage() {
         <main className='w-full flex flex-col items-start gap-3 mt-12'>
             <article className="w-full">
                 <h2 className="text-xl font-medium text-gray-900 mb-2">
-                    Paketlerinizin geçmişini buradan takip edebilirsiniz
+                    {t('history.description')}
                 </h2>
             </article>
             <section className='w-full flex flex-col items-start gap-4'>
@@ -76,20 +77,20 @@ export default function HistoryPackage() {
                     <TableSkeleton
                         rows={5}
                         columns={6}
-                        headers={['ID', 'Paket Adı', 'Ödenen Tutar', 'Plan', 'Durum', 'Başlangıç Tarihi', 'Bitiş Tarihi']}
+                        headers={[t('history.table.id'), t('history.table.packageName'), t('history.table.amount'), t('history.table.period'), t('history.table.status'), t('history.table.startDate'), t('history.table.endDate')]}
                     />
                 ) : (
                     <div className="w-full border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white">
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
-                                    <TableHead className="text-gray-700 font-semibold px-6">ID</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Paket Adı</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Tutar</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Periyot</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Başlangıç Tarihi</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Bitiş Tarihi</TableHead>
-                                    <TableHead className="text-gray-700 font-semibold px-6">Durum</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.id')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.packageName')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.amount')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.period')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.startDate')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.endDate')}</TableHead>
+                                    <TableHead className="text-gray-700 font-semibold px-6">{t('history.table.status')}</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -100,8 +101,8 @@ export default function HistoryPackage() {
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {packageItem.humanization_translations ?
-                                                (JSON.parse(packageItem.humanization_translations)[locale] || 'Bulunamadı') :
-                                                'Bulunamadı'
+                                                (JSON.parse(packageItem.humanization_translations)[locale] || t('history.notFound')) :
+                                                t('history.notFound')
                                             }
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">

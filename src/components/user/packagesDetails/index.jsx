@@ -71,7 +71,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                             <p className="text-xs text-gray-600 mb-2">
                                 Cüzdan Adresi
                             </p>
-                            <p className="text-[10px] sm:text-sm font-mono text-black/80 break-all">
+                            <p className="text-[12px] sm:text-sm font-mono text-black/80 break-all">
                                 {walletAddress}
                             </p>
                         </article>
