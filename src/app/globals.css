@@ -63,6 +63,10 @@ html {
   --color-soft-turquoise: #5dd0c0;
 }
 
+.css-t3ipsp-control:hover {
+  border-color: #03b49b !important;
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr min(93%, 1400px) 1fr;

@@ -12,12 +12,20 @@ import IyzicoFormSchema from './iyzicoFormSchema'
 import coreAxios from '@/helper/coreAxios'
 import { useAuth } from '@/context/AuthContext'
 
-export default function IyzicoForm({ basketData }) {
+export default function IyzicoForm({ packageData }) {
     const t = useTranslations('User.iyzico.form')
     const tMessages = useTranslations('User.iyzico.messages')
     const { userData, logout } = useAuth()
 
     const schema = IyzicoFormSchema()
+
+    // Basit fiyat hesaplama
+    const calculatePrice = () => {
+        const discountedPrice = packageData.usdt_price || 0; // Zaten indirimli fiyat
+
+        // Form için indirimli fiyatı döndür (usdt_price zaten indirimli)
+        return discountedPrice.toFixed(2);
+    };
 
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting }, reset, control, watch } = useForm({
         resolver: zodResolver(schema),
@@ -31,9 +39,9 @@ export default function IyzicoForm({ basketData }) {
             billingCity: null,
             billingCountry: null,
             billingZipCode: "",
-            basketId: basketData?.basketId || `BASKET_${Date.now()}`,
-            price: basketData?.price || "100.00",
-            currency: basketData?.currency || "TRY",
+            basketId: `BASKET_${packageData.id}_${Date.now()}`,
+            price: calculatePrice(),
+            currency: "USDT",
             acceptTerms: false
         },
         mode: "onChange"
@@ -42,8 +50,10 @@ export default function IyzicoForm({ basketData }) {
     const selectedCountry = watch("billingCountry")
 
     const onSubmit = async (data) => {
+        console.log("Form Data", data);
+        return;
         try {
-            const response = await coreAxios.POST("/iyzico/checkout-form", {
+            const response = await coreAxios.POST("", {
                 buyer: {
                     name: data.name,
                     surname: data.surname,
@@ -52,12 +62,6 @@ export default function IyzicoForm({ basketData }) {
                     identityNumber: data.identityNumber
                 },
                 billingAddress: {
-                    address: data.billingAddress,
-                    city: data.billingCity?.label || "",
-                    country: data.billingCountry?.label || "",
-                    zipCode: data.billingZipCode
-                },
-                shippingAddress: {
                     address: data.billingAddress,
                     city: data.billingCity?.label || "",
                     country: data.billingCountry?.label || "",
@@ -72,12 +76,6 @@ export default function IyzicoForm({ basketData }) {
 
             if (response.status) {
                 toast.success(response.message || tMessages("success"))
-                if (response.checkoutFormContent) {
-                    window.location.href = response.checkoutFormContent
-                }
-                if (onFormSubmit) {
-                    onFormSubmit(response)
-                }
             } else {
                 toast.error(response.message || tMessages("error"))
             }
@@ -88,13 +86,13 @@ export default function IyzicoForm({ basketData }) {
     }
 
     return (
-        <section className="lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">{t('title')}</h2>
+        <section className="col-span-1 xl:col-span-2">
+            <h2 className="text-2xl font-semibold text-black/80 mb-6">{t('title')}</h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="border-b pb-6">
-                    <h3 className="text-lg font-medium text-gray-700 mb-4">{t('buyerInfo')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <main className="border-b pb-6">
+                    <h3 className="text-lg font-medium text-black/80 mb-4">{t('buyerInfo')}</h3>
+                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-7">
                         <CustomInput
                             type="text"
                             label={t('name')}
@@ -131,11 +129,11 @@ export default function IyzicoForm({ basketData }) {
                             {...register("identityNumber")}
                         />
                     </div>
-                </div>
+                </main>
 
-                <div className="border-b pb-6">
-                    <h3 className="text-lg font-medium text-gray-700 mb-4">{t('billingAddress')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <main className="border-b pb-6">
+                    <h3 className="text-lg font-medium text-black/80 mb-4">{t('billingAddress')}</h3>
+                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-7">
                         <CustomInput
                             type="text"
                             label={t('address')}
@@ -146,7 +144,7 @@ export default function IyzicoForm({ basketData }) {
                         />
 
                         <div className="space-y-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-black/80">
                                 {t('country')}
                             </label>
                             <CountrySelect
@@ -157,7 +155,7 @@ export default function IyzicoForm({ basketData }) {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-black/80">
                                 {t('city')}
                             </label>
                             <CitySelect
@@ -176,26 +174,9 @@ export default function IyzicoForm({ basketData }) {
                             {...register("billingZipCode")}
                         />
                     </div>
-                </div>
+                </main>
 
-                <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                        <input
-                            type="checkbox"
-                            id="acceptTerms"
-                            {...register("acceptTerms")}
-                            className="w-4 h-4 text-aqua-green bg-gray-100 border-gray-300 rounded focus:ring-aqua-green"
-                        />
-                        <label htmlFor="acceptTerms" className="text-sm text-gray-700">
-                            {t('acceptTerms')}
-                        </label>
-                    </div>
-                    {errors.acceptTerms && (
-                        <p className="text-red-500 text-xs">{errors.acceptTerms.message}</p>
-                    )}
-                </div>
-
-                <div className="pt-6">
+                <article className="pt-2 md:pt-6 md:pb-0 pb-6">
                     <button
                         type="submit"
                         disabled={!isValid || isSubmitting}
@@ -214,7 +195,7 @@ export default function IyzicoForm({ basketData }) {
                             t('submitButton')
                         )}
                     </button>
-                </div>
+                </article>
             </form>
         </section>
     )

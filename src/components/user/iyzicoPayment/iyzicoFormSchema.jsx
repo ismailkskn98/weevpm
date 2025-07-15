@@ -28,8 +28,5 @@ export default function IyzicoFormSchema() {
         basketId: z.string().min(1, t('basketIdRequired')),
         price: z.string().min(1, t('priceRequired')),
         currency: z.string().min(1, t('currencyRequired')),
-        acceptTerms: z.boolean().refine(val => val === true, {
-            message: t('acceptTermsRequired')
-        })
     })
 }

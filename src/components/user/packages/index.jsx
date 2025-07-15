@@ -55,10 +55,10 @@ export default function Packages() {
 
     const handlePurchase = (packageId, price, interval) => {
         if (selectedCurrency === 'WCP') {
-            router.push(`/user/package-details?package_id=${packageId}&user_id=${userData.user.id}&currency=WCP&price=${price}&interval=${interval}`);
+            router.push(`/user/package-details?package_id=${packageId}`);
         } else {
             // iyzico
-            router.push(`/user/iyzico-payment?package_id=${packageId}&user_id=${userData.user.id}&currency=USD&price=${price}&interval=${interval}`);
+            router.push(`/user/iyzico-payment?package_id=${packageId}`);
         }
     };
     useEffect(() => {

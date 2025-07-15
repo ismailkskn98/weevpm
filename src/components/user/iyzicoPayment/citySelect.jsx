@@ -79,14 +79,15 @@ export default function CitySelect({ control, error, selectedCountry, name = "bi
                                 : 'Şehir bulunamadı'
                         }
                         loadingMessage={() => 'Şehirler yükleniyor...'}
-                        className='w-full'
+                        className='w-full rounded-3xl'
                         classNames={{
-                            control: (state) => `h-12 px-4 border border-gray-300 rounded-3xl bg-gray-50 text-gray-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-aqua-green focus:border-transparent ${state.isDisabled ? 'opacity-50 cursor-not-allowed' : ''} ${apiError ? 'border-red-300 bg-red-50' : ''}`,
-                            menu: () => 'z-30 bg-white rounded-lg border border-gray-300 mt-1 shadow-lg',
+                            control: (state) => `h-12 px-4 !bg-gray-50 border !border-gray-300 !rounded-3xl text-gray-900 text-xs sm:text-sm !outline-none !ring-0 !shadow-none ${apiError ? 'border-red-300 bg-red-50' : ''} ${state.isDisabled ? 'opacity-50 cursor-not-allowed' : ''}`,
+                            menu: () => 'z-30 bg-white !rounded-3xl !border-none mt-1 p-1',
                             option: ({ isFocused, isSelected }) =>
-                                `px-4 py-2 cursor-pointer text-xs sm:text-sm ${isFocused ? 'bg-aqua-green text-white' : 'text-gray-700 hover:bg-gray-100'} ${isSelected ? 'bg-aqua-green text-white font-medium' : ''}`,
-                            singleValue: () => 'text-gray-900 text-xs sm:text-sm',
-                            placeholder: () => `text-gray-500 text-xs sm:text-sm ${apiError ? 'text-red-500' : ''}`,
+                                ` px-4 py-2 !cursor-pointer hover:bg-red-600 !text-sm rounded-3xl ${isFocused ? '!bg-teal !text-white' : 'text-gray-300'
+                                } ${isSelected ? '!bg-deep-teal font-medium' : ''}`,
+                            singleValue: () => 'text-gray-900 !text-xs sm:!text-sm',
+                            placeholder: () => `text-gray-500 !text-xs sm:!text-sm ${apiError ? 'text-red-500' : ''}`,
                             input: () => 'text-gray-900 text-xs sm:text-sm',
                             dropdownIndicator: () => 'text-gray-500 py-0',
                             indicatorSeparator: () => 'hidden',
