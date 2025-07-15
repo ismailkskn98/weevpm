@@ -282,7 +282,8 @@
       "description": "Temel özellikler",
       "price": "ÜCRETSİZ",
       "priceUnit": "/ aylık",
-      "button": "Başlayın"
+      "button": "Başlayın",
+      "features": "Özellikler"
     },
     "premiumPackage": {
       "title": "Premium",
@@ -292,6 +293,7 @@
       "discount": "İndirim",
       "normalPrice": "Normal fiyat",
       "savingsText": "tasarruf edin!",
+      "features": "Özellikler",
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"

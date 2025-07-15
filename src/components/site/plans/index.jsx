@@ -11,9 +11,9 @@ export default function Plans({ children }) {
                 title={t('title')}
                 description={t('description')}
             />
-            <div className='mt-12 md:mt-16'>
+            <section className='w-full xl:w-11/12 2xl:w-10/12 mx-auto'>
                 {children}
-            </div>
+            </section>
         </main>
     )
 }

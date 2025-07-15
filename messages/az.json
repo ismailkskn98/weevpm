@@ -282,7 +282,8 @@
       "description": "Əsas xüsusiyyətlər",
       "price": "PULSUZ",
       "priceUnit": "/ aylıq",
-      "button": "Başlayın"
+      "button": "Başlayın",
+      "features": "Xüsusiyyətlər"
     },
     "premiumPackage": {
       "title": "Premium",
@@ -292,6 +293,7 @@
       "discount": "Endirim",
       "normalPrice": "Normal qiymət",
       "savingsText": "qənaət edin!",
+      "features": "Xüsusiyyətlər",
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"

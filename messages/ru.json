@@ -282,7 +282,8 @@
       "description": "Основные функции",
       "price": "БЕСПЛАТНО",
       "priceUnit": "/ месяц",
-      "button": "Начать"
+      "button": "Начать",
+      "features": "Функции"
     },
     "premiumPackage": {
       "title": "Премиум",
@@ -292,6 +293,7 @@
       "discount": "Скидка",
       "normalPrice": "Обычная цена",
       "savingsText": "экономия!",
+      "features": "Функции",
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"

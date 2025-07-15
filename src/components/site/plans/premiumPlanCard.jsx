@@ -86,6 +86,9 @@ export default function PremiumPlanCard({ packageItem }) {
             </article>
 
             <article className='border-t border-gray-600 w-full pt-6 md:pt-8'>
+                <h3 className='text-base md:text-lg font-semibold text-white/80 mb-4 md:mb-6'>
+                    {t('features')}
+                </h3>
                 <div className='flex flex-col gap-4'>
                     <div className='flex flex-col gap-2 md:gap-3'>
                         {features.length === 0 ? (

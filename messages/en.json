@@ -284,7 +284,8 @@
       "description": "Basic features",
       "price": "FREE",
       "priceUnit": "/ per month",
-      "button": "Get Started"
+      "button": "Get Started",
+      "features": "Features"
     },
     "premiumPackage": {
       "title": "Premium",
@@ -294,6 +295,7 @@
       "discount": "Discount",
       "normalPrice": "Normal price",
       "savingsText": "save!",
+      "features": "Features",
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"
