@@ -274,6 +274,30 @@
       "deliveryReturnTerms": "İade & Teslimat"
     }
   },
+  "plans": {
+    "title": "İhtiyacınıza Uygun Planlar",
+    "description": "En iyi plandan seçim yapın, mükemmel eşleşme sağlayın. Daha fazla veya daha az mı istiyorsunuz? Kesintisiz bir uyum için aboneliğinizi özelleştirin!",
+    "freePackage": {
+      "title": "Ücretsiz",
+      "description": "Temel özellikler",
+      "price": "ÜCRETSİZ",
+      "priceUnit": "/ aylık",
+      "button": "Başlayın"
+    },
+    "premiumPackage": {
+      "title": "Premium",
+      "description": "Tüm özellikler aktif",
+      "priceUnit": "/ aylık",
+      "button": "SATIN AL",
+      "discount": "İndirim",
+      "normalPrice": "Normal fiyat",
+      "savingsText": "tasarruf edin!",
+      "currencies": {
+        "usd": "USD",
+        "wcp": "WCP"
+      }
+    }
+  },
   "Auth": {
     "context": {
       "sessionEnded": "Oturum sonlandırıldı",

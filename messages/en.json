@@ -276,6 +276,30 @@
       "deliveryReturnTerms": "Returns & Delivery"
     }
   },
+  "plans": {
+    "title": "Plans for Your Need",
+    "description": "Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a seamless fit!",
+    "freePackage": {
+      "title": "Free",
+      "description": "Basic features",
+      "price": "FREE",
+      "priceUnit": "/ per month",
+      "button": "Get Started"
+    },
+    "premiumPackage": {
+      "title": "Premium",
+      "description": "All features active",
+      "priceUnit": "/ per month",
+      "button": "BUY NOW",
+      "discount": "Discount",
+      "normalPrice": "Normal price",
+      "savingsText": "save!",
+      "currencies": {
+        "usd": "USD",
+        "wcp": "WCP"
+      }
+    }
+  },
   "Auth": {
     "context": {
       "sessionEnded": "Session ended",

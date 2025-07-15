@@ -23,12 +23,16 @@ export default function Packages() {
     const t = useTranslations('User.packages');
 
     const fetchPackages = async () => {
-        const response = await coreAxios.POST('/package-list');
-        if (response.status == true) {
-            setFreePackages(response.free_details);
-            setPremiumPackages(response.data);
-        } else {
-            toast.error(response.message || t('errors.loadFailed'));
+        try {
+            const response = await coreAxios.POST('/package-list');
+            if (response.status == true) {
+                setFreePackages(response.free_details);
+                setPremiumPackages(response.data);
+            } else {
+                toast.error(response.message || t('errors.loadFailed'));
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 

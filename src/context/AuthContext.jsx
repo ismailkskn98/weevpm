@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
             'WEEVPN_TOKEN', 'username', 'email', 'country', 'referance_code',
             'package_names', 'can_token_withdraw', 'can_usdt_withdraw',
             'total_token_income', 'total_token_withdraw', 'total_usdt_income',
-            'total_usdt_withdraw', 'user'
+            'total_usdt_withdraw', 'user', 'active_package'
         ];
 
         cookiesToDelete.forEach(cookieName => {
@@ -40,6 +40,7 @@ export function AuthProvider({ children }) {
             const userData = await coreAxios.POST('/user-data', {}, t('userDataError'), logout);
             if (userData.status) {
                 setUserData(userData);
+                console.log(userData);
                 const cookies = {
                     WEEVPN_TOKEN: userData.token,
                     username: userData.user.user_name,
@@ -50,6 +51,7 @@ export function AuthProvider({ children }) {
                     reference_code: userData.user.reference_code,
                     reference_count: userData.user.reference_count,
                     package_names: userData.user.package_names,
+                    active_package: userData.user.active_package,
                     can_token_withdraw: userData.financial_status[0].can_token_withdraw,
                     can_usdt_withdraw: userData.financial_status[0].can_usdt_withdraw,
                     total_token_income: userData.financial_status[0].total_token_income,
