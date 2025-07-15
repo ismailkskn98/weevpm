@@ -661,6 +661,17 @@
       "page": {
         "title": "Paket Detalları",
         "description": "Bu bölmədə paket detallarını görə və ödəmə edə bilərsiniz."
+      },
+      "payment": {
+        "title": "Paket Ödəməsi",
+        "description": "Alışı tamamlamaq üçün aşağıdakı cüzdan adresinə {amount} WCP köçürün.",
+        "packageName": "Paket Adı",
+        "period": "Müddət",
+        "tokenPrice": "Token Qiyməti",
+        "walletAddress": "Cüzdan Adresi",
+        "countdown": "sonra bağlanacaq",
+        "warning": "Köçürmə tamamlandıqdan sonra səhifəni bağlayın.",
+        "copied": "Kopyalandı!"
       }
     },
     "passwordOperations": {

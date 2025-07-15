@@ -66,6 +66,9 @@ html {
 .css-t3ipsp-control:hover {
   border-color: #03b49b !important;
 }
+.css-t3ipsp-control:focus {
+  border-color: #03b49b !important;
+}
 
 .gridContainer {
   display: grid;
@@ -291,7 +294,7 @@ html {
   @keyframes float-middle {
     0%,
     100% {
-      transform: translateZ(0px) translateY(19px) translateX(38%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
+      transform: translateZ(0px) translateY(19px) translateX(40%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
     }
     50% {
       transform: translateZ(0px) translateY(14px) translateX(30%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);

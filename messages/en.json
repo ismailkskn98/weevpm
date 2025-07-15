@@ -663,6 +663,17 @@
       "page": {
         "title": "Package Details",
         "description": "In this section, you can view package details and make payment."
+      },
+      "payment": {
+        "title": "Package Payment",
+        "description": "Transfer {amount} WCP to the wallet address below to complete your purchase.",
+        "packageName": "Package Name",
+        "period": "Period",
+        "tokenPrice": "Token Price",
+        "walletAddress": "Wallet Address",
+        "countdown": "will close",
+        "warning": "Close the page after the transfer is completed.",
+        "copied": "Copied!"
       }
     },
     "passwordOperations": {

@@ -4,8 +4,10 @@ import { useRouter } from 'next/navigation';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import { Copy, Clock, Info } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function PackagesDetails({ packageData, walletAddress }) {
+    const t = useTranslations('User.packageDetails.payment');
     const [timeLeft, setTimeLeft] = useState(600);
     const router = useRouter();
 
@@ -29,36 +31,36 @@ export default function PackagesDetails({ packageData, walletAddress }) {
     };
 
     const handleCopySuccess = () => {
-        toast.success('Kopyalandı!');
+        toast.success(t('copied'));
     };
 
     return (
         <section className="w-full max-w-3xl space-y-8 sm:space-y-12">
             <header className="w-full flex flex-col items-start gap-2">
                 <h1 className="text-lg sm:text-xl font-medium text-nowrap text-gray-800">
-                    Paket Ödeme
+                    {t('title')}
                 </h1>
                 <p className="text-sm text-gray-500">
-                    Paket satın alma işleminizi tamamlamak için aşağıdaki cüzdan adresine {packageData?.token_price} WCP transfer ediniz.
+                    {t('description', { amount: packageData?.token_price })}
                 </p>
             </header>
 
             <main className='w-full flex flex-col items-center justify-between gap-4'>
                 <article className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">
-                        <p className="text-xs text-gray-500 mb-1">Paket Adı</p>
+                        <p className="text-xs text-gray-500 mb-1">{t('packageName')}</p>
                         <h2 className="text-base font-medium text-gray-700">
                             {packageData?.package_name}
                         </h2>
                     </div>
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">
-                        <p className="text-xs text-gray-500 mb-1">Periyot</p>
+                        <p className="text-xs text-gray-500 mb-1">{t('period')}</p>
                         <p className="text-base font-medium text-gray-700">
                             {packageData?.interval}
                         </p>
                     </div>
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">
-                        <p className="text-xs text-gray-500 mb-1">Token Fiyatı</p>
+                        <p className="text-xs text-gray-500 mb-1">{t('tokenPrice')}</p>
                         <p className="text-lg sm:text-xl font-medium text-teal-600">
                             {packageData?.token_price} WCP
                         </p>
@@ -69,7 +71,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                     <div className="flex flex-row items-center justify-between gap-3 sm:gap-4">
                         <article className="flex-1 min-w-0">
                             <p className="text-xs text-gray-600 mb-2">
-                                Cüzdan Adresi
+                                {t('walletAddress')}
                             </p>
                             <p className="text-[12px] sm:text-sm font-mono text-black/80 break-all">
                                 {walletAddress}
@@ -93,7 +95,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                             {formatCountdownTime(timeLeft)}
                         </span>
                         <span className="text-sm">
-                            sonra kapanacak
+                            {t('countdown')}
                         </span>
                     </article>
                 </section>
@@ -102,7 +104,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                     <article className="flex items-start gap-3">
                         <Info className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                         <p className="text-amber-800 text-sm">
-                            Transfer işlemi tamamlandıktan sonra sayfayı kapatınız.
+                            {t('warning')}
                         </p>
                     </article>
                 </section>
