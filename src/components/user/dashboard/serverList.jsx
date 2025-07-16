@@ -84,6 +84,24 @@ export default function ServerList() {
 
     }, [searchTerm, servers])
 
+    const handleServerConnectionCount = (count) => {
+        let newCount = 0;
+        let numType = '';
+        if (count < 1000) {
+            return count;
+        } else if (count < 1000000) {
+            newCount = count / 1000;
+            numType = 'K';
+        } else if (count < 1000000000) {
+            newCount = count / 1000000;
+            numType = 'M';
+        } else if (count < 1000000000000) {
+            newCount = count / 1000000000;
+            numType = 'B';
+        }
+        return newCount.toFixed(1) * 1 + numType;
+    }
+
     return (
         <main className="w-full flex flex-col items-start gap-4 md:gap-6 mt-16">
             <section className='w-full flex flex-col md:flex-row items-start md:items-end justify-start md:justify-between gap-6 md:gap-2'>
@@ -108,6 +126,7 @@ export default function ServerList() {
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-gray-100/50 border-b border-gray-200">
+                                    <TableHead className="text-gray-700 font-semibold px-6">ID</TableHead>
                                     <TableHead className="text-gray-700 font-semibold px-6">{t('table.serverName')}</TableHead>
                                     <TableHead className="text-gray-700 font-semibold px-6">{t('table.packageType')}</TableHead>
                                     <TableHead className="text-gray-700 font-semibold px-6">
@@ -125,8 +144,9 @@ export default function ServerList() {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server) => (
+                                {(filteredServers && filteredServers.length > 0 ? filteredServers : currentServers).map((server, index) => (
                                     <TableRow key={server.id} className="hover:bg-gray-50/80 transition-colors duration-200 border-b border-gray-100 last:border-b-0">
+                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">{index + 1}</TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             <div className='flex items-center gap-1.5'>
                                                 <Image src={`${server.country_flag}`} alt={server.country} width={24} height={16} className='w-6 h-3 object-contain object-center' />
@@ -162,7 +182,7 @@ export default function ServerList() {
                                                     <span>|</span>
                                                     <div className='flex items-center gap-0.5 text-xs text-deep-teal'>
                                                         <UserRound className='w-3 h-3 ' />
-                                                        <span className=''>{server.server_active_connection}</span>
+                                                        <span className=''>{handleServerConnectionCount(server.server_active_connection)}</span>
                                                     </div>
                                                 </div>
                                             </article>
