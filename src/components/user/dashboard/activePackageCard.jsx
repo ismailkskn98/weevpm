@@ -29,8 +29,8 @@ export default function ActivePackageCard() {
         premium: {
             title: t('premiumPackage.title'),
             description: t('premiumPackage.description'),
-            bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
-            borderColor: 'border-orange-600/30',
+            bgColor: 'bg-gradient-to-br from-purple-600 to-violet-700',
+            borderColor: 'border-purple-600/30',
             headerIcon: <Crown className="w-8 h-8 text-white/90" />,
             mainIcon: <Sparkles className="w-12 h-12 text-white/90" />,
             textColor: 'text-white/95',
@@ -41,7 +41,7 @@ export default function ActivePackageCard() {
     const config = isPremium ? packageConfig.premium : packageConfig.free;
 
     return (
-        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} ${isPremium ? 'shadow-md shadow-orange-200/40' : 'shadow-md shadow-slate-200/40'} ${config.bgColor} rounded-xl px-6 py-4 relative overflow-hidden`}>
+        <section className={`w-full max-w-sm h-full flex flex-col justify-between gap-5 border ${config.borderColor} ${isPremium ? 'shadow-md shadow-purple-200/40' : 'shadow-md shadow-slate-200/40'} ${config.bgColor} rounded-xl px-6 py-4 relative overflow-hidden`}>
             {isPremium && (
                 <>
                     <div className="absolute top-4 right-6 w-3 h-3 bg-white/20 rounded-full"></div>
