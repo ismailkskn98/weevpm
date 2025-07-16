@@ -744,6 +744,11 @@
       }
     },
     "packageDetails": {
+      "meta": {
+        "title": "WeeVPN - Paket Detayları",
+        "description": "WeeVPN paket detaylarını görüntüleyin ve güvenli ödeme işleminizi tamamlayın.",
+        "keywords": "weevpn paket detay, vpn ödeme, vpn paket satın al, vpn fiyat"
+      },
       "page": {
         "title": "Paket Detayları",
         "description": "Bu bölümde, paket detaylarını görüntüleyebilir ve ödeme yapabilirsiniz."
@@ -798,6 +803,11 @@
       "next": "Sonraki"
     },
     "iyzico": {
+      "meta": {
+        "title": "WeeVPN - Güvenli Ödeme",
+        "description": "WeeVPN güvenli ödeme sistemi ile paket satın alma işleminizi tamamlayın. Kredi kartı ve banka kartı ile ödeme.",
+        "keywords": "weevpn ödeme, vpn güvenli ödeme, vpn kredi kartı, vpn banka kartı, iyzico ödeme"
+      },
       "pageTitle": "Güvenli Ödeme",
       "pageDescription": "Güvenli ödeme sistemi ile satın alma işleminizi tamamlayın",
       "form": {

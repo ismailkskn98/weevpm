@@ -307,6 +307,28 @@
     }
   },
   "Auth": {
+    "meta": {
+      "login": {
+        "title": "WeeVPN - Daxil ol",
+        "description": "WeeVPN hesabınıza daxil olun və təhlükəsiz VPN xidmətimizə başlayın.",
+        "keywords": "weevpn daxil ol, vpn daxil ol, vpn hesab, təhlükəsiz daxil ol"
+      },
+      "register": {
+        "title": "WeeVPN - Qeydiyyat",
+        "description": "WeeVPN-ə pulsuz qeydiyyatdan keçin və təhlükəsiz internet təcrübəsinə həmin indi başlayın. Hərbi səviyyəli şifrələmə və qlobal server şəbəkəsi.",
+        "keywords": "weevpn qeydiyyat, vpn qeydiyyat, pulsuz vpn, vpn hesab"
+      },
+      "forgotPassword": {
+        "title": "WeeVPN - Şifrəni Unutdum",
+        "description": "WeeVPN hesabınızın şifrəsini sıfırlayın və hesabınıza təhlükəsiz giriş əldə edin.",
+        "keywords": "weevpn şifrə sıfırlama, vpn şifrəni unutdum, hesab bərpası"
+      },
+      "resetPassword": {
+        "title": "WeeVPN - Şifrə Sıfırlama",
+        "description": "WeeVPN hesabınız üçün yeni şifrə təyin edin və hesabınıza təhlükəsiz giriş təmin edin.",
+        "keywords": "weevpn yeni şifrə, vpn şifrə dəyiş, şifrə sıfırlama"
+      }
+    },
     "context": {
       "sessionEnded": "Sesiya bitdi",
       "userDataError": "İstifadəçi məlumatları alınmadı"
@@ -409,6 +431,38 @@
     }
   },
   "User": {
+    "meta": {
+      "dashboard": {
+        "title": "WeeVPN - İdarə Paneli",
+        "description": "WeeVPN hesabınızı idarə edin, istifadə statistikalarını görüntüləyin və referans gəlirlərini izləyin.",
+        "keywords": "weevpn panel, vpn idarə paneli, vpn istifadə, vpn idarə"
+      },
+      "packages": {
+        "title": "WeeVPN - Paketlər",
+        "description": "WeeVPN premium paketlərini kəşf edin və sizə ən uyğun VPN planını seçin. Pulsuz və premium seçimlər mövcuddur.",
+        "keywords": "weevpn paketlər, vpn qiymətlər, vpn planları, vpn premium"
+      },
+      "references": {
+        "title": "WeeVPN - Referanslar",
+        "description": "WeeVPN referans sistemi ilə dostlarınızı dəvət edin və hər referans üçün gəlir əldə edin.",
+        "keywords": "weevpn referans, vpn referans, vpn gəlir, vpn dəvət"
+      },
+      "referenceRevenues": {
+        "title": "WeeVPN - Referans Gəlirləri",
+        "description": "WeeVPN referans gəlirlərinizi izləyin və qazanclarınızı görüntüləyin.",
+        "keywords": "weevpn gəlir, vpn qazanc, referans gəliri, vpn pul qazan"
+      },
+      "withdrawal": {
+        "title": "WeeVPN - Çəkmə Əməliyyatları",
+        "description": "WeeVPN referans gəlirlərinizi çəkin və qazanclarınızı cüzdanınıza köçürün.",
+        "keywords": "weevpn çəkmə, vpn pul çəkmə, referans gəliri çəkmə, vpn qazanc"
+      },
+      "passwordOperations": {
+        "title": "WeeVPN - Şifrə Əməliyyatları",
+        "description": "WeeVPN hesabınızın şifrəsini təhlükəsiz şəkildə dəyişin və hesab təhlükəsizliyinizi artırın.",
+        "keywords": "weevpn şifrə dəyiş, vpn şifrə təhlükəsizlik, hesab təhlükəsizliyi"
+      }
+    },
     "passwordOperations": {
       "page": {
         "title": "Şifrə Əməliyyatları",
@@ -690,6 +744,11 @@
       }
     },
     "packageDetails": {
+      "meta": {
+        "title": "WeeVPN - Paket Detalları",
+        "description": "WeeVPN paket detaylarını görün və təhlükəsiz ödəmə prosesini tamamlayın.",
+        "keywords": "weevpn paket detalları, vpn ödəmə, vpn paket satın alma, vpn qiymət"
+      },
       "page": {
         "title": "Paket Detalları",
         "description": "Bu bölmədə paket detallarını görə və ödəmə edə bilərsiniz."
@@ -744,6 +803,11 @@
       "next": "Sonrakı"
     },
     "iyzico": {
+      "meta": {
+        "title": "WeeVPN - Təhlükəsiz Ödəmə",
+        "description": "WeeVPN paket alışınızı təhlükəsiz ödəmə sistemi ilə tamamlayın. Kredit kartı və bank kartı ilə ödəmə.",
+        "keywords": "weevpn ödəmə, vpn təhlükəsiz ödəmə, vpn kredit kartı, vpn bank kartı, iyzico ödəmə"
+      },
       "pageTitle": "Təhlükəsiz Ödəmə",
       "pageDescription": "Təhlükəsiz ödəmə sistemi ilə alışverişinizi tamamlayın",
       "form": {

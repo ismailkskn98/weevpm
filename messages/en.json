@@ -746,6 +746,11 @@
       }
     },
     "packageDetails": {
+      "meta": {
+        "title": "WeeVPN - Package Details",
+        "description": "View WeeVPN package details and complete your secure payment process.",
+        "keywords": "weevpn package details, vpn payment, vpn package purchase, vpn pricing"
+      },
       "page": {
         "title": "Package Details",
         "description": "In this section, you can view package details and make payment."
@@ -800,6 +805,11 @@
       "next": "Next"
     },
     "iyzico": {
+      "meta": {
+        "title": "WeeVPN - Secure Payment",
+        "description": "Complete your WeeVPN package purchase with secure payment system. Credit card and bank card payment.",
+        "keywords": "weevpn payment, vpn secure payment, vpn credit card, vpn bank card, iyzico payment"
+      },
       "pageTitle": "Secure Payment",
       "pageDescription": "Complete your purchase with secure payment system",
       "form": {
