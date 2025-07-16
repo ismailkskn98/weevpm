@@ -147,136 +147,109 @@
     "privacyPolicy": {
       "title": "Gizlilik Politikası",
       "article1": {
-        "title": "Giriş",
-        "description": "Bu gizlilik sözleşmesi, WeeVPN hizmetini kullanan tüm ziyaretçiler ve kullanıcılar için geçerlidir. Kullanıcılarımızın gizliliği bizim için önemlidir ve kişisel verilerin korunmasına büyük önem verilmektedir."
+        "title": "Topladığımız Veriler",
+        "description": "WeeVPN, hizmet sunumu için gerekli olan minimum düzeyde veri toplar:",
+        "item1": "Cihaz bilgisi (model, işletim sistemi)",
+        "item2": "Bağlantı zaman damgaları (isteğe bağlı ve anonimleştirilmiş)",
+        "item3": "IP adresi ve konum bilgisi (sadece oturum süresince, loglanmaz)",
+        "item4": "E-posta adresi (eğer bir hesap oluşturursanız)"
       },
       "article2": {
-        "title": "Toplanan Bilgiler",
-        "description": "Hizmetin sağlanabilmesi için bazı kişisel veriler toplanmaktadır. Bunlar:",
-        "item1": "Ad, soyad",
-        "item2": "E-posta adresi",
-        "item3": "Telefon numarası",
-        "item4": "Hesap ve kullanım tercihleri",
-        "item5": "Bağlantı logları (sadece güvenlik amaçlı, trafikle ilgili kayıt tutulmaz)",
-        "item6": "IP adresi ve cihaz bilgileri (güvenlik ve analiz amaçlı)"
+        "title": "Kesinlikle Toplamadığımız Veriler",
+        "item1": "İnternette gezindiğiniz siteler",
+        "item2": "DNS sorgularınız",
+        "item3": "VPN trafiğinizin içeriği"
       },
       "article3": {
-        "title": "Bilgi Kullanımı",
-        "description": "Toplanan bilgiler şu amaçlarla kullanılabilir:",
-        "item1": "Hizmet sağlama ve işlemler",
-        "item2": "Kullanıcı desteği ve sorun çözme",
-        "item3": "Hesap yönetimi ve güvenlik",
-        "item4": "İstatistiksel analizler (genel performans, kullanım analizi)"
+        "title": "Verilerin Kullanım Amaçları",
+        "description": "Topladığımız veriler şunlar için kullanılır:",
+        "item1": "VPN bağlantısını sağlamak ve optimize etmek",
+        "item2": "Güvenliği ve hizmet kalitesini artırmak",
+        "item3": "Kullanıcı desteği sağlamak",
+        "item4": "Yasal yükümlülükleri yerine getirmek"
       },
       "article4": {
-        "title": "Bilgi Paylaşımı",
-        "description": "Kullanıcı bilgileri, yasal zorunluluklar dışında üçüncü şahıslarla paylaşılmaz. Alt hizmet sağlayıcılar (ör. sunucu hizmeti, e-posta gönderimi gibi) ile sadece hizmetin sağlanması için gerekli veriler paylaşılabilir."
+        "title": "Üçüncü Taraflarla Paylaşım",
+        "description": "Hiçbir kişisel verinizi üçüncü taraflarla satmayız. Yalnızca aşağıdaki durumlarda paylaşım yapılabilir:",
+        "item1": "Yasal zorunluluklar",
+        "item2": "Güvenlik ihlali durumları",
+        "item3": "Hizmet sağlayıcılarımız (yalnızca teknik destek amaçlı)"
       },
       "article5": {
-        "title": "Çerezler (Cookies)",
-        "description": "Web sitemiz, kullanıcı deneyimini geliştirmek amacıyla çerezler kullanabilir. Tarayıcı ayarlarından çerezleri reddetmeyi tercih edebilirsiniz; ancak bazı işlevler kısıtlanabilir."
+        "title": "Verilerin Saklanması",
+        "description": "Verileriniz, yüksek güvenlik önlemleriyle korunur. Oturum verileri geçici olarak tutulur ve hizmetten çıktıktan sonra otomatik olarak silinir."
       },
       "article6": {
-        "title": "Verilerin Saklama Süresi",
-        "description": "Kişisel veriler, hizmet kullanımınız devam ettiği sürece ve yasal yükümlülükler kapsamında makul süre boyunca saklanır. Talep üzerine kişisel veriler silinebilir."
-      },
-      "article7": {
-        "title": "Güvenlik",
-        "description": "Kişisel verilerinizin güvenliği için gerekli tüm teknik ve idari tedbirler alınmaktadır. Veri güvenliğini sağlamak amacıyla SSL, güvenlik duvarı ve erişim kontrolleri gibi yöntemler kullanılmaktadır."
-      },
-      "article8": {
-        "title": "Haklarınız",
-        "description": "KVKK (Kişisel Verilerin Korunması Kanunu) kapsamında aşağıdaki haklara sahipsiniz:",
-        "item1": "Verilerinize erişme",
-        "item2": "Düzeltme talep etme",
-        "item3": "Silinmesini talep etme",
-        "item4": "İşlemeye itiraz etme"
-      },
-      "article9": {
-        "title": "İletişim",
-        "description": "Gizlilik politikamızla ilgili tüm sorularınız için info@weevpn.com adresinden bizimle iletişime geçebilirsiniz."
+        "title": "Kullanıcı Hakları",
+        "description": "Verilerinize erişme, düzeltme veya silme talebinde bulunabilirsiniz. Bizimle aşağıdaki e-posta üzerinden iletişime geçebilirsiniz:",
+        "item1": "📧 info@weevpn.com"
       }
     },
     "distanceSalesAgreement": {
-      "title": "Mesafeli Satış Sözleşmesi",
-      "description": "İşbu Mesafeli Satış Sözleşmesi, aşağıda bilgileri verilen taraflar arasında, aşağıda belirtilen hüküm ve şartlar çerçevesinde elektronik ortamda kurulmuştur.",
+      "title": "Kullanım Koşulları",
       "article1": {
-        "title": "Taraflar",
-        "description": "Satıcı:",
-        "item1": "Unvan: WeeVPN Dijital Hizmetleri",
-        "item2": "Adres: Yukarı Öveçler Mah. Lizbon Cad.",
-        "item3": "E-posta: info@weevpn.com"
+        "title": "Hizmet Tanımı",
+        "description": "WeeVPN, kullanıcıların internete daha güvenli ve özel bir şekilde erişmesini sağlayan bir sanal özel ağ (VPN) hizmetidir."
       },
-      "subtitle": "Alıcı (Müşteri):",
-      "subdescription": "WeeVPN web sitesine üye olan ve VPN hizmetini satın alan kullanıcı.",
       "article2": {
-        "title": "Konu",
-        "description": "İşbu sözleşme, Alıcı'nın Satıcı'ya ait www.weevpn.com internet sitesi üzerinden elektronik ortamda siparişini verdiği VPN hizmetinin satışı ve teslimi ile ilgili olarak 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve ilgili Mesafeli Sözleşmeler Yönetmeliği hükümleri gereğince tarafların hak ve yükümlülüklerini düzenler."
+        "title": "Kullanıcı Yükümlülükleri",
+        "description": "Uygulamayı kullanırken:",
+        "item1": "Yasalara uygun davranmayı",
+        "item2": "Spam, dolandırıcılık, yasa dışı içerik veya etkinliklerde VPN'i kullanmamayı",
+        "item3": "Hizmeti kötüye kullanmamayı",
+        "item4": "kabul etmiş olursunuz."
       },
       "article3": {
-        "title": "Ürün/Hizmet Bilgisi",
-        "item1": "Ürün: VPN (Virtual Private Network) Hizmeti",
-        "item2": "Fiyat: Sipariş anında sistemde belirtilen tutar",
-        "item3": "Teslim Şekli: E-posta veya kullanıcı paneli üzerinden hesap bilgileri teslimatı",
-        "item4": "Teslim Süresi: Anlık (ödeme onayının ardından)"
+        "title": "Hesap Güvenliği",
+        "description": "Eğer bir kullanıcı hesabı oluşturursanız, bilgilerinizi gizli tutmakla yükümlüsünüz. Hesabınız üzerinden yapılan tüm işlemlerden siz sorumlusunuz."
       },
       "article4": {
-        "title": "Ödeme",
-        "description": "Alıcı, satın alma işlemini tamamlamadan önce hizmetin toplam bedelini ve ödeme yöntemini onaylamıştır. Ödeme işlemi kredi kartı, banka kartı veya online ödeme sistemleri aracılığıyla gerçekleşir."
+        "title": "Sınırlı Sorumluluk",
+        "description": "WeeVPN, hizmetin kesintisiz, hatasız veya kesintisiz olacağını garanti etmez. Herhangi bir doğrudan veya dolaylı zarardan dolayı sorumluluk kabul edilmez."
       },
       "article5": {
-        "title": "Teslimat",
-        "description": "VPN hizmeti, ödeme sonrası kullanıcıya elektronik ortamda sunulur. Fiziksel gönderim yapılmaz. Alıcı, bu hususu kabul ettiğini beyan eder."
+        "title": "Fesih",
+        "description": "Hizmet şartlarına aykırı davranmanız durumunda, WeeVPN hizmetinize erişimi askıya alma veya sonlandırma hakkını saklı tutar."
       },
       "article6": {
-        "title": "Cayma Hakkı",
-        "description": "Alıcı, dijital içerik niteliği taşıyan bu hizmette, teslimden önce cayma hakkını kullanabilir. Ancak hizmetin kullanıma sunulması (hesap bilgilerinin paylaşılması veya VPN servisinin aktif hale getirilmesi) halinde cayma hakkı geçersiz olur."
+        "title": "Değişiklikler",
+        "description": "Bu koşullarda zaman zaman değişiklik yapabiliriz. Değişiklikler uygulama üzerinden veya web sitemiz aracılığıyla duyurulur."
       },
       "article7": {
-        "title": "Sorumluluklar",
-        "item1": "Satıcı, hizmeti zamanında ve eksiksiz teslim etmekle yükümlüdür.",
-        "item2": "Alıcı, sipariş esnasında sağladığı bilgilerin doğru olduğunu beyan eder.",
-        "item3": "Satıcı, Alıcı'nın kusurundan kaynaklanan erişim sorunlarından sorumlu değildir."
-      },
-      "article8": {
-        "title": "Uyuşmazlıkların Çözümü",
-        "description": "İşbu sözleşmeden doğabilecek uyuşmazlıklarda, Tüketici Hakem Heyetleri ve Tüketici Mahkemeleri yetkilidir."
-      },
-      "article9": {
-        "title": "Yürürlük",
-        "description": "Alıcı, www.weevpn.com sitesi üzerinden sipariş vererek bu sözleşmenin tüm şartlarını kabul etmiş sayılır. İşbu sözleşme, dijital ortamda onaylandığı tarihte yürürlüğe girer."
+        "title": "İletişim",
+        "description": "🛡️ Daha fazla bilgi veya destek için:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
       }
     },
     "deliveryReturnTerms": {
       "title": "Teslimat ve İade Koşulları",
       "article1": {
-        "title": "Teslimat Koşulları",
-        "description": "WeeVPN hizmeti, ödeme işleminizin tamamlanmasının ardından anlık olarak aktif hale getirilir. Hesap bilgileriniz ve bağlantı talimatları e-posta, kullanıcı paneli veya özel bağlantı yoluyla sağlanır."
+        "title": "Dijital Hizmet Teslimatı",
+        "description": "WeeVPN tamamen dijital bir VPN hizmetidir. Fiziksel ürün teslimatı yapılmamaktadır. Hizmet, ödeme onayından hemen sonra hesabınızda aktif hale getirilir."
       },
       "article2": {
-        "title": "Teslimat Biçimi",
-        "description": "Hizmetimiz tamamen dijital nitelikte olup, fiziksel gönderim yapılmamaktadır. VPN hizmeti, yazılım uygulamaları ve web paneli aracılığıyla sunulmakta ve çeşitli cihazlarda kullanım için erişim sağlanmaktadır."
+        "title": "Anında Erişim",
+        "description": "Ödemeniz onaylandıktan sonra VPN hizmetine anında erişim sağlanır. Hesap bilgileriniz ve bağlantı talimatları e-posta veya kullanıcı paneli üzerinden sağlanır."
       },
       "article3": {
-        "title": "İade Şartları",
-        "description": "Dijital ürünlerde, doğası gereği iade işlemi mümkün değildir. Ancak aşağıdaki durumlarda kullanıcıya özel çözüm sunulabilir:",
-        "item1": "Hizmetin taahhüt edilen süre içerisinde aktif hale getirilmemesi",
-        "item2": "Teslim edilen VPN hizmetinin, belirtilen özellik ve performanstan bariz şekilde farklı olması",
-        "item3": "Teknik aksaklıklar nedeniyle erişilemeyen VPN servisi olması"
-      },
-      "article4": {
-        "title": "İade Süreci",
-        "description": "Yukarıdaki durumlar söz konusuysa, kullanıcı info@weevpn.com adresine 7 gün içinde e-posta göndererek destek talebinde bulunabilir. Talebiniz incelendikten sonra, gerektiğinde yeniden teslimat, düzeltme veya istisnai olarak ücret iadesi yapılabilir."
+        "title": "İade Politikası",
+        "description": "WeeVPN, kurumsal VPN sağlayıcıları gibi, dijital hizmet niteliği nedeniyle iade kabul etmemektedir. VPN hizmetleri:",
+        "item1": "Kullanıma sunulduğu andan itibaren tüketilmiş sayılır",
+        "item2": "Fiziksel ürün olmadığı için iade edilemez",
+        "item3": "Kurumsal VPN standartlarına uygun olarak iade kabul edilmez"
       },
       "article5": {
         "title": "İletişim",
-        "description": "Her türlü soru ve destek talepleriniz için bizimle info@weevpn.com adresinden iletişime geçebilirsiniz."
+        "description": "Teknik sorunlarınız için bizimle iletişime geçebilirsiniz:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
       }
     },
     "aside": {
       "title": "Yasal Belgeler",
       "privacyPolicy": "Gizlilik Politikası",
-      "distanceSalesAgreement": "Satış Sözleşmesi",
+      "distanceSalesAgreement": "Kullanım Koşulları",
       "deliveryReturnTerms": "İade & Teslimat"
     }
   },

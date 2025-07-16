@@ -11,7 +11,7 @@ export default function HeaderRight({ className, token, username }) {
     return (
         <article className={`flex items-center gap-4 text-sm ${className}`}>
             {token ? (
-                <Link href="/user" className="group relative flex items-center gap-1 hover:text-deep-teal">
+                <Link href="/user" className="group relative flex items-center gap-1">
                     <CiUser className="w-5 h-5" />
                     <span className="inline-block overflow-hidden whitespace-nowrap">
                         {username ? username : 'Dashboard'}

@@ -149,136 +149,109 @@
     "privacyPolicy": {
       "title": "Privacy Policy",
       "article1": {
-        "title": "Introduction",
-        "description": "This privacy policy applies to all visitors and users of the WeeVPN service. We value the privacy of our users and attach great importance to the protection of personal data."
+        "title": "Data We Collect",
+        "description": "WeeVPN collects minimal data necessary for service provision:",
+        "item1": "Device information (model, operating system)",
+        "item2": "Connection timestamps (optional and anonymized)",
+        "item3": "IP address and location data (only during session, not logged)",
+        "item4": "Email address (if you create an account)"
       },
       "article2": {
-        "title": "Collected Information",
-        "description": "Certain personal data is collected in order to provide the service. These include:",
-        "item1": "First and last name",
-        "item2": "Email address",
-        "item3": "Phone number",
-        "item4": "Account and usage preferences",
-        "item5": "Connection logs (for security purposes only, no traffic data is stored)",
-        "item6": "IP address and device information (for security and analytics purposes)"
+        "title": "Data We Never Collect",
+        "item1": "Websites you visit",
+        "item2": "Your DNS queries",
+        "item3": "Content of your VPN traffic"
       },
       "article3": {
-        "title": "Use of Information",
-        "description": "Collected information may be used for the following purposes:",
-        "item1": "Service provision and operations",
-        "item2": "User support and issue resolution",
-        "item3": "Account management and security",
-        "item4": "Statistical analysis (general performance, usage analysis)"
+        "title": "Purpose of Data Usage",
+        "description": "The data we collect is used for:",
+        "item1": "Providing and optimizing VPN connection",
+        "item2": "Enhancing security and service quality",
+        "item3": "Providing user support",
+        "item4": "Fulfilling legal obligations"
       },
       "article4": {
-        "title": "Information Sharing",
-        "description": "User information is not shared with third parties except where legally required. Necessary data may be shared with sub-service providers (e.g., hosting, email delivery) solely for service provision."
+        "title": "Third-Party Sharing",
+        "description": "We never sell your personal data to third parties. Sharing may only occur in the following cases:",
+        "item1": "Legal requirements",
+        "item2": "Security breach situations",
+        "item3": "Our service providers (for technical support only)"
       },
       "article5": {
-        "title": "Cookies",
-        "description": "Our website may use cookies to improve user experience. You may choose to reject cookies via your browser settings; however, this may limit certain functions."
+        "title": "Data Storage",
+        "description": "Your data is protected with high security measures. Session data is temporarily stored and automatically deleted after you exit the service."
       },
       "article6": {
-        "title": "Data Retention Period",
-        "description": "Personal data is retained for as long as you use the service and for a reasonable period in accordance with legal obligations. Upon request, your personal data can be deleted."
-      },
-      "article7": {
-        "title": "Security",
-        "description": "All necessary technical and administrative measures are taken to ensure the security of your personal data. Methods such as SSL, firewalls, and access controls are used to protect data."
-      },
-      "article8": {
-        "title": "Your Rights",
-        "description": "Under the Personal Data Protection Law, you have the following rights:",
-        "item1": "Access your data",
-        "item2": "Request correction",
-        "item3": "Request deletion",
-        "item4": "Object to processing"
-      },
-      "article9": {
-        "title": "Contact",
-        "description": "For any questions regarding our privacy policy, please contact us at info@weevpn.com."
+        "title": "User Rights",
+        "description": "You can request access, correction, or deletion of your data. Contact us at:",
+        "item1": "📧 info@weevpn.com"
       }
     },
     "distanceSalesAgreement": {
-      "title": "Distance Sales Agreement",
-      "description": "This Distance Sales Agreement is established electronically between the parties listed below under the terms and conditions specified herein.",
+      "title": "Terms of Service",
       "article1": {
-        "title": "Parties",
-        "description": "Seller:",
-        "item1": "Title: WeeVPN Digital Services",
-        "item2": "Address: Yukarı Öveçler Mah. Lizbon Cad.",
-        "item3": "Email: info@weevpn.com"
+        "title": "Service Definition",
+        "description": "WeeVPN is a virtual private network (VPN) service that enables users to access the internet more securely and privately."
       },
-      "subtitle": "Buyer (Customer):",
-      "subdescription": "The user who registers on the WeeVPN website and purchases the VPN service.",
       "article2": {
-        "title": "Subject",
-        "description": "This agreement regulates the rights and obligations of the parties in accordance with the Consumer Protection Law No. 6502 and relevant Distance Contracts Regulation, regarding the sale and delivery of the VPN service ordered by the Buyer electronically via www.weevpn.com."
+        "title": "User Obligations",
+        "description": "When using the application, you agree to:",
+        "item1": "Comply with laws",
+        "item2": "Not use VPN for spam, fraud, illegal content, or activities",
+        "item3": "Not abuse the service",
+        "item4": "accept these terms."
       },
       "article3": {
-        "title": "Product/Service Information",
-        "item1": "Product: VPN (Virtual Private Network) Service",
-        "item2": "Price: The amount specified in the system at the time of order",
-        "item3": "Delivery Method: Account information delivered via email or user panel",
-        "item4": "Delivery Time: Instant (following payment confirmation)"
+        "title": "Account Security",
+        "description": "If you create a user account, you are responsible for keeping your information confidential. You are responsible for all transactions made through your account."
       },
       "article4": {
-        "title": "Payment",
-        "description": "Before completing the purchase, the Buyer confirms the total price and the selected payment method. Payment is made via credit card, debit card, or online payment systems."
+        "title": "Limited Liability",
+        "description": "WeeVPN does not guarantee that the service will be uninterrupted, error-free, or continuous. No liability is accepted for any direct or indirect damages."
       },
       "article5": {
-        "title": "Delivery",
-        "description": "The VPN service is provided electronically to the user after payment. No physical delivery is made. The Buyer declares acceptance of this condition."
+        "title": "Termination",
+        "description": "If you violate the terms of service, WeeVPN reserves the right to suspend or terminate access to your service."
       },
       "article6": {
-        "title": "Right of Withdrawal",
-        "description": "The Buyer may exercise the right of withdrawal before the service is delivered. However, once the service is made available (such as sharing account credentials or activating the VPN), the right of withdrawal becomes void."
+        "title": "Changes",
+        "description": "We may make changes to these terms from time to time. Changes are announced through the application or our website."
       },
       "article7": {
-        "title": "Responsibilities",
-        "item1": "The Seller is obligated to deliver the service on time and without any defects.",
-        "item2": "The Buyer declares that the information provided during the order is accurate.",
-        "item3": "The Seller is not responsible for access issues caused by the Buyer's fault."
-      },
-      "article8": {
-        "title": "Dispute Resolution",
-        "description": "In case of any disputes arising from this agreement, Consumer Arbitration Boards and Consumer Courts shall have jurisdiction."
-      },
-      "article9": {
-        "title": "Enforcement",
-        "description": "By placing an order on www.weevpn.com, the Buyer is deemed to have accepted all terms of this agreement. This agreement enters into force on the date it is digitally approved."
+        "title": "Contact",
+        "description": "🛡️ For more information or support:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
       }
     },
     "deliveryReturnTerms": {
       "title": "Delivery and Return Terms",
       "article1": {
-        "title": "Delivery Conditions",
-        "description": "WeeVPN service is activated instantly after the completion of your payment. Your account information and connection instructions are provided via email, user panel, or a private link."
+        "title": "Digital Service Delivery",
+        "description": "WeeVPN is a completely digital VPN service. No physical product delivery is made. The service is activated in your account immediately after payment confirmation."
       },
       "article2": {
-        "title": "Delivery Method",
-        "description": "Our service is entirely digital; no physical shipment is made. VPN service is provided via software applications and a web panel, and can be accessed on various devices."
+        "title": "Instant Access",
+        "description": "VPN service access is provided instantly after your payment is confirmed. Your account information and connection instructions are provided via email or user panel."
       },
       "article3": {
-        "title": "Return Conditions",
-        "description": "Due to the nature of digital products, returns are not generally possible. However, special solutions may be offered in the following cases:",
-        "item1": "Failure to activate the service within the promised time frame",
-        "item2": "Significant discrepancies between the delivered VPN service and the advertised features or performance",
-        "item3": "Technical issues that prevent access to the VPN service"
-      },
-      "article4": {
-        "title": "Return Process",
-        "description": "In such cases, users can contact info@weevpn.com within 7 days via email. After evaluating the request, re-delivery, correction, or exceptional refunds may be issued as needed."
+        "title": "Return Policy",
+        "description": "WeeVPN, like corporate VPN providers, does not accept returns due to the digital nature of the service. VPN services:",
+        "item1": "Are considered consumed once made available for use",
+        "item2": "Cannot be returned as they are not physical products",
+        "item3": "Are not subject to returns in accordance with corporate VPN standards"
       },
       "article5": {
         "title": "Contact",
-        "description": "For any questions or support requests, feel free to contact us at info@weevpn.com."
+        "description": "For technical issues, you can contact us:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
       }
     },
     "aside": {
       "title": "Legal Documents",
       "privacyPolicy": "Privacy Policy",
-      "distanceSalesAgreement": "Sales Agreement",
+      "distanceSalesAgreement": "Terms of Service",
       "deliveryReturnTerms": "Returns & Delivery"
     }
   },
