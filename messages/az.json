@@ -1,5 +1,10 @@
 {
   "Site": {
+    "meta": {
+      "title": "WeeVPN - Təhlükəsiz və Sürətli VPN Həlli",
+      "description": "WeeVPN-in hərbi səviyyəli şifrələmə ilə məlumatlarınızı qoruyun. Qlobal server şəbəkəsi, optimallaşdırılmış performans və məxfilik yönümlü dizayn ilə təhlükəsiz internet təcrübəsi.",
+      "keywords": "vpn, təhlükəsiz vpn, sürətli vpn, vpn xidməti, weevpn, internet təhlükəsizliyi, şifrələmə, məxfilik"
+    },
     "mobileNavbarHeader": "Təhlükəsiz və Sürətli VPN Həlli",
     "navbar": {
       "home": "Ana səhifə",

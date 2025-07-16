@@ -1,5 +1,10 @@
 {
   "Site": {
+    "meta": {
+      "title": "WeeVPN - Güvenli ve Hızlı VPN Çözümü",
+      "description": "WeeVPN ile verilerinizi askeri düzeyde şifreleme ile koruyun. Global sunucu ağı, optimize edilmiş performans ve gizlilik odaklı tasarımla güvenli internet deneyimi.",
+      "keywords": "vpn, güvenli vpn, hızlı vpn, türkiye vpn, vpn servisi, weevpn, internet güvenliği, şifreleme, gizlilik"
+    },
     "mobileNavbarHeader": "Güvenli ve Hızlı VPN Çözümü",
     "navbar": {
       "home": "Ana sayfa",
@@ -302,6 +307,28 @@
     }
   },
   "Auth": {
+    "meta": {
+      "login": {
+        "title": "WeeVPN - Giriş Yap",
+        "description": "WeeVPN hesabınıza giriş yapın ve güvenli VPN hizmetimizden yararlanmaya başlayın.",
+        "keywords": "weevpn giriş, vpn login, vpn giriş, weevpn hesap"
+      },
+      "register": {
+        "title": "WeeVPN - Kayıt Ol",
+        "description": "WeeVPN'e ücretsiz kayıt olun ve güvenli internet deneyimini hemen başlatın. Askeri düzeyde şifreleme ve global sunucu ağı.",
+        "keywords": "weevpn kayıt, vpn kayıt, vpn ücretsiz, vpn hesap oluştur"
+      },
+      "forgotPassword": {
+        "title": "WeeVPN - Şifremi Unuttum",
+        "description": "WeeVPN hesabınızın şifresini sıfırlayın ve hesabınıza tekrar güvenli erişim sağlayın.",
+        "keywords": "weevpn şifre sıfırlama, vpn şifre unuttum, hesap kurtarma"
+      },
+      "resetPassword": {
+        "title": "WeeVPN - Şifre Sıfırlama",
+        "description": "WeeVPN hesabınız için yeni şifre belirleyin ve hesabınıza güvenli erişim sağlayın.",
+        "keywords": "weevpn yeni şifre, vpn şifre değiştir, şifre sıfırlama"
+      }
+    },
     "context": {
       "sessionEnded": "Oturum sonlandırıldı",
       "userDataError": "Kullanıcı verileri alınamadı"
@@ -404,6 +431,38 @@
     }
   },
   "User": {
+    "meta": {
+      "dashboard": {
+        "title": "WeeVPN - Gösterge Paneli",
+        "description": "WeeVPN hesabınızı yönetin, kullanım istatistiklerinizi görüntüleyin ve referans gelirlerinizi takip edin.",
+        "keywords": "weevpn panel, vpn kontrol paneli, vpn kullanım, vpn yönetim"
+      },
+      "packages": {
+        "title": "WeeVPN - Paketler",
+        "description": "WeeVPN premium paketlerini keşfedin ve size en uygun VPN planını seçin. Ücretsiz ve premium seçenekler.",
+        "keywords": "weevpn paketler, vpn fiyatları, vpn planları, vpn premium"
+      },
+      "references": {
+        "title": "WeeVPN - Referanslar",
+        "description": "WeeVPN referans sistemi ile arkadaşlarınızı davet edin ve her referans için gelir elde edin.",
+        "keywords": "weevpn referans, vpn referans, vpn gelir, vpn davet"
+      },
+      "referenceRevenues": {
+        "title": "WeeVPN - Referans Gelirleri",
+        "description": "WeeVPN referans gelirlerinizi takip edin ve kazançlarınızı görüntüleyin.",
+        "keywords": "weevpn gelir, vpn kazanç, referans geliri, vpn para kazan"
+      },
+      "withdrawal": {
+        "title": "WeeVPN - Çekim İşlemleri",
+        "description": "WeeVPN referans gelirlerinizi çekin ve kazançlarınızı cüzdanınıza transfer edin.",
+        "keywords": "weevpn çekim, vpn para çekme, referans geliri çekme, vpn kazanç"
+      },
+      "passwordOperations": {
+        "title": "WeeVPN - Şifre İşlemleri",
+        "description": "WeeVPN hesabınızın şifresini güvenli bir şekilde değiştirin ve hesap güvenliğinizi artırın.",
+        "keywords": "weevpn şifre değiştir, vpn şifre güvenlik, hesap güvenliği"
+      }
+    },
     "passwordOperations": {
       "page": {
         "title": "Şifre İşlemleri",

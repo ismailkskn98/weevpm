@@ -23,26 +23,46 @@ const inter = localFont({
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale: locale });
+  const t = await getTranslations({ locale: locale, namespace: 'Site.meta' });
 
   return {
-    title: "",
-    description: "",
-    keywords: "",
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
     robots: "index, follow",
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      type: 'website',
+      locale: locale,
+      url: 'https://weevpn.com',
+      siteName: 'WeeVPN',
+      images: [
+        {
+          url: '/logo.png',
+          width: 512,
+          height: 512,
+          alt: 'WeeVPN Logo'
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: ['/logo.png']
+    },
     icons: {
       icon: [
         { url: "/logo.png", type: "image/png", sizes: "512x512" },
       ],
     },
-    meta: [
-      {
-        name: "google-site-verification",
-        content: "im-2q85dxUJnm9vFy7b2UdfvJKVljHp6Fz9o07cHyWQ",
-      },
-    ],
+    verification: {
+      google: "im-2q85dxUJnm9vFy7b2UdfvJKVljHp6Fz9o07cHyWQ"
+    },
   };
 }
+
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {

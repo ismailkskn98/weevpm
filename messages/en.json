@@ -1,5 +1,10 @@
 {
   "Site": {
+    "meta": {
+      "title": "WeeVPN - Secure and Fast VPN Solution",
+      "description": "Protect your data with WeeVPN's military-grade encryption. Global server network, optimized performance, and privacy-first design for secure internet experience.",
+      "keywords": "vpn, secure vpn, fast vpn, vpn service, weevpn, internet security, encryption, privacy, global vpn"
+    },
     "mobileNavbarHeader": "Secure and Fast VPN Solution",
     "navbar": {
       "home": "Home",
@@ -304,6 +309,28 @@
     }
   },
   "Auth": {
+    "meta": {
+      "login": {
+        "title": "WeeVPN - Login",
+        "description": "Log in to your WeeVPN account and start enjoying our secure VPN service.",
+        "keywords": "weevpn login, vpn login, vpn account, secure login"
+      },
+      "register": {
+        "title": "WeeVPN - Register",
+        "description": "Sign up for WeeVPN for free and start your secure internet experience now. Military-grade encryption and global server network.",
+        "keywords": "weevpn register, vpn signup, free vpn, vpn account"
+      },
+      "forgotPassword": {
+        "title": "WeeVPN - Forgot Password",
+        "description": "Reset your WeeVPN account password and regain secure access to your account.",
+        "keywords": "weevpn password reset, vpn forgot password, account recovery"
+      },
+      "resetPassword": {
+        "title": "WeeVPN - Reset Password",
+        "description": "Set a new password for your WeeVPN account and secure your account access.",
+        "keywords": "weevpn new password, vpn password change, password reset"
+      }
+    },
     "context": {
       "sessionEnded": "Session ended",
       "userDataError": "User data could not be retrieved"
@@ -406,6 +433,38 @@
     }
   },
   "User": {
+    "meta": {
+      "dashboard": {
+        "title": "WeeVPN - Dashboard",
+        "description": "Manage your WeeVPN account, view usage statistics, and track your referral earnings.",
+        "keywords": "weevpn dashboard, vpn control panel, vpn usage, vpn management"
+      },
+      "packages": {
+        "title": "WeeVPN - Packages",
+        "description": "Explore WeeVPN premium packages and choose the VPN plan that suits you best. Free and premium options available.",
+        "keywords": "weevpn packages, vpn pricing, vpn plans, vpn premium"
+      },
+      "references": {
+        "title": "WeeVPN - References",
+        "description": "Invite your friends with WeeVPN referral system and earn income for each referral.",
+        "keywords": "weevpn referral, vpn referral, vpn income, vpn invite"
+      },
+      "referenceRevenues": {
+        "title": "WeeVPN - Referral Revenues",
+        "description": "Track your WeeVPN referral earnings and view your income statistics.",
+        "keywords": "weevpn earnings, vpn income, referral revenue, vpn earn money"
+      },
+      "withdrawal": {
+        "title": "WeeVPN - Withdrawal",
+        "description": "Withdraw your WeeVPN referral earnings and transfer your income to your wallet.",
+        "keywords": "weevpn withdrawal, vpn withdraw money, referral earnings withdrawal, vpn income"
+      },
+      "passwordOperations": {
+        "title": "WeeVPN - Password Operations",
+        "description": "Securely change your WeeVPN account password and enhance your account security.",
+        "keywords": "weevpn password change, vpn password security, account security"
+      }
+    },
     "passwordOperations": {
       "page": {
         "title": "Password Operations",
