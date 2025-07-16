@@ -16,7 +16,7 @@ import HistoryPackage from './historyPackage';
 export default function Packages() {
     const [freePackages, setFreePackages] = useState([]);
     const [premiumPackages, setPremiumPackages] = useState([]);
-    const [selectedCurrency, setSelectedCurrency] = useState('USD');
+    const [selectedCurrency, setSelectedCurrency] = useState('WCP');
     const [activeTab, setActiveTab] = useState("6");
     const { userData } = useAuth();
     const router = useRouter();

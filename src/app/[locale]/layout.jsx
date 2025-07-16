@@ -30,12 +30,22 @@ export async function generateMetadata({ params }) {
     description: t('description'),
     keywords: t('keywords'),
     robots: "index, follow",
+    alternates: {
+      canonical: `https://weevpn.com/${locale}`,
+      languages: {
+        'en': 'https://weevpn.com/en',
+        'tr': 'https://weevpn.com/tr',
+        'ru': 'https://weevpn.com/ru',
+        'az': 'https://weevpn.com/az',
+        'x-default': 'https://weevpn.com/en'
+      }
+    },
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
       locale: locale,
-      url: 'https://weevpn.com',
+      url: `https://weevpn.com/${locale}`,
       siteName: 'WeeVPN',
       images: [
         {

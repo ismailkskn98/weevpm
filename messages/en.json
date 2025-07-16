@@ -305,6 +305,11 @@
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"
+      },
+      "usdModal": {
+        "title": "USD Payment Coming Soon",
+        "description": "Our USD payment service is currently in the testing phase and will be available to you very soon. Thank you for your patience.",
+        "button": "Got it"
       }
     }
   },

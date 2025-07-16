@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Allow register pages for marketing/sublinks
+Allow: /*/auth/register/
+
+# Block other auth pages from indexing
+Disallow: /*/auth/login/
+Disallow: /*/auth/forgot-password/
+Disallow: /*/auth/reset-password/
+Disallow: /*/user/
+
+# Block specific files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow public assets
+Allow: /images/
+Allow: /videos/
+Allow: /rive/
+Allow: /iyzico/
+
+# Sitemap location
+Sitemap: https://weevpn.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

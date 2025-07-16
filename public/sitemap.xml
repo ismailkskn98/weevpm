@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage for all locales -->
+  <url>
+    <loc>https://weevpn.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/tr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/ru</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/az</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Legal pages for all locales -->
+  <url>
+    <loc>https://weevpn.com/en/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/legal" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/legal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/legal" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/legal" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/tr/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/legal" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/legal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/legal" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/legal" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/ru/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/legal" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/legal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/legal" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/legal" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/az/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/legal" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/legal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/legal" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/legal" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Register pages for marketing/sublinks -->
+  <url>
+    <loc>https://weevpn.com/en/auth/register</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/auth/register" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/auth/register" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/auth/register" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/auth/register" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/auth/register" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/tr/auth/register</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/auth/register" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/auth/register" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/auth/register" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/auth/register" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/auth/register" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/ru/auth/register</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/auth/register" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/auth/register" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/auth/register" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/auth/register" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/auth/register" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://weevpn.com/az/auth/register</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://weevpn.com/en/auth/register" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://weevpn.com/tr/auth/register" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://weevpn.com/ru/auth/register" />
+    <xhtml:link rel="alternate" hreflang="az" href="https://weevpn.com/az/auth/register" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weevpn.com/en/auth/register" />
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

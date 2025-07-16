@@ -303,6 +303,11 @@
       "currencies": {
         "usd": "USD",
         "wcp": "WCP"
+      },
+      "usdModal": {
+        "title": "USD Ödəmə Tezliklə",
+        "description": "USD ödəmə xidmətimiz hal-hazırda test mərhələsindədir və çox tezliklə sizə təqdim olunacaq. Səbrinizə görə təşəkkür edirik.",
+        "button": "Anladım"
       }
     }
   },
