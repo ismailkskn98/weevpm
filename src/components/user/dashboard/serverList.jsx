@@ -7,7 +7,7 @@ import Pagination from '../pagination';
 import TableSkeleton from '../../ui/table-skeleton';
 import coreAxios from '@/helper/coreAxios';
 import { toast } from 'sonner';
-import { Crown } from 'lucide-react';
+import { Crown, UserRound } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -157,7 +157,14 @@ export default function ServerList() {
                                                     <div className='absolute left-5 inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
                                                     <div className='absolute left-[26px] inset-y-0 w-[1px] h-full bg-[#ececec]'></div>
                                                 </div>
-                                                <span className='text-xs !text-black/70 hover:!text-black'>{server.server_signal}ms</span>
+                                                <div className='flex items-center gap-2 text-xs !text-black/70 hover:!text-black'>
+                                                    <span>{server.server_signal}ms</span>
+                                                    <span>|</span>
+                                                    <div className='flex items-center gap-0.5 text-xs text-deep-teal'>
+                                                        <UserRound className='w-3 h-3 ' />
+                                                        <span className=''>{server.server_active_connection}</span>
+                                                    </div>
+                                                </div>
                                             </article>
                                         </TableCell>
                                     </TableRow>

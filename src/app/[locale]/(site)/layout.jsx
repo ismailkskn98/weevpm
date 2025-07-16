@@ -12,7 +12,7 @@ export default async function SiteLayout({ children }) {
     return (
         <ReactLenis root>
             <main className='w-full bg-deep-white overflow-x-clip'>
-                <Header>
+                <Header token={token} username={username}>
                     <HeaderSection token={token} username={username} />
                 </Header>
                 {children}
