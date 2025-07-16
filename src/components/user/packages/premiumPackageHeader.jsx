@@ -13,9 +13,9 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
     const currentPrice = getPrice(packageItem);
 
     return (
-        <figure className="relative bg-gradient-to-br from-amber-500 to-orange-600 px-6 pt-10 pb-12 text-white rounded-t-2xl">
+        <figure className="relative bg-gradient-to-br from-purple-600 to-violet-700 px-6 pt-10 pb-12 text-white rounded-t-2xl">
             {packageItem.interval === 'YEARLY' && (
-                <div className='absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-fit h-fit px-3 py-1.5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-lg'>
+                <div className='absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-fit h-fit px-3 py-1.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full shadow-lg'>
                     <span className='text-xs font-semibold tracking-wide'>{tPackage('discount')}</span>
                 </div>
             )}
@@ -73,7 +73,7 @@ export default function PremiumPackageHeader({ packageItem, selectedCurrency, ge
                     )}
                 </div>
             </div>
-            <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-orange-50 rounded-t-[2rem] z-10 drop-shadow-[0px_-5px_2px_#0000004a]"></div>
+            <div className="absolute -bottom-1 left-0 right-0 h-6 3xl:h-8 bg-purple-50 rounded-t-[2rem] z-10 drop-shadow-[0px_-5px_2px_#0000004a]"></div>
         </figure>
     )
 }

@@ -11,7 +11,7 @@ export default function TabList({ premiumPackages, activeTab }) {
     }
 
     return (
-        <section className="w-full flex justify-center mb-8 md:mb-12 px-4">
+        <section className="w-full flex justify-center mb-4 md:mb-8 px-4">
             <TabsList className="mx-auto flex bg-white shadow-md p-1 md:p-1.5 rounded-3xl h-auto relative max-w-full overflow-hidden">
                 {premiumPackages.sort((b, a) => a.id - b.id).map((packageItem) => (
                     <TabsTrigger

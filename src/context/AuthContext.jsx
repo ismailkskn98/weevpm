@@ -40,7 +40,6 @@ export function AuthProvider({ children }) {
             const userData = await coreAxios.POST('/user-data', {}, t('userDataError'), logout);
             if (userData.status) {
                 setUserData(userData);
-                console.log(userData);
                 const cookies = {
                     WEEVPN_TOKEN: userData.token,
                     username: userData.user.user_name,

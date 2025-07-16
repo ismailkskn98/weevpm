@@ -13,8 +13,8 @@ export default function FreePlanCard({ freeDetails }) {
     const t = useTranslations('plans.freePackage');
 
     return (
-        <section className='w-full h-full max-w-sm flex flex-col bg-white border border-gray-200 rounded-3xl px-4 sm:px-6 md:px-8 py-6 md:py-8 shadow-sm'>
-            <article className='flex flex-col items-start gap-5 md:gap-7 w-full pb-6 md:pb-8'>
+        <section className='w-full h-full max-w-sm flex flex-col bg-white border border-gray-200 rounded-3xl px-4 sm:px-6 md:px-8 py-6 shadow-sm'>
+            <article className='flex flex-col items-start gap-5 md:gap-6 w-full pb-6'>
                 <div className='relative w-8 h-8 md:w-10 md:h-10 bg-teal rounded-full drop-shadow-md'>
                     <Image
                         src={"/images/logos/white_single_icon.png"}
@@ -44,14 +44,14 @@ export default function FreePlanCard({ freeDetails }) {
                 </div>
 
                 <Link
-                    href={"/auth/register"}
+                    href={"/user"}
                     className='w-full sm:w-[70%] flex items-center justify-center mx-auto bg-gradient-to-r from-black to-slate-950 text-white/80 hover:text-white rounded-3xl py-2 md:py-2.5 px-6 md:px-8 border border-gray-600 cursor-pointer text-sm md:text-base font-medium transition-all duration-200 hover:shadow-lg'
                 >
                     {t('button')}
                 </Link>
             </article>
 
-            <article className='border-t border-gray-200 w-full pt-6 md:pt-8'>
+            <article className='border-t border-gray-200 w-full pt-6'>
                 <h3 className='text-base md:text-lg font-semibold text-black/80 mb-4 md:mb-6'>
                     {t('features')}
                 </h3>

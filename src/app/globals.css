@@ -270,15 +270,15 @@ html {
 
 @media (max-width: 768px) {
   .hero-layer-1 {
-    transform: translateZ(0px) translateY(54px) translateX(35%) skewY(1deg) skewX(6deg) rotateX(2deg) rotateY(6deg) scale(0.91);
+    transform: translateZ(0px) translateY(54px) translateX(20%) skewY(1deg) skewX(6deg) rotateX(2deg) rotateY(6deg) scale(0.91);
   }
 
   .hero-layer-2 {
-    transform: translateZ(0px) translateY(16px) translateX(45%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
+    transform: translateZ(0px) translateY(16px) translateX(40%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
   }
 
   .hero-layer-3 {
-    transform: translateZ(0px) translateY(-15px) translateX(50%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
+    transform: translateZ(0px) translateY(-15px) translateX(40%) skewY(-1deg) skewY(1deg) skewX(6deg) rotateY(6deg) scale(0.9);
   }
 
   @keyframes float-background {

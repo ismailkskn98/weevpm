@@ -23,7 +23,6 @@ export default function MobilNavbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
 
-    // Track scroll position
     useMotionValueEvent(scrollY, "change", (current) => {
         setIsScrolled(current > 70);
     });
@@ -32,6 +31,7 @@ export default function MobilNavbar() {
         { name: t('navbar.home'), href: "/#hero", id: "hero" },
         { name: t('navbar.features'), href: "/#features", id: "features" },
         { name: t('navbar.products'), href: "/#weevpn", id: "weevpn" },
+        { name: t('navbar.plans'), href: "/#plans", id: "plans" },
         { name: t('navbar.faq'), href: "/#faq", id: "faq" }
     ]
 

@@ -5,6 +5,7 @@
       "home": "Ana sayfa",
       "features": "Özellikler",
       "products": "WeeVPN",
+      "plans": "Planlar",
       "faq": "S.S.S"
     },
     "login": "Giriş Yap",
@@ -66,7 +67,7 @@
         },
         "question3": {
           "title": "WeeVPN'i hangi cihazlarda kullanabilirim?",
-          "answer": "WeeVPN, Windows, macOS, Android ve iOS gibi tüm yaygın işletim sistemlerini destekleyecek şekilde geliştirilmektedir."
+          "answer": "WeeVPN şu anda Android ve iOS'ta mevcuttur. Windows, macOS ve Linux desteği çok yakında geliyor."
         },
         "question4": {
           "title": "WeeVPN ücretsiz mi?",

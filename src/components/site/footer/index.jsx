@@ -40,7 +40,7 @@ export default function Footer() {
             <article className='w-full z-10 px-8 sm:px-12 lg:px-16 xl:px-28 py-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 bg-white rounded-2xl'>
                 <div className='order-2 md:order-1 flex flex-col items-start justify-between gap-6 lg:gap-12'>
                     <p className='text-black/80 font-bold text-xl md:text-2xl xl:text-3xl 3xl:text-4xl'>{t('title')}</p>
-                    <Link href="/" className='rounded-full py-2.5 xl:py-3.5 px-4 xl:px-6 bg-gradient-to-b from-teal to-soft-turquoise text-white shadow-xl text-sm xl:text-base 3xl:text-lg font-medium'>{t('freeTrial')}</Link>
+                    <Link href="/auth/register" className='rounded-full py-2.5 xl:py-3.5 px-4 xl:px-6 bg-gradient-to-b from-teal to-soft-turquoise text-white shadow-xl text-sm xl:text-base 3xl:text-lg font-medium'>{t('freeTrial')}</Link>
                 </div>
                 <Image src="/images/footer-top.png" alt="WeeVPN Footer" width={600} height={600} className="order-1 md:order-2 object-contain object-center w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[500px] 2xl:max-w-[600px] h-fit" />
             </article>

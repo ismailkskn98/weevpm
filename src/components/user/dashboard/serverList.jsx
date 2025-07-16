@@ -71,8 +71,8 @@ export default function ServerList() {
         const timer = setTimeout(() => {
             if (searchTerm.length > 1) {
                 const filteredServer = servers && servers.length > 0 ? servers.filter(server => {
-                    return server.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-                        server.location.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+                    return server.city.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+                        server.country.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
                 }) : [];
                 setFilteredServers(filteredServer);
             } else {
@@ -83,8 +83,6 @@ export default function ServerList() {
         return () => clearTimeout(timer);
 
     }, [searchTerm, servers])
-
-
 
     return (
         <main className="w-full flex flex-col items-start gap-4 md:gap-6 mt-16">

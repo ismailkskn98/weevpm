@@ -4,11 +4,12 @@ import React, { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl';
 import { Check, X } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Link } from '@/i18n/navigation';
+import { useRouter } from '@/i18n/navigation';
 
 export default function PremiumPlanCard({ packageItem }) {
     const locale = useLocale();
     const t = useTranslations('plans.premiumPackage');
+    const router = useRouter();
 
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
 
@@ -22,15 +23,25 @@ export default function PremiumPlanCard({ packageItem }) {
     const currentPrice = selectedCurrency === 'USD' ? packageItem.usdt_price : packageItem.token_price;
     const normalPrice = isYearly ? (currentPrice * 1.19).toFixed(2) : currentPrice;
 
+
+    const handlePurchase = (packageId) => {
+        if (selectedCurrency === 'WCP') {
+            router.push(`/user/package-details?package_id=${packageId}`);
+        } else {
+            // iyzico
+            router.push(`/user/iyzico-payment?package_id=${packageId}`);
+        }
+    };
+
     return (
-        <section className='w-full h-full max-w-sm flex flex-col bg-gradient-to-b from-black to-[#333333] border border-gray-700 rounded-3xl px-4 sm:px-6 md:px-8 py-6 md:py-8 shadow-lg relative overflow-hidden'>
+        <section className='w-full h-full max-w-sm flex flex-col bg-gradient-to-b from-black to-[#333333] border border-gray-700 rounded-3xl px-4 sm:px-6 md:px-8 py-6 shadow-lg relative overflow-hidden'>
             {isYearly && (
                 <div className='absolute top-3 right-3 md:top-4 md:right-4 bg-gradient-to-l from-red-500 to-red-600 text-white text-xs font-bold px-2 py-1 md:px-3 md:py-1 rounded-full'>
                     {discountPercent}% {t('discount')}
                 </div>
             )}
 
-            <article className='flex flex-col items-start gap-5 md:gap-7 w-full pb-6 md:pb-8'>
+            <article className='flex flex-col items-start gap-5 md:gap-6 w-full pb-6'>
                 <div className='relative w-8 h-8 md:w-10 md:h-10 bg-white rounded-full drop-shadow-md'>
                     <Image
                         src={"/images/logos/yellow_single_icon.png"}
@@ -77,15 +88,15 @@ export default function PremiumPlanCard({ packageItem }) {
                     )}
                 </div>
 
-                <Link
-                    href={"/user/packages"}
+                <button
+                    onClick={() => handlePurchase(packageItem.id)}
                     className='w-full sm:w-[70%] flex items-center justify-center mx-auto bg-gradient-to-r from-white to-slate-100 text-black/80 hover:text-black rounded-3xl py-2 md:py-2.5 px-6 md:px-8 border border-gray-300 cursor-pointer text-sm md:text-base font-medium transition-all duration-200 hover:shadow-lg'
                 >
                     {t('button')}
-                </Link>
+                </button>
             </article>
 
-            <article className='border-t border-gray-600 w-full pt-6 md:pt-8'>
+            <article className='border-t border-gray-600 w-full pt-6'>
                 <h3 className='text-base md:text-lg font-semibold text-white/80 mb-4 md:mb-6'>
                     {t('features')}
                 </h3>
@@ -113,19 +124,11 @@ export default function PremiumPlanCard({ packageItem }) {
                         )}
                     </div>
 
-                    {sloganData && (
-                        <div className='mt-3 md:mt-4 text-center'>
-                            <span className='text-xs md:text-sm text-green-400 font-medium break-words'>
-                                {sloganData[locale]}
-                            </span>
-                        </div>
-                    )}
-
-                    <div className='mt-4 md:mt-6 border-t border-gray-600 pt-3 md:pt-4'>
+                    <div className='mt-4 border-t border-gray-600 pt-3'>
                         <div className='w-fit mx-auto flex bg-transparent rounded-3xl p-1 gap-1 relative'>
                             <button
                                 onClick={() => setSelectedCurrency('USD')}
-                                className={`flex-1 py-1.5 md:py-2 px-6 md:px-8 rounded-3xl text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer relative z-10 ${selectedCurrency === 'USD'
+                                className={`flex-1 py-1.5 md:py-2 px-6 md:px-7 rounded-3xl text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer relative z-10 ${selectedCurrency === 'USD'
                                     ? 'text-white'
                                     : 'text-white/60 hover:text-white/80'
                                     }`}

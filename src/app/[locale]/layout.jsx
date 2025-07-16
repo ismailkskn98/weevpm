@@ -5,6 +5,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Toaster } from "@/components/ui/sonner"
+import { getTranslations } from "next-intl/server";
 
 const inter = localFont({
   src: [
@@ -20,11 +21,28 @@ const inter = localFont({
   variable: "--font-inter",
 });
 
-export const metadata = {
-  title: "WeeVPN",
-  description: "WeeVPN",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale });
 
+  return {
+    title: "",
+    description: "",
+    keywords: "",
+    robots: "index, follow",
+    icons: {
+      icon: [
+        { url: "/logo.png", type: "image/png", sizes: "512x512" },
+      ],
+    },
+    meta: [
+      {
+        name: "google-site-verification",
+        content: "im-2q85dxUJnm9vFy7b2UdfvJKVljHp6Fz9o07cHyWQ",
+      },
+    ],
+  };
+}
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {

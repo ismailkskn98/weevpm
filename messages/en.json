@@ -5,6 +5,7 @@
       "home": "Home",
       "features": "Features",
       "products": "WeeVPN",
+      "plans": "Plans",
       "faq": "FAQ"
     },
     "login": "Login",
@@ -68,7 +69,7 @@
         },
         "question3": {
           "title": "Which devices can I use WeeVPN on?",
-          "answer": "WeeVPN is being developed to support all major operating systems including Windows, macOS, Android, and iOS."
+          "answer": "WeeVPN is currently available on Android and iOS. Support for Windows, macOS, and Linux is coming very soon."
         },
         "question4": {
           "title": "Is WeeVPN free?",

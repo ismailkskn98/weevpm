@@ -6,7 +6,7 @@ export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrenc
     const { userData, loading } = useAuth();
     return (
         <section className="w-full flex justify-center mb-6">
-            <div className="flex bg-orange-100/70 p-1 rounded-2xl relative">
+            <div className="flex bg-purple-100/70 p-1 rounded-2xl relative">
                 {
                     loading || !userData ? (
                         <>
@@ -26,7 +26,7 @@ export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrenc
                                 {selectedCurrency === 'USD' && (
                                     <motion.div
                                         layoutId="activeCurrency"
-                                        className="absolute inset-0 bg-orange-400 rounded-xl shadow-sm"
+                                        className="absolute inset-0 bg-purple-600 rounded-xl shadow-sm"
                                         transition={{ duration: 0.2, ease: "easeInOut" }}
                                     />
                                 )}
@@ -43,7 +43,7 @@ export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrenc
                                 {selectedCurrency === 'WCP' && (
                                     <motion.div
                                         layoutId="activeCurrency"
-                                        className="absolute inset-0 bg-orange-400 rounded-xl shadow-sm"
+                                        className="absolute inset-0 bg-purple-600 rounded-xl shadow-sm"
                                         transition={{ duration: 0.2, ease: "easeInOut" }}
                                     />
                                 )}

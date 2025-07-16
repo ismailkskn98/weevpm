@@ -5,6 +5,7 @@
       "home": "Главная",
       "features": "Возможности",
       "products": "WeeVPN",
+      "plans": "Планы",
       "faq": "FAQ"
     },
     "login": "Войти",
@@ -66,7 +67,7 @@
         },
         "question3": {
           "title": "На каких устройствах я могу использовать WeeVPN?",
-          "answer": "WeeVPN разрабатывается с поддержкой всех популярных систем: Windows, macOS, Android и iOS."
+          "answer": "WeeVPN в настоящее время доступен на Android и iOS. Поддержка Windows, macOS и Linux появится очень скоро."
         },
         "question4": {
           "title": "WeeVPN бесплатный?",

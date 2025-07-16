@@ -57,7 +57,7 @@ export default function Packages() {
         }
     };
 
-    const handlePurchase = (packageId, price, interval) => {
+    const handlePurchase = (packageId) => {
         if (selectedCurrency === 'WCP') {
             router.push(`/user/package-details?package_id=${packageId}`);
         } else {
@@ -65,19 +65,20 @@ export default function Packages() {
             router.push(`/user/iyzico-payment?package_id=${packageId}`);
         }
     };
+
     useEffect(() => {
         fetchPackages();
     }, []);
 
     return (
-        <section className="w-full flex flex-col items-start gap-6">
+        <section className="w-full flex flex-col items-start gap-3">
             <Tabs defaultValue={"6"} onValueChange={setActiveTab} className="w-full">
                 <TabList premiumPackages={premiumPackages} activeTab={activeTab} />
 
                 <main className='w-full max-w-[850px] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0'>
                     <FreePackage freePackages={freePackages} />
                     {premiumPackages.map((packageItem) => (
-                        <TabsContent key={packageItem.id} value={packageItem.id.toString()} className="w-full max-w-sm h-full flex flex-col justify-between gap-0 relative shadow-md hover:shadow-lg transition-all duration-300 bg-orange-50 rounded-2xl" asChild>
+                        <TabsContent key={packageItem.id} value={packageItem.id.toString()} className="w-full max-w-sm h-full flex flex-col justify-between gap-0 relative shadow-md hover:shadow-lg transition-all duration-300 bg-purple-50 rounded-2xl" asChild>
                             <article className='w-full h-full'>
                                 <PremiumPackageHeader
                                     packageItem={packageItem}

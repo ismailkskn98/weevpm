@@ -18,6 +18,7 @@ export default function Navbar() {
         { name: t('home'), href: "/#hero", id: "hero" },
         { name: t('features'), href: "/#features", id: "features" },
         { name: t('products'), href: "/#weevpn", id: "weevpn" },
+        { name: t('plans'), href: "/#plans", id: "plans" },
         { name: t('faq'), href: "/#faq", id: "faq" }
     ]
 

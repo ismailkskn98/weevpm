@@ -48,7 +48,7 @@ export default function FAQ() {
     ]
 
     return (
-        <main id='faq' className='fluid gridContainer w-full pb-20 lg:pb-40 pt-20 lg:pt-36'>
+        <main id='faq' className='fluid gridContainer w-full pb-20 lg:pb-28 pt-20 lg:pt-36'>
             <section className='relative w-full bg-[#001815] px-5 sm:px-12 py-12 sm:py-16 md:p-16 lg:p-20 rounded-2xl overflow-hidden'>
                 <MainTitle title={t('title')} description={t('description')} h2ClassName="text-white/80" pClassName="text-white/70" />
                 <div className='absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none'>
