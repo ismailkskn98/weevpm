@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { useScroll, useMotionValueEvent } from "motion/react";
 
 export default function HeaderLogo() {
     const { scrollY } = useScroll();

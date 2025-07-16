@@ -23,7 +23,6 @@ export default function PremiumPlanCard({ packageItem }) {
 
     const packageName = JSON.parse(packageItem.humanization_translations)[locale];
     const features = JSON.parse(packageItem.features);
-    const sloganData = packageItem.slogan ? JSON.parse(packageItem.slogan) : null;
 
     const isYearly = packageItem.interval === 'YEARLY';
     const discountPercent = isYearly ? 16 : 0;
@@ -77,14 +76,14 @@ export default function PremiumPlanCard({ packageItem }) {
                         {isYearly && (
                             <div className='flex items-center gap-2'>
                                 <span className='text-sm md:text-lg text-white/50 line-through italic'>
-                                    {normalPrice}$ ({t('normalPrice')})
+                                    {normalPrice}{selectedCurrency === 'USD' ? '$' : ' WCP'} ({t('normalPrice')})
                                 </span>
                             </div>
                         )}
 
                         <div className='flex items-end gap-2'>
                             <span className='text-2xl md:text-3xl font-semibold text-white/90 leading-none'>
-                                {currentPrice}$
+                                {currentPrice}{selectedCurrency === 'USD' ? '$' : ' WCP'}
                             </span>
                             <p className='text-xs md:text-sm text-white/60 leading-none pb-1'>
                                 {t('priceUnit')}
