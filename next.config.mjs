@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ["http://192.168.1.164:3000"],
+  allowedDevOrigins: ["http://192.168.1.195:3000"],
   images: {
     remotePatterns: [
       {

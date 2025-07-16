@@ -753,6 +753,8 @@
         "description": "Paket satın alma işleminizi tamamlamak için aşağıdaki cüzdan adresine {amount} WCP transfer ediniz.",
         "packageName": "Paket Adı",
         "period": "Periyot",
+        "monthly": "Aylık",
+        "yearly": "Yıllık",
         "tokenPrice": "Token Fiyatı",
         "walletAddress": "Cüzdan Adresi",
         "countdown": "sonra kapanacak",

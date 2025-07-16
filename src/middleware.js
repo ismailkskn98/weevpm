@@ -33,15 +33,20 @@ export default async function middleware(request) {
   // mobilden gelen direkt panele gidecek olan kullanıcı için kontrol
   if (pathname.endsWith("auth/login")) {
     if (searchParams.get("user_id") && searchParams.get("password")) {
+      console.log("user_id: ", searchParams.get("user_id"));
+      console.log("password: ", searchParams.get("password"));
+      console.log("hash: ", process.env.GENERAl_HASH);
+      console.log("api_url: ", process.env.NEXT_PUBLIC_GENERAl_HASH);
       try {
         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auto-login`, {
           user_id: searchParams.get("user_id"),
           password: searchParams.get("password"),
-          hash: process.env.NEXT_PUBLIC_GENERAl_HASH,
+          hash: process.env.GENERAl_HASH,
         });
+        console.log("response: ", response.data);
         if (response.data.status) {
           // Redirect response oluştur
-          let page_url = atob(searchParams.get("page_url")) || "/";
+          let page_url = searchParams.get("page_url") ? atob(searchParams.get("page_url")) : "/";
           const redirectResponse = NextResponse.redirect(new URL(`${locale}/user${page_url}`, originUrl));
 
           // Cookie'leri redirect response üzerine set et

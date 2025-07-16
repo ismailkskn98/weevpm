@@ -755,6 +755,8 @@
         "description": "Transfer {amount} WCP to the wallet address below to complete your purchase.",
         "packageName": "Package Name",
         "period": "Period",
+        "monthly": "Monthly",
+        "yearly": "Yearly",
         "tokenPrice": "Token Price",
         "walletAddress": "Wallet Address",
         "countdown": "will close",

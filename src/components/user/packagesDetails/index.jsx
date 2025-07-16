@@ -56,7 +56,7 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">
                         <p className="text-xs text-gray-500 mb-1">{t('period')}</p>
                         <p className="text-base font-medium text-gray-700">
-                            {packageData?.interval}
+                            {packageData?.interval === 'MONTHLY' ? t('monthly') : t('yearly')}
                         </p>
                     </div>
                     <div className="bg-slate-100 px-4 py-3 rounded-lg text-center">

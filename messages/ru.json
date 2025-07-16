@@ -699,6 +699,8 @@
         "description": "Переведите {amount} WCP на адрес кошелька ниже для завершения покупки.",
         "packageName": "Название",
         "period": "Период",
+        "monthly": "Месячный",
+        "yearly": "Годовой",
         "tokenPrice": "Цена токена",
         "walletAddress": "Адрес кошелька",
         "countdown": "закроется",

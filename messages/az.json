@@ -699,6 +699,8 @@
         "description": "Alışı tamamlamaq üçün aşağıdakı cüzdan adresinə {amount} WCP köçürün.",
         "packageName": "Paket Adı",
         "period": "Müddət",
+        "monthly": "Aylıq",
+        "yearly": "İllik",
         "tokenPrice": "Token Qiyməti",
         "walletAddress": "Cüzdan Adresi",
         "countdown": "sonra bağlanacaq",
