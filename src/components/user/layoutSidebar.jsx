@@ -16,6 +16,7 @@ import { TbPinned } from "react-icons/tb";
 import { Link, usePathname } from '@/i18n/navigation';
 import { GoPackage } from "react-icons/go";
 import { useTranslations } from 'next-intl';
+import { MdOutlinePayment } from "react-icons/md";
 
 
 export default function LayoutSidebar() {
@@ -65,6 +66,13 @@ export default function LayoutSidebar() {
             href: "/user/packages",
             icon: (
                 <GoPackage className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/packages" ? "text-white" : "text-white/70"}`} />
+            ),
+        },
+        {
+            label: t('paymentHistory'),
+            href: "/user/payment-history",
+            icon: (
+                <MdOutlinePayment className={`h-5 2xl:h-6 w-5 2xl:w-6 shrink-0 group-hover:text-white transition-all duration-150 ${pathname === "/user/payment-history" ? "text-white" : "text-white/70"}`} />
             ),
         },
         {

@@ -448,6 +448,7 @@
       "references": "References",
       "referenceRevenues": "Reference Revenues",
       "packages": "Packages",
+      "paymentHistory": "Payment History",
       "withdrawal": "Withdrawal Operations",
       "passwordOperations": "Password Operations",
       "logout": "Logout"

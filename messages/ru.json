@@ -446,6 +446,7 @@
       "references": "Рефералы",
       "referenceRevenues": "Доходы от Рефералов",
       "packages": "Пакеты",
+      "paymentHistory": "История Платежей",
       "withdrawal": "Операции Вывода",
       "passwordOperations": "Операции с Паролем",
       "logout": "Выйти"
