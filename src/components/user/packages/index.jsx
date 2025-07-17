@@ -87,7 +87,7 @@ export default function Packages() {
                                     getOriginalPrice={getOriginalPrice}
                                 />
                                 <PremiumPackageBody packageItem={packageItem} selectedCurrency={selectedCurrency} handlePurchase={handlePurchase}>
-                                    <PremiumPackageTab selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency} />
+                                    <PremiumPackageTab packageId={packageItem.id} selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency} />
                                 </PremiumPackageBody>
                             </article>
                         </TabsContent>

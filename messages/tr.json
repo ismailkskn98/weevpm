@@ -702,6 +702,34 @@
       "previous": "Önceki",
       "next": "Sonraki"
     },
+    "paymentHistory": {
+      "meta": {
+        "title": "WeeVPN - Ödeme Geçmişi",
+        "description": "WeeVPN ödeme geçmişinizi görüntüleyin ve tüm işlemlerinizi takip edin.",
+        "keywords": "weevpn ödeme geçmişi, vpn işlemleri, ödeme takibi, vpn faturalama"
+      },
+      "page": {
+        "title": "Ödeme Geçmişi",
+        "description": "Bu bölümde ödeme geçmişinizi görüntüleyebilir ve tüm işlemlerinizi takip edebilirsiniz."
+      },
+      "component": {
+        "title": "Ödeme Geçmişi",
+        "errorLoading": "Ödeme geçmişi yüklenemedi",
+        "tableHeaders": {
+          "id": "ID",
+          "paymentType": "Ödeme Tipi",
+          "amount": "Tutar",
+          "transactionHash": "İşlem Hash",
+          "status": "Durum",
+          "date": "Tarih"
+        },
+        "status": {
+          "PENDING": "Beklemede",
+          "APPROVED": "Onaylandı",
+          "REJECTED": "Reddedildi"
+        }
+      }
+    },
     "iyzico": {
       "meta": {
         "title": "WeeVPN - Güvenli Ödeme",

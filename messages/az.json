@@ -702,6 +702,34 @@
       "previous": "Əvvəlki",
       "next": "Sonrakı"
     },
+    "paymentHistory": {
+      "meta": {
+        "title": "WeeVPN - Ödəmə Tarixçəsi",
+        "description": "WeeVPN ödəmə tarixçənizi görün və bütün əməliyyatlarınızı izləyin.",
+        "keywords": "weevpn ödəmə tarixçəsi, vpn əməliyyatları, ödəmə izləmə, vpn hesab-faktura"
+      },
+      "page": {
+        "title": "Ödəmə Tarixçəsi",
+        "description": "Bu bölmədə ödəmə tarixçənizi görə və bütün əməliyyatlarınızı izləyə bilərsiniz."
+      },
+      "component": {
+        "title": "Ödəmə Tarixçəsi",
+        "errorLoading": "Ödəmə tarixçəsi yüklənə bilmədi",
+        "tableHeaders": {
+          "id": "ID",
+          "paymentType": "Ödəmə Növü",
+          "amount": "Məbləğ",
+          "transactionHash": "Əməliyyat Hash",
+          "status": "Status",
+          "date": "Tarix"
+        },
+        "status": {
+          "PENDING": "Gözləyir",
+          "APPROVED": "Təsdiqləndi",
+          "REJECTED": "Rədd edildi"
+        }
+      }
+    },
     "iyzico": {
       "meta": {
         "title": "WeeVPN - Təhlükəsiz Ödəmə",

@@ -12,7 +12,6 @@ import TableSkeleton from '../../ui/table-skeleton';
 export default function PastWithdrawals() {
     const locale = useLocale();
     const t = useTranslations('User.withdrawal');
-    const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [withdrawals, setWithdrawals] = useState(null);
     const itemsPerPage = 5;

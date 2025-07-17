@@ -10,7 +10,7 @@ import {
     DialogTitle
 } from '@/components/ui/dialog';
 
-export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrency }) {
+export default function PremiumPackageTab({ packageId, selectedCurrency, setSelectedCurrency }) {
     const { userData, loading } = useAuth();
     const t = useTranslations('plans.premiumPackage');
     const [isUsdModalOpen, setIsUsdModalOpen] = useState(false);
@@ -64,7 +64,7 @@ export default function PremiumPackageTab({ selectedCurrency, setSelectedCurrenc
                                 >
                                     {selectedCurrency === 'WCP' && (
                                         <motion.div
-                                            layoutId="activeCurrency"
+                                            layoutId={`currencyTab-${packageId}`}
                                             className="absolute inset-0 bg-purple-600 rounded-xl shadow-sm"
                                             transition={{ duration: 0.2, ease: "easeInOut" }}
                                         />

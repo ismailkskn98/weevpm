@@ -704,6 +704,34 @@
       "previous": "Previous",
       "next": "Next"
     },
+    "paymentHistory": {
+      "meta": {
+        "title": "WeeVPN - Payment History",
+        "description": "View your WeeVPN payment history and track all your transactions.",
+        "keywords": "weevpn payment history, vpn transactions, payment tracking, vpn billing"
+      },
+      "page": {
+        "title": "Payment History",
+        "description": "In this section, you can view your payment history and track all your transactions."
+      },
+      "component": {
+        "title": "Payment History",
+        "errorLoading": "Failed to load payment history",
+        "tableHeaders": {
+          "id": "ID",
+          "paymentType": "Payment Type",
+          "amount": "Amount",
+          "transactionHash": "Transaction Hash",
+          "status": "Status",
+          "date": "Date"
+        },
+        "status": {
+          "PENDING": "Pending",
+          "APPROVED": "Approved",
+          "REJECTED": "Rejected"
+        }
+      }
+    },
     "iyzico": {
       "meta": {
         "title": "WeeVPN - Secure Payment",
