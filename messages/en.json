@@ -551,6 +551,13 @@
         },
         "notFound": "Not Found",
         "errorFetch": "Failed to fetch packages"
+      },
+      "infoWCPModal": {
+        "title": "Warning!",
+        "description": "Please make the payment for the specified amount on the page that will open.",
+        "warning1": "Payment transactions made less or more than the specified amount are not taken into account.",
+        "warning2": "You are responsible for the transactions you will make.",
+        "acceptButton": "I Accept"
       }
     },
     "references": {
@@ -667,7 +674,13 @@
         "walletAddress": "Wallet Address",
         "countdown": "will close",
         "warning": "Close the page after the transfer is completed.",
-        "copied": "Copied!"
+        "copied": "Copied!",
+        "importantWarning": {
+          "title": "IMPORTANT WARNING!",
+          "description": "Please make the payment for the specified amount.",
+          "warning1": "Payment transactions made less or more than the specified amount are not taken into account.",
+          "warning2": "You are responsible for the transactions you will make."
+        }
       }
     },
     "passwordOperations": {
@@ -722,7 +735,7 @@
           "id": "ID",
           "paymentType": "Payment Type",
           "amount": "Amount",
-          "transactionHash": "Transaction Hash",
+          "transactionHash": "Transaction ID",
           "status": "Status",
           "date": "Date"
         },
@@ -730,6 +743,10 @@
           "PENDING": "Pending",
           "APPROVED": "Approved",
           "REJECTED": "Rejected"
+        },
+        "providers": {
+          "CRYPTO": "Crypto",
+          "IYZICO": "Credit Card"
         }
       }
     },

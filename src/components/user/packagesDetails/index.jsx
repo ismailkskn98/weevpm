@@ -5,6 +5,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import { Copy, Clock, Info } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { IoIosWarning } from 'react-icons/io';
 
 export default function PackagesDetails({ packageData, walletAddress }) {
     const t = useTranslations('User.packageDetails.payment');
@@ -32,6 +33,13 @@ export default function PackagesDetails({ packageData, walletAddress }) {
 
     const handleCopySuccess = () => {
         toast.success(t('copied'));
+    };
+
+    const shortenText = (text) => {
+        if (text && text.length > 16) {
+            return `${text.slice(0, 16)}...${text.slice(-16)}`;
+        }
+        return text;
     };
 
     return (
@@ -67,23 +75,66 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                     </div>
                 </article>
 
-                <article className="w-full bg-slate-100 px-4 py-3 rounded-lg">
-                    <div className="flex flex-row items-center justify-between gap-3 sm:gap-4">
-                        <article className="flex-1 min-w-0">
-                            <p className="text-xs text-gray-600 mb-2">
-                                {t('walletAddress')}
-                            </p>
-                            <p className="text-[12px] sm:text-sm font-mono text-black/80 break-all">
-                                {walletAddress}
-                            </p>
-                        </article>
+                <section className="w-full bg-gradient-to-r from-red-50 to-orange-50 p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl border-2 border-red-300 shadow-md sm:shadow-lg relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-100/20 to-orange-100/20 animate-pulse"></div>
+                    <div className="relative flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+                        <div className="flex-shrink-0 flex justify-center sm:justify-start">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                                <IoIosWarning className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                        </div>
 
-                        <CopyToClipboard text={walletAddress} onCopy={handleCopySuccess}>
-                            <button className="p-2 bg-slate-200 rounded-lg group hover:bg-slate-300 transition-colors duration-200 cursor-pointer self-start sm:self-center">
+                        <div className="flex-1 space-y-2 sm:space-y-3">
+                            <h3 className="text-base sm:text-lg font-bold text-red-800 uppercase tracking-wide text-center sm:text-left">
+                                {t('importantWarning.title')}
+                            </h3>
+
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                                    <p className="text-red-700 font-medium text-sm sm:text-base leading-relaxed">
+                                        {t('importantWarning.description')}
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-2">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                                    <p className="text-red-700 text-sm sm:text-base leading-relaxed">
+                                        {t('importantWarning.warning1')}
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-2">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                                    <p className="text-red-700 font-semibold text-sm sm:text-base leading-relaxed">
+                                        {t('importantWarning.warning2')}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="absolute top-0 right-0 w-12 h-12 sm:w-20 sm:h-20 bg-red-200/30 rounded-full -translate-y-6 sm:-translate-y-10 translate-x-6 sm:translate-x-10"></div>
+                    <div className="absolute bottom-0 left-0 w-10 h-10 sm:w-16 sm:h-16 bg-orange-200/30 rounded-full translate-y-4 sm:translate-y-8 -translate-x-4 sm:-translate-x-8"></div>
+                </section>
+
+                <article className="w-full bg-slate-100 px-4 py-3 rounded-lg">
+                    <CopyToClipboard text={walletAddress} onCopy={handleCopySuccess}>
+                        <div className="flex flex-row items-center justify-between gap-3 sm:gap-4 cursor-pointer">
+                            <article className="flex-1 min-w-0">
+                                <p className="text-xs text-gray-600 mb-2">
+                                    {t('walletAddress')}
+                                </p>
+                                <p className="text-[12px] sm:text-sm font-mono text-black/80 break-all">
+                                    {shortenText(walletAddress)}
+                                </p>
+                            </article>
+
+                            <button className="p-2 bg-slate-200 rounded-lg group hover:bg-slate-300 transition-colors duration-200 cursor-pointer">
                                 <Copy className="w-4 h-4 text-slate-400 group-hover:text-slate-500 transition-colors duration-200" />
                             </button>
-                        </CopyToClipboard>
-                    </div>
+                        </div>
+                    </CopyToClipboard>
                 </article>
             </main>
 
@@ -101,8 +152,8 @@ export default function PackagesDetails({ packageData, walletAddress }) {
                 </section>
 
                 <section className="bg-amber-50 p-4 rounded-lg border border-amber-200">
-                    <article className="flex items-start gap-3">
-                        <Info className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <article className="flex items-center gap-2">
+                        <Info className="w-5 h-5 lg:w-6 lg:h-6 text-amber-600 mt-0.5 flex-shrink-0" />
                         <p className="text-amber-800 text-sm">
                             {t('warning')}
                         </p>

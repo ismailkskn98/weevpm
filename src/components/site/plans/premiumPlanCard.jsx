@@ -189,8 +189,8 @@ export default function PremiumPlanCard({ packageItem }) {
                     className="bg-gradient-to-b from-black to-[#333333] border border-slate-950 text-white max-w-[350px] min-[390px]:max-w-sm sm:max-w-md mx-auto"
                     showCloseButton={false}
                 >
-                    <DialogHeader className="text-center space-y-3">
-                        <div className='relative w-10 h-10 bg-white rounded-full drop-shadow-md mx-auto'>
+                    <DialogHeader className="text-center space-y-1.5">
+                        <div className='relative w-14 h-14 bg-white rounded-full drop-shadow-md mx-auto'>
                             <Image
                                 src={"/images/logos/yellow_single_icon.png"}
                                 alt={"WeeVPN Logo"}
@@ -199,14 +199,14 @@ export default function PremiumPlanCard({ packageItem }) {
                                 className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 object-contain object-center drop-shadow-md'
                             />
                         </div>
-                        <DialogTitle className="text-white/90 text-lg font-bold mx-auto">
+                        <DialogTitle className="text-white/90 text-xl font-bold mx-auto">
                             {t('usdModal.title')}
                         </DialogTitle>
                         <DialogDescription className="text-white/70 text-sm leading-relaxed text-center mx-auto">
                             {t('usdModal.description')}
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex justify-center mt-3">
                         <button
                             onClick={() => setIsUsdModalOpen(false)}
                             className="bg-gradient-to-r from-white to-slate-100 text-black/80 hover:text-black rounded-3xl py-2 px-8 border border-gray-300 cursor-pointer text-sm md:text-base font-medium transition-all duration-200 hover:shadow-lg"

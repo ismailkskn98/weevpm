@@ -2,7 +2,6 @@
 import coreAxios from '@/helper/coreAxios';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'sonner';
-import { useAuth } from '@/context/AuthContext';
 import { useTranslations } from 'next-intl';
 import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { useRouter } from '@/i18n/navigation';
@@ -12,13 +11,14 @@ import PremiumPackageHeader from './premiumPackageHeader';
 import PremiumPackageBody from './premiumPackageBody';
 import PremiumPackageTab from './premiumPackageTab';
 import HistoryPackage from './historyPackage';
+import InfoWCPModal from './infoWCPModal';
 
 export default function Packages() {
     const [freePackages, setFreePackages] = useState([]);
     const [premiumPackages, setPremiumPackages] = useState([]);
     const [selectedCurrency, setSelectedCurrency] = useState('WCP');
     const [activeTab, setActiveTab] = useState("6");
-    const { userData } = useAuth();
+    const [infoWCPModal, setInfoWCPModal] = useState(false);
     const router = useRouter();
     const t = useTranslations('User.packages');
 
@@ -59,7 +59,8 @@ export default function Packages() {
 
     const handlePurchase = (packageId) => {
         if (selectedCurrency === 'WCP') {
-            router.push(`/user/package-details?package_id=${packageId}`);
+            setInfoWCPModal(true);
+            // router.push(`/user/package-details?package_id=${packageId}`);
         } else {
             // iyzico
             router.push(`/user/iyzico-payment?package_id=${packageId}`);
@@ -89,6 +90,11 @@ export default function Packages() {
                                 <PremiumPackageBody packageItem={packageItem} selectedCurrency={selectedCurrency} handlePurchase={handlePurchase}>
                                     <PremiumPackageTab packageId={packageItem.id} selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency} />
                                 </PremiumPackageBody>
+                                <InfoWCPModal
+                                    open={infoWCPModal}
+                                    onOpenChange={setInfoWCPModal}
+                                    packageId={packageItem.id}
+                                />
                             </article>
                         </TabsContent>
                     ))}

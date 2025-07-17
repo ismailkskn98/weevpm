@@ -7,6 +7,7 @@ import { dateFormat } from '@/helper/dateFormat';
 import coreAxios from '@/helper/coreAxios';
 import { toast } from 'sonner';
 import TableSkeleton from '../../ui/table-skeleton';
+import { IoCopy } from 'react-icons/io5';
 
 export default function PaymentHistory() {
     const locale = useLocale();
@@ -22,7 +23,7 @@ export default function PaymentHistory() {
 
     const paymentHistoryFetch = async () => {
         try {
-            const response = await coreAxios.POST("/payment-history");
+            const response = await coreAxios.POST("/transaction-history");
             if (response.status === true) {
                 setPaymentHistory(response.data);
             }
@@ -71,6 +72,18 @@ export default function PaymentHistory() {
         }
     };
 
+    const copyToClipboard = (text) => {
+        if (!text) return;
+        navigator.clipboard.writeText(text);
+        toast.success('Başarılı');
+    };
+
+    const shortenText = (text) => {
+        if (text && text.length > 16) {
+            return `${text.slice(0, 8)}...${text.slice(-8)}`;
+        }
+        return text;
+    };
 
     return (
         <section className="w-full flex flex-col items-start gap-6">
@@ -113,13 +126,18 @@ export default function PaymentHistory() {
                                             {index + 1}
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
-                                            {paymentHistoryItem.payment_type}
+                                            {t(`providers.${paymentHistoryItem.provider}`) || paymentHistoryItem.provider}
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {paymentHistoryItem.amount * 1} {paymentHistoryItem.currency}
                                         </TableCell>
-                                        <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
-                                            {paymentHistoryItem.transaction_hash}
+                                        <TableCell className="!text-black/70 hover:!text-black group text-xsm py-4 px-6">
+                                            <div className="w-full flex items-center justify-between gap-2 cursor-pointer group-hover:!text-black" onClick={() => copyToClipboard(paymentHistoryItem.hash || '')}>
+                                                <span>{shortenText(paymentHistoryItem.hash) || '—'}</span>
+                                                {paymentHistoryItem.hash && (
+                                                    <IoCopy className="w-4 h-4 !text-deep-teal group-hover:!text-aqua-green" />
+                                                )}
+                                            </div>
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
                                             {getStatusContent(paymentHistoryItem.status)}

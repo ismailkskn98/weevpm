@@ -82,21 +82,21 @@ export default function PremiumPackageTab({ packageId, selectedCurrency, setSele
                     className="bg-white border border-purple-200 max-w-[350px] min-[390px]:max-w-sm sm:max-w-md mx-auto shadow-xl"
                     showCloseButton={false}
                 >
-                    <DialogHeader className="text-center space-y-3">
-                        <div className='relative w-12 h-12 bg-purple-600 rounded-full mx-auto flex items-center justify-center'>
-                            <span className="text-white font-bold text-lg">$</span>
+                    <DialogHeader className="text-center space-y-1.5">
+                        <div className='relative w-14 h-14 bg-purple-600 rounded-full mx-auto flex items-center justify-center'>
+                            <span className="text-white font-bold text-3xl">$</span>
                         </div>
-                        <DialogTitle className="text-gray-800 text-lg font-bold mx-auto">
+                        <DialogTitle className="text-gray-800 text-xl font-bold mx-auto">
                             {t('usdModal.title')}
                         </DialogTitle>
                         <DialogDescription className="text-gray-600 text-sm leading-relaxed text-center mx-auto">
                             {t('usdModal.description')}
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex justify-center mt-3">
                         <button
                             onClick={() => setIsUsdModalOpen(false)}
-                            className="bg-purple-600 hover:bg-purple-700 text-white rounded-3xl py-2 px-8 text-sm font-medium transition-all duration-200 hover:shadow-lg"
+                            className="bg-purple-600 hover:bg-purple-700 text-white rounded-3xl py-2 px-8 text-sm font-medium transition-all duration-200 hover:shadow-lg cursor-pointer"
                         >
                             {t('usdModal.button')}
                         </button>

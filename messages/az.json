@@ -549,6 +549,13 @@
         },
         "notFound": "Tapılmadı",
         "errorFetch": "Paketlər alına bilmədi"
+      },
+      "infoWCPModal": {
+        "title": "Diqqət!",
+        "description": "Zəhmət olmasa açılacaq səhifədə göstərilən məbləğ qədər ödəmə əməliyyatı edin.",
+        "warning1": "Göstərilən məbləğdən az və ya çox edilən ödəmə əməliyyatları nəzərə alınmır.",
+        "warning2": "Edəcəyiniz əməliyyatlarda məsuliyyət sizə aiddir.",
+        "acceptButton": "Qəbul Edirəm"
       }
     },
     "references": {
@@ -665,7 +672,13 @@
         "walletAddress": "Cüzdan Adresi",
         "countdown": "sonra bağlanacaq",
         "warning": "Köçürmə tamamlandıqdan sonra səhifəni bağlayın.",
-        "copied": "Kopyalandı!"
+        "copied": "Kopyalandı!",
+        "importantWarning": {
+          "title": "ƏHƏMİYYƏTLİ XƏBƏRDARLIQ!",
+          "description": "Zəhmət olmasa göstərilən məbləğ qədər ödəmə əməliyyatı edin.",
+          "warning1": "Göstərilən məbləğdən az və ya çox edilən ödəmə əməliyyatları nəzərə alınmır.",
+          "warning2": "Edəcəyiniz əməliyyatlarda məsuliyyət sizə aiddir."
+        }
       }
     },
     "passwordOperations": {
@@ -720,7 +733,7 @@
           "id": "ID",
           "paymentType": "Ödəmə Növü",
           "amount": "Məbləğ",
-          "transactionHash": "Əməliyyat Hash",
+          "transactionHash": "Əməliyyat ID",
           "status": "Status",
           "date": "Tarix"
         },
@@ -728,6 +741,10 @@
           "PENDING": "Gözləyir",
           "APPROVED": "Təsdiqləndi",
           "REJECTED": "Rədd edildi"
+        },
+        "providers": {
+          "CRYPTO": "Kripto",
+          "IYZICO": "Kredit Kartı"
         }
       }
     },

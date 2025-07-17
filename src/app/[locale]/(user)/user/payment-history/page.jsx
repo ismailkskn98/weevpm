@@ -1,5 +1,5 @@
+import HeaderTitle from '@/components/user/headerTitle'
 import PaymentHistory from '@/components/user/paymentHistory'
-import HeaderTitle from '@/components/site/header/headerTitle'
 import React from 'react'
 
 export default function page() {
