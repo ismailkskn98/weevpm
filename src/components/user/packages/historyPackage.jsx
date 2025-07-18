@@ -41,6 +41,35 @@ export default function HistoryPackage() {
         packagesFetch();
     }, [])
 
+    const getStatusContent = (status) => {
+        switch (status) {
+            case 'PENDING':
+                return (
+                    <span className="flex items-center gap-1.5 text-yellow-700 px-3 py-1.5 rounded-full text-xs font-medium">
+                        <span className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
+                    </span>
+                );
+            case 'ACTIVE':
+                return (
+                    <span className="flex items-center gap-1.5 text-green-700 px-3 py-1.5 rounded-full text-xs font-medium">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    </span>
+                );
+            case 'REJECTED':
+                return (
+                    <span className="flex items-center gap-1.5 text-red-700 px-3 py-1.5 rounded-full text-xs font-medium">
+                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    </span>
+                );
+            default:
+                return (
+                    <span className="flex items-center gap-1.5 text-red-700 px-3 py-1.5 rounded-full text-xs font-medium">
+                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    </span>
+                );
+        }
+    };
+
 
     const getInterval = (interval) => {
         if (interval === 'MONTHLY') {
@@ -119,8 +148,7 @@ export default function HistoryPackage() {
                                             {packageItem.package_name === 'FREE' ? <PiInfinity className="text-2xl" /> : dateFormat(packageItem.expires_at, locale)}
                                         </TableCell>
                                         <TableCell className="!text-black/70 hover:!text-black text-xsm py-4 px-6">
-                                            <span className={`inline-block rounded-full w-2 h-2 ${packageItem.status === 'ACTIVE' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}>
-                                            </span>
+                                            {getStatusContent(packageItem.status)}
                                         </TableCell>
                                     </TableRow>
                                 ))}

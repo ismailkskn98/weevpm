@@ -9,8 +9,8 @@ export default function HeroImage() {
 
       <div className="absolute inset-0 w-fit h-full hero-layer-1 rounded-2xl shadow-md">
         <Image
-          src="/images/hero-image-left.png"
-          alt="background layer"
+          src="/images/hero-image-bottom.webp"
+          alt="weevpn mobile"
           width={750}
           height={600}
           className="w-full h-full object-fill object-center rounded-2xl"
@@ -23,8 +23,8 @@ export default function HeroImage() {
 
       <div className="relative w-fit h-full z-30 hero-layer-3 rounded-2xl shadow-md">
         <Image
-          src="/images/hero-image-bottom.png"
-          alt="foreground layer"
+          src="/images/hero-image-top.webp"
+          alt="weevpn mobile"
           width={550}
           height={400}
           className="object-fill object-center w-full h-full rounded-2xl"

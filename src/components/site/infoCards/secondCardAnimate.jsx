@@ -13,8 +13,8 @@ export default function SecondCardAnimate() {
     }
 
     const images = [
-        { src: "/images/app-ui-1.png", alt: "WeeVPN Lite", mode: "lite" },
-        { src: "/images/app-ui-2.png", alt: "WeeVPN Pro", mode: "pro" }
+        { src: "/images/hero-image-top.webp", alt: "WeeVPN Lite", mode: "lite" },
+        { src: "/images/pro.webp", alt: "WeeVPN Pro", mode: "pro" }
     ]
 
     const activeImage = images.find(image => image.mode === imageMode);
