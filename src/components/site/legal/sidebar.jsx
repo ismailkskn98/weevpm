@@ -1,13 +1,23 @@
 'use client'
 import React from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl';
 
 
 export default function Sidebar() {
     const searchParams = useSearchParams();
-    const activeSection = searchParams.get('t');
+    const pathname = usePathname();
     const t = useTranslations('Legal.aside');
+
+    const pathToContentMapping = {
+        'privacy-policy': 'privacyPolicy',
+        'distance-sales-agreement': 'distanceSalesAgreement',
+        'delivery-and-return-terms': 'deliveryReturnTerms',
+        'delete-account': 'deleteAccount'
+    };
+
+    const slug = pathname.split('/').pop();
+    const activeSection = searchParams.get('t') || pathToContentMapping[slug];
 
     const menuItems = [
         {
@@ -24,6 +34,11 @@ export default function Sidebar() {
             href: "/legal/delivery-and-return-terms?t=deliveryReturnTerms",
             label: t('deliveryReturnTerms'),
             key: "deliveryReturnTerms"
+        },
+        {
+            href: "/legal/delete-account?t=deleteAccount",
+            label: t('deleteAccount'),
+            key: "deleteAccount"
         }
     ]
 

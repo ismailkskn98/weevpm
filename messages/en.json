@@ -111,7 +111,7 @@
         "register": "Register",
         "forgotPassword": "Forgot Password",
         "privacyPolicy": "Privacy Policy",
-        "distanceSalesAgreement": "Distance Sales Agreement",
+        "distanceSalesAgreement": "Terms of Service",
         "deliveryReturnTerms": "Delivery and Return Terms"
       }
     },
@@ -137,8 +137,9 @@
     "copyright": {
       "copyright": "Copyright © 2025 WeeVPN. All rights reserved.",
       "privacyPolicy": "Privacy Policy",
-      "distanceSalesAgreement": "Distance Sales Agreement",
-      "deliveryReturnTerms": "Delivery and Return Terms"
+      "distanceSalesAgreement": "Terms of Service",
+      "deliveryReturnTerms": "Delivery and Return Terms",
+      "deleteAccount": "Delete Account"
     }
   },
   "Legal": {
@@ -248,11 +249,60 @@
         "item2": "🌐 www.weevpn.com"
       }
     },
+    "deleteAccount": {
+      "title": "Account Deletion Policy",
+      "article1": {
+        "title": "Account Deletion Process",
+        "description": "WeeVPN takes user account deletion requests seriously and processes them securely. The account deletion process follows these steps:",
+        "item1": "Request must be sent from the user's registered email address",
+        "item2": "Account deletion request verification",
+        "item3": "Account removal from the system",
+        "item4": "Secure archiving of data"
+      },
+      "article2": {
+        "title": "Account Deletion Request",
+        "description": "To delete your account, you must meet the following conditions:",
+        "item1": "Send request from your registered email address",
+        "item2": "Your account deletion request must be clear and explicit",
+        "item3": "Specify the reason for your request (optional)",
+        "item4": "Your contact information must be up to date"
+      },
+      "article3": {
+        "title": "Account Deletion Process",
+        "description": "After your account deletion request is received:",
+        "item1": "Your account is immediately removed from the system",
+        "item2": "Your VPN service access is terminated",
+        "item3": "Your active subscriptions are cancelled",
+        "item4": "Your account information is transferred to secure archiving system"
+      },
+      "article4": {
+        "title": "Data Archiving and Deletion",
+        "description": "After account deletion, your data:",
+        "item1": "Is stored in secure archiving system for 90 days",
+        "item2": "No account restoration is performed during this period",
+        "item3": "All data is permanently deleted after 90 days",
+        "item4": "Data deletion process is irreversible"
+      },
+      "article5": {
+        "title": "Important Notes",
+        "description": "What you need to know about account deletion:",
+        "item1": "Account deletion process is irreversible",
+        "item3": "No data access is provided during archiving period",
+        "item4": "Account deletion requests are only accepted via email"
+      },
+      "article6": {
+        "title": "Contact",
+        "description": "Send your account deletion request to:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
+      }
+    },
     "aside": {
       "title": "Legal Documents",
       "privacyPolicy": "Privacy Policy",
       "distanceSalesAgreement": "Terms of Service",
-      "deliveryReturnTerms": "Returns & Delivery"
+      "deliveryReturnTerms": "Returns & Delivery",
+      "deleteAccount": "Delete Account"
     }
   },
   "plans": {

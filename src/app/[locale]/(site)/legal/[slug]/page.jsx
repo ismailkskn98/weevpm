@@ -4,7 +4,17 @@ import { getMessages, getTranslations } from 'next-intl/server'
 export default async function LegalPage({ params, searchParams }) {
     const { slug } = await params;
     const queryParams = await searchParams;
-    const content = (await getMessages()).Legal[queryParams.t];
+
+    const pathToContentMapping = {
+        'privacy-policy': 'privacyPolicy',
+        'distance-sales-agreement': 'distanceSalesAgreement',
+        'delivery-and-return-terms': 'deliveryReturnTerms',
+        'delete-account': 'deleteAccount'
+    };
+
+    const contentKey = queryParams.t || pathToContentMapping[slug];
+    const messages = await getMessages();
+    const content = messages.Legal[contentKey];
     const t = await getTranslations('Legal.page');
 
     if (!content) {

@@ -109,7 +109,7 @@
         "register": "Kayıt Ol",
         "forgotPassword": "Şifremi Unuttum",
         "privacyPolicy": "Gizlilik Politikası",
-        "distanceSalesAgreement": "Mesafeli Satış Sözleşmesi",
+        "distanceSalesAgreement": "Kullanım Koşulları",
         "deliveryReturnTerms": "Teslimat ve İade Koşulları"
       }
     },
@@ -135,8 +135,9 @@
     "copyright": {
       "copyright": "Telif Hakkı © 2025 WeeVPN. Tüm hakları saklıdır.",
       "privacyPolicy": "Gizlilik Politikası",
-      "distanceSalesAgreement": "Mesafeli Satış Sözleşmesi",
-      "deliveryReturnTerms": "Teslimat ve İade Koşulları"
+      "distanceSalesAgreement": "Kullanım Koşulları",
+      "deliveryReturnTerms": "Teslimat ve İade Koşulları",
+      "deleteAccount": "Hesap Silme"
     }
   },
   "Legal": {
@@ -246,11 +247,60 @@
         "item2": "🌐 www.weevpn.com"
       }
     },
+    "deleteAccount": {
+      "title": "Hesap Silme Politikası",
+      "article1": {
+        "title": "Hesap Silme Süreci",
+        "description": "WeeVPN, kullanıcıların hesap silme taleplerini ciddiye alır ve güvenli bir şekilde işler. Hesap silme işlemi aşağıdaki adımları takip eder:",
+        "item1": "Kullanıcının kayıt olduğu e-posta adresinden talep gönderilmesi",
+        "item2": "Hesap silme talebinin doğrulanması",
+        "item3": "Hesabın sistemden kaldırılması",
+        "item4": "Verilerin güvenli bir şekilde arşivlenmesi"
+      },
+      "article2": {
+        "title": "Hesap Silme Talebi",
+        "description": "Hesabınızı silmek için aşağıdaki koşulları sağlamanız gerekir:",
+        "item1": "Hesabınızda kayıtlı olan e-posta adresinden talep göndermeniz",
+        "item2": "Hesap silme talebinizin açık ve net olması",
+        "item3": "Talep nedeninizi belirtmeniz (opsiyonel)",
+        "item4": "İletişim bilgilerinizin güncel olması"
+      },
+      "article3": {
+        "title": "Hesap Silme İşlemi",
+        "description": "Hesap silme talebiniz alındıktan sonra:",
+        "item1": "Hesabınız sistemden anında kaldırılır",
+        "item2": "VPN hizmetine erişiminiz sonlandırılır",
+        "item3": "Aktif abonelikleriniz iptal edilir",
+        "item4": "Hesap bilgileriniz güvenli arşivleme sistemine aktarılır"
+      },
+      "article4": {
+        "title": "Veri Arşivleme ve Silme",
+        "description": "Hesap silme işleminden sonra verileriniz:",
+        "item1": "90 gün boyunca güvenli arşivleme sisteminde saklanır",
+        "item2": "Bu süre zarfında hesap geri yükleme işlemi yapılmaz",
+        "item3": "90 gün sonunda tüm veriler kalıcı olarak silinir",
+        "item4": "Veri silme işlemi geri alınamaz"
+      },
+      "article5": {
+        "title": "Önemli Notlar",
+        "description": "Hesap silme işlemi hakkında bilmeniz gerekenler:",
+        "item1": "Hesap silme işlemi geri alınamaz",
+        "item3": "Arşivleme süresi boyunca veri erişimi sağlanmaz",
+        "item4": "Hesap silme talebi sadece e-posta ile kabul edilir"
+      },
+      "article6": {
+        "title": "İletişim",
+        "description": "Hesap silme talebinizi aşağıdaki e-posta adresine gönderin:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
+      }
+    },
     "aside": {
       "title": "Yasal Belgeler",
       "privacyPolicy": "Gizlilik Politikası",
       "distanceSalesAgreement": "Kullanım Koşulları",
-      "deliveryReturnTerms": "İade & Teslimat"
+      "deliveryReturnTerms": "İade & Teslimat",
+      "deleteAccount": "Hesap Silme"
     }
   },
   "plans": {

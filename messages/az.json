@@ -109,7 +109,7 @@
         "register": "Qeydiyyat",
         "forgotPassword": "Şifrəmi Unutdum",
         "privacyPolicy": "Məxfilik Siyasəti",
-        "distanceSalesAgreement": "Məsafəli Satış Müqaviləsi",
+        "distanceSalesAgreement": "İstifadə Şərtləri",
         "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri"
       }
     },
@@ -136,7 +136,8 @@
       "copyright": "Müəllif Hüquqları © 2025 WeeVPN. Bütün hüquqlar qorunur.",
       "privacyPolicy": "Məxfilik Siyasəti",
       "distanceSalesAgreement": "Məsafəli Satış Müqaviləsi",
-      "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri"
+      "deliveryReturnTerms": "Çatdırılma və Qaytarma Şərtləri",
+      "deleteAccount": "Hesab Silmə"
     }
   },
   "Legal": {
@@ -246,11 +247,60 @@
         "item2": "🌐 www.weevpn.com"
       }
     },
+    "deleteAccount": {
+      "title": "Hesab Silmə Siyasəti",
+      "article1": {
+        "title": "Hesab Silmə Prosesi",
+        "description": "WeeVPN istifadəçi hesab silmə tələblərini ciddi qəbul edir və təhlükəsiz şəkildə emal edir. Hesab silmə prosesi aşağıdakı addımları izləyir:",
+        "item1": "Tələb istifadəçinin qeydiyyatdan keçdiyi e-poçt ünvanından göndərilməlidir",
+        "item2": "Hesab silmə tələbinin yoxlanması",
+        "item3": "Hesabın sistemdən çıxarılması",
+        "item4": "Məlumatların təhlükəsiz arxivlənməsi"
+      },
+      "article2": {
+        "title": "Hesab Silmə Tələbi",
+        "description": "Hesabınızı silmək üçün aşağıdakı şərtləri yerinə yetirməlisiniz:",
+        "item1": "Qeydiyyatdan keçdiyiniz e-poçt ünvanından tələb göndərin",
+        "item2": "Hesab silmə tələbiniz aydın və açıq olmalıdır",
+        "item3": "Tələbinizin səbəbini göstərin (istəyə bağlı)",
+        "item4": "Əlaqə məlumatlarınız güncəl olmalıdır"
+      },
+      "article3": {
+        "title": "Hesab Silmə Prosesi",
+        "description": "Hesab silmə tələbiniz alındıqdan sonra:",
+        "item1": "Hesabınız sistemdən dərhal çıxarılır",
+        "item2": "VPN xidmətinə girişiniz dayandırılır",
+        "item3": "Aktiv abunəlikləriniz ləğv edilir",
+        "item4": "Hesab məlumatlarınız təhlükəsiz arxivləmə sisteminə ötürülür"
+      },
+      "article4": {
+        "title": "Məlumat Arxivləmə və Silmə",
+        "description": "Hesab silmə prosesindən sonra məlumatlarınız:",
+        "item1": "90 gün ərzində təhlükəsiz arxivləmə sistemində saxlanılır",
+        "item2": "Bu müddət ərzində hesab bərpası edilmir",
+        "item3": "90 gün sonra bütün məlumatlar daimi olaraq silinir",
+        "item4": "Məlumat silmə prosesi geri alınmır"
+      },
+      "article5": {
+        "title": "Vacib Qeydlər",
+        "description": "Hesab silmə haqqında bilməli olduğunuzlar:",
+        "item1": "Hesab silmə prosesi geri alınmır",
+        "item3": "Arxivləmə müddəti ərzində məlumat girişi təmin edilmir",
+        "item4": "Hesab silmə tələbləri yalnız e-poçt vasitəsilə qəbul edilir"
+      },
+      "article6": {
+        "title": "Əlaqə",
+        "description": "Hesab silmə tələbinizi aşağıdakı ünvana göndərin:",
+        "item1": "📧 info@weevpn.com",
+        "item2": "🌐 www.weevpn.com"
+      }
+    },
     "aside": {
       "title": "Hüquqi Sənədlər",
       "privacyPolicy": "Məxfilik Siyasəti",
       "distanceSalesAgreement": "İstifadə Şərtləri",
-      "deliveryReturnTerms": "Qaytarma və Çatdırılma"
+      "deliveryReturnTerms": "Qaytarma və Çatdırılma",
+      "deleteAccount": "Hesab Silmə"
     }
   },
   "plans": {
